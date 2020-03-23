@@ -37,10 +37,6 @@ html, body {
     }
 
 
-/********************************
-Plugin Hero Example
-********************************/
-
 .patch-button {
 
   color: white;
@@ -73,6 +69,11 @@ Plugin Hero Example
 .textIcons {
 
   color: white;
+  float: right;
+  font-weight: bold;
+  margin-right: 30%;
+
+
     }
 
 .patch-container {
@@ -148,8 +149,14 @@ Media Queries
   float: left;
   height: 100px;
   width: 100%;
-
     }
+
+	.textIcons {
+
+  color: white;
+  float: right;
+  font-weight: bold;
+	margin-right: 30%;}
 
 .patch-item {
     padding-top: 30px;
@@ -168,10 +175,6 @@ Media Queries
   margin: 0 0 5% 0;
     width: 30%;
   }*/
-
-
-}
-
 
 
 @media only screen and (min-width: 990px) {
@@ -201,6 +204,13 @@ Media Queries
 
 }
 
+.textIcons {
+
+  color: white;
+  float: right;
+  font-weight: bold;
+margin-right: 30%;}
+
   .resize {
     margin: 50px auto -2%;
   }
@@ -228,51 +238,10 @@ Media Queries
         </a>
     </div>
 
-    <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="Images/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
-            <h5 class="textIcons">Map</h5>
-        </a>
-    </div>
-
-    <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="logo" src="Images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
-            <h5 class="textIcons">Group Chat</h5>
-        </a>
-    </div>
-
-    <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="Images/question.png" alt="Help" width= "120px" height= "120px" />
-            <h5 class="textIcons">Help</h5>
-        </a>
-    </div>
-
-     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="Images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
-            <h5 class="textIcons">Annoucements</h5>
-        </a>
-    </div>
-
-    <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="Images/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
-            <h5 class="textIcons">Self Enrolment</h5>
-        </a>
-    </div>
-
-    <div class="patch-item patch-button">
-        <a href="settings.php">
-            <img class="test" src="Images/settings.png" alt="Settings" width= "120px" height= "120px" />
-            <h5 class="textIcons">Settings</h5>
-        </a>
-    </div>
-
-    <div class="logout-box">
-        <a href="logout.php">
-            <img class="test" src="Images/logout.png" alt="Logout" width= "44px" height= "44px" />
+    <div class="patch-item patch-button" style="width: 100%; float: left;">
+        <a href="userDashboard.php">
+            <img class="test" src="Images/profile.png" alt="Map" width= "90px" height= "90px" />
+            <h2 class="textIcons">My Profile</h2>
         </a>
     </div>
 

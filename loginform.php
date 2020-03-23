@@ -1,5 +1,5 @@
 <?php
-    require_once("connection.php");//gets the connections.php
+    require_once("connection.php");//gets the connections.php //was connection
     $db = getConnection();//returns the connection for the database.
 
     //NEEDS TO INCLUDE VALIDATION, Error Handling
@@ -17,13 +17,16 @@ if(isset($_POST['submit']))
 
     $pwobject = $obj->password; //ensures that the value isn't empty
 
+    $studentinfo = $db->query("select * from tbl_student where studentID='$ID'");
+
     //This is pulling both numbers and strings from the DB.
 //serialise
     if(password_verify($PW, $pwobject)) //['password'] //$obj->fetch->password uses a hash //serialize converts it to string
     //if($PW == $pwobject)
     {
         session_start();
-        //$_SESSION["studentID"] = $obj->fetch('studentID'); //$row["studentID"]
+        $row = $studentinfo->fetch(PDO::FETCH_ASSOC); //getting the row
+        $_SESSION["sessionStudentID"] = $row["studentID"]; //$row["studentID"]
         //Here we are pulling the information from the specific row in the DB.
         header("Location:mainmenu.php");
     }
@@ -31,14 +34,13 @@ if(isset($_POST['submit']))
     {
         session_start();
         $_SESSION["LogInFail"] = "Yes";
-        echo 'Failed: PW and ID = '.$pwobject.' '.$ID; //Delete later
     }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V19</title>
+	<title>WelcomeU</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -71,7 +73,9 @@ if(isset($_POST['submit']))
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-                <img class="imglogo" src="CSS/images/logo.png" alt="logo" width="250" height="75"/>
+                <div class="imgWrapper">
+                <img class="imglogo" src="Images/uni_logo.png" alt="logo" width= "250px" height= "75px" />
+                    </div>
 				<form action="loginform.php" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-33">
 						WelcomeU

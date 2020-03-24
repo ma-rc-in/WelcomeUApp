@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: OpenSans-Regular;
-  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
 }
 
 
@@ -16,8 +16,8 @@
 [ RESTYLE TAG ]*/
 
 * {
-	margin: 0px; 
-	padding: 0px; 
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
@@ -50,10 +50,14 @@ a:hover {
 /*---------------------------------------------*/
 h1,h2,h3,h4,h6 {
 	margin: 0px;
-    
+
 }
 h5 {
       text-align: center;
+      font-family: OpenSans-Regular, sans-serif;
+      font-weight: normal;
+      margin-top: 15px;
+      margin-bottom: 20px;
 }
 
 p {
@@ -140,7 +144,7 @@ iframe {
 }
 
 .container-login100 {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -179,11 +183,12 @@ iframe {
 
 .login100-form-title {
   display: block;
-  font-family: OpenSans-Regular;
+  font-family: OpenSans-Regular, sans-serif;
   font-size: 30px;
   color: #555555;
   line-height: 1.2;
   text-align: center;
+  margin-top: 50px;
 }
 
 /*------------------------------------------------------------------
@@ -220,7 +225,7 @@ input.input100 {
 /*------------------------------------------------------------------
 [ Focus Input ]*/
 
-.focus-input100-1, 
+.focus-input100-1,
 .focus-input100-2 {
   display: block;
   position: absolute;
@@ -420,7 +425,7 @@ input.input100 {
   .alert-validate::before {
     visibility: visible;
     opacity: 1;
-      
+
   }
     .imgWrapper {
      flex-wrap: wrap;
@@ -432,7 +437,7 @@ input.input100 {
     .imglogo{
         margin-right: 20%;
     }
-    
+
 }
 
 @media (min-width: 1000px) {
@@ -442,15 +447,11 @@ input.input100 {
      align-items: center;
      align-self: center;
      align-content: center;
-       
+
     }
     .imglogo{
-        float: right; 
+        float: right;
         margin-right: 20%;
-    
+
     }
 }
-
-
-
-

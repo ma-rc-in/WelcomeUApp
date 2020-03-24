@@ -67,7 +67,7 @@ if(isset($_POST['submit']))
           <h5> Please login with your university login</h5>
 
           <div class="wrap-input100 validate-input" data-validate="Student ID is required">
-            <input class="input100" type="text" name="formStudentID" placeholder="StudentID">
+            <input class="input100" type="text" name="formStudent ID" placeholder="StudentID">
             <span class="focus-input100-1"></span>
             <span class="focus-input100-2"></span>
           </div>

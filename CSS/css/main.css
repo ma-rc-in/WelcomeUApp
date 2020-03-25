@@ -50,8 +50,8 @@ a:hover {
 /*---------------------------------------------*/
 h1,h2,h3,h4,h6 {
 	margin: 0px;
-
 }
+
 h5 {
       text-align: center;
       font-family: OpenSans-Regular, sans-serif;
@@ -71,6 +71,12 @@ p {
 ul, li {
 	margin: 0px;
 	list-style-type: none;
+}
+
+.messageChat {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 
@@ -161,16 +167,52 @@ iframe {
 
 .wrap-login100 {
   width: 500px;
-    height: 600px;
+  height: 600px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-
   box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrappedChat {
+  width: 500px;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.messageBox {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+}
+
+.messageRecord {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: inherit;
+  max-width: 100%;
+  text-align: center;
+}
+
+.messageRecord::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 
@@ -189,6 +231,15 @@ iframe {
   line-height: 1.2;
   text-align: center;
   margin-top: 50px;
+}
+
+.chatHeading{
+  display: block;
+  font-family: OpenSans-Regular, sans-serif;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+  text-align: center;
 }
 
 /*------------------------------------------------------------------
@@ -213,6 +264,12 @@ iframe {
   font-size: 15px;
   color: #666666;
   line-height: 1.2;
+}
+
+.wrappedChat {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
 }
 
 

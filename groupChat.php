@@ -40,7 +40,13 @@
 <html lang="en">
 <head>
     <title>WelcomeU Group Chat</title>
+
+    <!--Scripts-->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
+    <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -76,8 +82,6 @@
     <input type = "text" name = "formMessage"><br><br>
     <button>Report</button>
     <input type="submit" name="submit" value="Submit"/>
-
-
     </form>
 </body>
 </html>

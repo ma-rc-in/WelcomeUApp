@@ -98,7 +98,7 @@ if(isset($_POST['submit'])) //when the user submits their message
         <button  onclick="goBack()"><img src="images/back.png" style="height: 28px; width: 28px; margin-bottom: 10px;"></button>
 
         <!-- Messages will be placed here -->
-        <div class="scrolling-box" id="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden;">
+        <div id="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden;">
 
         </div>
 

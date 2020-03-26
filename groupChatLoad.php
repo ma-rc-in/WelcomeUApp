@@ -17,8 +17,12 @@
         //shows information for users
         $sendID = $row->senderStudentID;
         $studentNames = studentName($sendID);
+
+        echo '<div id=messageSent>';
         echo $studentNames['firstName'] . " " . $studentNames['lastName'] . " (" . $row->senderStudentID . "):\n";
-        echo $row->chatMessage . "\n";
+        echo $row->chatMessage."\n";
+        echo "\n";
+        echo '</div>';
 }
 ?>
 

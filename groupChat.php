@@ -77,7 +77,7 @@ if(isset($_POST['submit'])) //when the user submits their message
     <script>
     $(document).ready(function(){
       setInterval(function() {
-        $("#message").load("groupChatLoad.php");
+        $("#messageBox").load("groupChatLoad.php");
       }, 1000);
     });
     </script>
@@ -97,21 +97,9 @@ if(isset($_POST['submit'])) //when the user submits their message
 
         <button  onclick="goBack()"><img src="images/back.png" style="height: 28px; width: 28px; margin-bottom: 10px;"></button>
 
+        <!-- Messages will be placed here -->
+        <div class="scrolling-box" id="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden;">
 
-        <div class="messageBox">
-          <textarea name="messageArea" id="message" class="messageRecord" rows="20" cols="60">
-            <?php
-            $messages = groupChatMessage($courseName);//gets all the messages associated with the courseName
-            while ($row = $messages->fetchObject()) {
-              //shows information for users
-              $sendID = $row->senderStudentID;
-              $studentNames = studentName($sendID);
-              echo $studentNames['firstName'] . " " . $studentNames['lastName'] . " (" . $row->senderStudentID . "):\n";
-              echo $row->chatMessage . "\n";
-              echo "\n";
-            }
-            ?>
-          </textarea>
         </div>
 
 

@@ -182,15 +182,16 @@ Media Queries
 	margin-right: 30%;}
 
 .patch-item {
-    padding-top: 30px;
+  padding-top: 30px;
   background-color: black;
   border-radius: 4px;
   float: left;
   height: 200px;
   margin: 0 0 1% 0;
   width: 100%;
-
 }
+
+
 
     /*.patch-item {
     float: left;
@@ -287,7 +288,6 @@ margin-right: 30%;}
                       if (event.target == modal) {
                         modal.style.display = "none"; }}
                   </script>
-
       </div>
   </div>
 </body>

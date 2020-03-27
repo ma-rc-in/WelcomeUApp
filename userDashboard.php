@@ -13,10 +13,10 @@ else
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <title>WelcomeU Login</title>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <style>
 
 html, body {
@@ -24,21 +24,16 @@ html, body {
   background-color: black;
   font-family: 'Open Sans';
   -webkit-font-smoothing: subpixel-antialiased;
-
-
 }
 
 @-ms-viewport{
   height: device-height;
 }
-
     a {
         text-decoration: none;
     }
 
-
 .patch-button {
-
   color: white;
   cursor: pointer;
   font-size: 1em;
@@ -73,9 +68,6 @@ html, body {
   font-weight: bold;
   width: 50%;
   pointer: none;
-
-
-
     }
 
 .patch-container {
@@ -86,7 +78,6 @@ html, body {
   position: relative;
   text-align: center;
   zoom: 1;
-
 }
 
 
@@ -212,7 +203,6 @@ Media Queries
 @media only screen and (min-width: 990px) {
   .patch-container {
       max-width: 100%;
-
   }
 
   .patch-item {
@@ -257,11 +247,10 @@ margin-right: 30%;}
     width: calc(25% - (4% / 6) * 2);
   }
 }
+
 </style>
 </head>
 <body>
-
-
 <div class="patch-container">
 
     <div class="logoMain">
@@ -270,16 +259,36 @@ margin-right: 30%;}
         </a>
     </div>
 
-   <div class="patch-item patch-button" style="width: 100%; float: left;">
-            <img class="test" src="Images/pass.png" alt="Map" width= "90px" height= "90px" style="float: left; margin-left: 100px; pointer: none;" />
-			<a href="#" class="button">Change</a>
-            <h3 class="textIcons">Change password</h3>
+     <div class="patch-item patch-button" style="width: 100%; float: left;">
+              <img class="test" src="Images/pass.png" alt="Map" width= "90px" height= "90px" style="float: left; margin-left: 100px; pointer: none;" />
+  			         <a href="#" id="myBtn" class="button">Change</a>
+                  <h3 class="textIcons">Change password</h3>
+                    <div id="myModal" class="modal">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <span class="close">&times;</span>
+                          <h4>Change password</h4>
+                        </div>
+                        <div class="modal-body">
+                        aa
+                        </div>
+                      </div>
+                    </div>
 
-    </div>
+                  <script>
+                    var modal = document.getElementById("myModal");
+                    var btn = document.getElementById("myBtn");
+                    var span = document.getElementsByClassName("close")[0];
+                    btn.onclick = function() {
+                      modal.style.display = "block";}
+                    span.onclick = function() {
+                      modal.style.display = "none";}
+                    window.onclick = function(event) {
+                      if (event.target == modal) {
+                        modal.style.display = "none"; }}
+                  </script>
 
-
-
-    </div>
-
+      </div>
+  </div>
 </body>
 </html>

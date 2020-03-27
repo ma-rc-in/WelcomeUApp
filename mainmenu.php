@@ -16,27 +16,27 @@ else
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>WelcomeU Login</title>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <style>
 
 html, body {
-  
+
   background-color: black;
   font-family: 'Open Sans';
-  -webkit-font-smoothing: subpixel-antialiased;   
-   
+  -webkit-font-smoothing: subpixel-antialiased;
+
 
 }
-    
+
 @-ms-viewport{
   height: device-height;
 }
-    
+
     a {
         text-decoration: none;
     }
-    
-    
+
+
 /********************************
 Plugin Hero Example
 ********************************/
@@ -51,14 +51,14 @@ Plugin Hero Example
   height: 70px;
   width: 30px;
 }
-    
+
 /*
 .patch-button:hover {
   border: solid 3px #FFF;
   line-height: 1px;
 }
 */
-    
+
 .patch-item {
     padding-top: 100px;
   background-color: black;
@@ -69,22 +69,22 @@ Plugin Hero Example
   width: 70%;
 
 }
-    
+
 .textIcons {
-        
+
   color: white;
     }
 
 .patch-container {
   background-color: #000000;
   border-radius: 5px;
-  color: #000000;  
-  overflow: auto; 
+  color: #000000;
+  overflow: auto;
   position: relative;
   text-align: center;
   zoom: 1;
-  
-}   
+
+}
 
 
 .patch-panel {
@@ -94,7 +94,7 @@ Plugin Hero Example
   display: none;
   float: left;
   font-size: 1.5em;
-  
+
   line-height: 250px;
   margin: 0 0 2% 0;
   width: 70%;
@@ -132,25 +132,25 @@ Media Queries
   h2 {
     font-size: 3.3rem;
   }
-  
+
   .patch-panel {
     margin: 1%;
     width: 100%;
-      
+
   }
   .components {
     margin: 1.5%;
     width: 46%;
   }
-    
+
    .logout-box {
-  padding-top: 30px; 
+  padding-top: 30px;
   float: left;
-  height: 100px;  
-  width: 100%; 
+  height: 100px;
+  width: 100%;
 
     }
-    
+
 .patch-item {
     padding-top: 30px;
   background-color: black;
@@ -161,23 +161,23 @@ Media Queries
   width: 50%;
 
 }
-    
+
     /*.patch-item {
     float: left;
   height: 200px;
   margin: 0 0 5% 0;
     width: 30%;
   }*/
-    
-    
+
+
 }
-    
+
 
 
 @media only screen and (min-width: 990px) {
   .patch-container {
-      max-width: 100%;  
-    
+      max-width: 100%;
+
   }
 
   .patch-item {
@@ -194,11 +194,11 @@ Media Queries
   }
 
 .logout-box {
-  padding-top: 30px; 
+  padding-top: 30px;
   float: left;
-  height: 100px; 
-  width: 100%; 
-   
+  height: 100px;
+  width: 100%;
+
 }
 
   .resize {
@@ -217,67 +217,66 @@ Media Queries
 }
 </style>
 </head>
-<body>	
+<body>
 
 
-<div class="patch-container">  
-    
+<div class="patch-container">
+
     <div class="logoMain">
         <a href="mainmenu.php">
-            <img class="test" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />            
-        </a>        
-    </div>    
-    
+            <img class="test" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+        </a>
+    </div>
+
     <div class="patch-item patch-button">
         <a href="mainmenu.php">
-            <img class="test" src="Images/icons/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
+            <img class="test" src="Images/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
             <h5 class="textIcons">Map</h5>
-        </a>        
-    </div>     
-    
+        </a>
+    </div>
+
     <div class="patch-item patch-button">
         <a href="mainmenu.php">
-            <img class="logo" src="Images/icons/chat.png" alt="Group Chat" width= "120px" height= "120px" />
+            <img class="logo" src="Images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
             <h5 class="textIcons">Group Chat</h5>
-        </a>        
-    </div>  
-    
+        </a>
+    </div>
+
     <div class="patch-item patch-button">
         <a href="mainmenu.php">
-            <img class="test" src="Images/icons/question.png" alt="Help" width= "120px" height= "120px" />
+            <img class="test" src="Images/question.png" alt="Help" width= "120px" height= "120px" />
             <h5 class="textIcons">Help</h5>
-        </a>        
-    </div>  
-    
+        </a>
+    </div>
+
      <div class="patch-item patch-button">
         <a href="mainmenu.php">
-            <img class="test" src="Images/icons/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
+            <img class="test" src="Images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
             <h5 class="textIcons">Annoucements</h5>
-        </a>        
-    </div> 
-    
+        </a>
+    </div>
+
     <div class="patch-item patch-button">
         <a href="mainmenu.php">
-            <img class="test" src="Images/icons/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
+            <img class="test" src="Images/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
             <h5 class="textIcons">Self Enrolment</h5>
-        </a>        
-    </div>  
-    
+        </a>
+    </div>
+
     <div class="patch-item patch-button">
         <a href="mainmenu.php">
-            <img class="test" src="Images/icons/settings.png" alt="Settings" width= "120px" height= "120px" />
+            <img class="test" src="Images/settings.png" alt="Settings" width= "120px" height= "120px" />
             <h5 class="textIcons">Settings</h5>
-        </a>        
-    </div>  
-    
+        </a>
+    </div>
+
     <div class="logout-box">
         <a href="logout.php">
-            <img class="test" src="Images/logout.png" alt="Logout" width= "44px" height= "44px" />            
-        </a>        
-    </div>  
-    
+            <img class="test" src="Images/logout.png" alt="Logout" width= "44px" height= "44px" />
+        </a>
+    </div>
+
     </div>
 
 </body>
 </html>
-

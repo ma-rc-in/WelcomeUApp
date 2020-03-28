@@ -16,6 +16,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <title>WelcomeU Login</title>
+    <script src="jquery-3.4.1.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <style>
 
@@ -64,7 +65,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
   .textIcons {
     color: white;
     font-weight: bold;
-    pointer: none;
+    cursor: default;
     font-size: 1em;
     font-size: 1.5em;
     letter-spacing: 0;
@@ -118,7 +119,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     float: center;
     margin-top: 28px;
     min-width: 35%;
-
+    margin-left: 10px;
   }
   a.button:hover{
     color:#000000;
@@ -134,7 +135,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
   .imgPass {
     float: left;
     margin-left: 100px;
-    pointer: none;
+    cursor: default;
   }
 
   [data-patch-panel='1'],
@@ -164,7 +165,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
   Media Queries
   ********************************/
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1010px) {
     h2 {
       font-size: 3.3rem;
     }
@@ -197,15 +198,22 @@ if(isset($_SESSION['sessionStudentID'])) {}
     .imgPass {
       float: left;
       margin-left: 50px;
-      pointer: none;
+      cursor: default;
+      height: 80px;
+      width: 80px;
+      margin-top: 10px;
+    }
+
+    .button[data-abbr]::after {
+      content: attr(data-abbr);
     }
 
 
     /* .imgPass {
-      height: auto;
-      width: auto;
-      max-width: 80px;
-      max-height: 80px;
+    height: auto;
+    width: auto;
+    max-width: 80px;
+    max-height: 80px;
     } */
 
 
@@ -217,7 +225,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     }*/
 
 
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (min-width: 1010px) {
       .patch-container {
         max-width: 100%;
       }
@@ -244,19 +252,18 @@ if(isset($_SESSION['sessionStudentID'])) {}
         }
 
         .textIcons {
-
           color: white;
           float: right;
           font-weight: bold;
           float: left;
           width: 33.33%;
+
         }
 
         .iconPass {
           float: left;
-          width: 33.33%;          }
-
-
+          width: 33.33%;
+        }
 
           .resize {
             margin: 50px auto -2%;
@@ -277,19 +284,17 @@ if(isset($_SESSION['sessionStudentID'])) {}
         </head>
         <body>
         <div class="patch-container">
-
         <div class="logoMain">
         <a href="mainmenu.php">
         <img class="test" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
         </div>
-
         <div class="patch-item patch-button" style="width: 100%; float: left;">
         <div class="iconPass">
-          <img class="imgPass" src="Images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
+        <img class="imgPass" src="Images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
         </div>
         <h3 class="textIcons">Change password</h3>
-        <a href="#" id="myBtn" class="button">Change</a>
+        <a href="#" id="myBtn" class="button" data-abbr=" password">Change</a>
         <div id="myModal" class="modal">
         <div class="modal-content">
         <div class="modal-header">
@@ -301,7 +306,6 @@ if(isset($_SESSION['sessionStudentID'])) {}
         </div>
         </div>
         </div>
-
         <script>
         var modal = document.getElementById("myModal");
         var btn = document.getElementById("myBtn");

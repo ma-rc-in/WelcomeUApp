@@ -25,14 +25,14 @@ else { //return user to login
 if(isset($_POST['submit'])) //when the user submits their message
 {
   $RoomName = $courseName;
+
   $Message = $_POST['formMessage'];//message is assigned to what the user writes
   $senderStudentID = $studentID;
-  $sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"
-
+  //$sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"  //timeSent ,'{$sendTime}')
   //sends this to the database when user clicks send
   $groupChatInsert = $db->query("INSERT INTO tbl_groupchat (
-    chatRoomName, chatMessage, senderStudentID, timeSent)
-    VALUES('{$RoomName}','{$Message}','{$senderStudentID}','{$sendTime}')");
+    chatRoomName, chatMessage, senderStudentID)
+    VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
   }
   ?>
 
@@ -75,10 +75,18 @@ if(isset($_POST['submit'])) //when the user submits their message
     }
     </style>
     <script>
+        //every 1000ms call the load function
+
     $(document).ready(function(){
       setInterval(function() {
         $("#messageBox").load("groupChatLoad.php");
-      }, 1000);
+      }, 2000);
+    });
+
+    //loads all the data when the form loads
+    $(document).ready(function(){
+            $("#messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
+
     });
     </script>
 
@@ -99,7 +107,6 @@ if(isset($_POST['submit'])) //when the user submits their message
 
         <!-- Messages will be placed here -->
         <div id="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden;">
-
         </div>
 
 
@@ -108,7 +115,7 @@ if(isset($_POST['submit'])) //when the user submits their message
             <h3 class="messageChat">Your message:</h3>
             <form action=""groupChat.php" method="post">
               <div class="wrap-input100 validate-input" data-validate="" style="border: 2px solid #e6e6e6;">
-                <input class="input100" type="text" name="formStudentID" placeholder="Put your message">
+                <input class="input100" type="text" name="formMessage" placeholder="Type your message here.">
                 <span class="focus-input100-1"></span>
                 <span class="focus-input100-2"></span>
                 <input class="login100-form-btn" type="submit" name="submit" value="Submit" style="margin-top: 10px; "/>

@@ -161,9 +161,52 @@ if(isset($_SESSION['sessionStudentID'])) {}
   [data-patch-panel='12'] {
     background: #3498DB;
   }
-  /********************************
-  Media Queries
-  ********************************/
+
+
+.formPass {
+  width: 100%;
+}
+
+.formPassWrapper {
+
+}
+
+.formHeading {
+
+
+}
+
+.formPassInput {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #a3a3a3;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, 0.2);
+  color: white;
+  outline: none;
+  text-align: center;
+}
+
+.submitPass {
+  border: 1px solid #a3a3a3;
+  background: rgba(20, 20, 20, 0.6);
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+  margin-bottom: 25px;
+}
+#submitPass:hover {
+  background: rgba(20, 20, 20, 0.8);
+  padding: 10px 80px;
+}
+
 
   @media only screen and (max-width: 1010px) {
     h2 {
@@ -295,6 +338,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
         </div>
         <h3 class="textIcons">Change password</h3>
         <a href="#" id="myBtn" class="button" data-abbr=" password">Change</a>
+
         <div id="myModal" class="modal">
         <div class="modal-content">
         <div class="modal-header">
@@ -302,22 +346,39 @@ if(isset($_SESSION['sessionStudentID'])) {}
         <h4>Change password</h4>
         </div>
         <div class="modal-body">
-        aa
+
+        <form class="formPass">
+            <div class="formPassWrapper">
+              <h5 class="formHeading"></h5>
+              <input type="password" class="formPassInput" id="oldPassInput" placeholder="Enter your old password">
+            </div>
+            <div class="formPassWrapper">
+            <h5 class="formHeading"></h5h5>
+              <input type="password" class="formPassInput" id="newPassInput" placeholder="Enter your new password">
+            </div>
+            <div class="formPassWrapper">
+            <h5 class="formHeading"></h5>
+              <input type="password" class="formPassInput" id="repeatPassInput" placeholder="Repeat your new password">
+            </div>
+            <input name="submit" class="submitPass" type="submit" value="Submit"/>
+        </form>
+
+        </div>
         </div>
         </div>
         </div>
         <script>
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-          modal.style.display = "block";}
-          span.onclick = function() {
-            modal.style.display = "none";}
-            window.onclick = function(event) {
-              if (event.target == modal) {
-                modal.style.display = "none"; }}
-                </script>
+          var modal = document.getElementById("myModal");
+          var btn = document.getElementById("myBtn");
+          var span = document.getElementsByClassName("close")[0];
+          btn.onclick = function() {
+            modal.style.display = "block";}
+            span.onclick = function() {
+              modal.style.display = "none";}
+              window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none"; }}
+              </script>
                 </div>
                 </div>
                 </body>

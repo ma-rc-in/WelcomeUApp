@@ -264,7 +264,7 @@ Media Queries
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
+        <a href="settings.php">
             <img class="test" src="Images/settings.png" alt="Settings" width= "120px" height= "120px" />
             <h5 class="textIcons">Settings</h5>
         </a>

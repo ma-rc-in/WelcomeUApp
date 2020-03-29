@@ -1,6 +1,5 @@
-<?php
+<!-- <?php
 require_once("connection.php");//gets the connections.php
-require_once("functions.php");
 $db = getConnection();//returns the connection for the database.
 ?>
 <?php
@@ -9,6 +8,25 @@ if(isset($_SESSION['sessionStudentID'])) {}
   else
   {header('Location:loginform.php');}  //return user to login
   ?>
+  <?php
+
+  if (count($_POST) > 0) {
+      $studentselect = $db->query("select password from tbl_student where studentID='$ID'"); //gets all from tbl_student, //password
+      $obj = $studentselect->fetchObject();
+      if ($_POST["currentPassword"] == $obj["password"]) {
+          $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+          $db->query("UPDATE tbl_student SET password=$hashed_password WHERE studentID='$student'");
+          $message = "Password Changed";
+      } else
+          $message = "Current Password is not correct";
+  }
+
+
+  ?> -->
+
+
+
+
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -18,6 +36,40 @@ if(isset($_SESSION['sessionStudentID'])) {}
     <title>WelcomeU Login</title>
     <script src="jquery-3.4.1.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+    <script>
+    function validatePassword() {
+    var currentPassword,newPassword,confirmPassword,output = true;
+
+    currentPassword = document.frmChange.currentPassword;
+    newPassword = document.frmChange.newPassword;
+    confirmPassword = document.frmChange.confirmPassword;
+
+    if(!currentPassword.value) {
+    	currentPassword.focus();
+    	document.getElementById("currentPassword").innerHTML = "required";
+    	output = false;
+    }
+    else if(!newPassword.value) {
+    	newPassword.focus();
+    	document.getElementById("newPassword").innerHTML = "required";
+    	output = false;
+    }
+    else if(!confirmPassword.value) {
+    	confirmPassword.focus();
+    	document.getElementById("confirmPassword").innerHTML = "required";
+    	output = false;
+    }
+    if(newPassword.value != confirmPassword.value) {
+    	newPassword.value="";
+    	confirmPassword.value="";
+    	newPassword.focus();
+    	document.getElementById("confirmPassword").innerHTML = "not same";
+    	output = false;
+    }
+    return output;
+    }
+    </script>
     <style>
 
     html, body {
@@ -56,7 +108,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     background-color: black;
     border-radius: 4px;
     float: left;
-    height: 200px;
+    height: 100%;
     margin: 0 0 5% 0;
     width: 100%;
 
@@ -74,7 +126,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     background-color: black;
     border-radius: 4px;
     float: left;
-    width: 45%;
+    width: 38%;
     margin-top: 25px;
 
   }
@@ -125,12 +177,6 @@ if(isset($_SESSION['sessionStudentID'])) {}
     color:#000000;
     background-color:#FFFFFF;
   }
-  @media all and (max-width:30em){
-    a.button{
-      float: center;
-      text-align: center;
-    }
-  }
 
   .imgPass {
     float: left;
@@ -163,52 +209,52 @@ if(isset($_SESSION['sessionStudentID'])) {}
   }
 
 
-.formPass {
-  width: 100%;
-}
+  .formPass {
+    width: 100%;
+  }
 
-.formPassWrapper {
+  .formPassWrapper {
 
-}
+  }
 
-.formHeading {
-
-
-}
-
-.formPassInput {
-  margin: 15px 0;
-  font-size: 16px;
-  padding: 10px;
-  width: 70%;
-  border: 1px solid #a3a3a3;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background: rgba(20, 20, 20, 0.2);
-  color: white;
-  outline: none;
-  text-align: center;
-}
-
-.submitPass {
-  border: 1px solid #a3a3a3;
-  background: rgba(20, 20, 20, 0.6);
-  font-size: 18px;
-  color: white;
-  margin-top: 20px;
-  padding: 10px 50px;
-  cursor: pointer;
-  transition: .4s;
-  margin-bottom: 25px;
-}
-#submitPass:hover {
-  background: rgba(20, 20, 20, 0.8);
-  padding: 10px 80px;
-}
+  .formHeading {
 
 
-  @media only screen and (max-width: 1010px) {
+  }
+
+  .formPassInput {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #a3a3a3;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, 0.2);
+    color: white;
+    outline: none;
+    text-align: center;
+  }
+
+  .submitPass {
+    border: 1px solid #a3a3a3;
+    background: rgba(20, 20, 20, 0.6);
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+    margin-bottom: 25px;
+  }
+  .submitPass:hover {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 10px 80px;
+  }
+
+
+  @media only screen and (max-width: 900px) {
     h2 {
       font-size: 3.3rem;
     }
@@ -268,7 +314,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     }*/
 
 
-    @media only screen and (min-width: 1010px) {
+    @media only screen and (min-width: 900px) {
       .patch-container {
         max-width: 100%;
       }
@@ -308,78 +354,163 @@ if(isset($_SESSION['sessionStudentID'])) {}
           width: 33.33%;
         }
 
-          .resize {
-            margin: 50px auto -2%;
-          }
-          .wide {
-            margin: 0.6667%;
-            margin: calc(4% / 6);
-            width: 48.6666%;
-            width: calc(50% - (4% / 6) * 2);
-          }
-          .thin {
-            width: 23.6666%;
-            width: calc(25% - (4% / 6) * 2);
-          }
+        .logoIcon {
+          float: center;
         }
 
-        </style>
-        </head>
-        <body>
-        <div class="patch-container">
-        <div class="logoMain">
-        <a href="mainmenu.php">
-        <img class="test" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
-        </a>
-        </div>
-        <div class="patch-item patch-button" style="width: 100%; float: left;">
-        <div class="iconPass">
-        <img class="imgPass" src="Images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
-        </div>
-        <h3 class="textIcons">Change password</h3>
-        <a href="#" id="myBtn" class="button" data-abbr=" password">Change</a>
+        .resize {
+          margin: 50px auto -2%;
+        }
+        .wide {
+          margin: 0.6667%;
+          margin: calc(4% / 6);
+          width: 48.6666%;
+          width: calc(50% - (4% / 6) * 2);
+        }
+        .thin {
+          width: 23.6666%;
+          width: calc(25% - (4% / 6) * 2);
+        }
+      }
 
-        <div id="myModal" class="modal">
-        <div class="modal-content">
-        <div class="modal-header">
-        <span class="close">&times;</span>
-        <h4>Change password</h4>
-        </div>
-        <div class="modal-body">
+      @media all and (max-width:700px){
+        a.button{
+          float: center;
+          text-align: center;
 
-        <form class="formPass">
-            <div class="formPassWrapper">
-              <h5 class="formHeading"></h5>
-              <input type="password" class="formPassInput" id="oldPassInput" placeholder="Enter your old password">
-            </div>
-            <div class="formPassWrapper">
-            <h5 class="formHeading"></h5h5>
-              <input type="password" class="formPassInput" id="newPassInput" placeholder="Enter your new password">
-            </div>
+        }
+        .imgPass {
+          float: left;
+          margin-left: 39%;
+        }
+
+        .iconPass {
+          float: left;
+          width: 100%;
+        }
+
+        .imgLogo {
+          float: center;
+          cursor: default;
+          height: 90px;
+          width: 330px;
+          margin-top: 10px;
+        }
+      }
+
+      </style>
+      </head>
+      <body>
+      <div class="patch-container">
+      <div class="logoMain">
+      <a href="mainmenu.php">
+      <div class="logoIcon">
+        <img class="imgLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+      </div>
+      </a>
+      </div>
+
+      <div class="patch-item patch-button" style="width: 100%; float: left;">
+
+      <div class="iconPass">
+        <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
+      </div>
+      <h3 class="textIcons">Change password</h3>
+      <a href="#" id="myBtn" class="button" data-abbr=" password">Change</a>
+      </div>
+
+      <div class="patch-item patch-button" style="width: 100%; float: left;">
+      <div class="iconPass">
+        <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
+      </div>
+      <h3 class="textIcons">Remove data</h3>
+      <a href="#" id="myBtn" class="button" data-abbr=" data">Remove</a>
+      </div>
+
+      <div class="patch-item patch-button" style="width: 100%; float: left;">
+      <div class="iconPass">
+        <img class="imgPass" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
+      </div>
+      <h3 class="textIcons">Set PIN</h3>
+      <a href="#" id="myBtn" class="button" data-abbr=" PIN">Set</a>
+      </div>
+
+      <div id="myModal" class="modal">
+      <div class="modal-content">
+      <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Change password</h4>
+      </div>
+      <div class="modal-body">
+
+      <!--/* <form name="frmChange" method="post" action=""
+          onSubmit="return validatePassword()">
+          <div style="width: 500px;">
+              <div class="message"><?php if(isset($message)) { echo $message; } ?></div>
+              <table border="0" cellpadding="10" cellspacing="0"
+                  width="500" align="center" class="tblSaveForm">
+                  <tr class="tableheader">
+                      <td colspan="2">Change Password</td>
+                  </tr>
+                  <tr>
+                      <td width="40%"><label>Current Password</label></td>
+                      <td width="60%"><input type="password"
+                          name="currentPassword" class="txtField" /><span
+                          id="currentPassword" class="required"></span></td>
+                  </tr>
+                  <tr>
+                      <td><label>New Password</label></td>
+                      <td><input type="password" name="newPassword"
+                          class="txtField" /><span id="newPassword"
+                          class="required"></span></td>
+                  </tr>
+                  <td><label>Confirm Password</label></td>
+                  <td><input type="password" name="confirmPassword"
+                      class="txtField" /><span id="confirmPassword"
+                      class="required"></span></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><input type="submit" name="submit"
+                          value="Submit" class="btnSubmit"></td>
+                  </tr>
+              </table>
+          </div>
+      </form>  */-->
+
+      <form class="formPass" method="post">
+        <div class="formPassWrapper">
+        <h5 class="formHeading"></h5>
+          <input type="password" class="formPassInput" id="oldPassInput" placeholder="Enter your old password" autocomplete="off"/>
+        </div>
+          <div class="formPassWrapper">
+          <h5 class="formHeading"></h5h5>
+            <input type="password" class="formPassInput" id="newPassInput" placeholder="Enter your new password" autocomplete="off"/>
+          </div>
             <div class="formPassWrapper">
             <h5 class="formHeading"></h5>
-              <input type="password" class="formPassInput" id="repeatPassInput" placeholder="Repeat your new password">
+              <input type="password" class="formPassInput" id="repeatPassInput" placeholder="Repeat your new password" autocomplete="off"/>
             </div>
-            <input name="submit" class="submitPass" type="submit" value="Submit"/>
-        </form>
+                <input name="submit" class="submitPass" type="submit" value="Submit"/>
+      </form>
 
-        </div>
-        </div>
-        </div>
-        </div>
-        <script>
-          var modal = document.getElementById("myModal");
-          var btn = document.getElementById("myBtn");
-          var span = document.getElementsByClassName("close")[0];
-          btn.onclick = function() {
-            modal.style.display = "block";}
-            span.onclick = function() {
-              modal.style.display = "none";}
-              window.onclick = function(event) {
-                if (event.target == modal) {
-                  modal.style.display = "none"; }}
+
+      </div>
+      </div>
+      </div>
+      </div>
+      <script>
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function() {
+        modal.style.display = "block";}
+        span.onclick = function() {
+          modal.style.display = "none";}
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none"; }}
               </script>
-                </div>
-                </div>
-                </body>
-                </html>
+              </div>
+              </div>
+              </body>
+              </html>

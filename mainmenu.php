@@ -229,28 +229,28 @@ Media Queries
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
+        <a href="map.php">
             <img class="test" src="Images/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
             <h5 class="textIcons">Map</h5>
         </a>
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
+        <a href="groupChat.php">
             <img class="logo" src="Images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
             <h5 class="textIcons">Group Chat</h5>
         </a>
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
+        <a href="help.php">
             <img class="test" src="Images/question.png" alt="Help" width= "120px" height= "120px" />
             <h5 class="textIcons">Help</h5>
         </a>
     </div>
 
      <div class="patch-item patch-button">
-        <a href="mainmenu.php">
+        <a href="annoucements.php">
             <img class="test" src="Images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
             <h5 class="textIcons">Annoucements</h5>
         </a>

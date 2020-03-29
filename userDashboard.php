@@ -382,7 +382,11 @@ if(isset($_SESSION['sessionStudentID'])) {}
         .imgPass {
           float: left;
           margin-left: 35%;
+        }
 
+        .iconPass {
+          float: left;
+          width: 100%;
         }
 
         .imgLogo {

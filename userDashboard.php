@@ -108,7 +108,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     background-color: black;
     border-radius: 4px;
     float: left;
-    height: 200px;
+    height: 100%;
     margin: 0 0 5% 0;
     width: 100%;
 
@@ -407,15 +407,33 @@ if(isset($_SESSION['sessionStudentID'])) {}
       <div class="logoIcon">
         <img class="imgLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
       </div>
-
       </a>
       </div>
+
       <div class="patch-item patch-button" style="width: 100%; float: left;">
+
       <div class="iconPass">
         <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
       </div>
       <h3 class="textIcons">Change password</h3>
       <a href="#" id="myBtn" class="button" data-abbr=" password">Change</a>
+      </div>
+
+      <div class="patch-item patch-button" style="width: 100%; float: left;">
+      <div class="iconPass">
+        <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
+      </div>
+      <h3 class="textIcons">Remove data</h3>
+      <a href="#" id="myBtn" class="button" data-abbr=" data">Remove</a>
+      </div>
+
+      <div class="patch-item patch-button" style="width: 100%; float: left;">
+      <div class="iconPass">
+        <img class="imgPass" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
+      </div>
+      <h3 class="textIcons">Set PIN</h3>
+      <a href="#" id="myBtn" class="button" data-abbr=" PIN">Set</a>
+      </div>
 
       <div id="myModal" class="modal">
       <div class="modal-content">

@@ -293,6 +293,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
       margin-top: 10px;
     }
 
+
     .button[data-abbr]::after {
       content: attr(data-abbr);
     }

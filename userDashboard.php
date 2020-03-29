@@ -381,7 +381,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
         }
         .imgPass {
           float: left;
-          margin-left: 35%;
+          margin-left: 39%;
         }
 
         .iconPass {
@@ -425,7 +425,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
       </div>
       <div class="modal-body">
 
-      <form name="frmChange" method="post" action=""
+      <!--/* <form name="frmChange" method="post" action=""
           onSubmit="return validatePassword()">
           <div style="width: 500px;">
               <div class="message"><?php if(isset($message)) { echo $message; } ?></div>
@@ -457,7 +457,24 @@ if(isset($_SESSION['sessionStudentID'])) {}
                   </tr>
               </table>
           </div>
+      </form>  */-->
+
+      <form class="formPass" method="post">
+        <div class="formPassWrapper">
+        <h5 class="formHeading"></h5>
+          <input type="password" class="formPassInput" id="oldPassInput" placeholder="Enter your old password" autocomplete="off"/>
+        </div>
+          <div class="formPassWrapper">
+          <h5 class="formHeading"></h5h5>
+            <input type="password" class="formPassInput" id="newPassInput" placeholder="Enter your new password" autocomplete="off"/>
+          </div>
+            <div class="formPassWrapper">
+            <h5 class="formHeading"></h5>
+              <input type="password" class="formPassInput" id="repeatPassInput" placeholder="Repeat your new password" autocomplete="off"/>
+            </div>
+                <input name="submit" class="submitPass" type="submit" value="Submit"/>
       </form>
+
 
       </div>
       </div>

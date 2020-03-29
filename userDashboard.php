@@ -208,7 +208,6 @@ if(isset($_SESSION['sessionStudentID'])) {}
     background: #3498DB;
   }
 
-
   .formPass {
     width: 100%;
   }

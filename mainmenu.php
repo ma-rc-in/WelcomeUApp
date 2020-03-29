@@ -257,7 +257,7 @@ Media Queries
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
+        <a href="selfEnrolmentForm.php">
             <img class="test" src="Images/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
             <h5 class="textIcons">Self Enrolment</h5>
         </a>

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once("connection.php");//gets the connections.php
 $db = getConnection();//returns the connection for the database.
 ?>
@@ -22,7 +22,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
   }
 
 
-  ?>
+  ?> -->
 
 
 
@@ -126,7 +126,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     background-color: black;
     border-radius: 4px;
     float: left;
-    width: 45%;
+    width: 38%;
     margin-top: 25px;
 
   }
@@ -176,12 +176,6 @@ if(isset($_SESSION['sessionStudentID'])) {}
   a.button:hover{
     color:#000000;
     background-color:#FFFFFF;
-  }
-  @media all and (max-width:30em){
-    a.button{
-      float: center;
-      text-align: center;
-    }
   }
 
   .imgPass {
@@ -260,7 +254,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
   }
 
 
-  @media only screen and (max-width: 1010px) {
+  @media only screen and (max-width: 900px) {
     h2 {
       font-size: 3.3rem;
     }
@@ -320,7 +314,7 @@ if(isset($_SESSION['sessionStudentID'])) {}
     }*/
 
 
-    @media only screen and (min-width: 1010px) {
+    @media only screen and (min-width: 900px) {
       .patch-container {
         max-width: 100%;
       }
@@ -360,6 +354,10 @@ if(isset($_SESSION['sessionStudentID'])) {}
           width: 33.33%;
         }
 
+        .logoIcon {
+          float: center;
+        }
+
         .resize {
           margin: 50px auto -2%;
         }
@@ -375,18 +373,42 @@ if(isset($_SESSION['sessionStudentID'])) {}
         }
       }
 
+      @media all and (max-width:700px){
+        a.button{
+          float: center;
+          text-align: center;
+
+        }
+        .imgPass {
+          float: left;
+          margin-left: 35%;
+
+        }
+
+        .imgLogo {
+          float: center;
+          cursor: default;
+          height: 90px;
+          width: 330px;
+          margin-top: 10px;
+        }
+      }
+
       </style>
       </head>
       <body>
       <div class="patch-container">
       <div class="logoMain">
       <a href="mainmenu.php">
-      <img class="test" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+      <div class="logoIcon">
+        <img class="imgLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+      </div>
+
       </a>
       </div>
       <div class="patch-item patch-button" style="width: 100%; float: left;">
       <div class="iconPass">
-      <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
+        <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
       </div>
       <h3 class="textIcons">Change password</h3>
       <a href="#" id="myBtn" class="button" data-abbr=" password">Change</a>

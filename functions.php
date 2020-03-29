@@ -51,4 +51,12 @@ function studentName($studentName)//for first and last name
     $row = $studentinfo->fetch(PDO::FETCH_ASSOC);
     return $row;
 }
+
+function deleteUser($studentID)
+{
+    $db = getConnection();
+    $db->query("DELETE from tbl_student where studentID='$studentID'");
+    $db->query("DELETE from tbl_groupchat where senderStudentID='$studentID'");
+    //$db->query("DELETE from tbl_selfenrolment where student='$studentID'"); //update once Kee Wen has finished self enrolment
+}
 ?>

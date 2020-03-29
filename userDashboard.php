@@ -9,6 +9,7 @@ if(isset($_SESSION['sessionStudentID'])) {
     $student = $_SESSION['sessionStudentID'];
     $students = getStudentDetails();
     $password = $students['password'];
+    $message = "";
 }
   else
   {header('Location:loginform.php');}  //return user to login
@@ -19,8 +20,6 @@ $CheckPassword = $_POST['CheckPass'];
 
   if (count($_POST) > 0) {
       if (password_verify($oldPassword, $password)) {
-          $studentselect = $db->query("select password from tbl_student where studentID='$ID'"); //gets all from tbl_student, //password
-          $obj = $studentselect->fetchObject();
           if ($newPassword == $CheckPassword) {
               $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
               $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'

@@ -224,55 +224,55 @@ Media Queries
 
     <div class="logoMain">
         <a href="mainmenu.php">
-            <img class="test" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+            <img class="test" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="images/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
+        <a href="map.php">
+            <img class="test" src="Images/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
             <h5 class="textIcons">Map</h5>
         </a>
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="logo" src="images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
+        <a href="groupChat.php">
+            <img class="logo" src="Images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
             <h5 class="textIcons">Group Chat</h5>
         </a>
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="images/question.png" alt="Help" width= "120px" height= "120px" />
+        <a href="help.php">
+            <img class="test" src="Images/question.png" alt="Help" width= "120px" height= "120px" />
             <h5 class="textIcons">Help</h5>
         </a>
     </div>
 
      <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
+        <a href="annoucements.php">
+            <img class="test" src="Images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
             <h5 class="textIcons">Annoucements</h5>
         </a>
     </div>
 
     <div class="patch-item patch-button">
-        <a href="mainmenu.php">
-            <img class="test" src="images/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
+        <a href="selfEnrolmentForm.php">
+            <img class="test" src="Images/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
             <h5 class="textIcons">Self Enrolment</h5>
         </a>
     </div>
 
     <div class="patch-item patch-button">
         <a href="settings.php">
-            <img class="test" src="images/settings.png" alt="Settings" width= "120px" height= "120px" />
+            <img class="test" src="Images/settings.png" alt="Settings" width= "120px" height= "120px" />
             <h5 class="textIcons">Settings</h5>
         </a>
     </div>
 
     <div class="logout-box">
         <a href="logout.php">
-            <img class="test" src="images/logout.png" alt="Logout" width= "44px" height= "44px" />
+            <img class="test" src="Images/logout.png" alt="Logout" width= "44px" height= "44px" />
         </a>
     </div>
 

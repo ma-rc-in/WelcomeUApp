@@ -51,4 +51,10 @@ function studentName($studentName)//for first and last name
     $row = $studentinfo->fetch(PDO::FETCH_ASSOC);
     return $row;
 }
+
+function deleteUser($studentID)
+{
+    $db = getConnection();
+    $db->query("DELETE from tbl_student where studentID='$studentID'");
+}
 ?>

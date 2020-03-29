@@ -234,13 +234,13 @@ margin-right: 30%;}
 
     <div class="logoMain">
         <a href="mainmenu.php">
-            <img class="test" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+            <img class="test" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
 
     <div class="patch-item patch-button" style="width: 100%; float: left;">
         <a href="userDashboard.php">
-            <img class="test" src="Images/profile.png" alt="Map" width= "90px" height= "90px" />
+            <img class="test" src="images/profile.png" alt="Map" width= "90px" height= "90px" />
             <h2 class="textIcons">My Profile</h2>
         </a>
     </div>

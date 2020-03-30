@@ -33,19 +33,31 @@ if(isset($_POST['submit'])) //when the user submits their message
   $groupChatInsert = $db->query("INSERT INTO tbl_groupchat (
     chatRoomName, chatMessage, senderStudentID)
     VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
-  }
+}
+
+if(isset($_POST['submitReport'])) //when the user submits their message
+{
+    $reporterStudentID = $studentID;
+
+    $reportedStudentID = $_POST['reportUserID'];
+    $reportType = $_POST['reportType'];
+    $reportComment = $_POST['reportComment'];
+
+    $groupChatInsert = $db->query("INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
+    VALUES('{$reportType}','{$reportedStudentID}','{$reportComment}','$reporterStudentID')");
+}
   ?>
 
   <!DOCTYPE html>
   <html lang="en">
   <head>
     <title>WelcomeU Group Chat</title>
-
+      <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <!--Scripts-->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
-
+      <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <style>
     @media only screen and (max-width: 600px) {
@@ -74,9 +86,11 @@ if(isset($_POST['submit'])) //when the user submits their message
 
     }
     </style>
+
+
+      <!--AJAX Script-->
     <script>
         //every 1000ms call the load function
-
     $(document).ready(function(){
       setInterval(function() {
         $(".messageBox").load("groupChatLoad.php");
@@ -121,16 +135,88 @@ if(isset($_POST['submit'])) //when the user submits their message
         <div class="login100-form validate-form">
           <span class="chatHeading p-b-33">
             <h3 class="messageChat">Your message:</h3>
-            <form action=""groupChat.php" method="post">
+            <form action="groupChat.php" method="post">
               <div class="wrap-input100 validate-input" data-validate="" style="border: 2px solid #e6e6e6;">
                 <input class="input100 messageContent" type="text" name="formMessage" placeholder="Type your message here.">
                 <span class="focus-input100-1"></span>
                 <span class="focus-input100-2"></span>
-                <input class="buttonChat" type="submit" name="submit" value="Report" style="margin-top: 10px; float: left;"/>
+                <button type="button" class="buttonChat" id="reportButton" style="margin-top: 10px; float: left";>Report</button>
                 <input class="buttonChat" type="submit" name="submit" value="Send" style="margin-top: 10px; float: right;"/>
               </form>
             </div>
           </div>
+
+      <!--PopupBoxPage reportButton close-->
+      <!--JavaScript for report function-->
+      <!--Pop Up Box HTML-->
+      <div id="PopupBoxPage" class="modal">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h4>Report User</h4>
+              </div>
+              <div class="modal-body"> <!--report form-->
+                  <form class="formReport" method="post">
+                      <div class="formReportWrapper">
+                          <h5 class="formHeading">Please select the users ID you wish to report:</h5>
+                          <select id="reportUserID" name="reportUserID">
+                              <?php
+                              //php to select the ID
+                              $studentInfo = getStudentDetails();
+                              $studentCourseID = $studentInfo['courseID'];
+
+                              $users = usersInChat($studentCourseID);
+                              $results = $db->query($users);
+                              while ($row = $results->fetchObject())
+                              {
+                                  $id = $row->studentID;
+                                  $firstName = $row->firstName;
+                                  $lastName = $row->lastName;
+                                  echo '<option value="'.$id.'">'.$id." (".$firstName." ".$lastName.")".'</option>'; //'.$id.'
+                              }
+                              ?>
+                          </select>
+                      </div>
+                      <div class="formReportWrapper">
+                          <h5 class="formHeading">Please select your reason for reporting:</h5>
+                          <select id="reportType" name="reportType"> <!--class="formReportInput"-->
+                              <option value="Spam">Spam</option>
+                              <option value="Abuse">Abusive Language/Content</option>
+                              <option value="Violence">Inciting Violence</option>
+                              <option value="Other">Other (Please Comment Below)</option>
+                          </select>
+                      </div>
+                      <div class="formReportWrapper">
+                          <h5 class="formHeading">Please explain why you are making this report:</h5>
+                          <textarea id="reportComment" class="formReportInput"  name="reportComment" placeholder="Please comment here:" rows="10" cols="140"></textarea>
+                      </div>
+                      <input name="submitReport" type="submit" value="Submit"/>
+                  </form>
+              </div>
+          </div>
+      </div>
+
+      <script>
+          var modal = document.getElementById("PopupBoxPage");
+          var btn = document.getElementById("reportButton");
+          var span = document.getElementsByClassName("close")[0];
+
+          btn.onclick = function()
+          {
+              modal.style.display = "block";
+          }
+          span.onclick = function()
+          {
+              modal.style.display = "none";
+          }
+          window.onclick = function(event)
+          {
+              if (event.target == modal)
+              {
+                  modal.style.display = "none";
+              }
+          }
+      </script>
 
       </div>
     </body>

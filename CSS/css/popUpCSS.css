@@ -62,3 +62,49 @@
   color: white;
   font-family: OpenSans-Regular, sans-serif;
 }
+
+
+/* Form Report CSS*/
+.formReport {
+  width: 100%;
+}
+
+.formReportWrapper {
+
+}
+
+.formHeading {
+
+
+}
+
+.formReportInput {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #a3a3a3;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, 0.2);
+  color: white;
+  outline: none;
+  text-align: center;
+}
+
+.submitReport {
+  border: 1px solid #a3a3a3;
+  background: rgba(20, 20, 20, 0.6);
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+  margin-bottom: 25px;
+}
+.submitReport:hover {
+  background: rgba(20, 20, 20, 0.8);
+  padding: 10px 80px;
+}

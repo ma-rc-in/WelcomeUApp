@@ -22,6 +22,9 @@
         echo '<div id=messageSent>';
         echo $studentNames['firstName'] . " " . $studentNames['lastName'] . " (" . $row->senderStudentID . "):\n";
         echo $row->chatMessage . "\n";
+        echo '<div id=timestamp>';
+        echo $row->timeSent ."<br />\n";
+        echo '</div>';
         echo "\n";
         echo '</div>';
     }

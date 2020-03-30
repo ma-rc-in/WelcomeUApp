@@ -79,13 +79,13 @@ if(isset($_POST['submit'])) //when the user submits their message
 
     $(document).ready(function(){
       setInterval(function() {
-        $("#messageBox").load("groupChatLoad.php");
+        $(".messageBox").load("groupChatLoad.php");
       }, 2000);
     });
 
     //loads all the data when the form loads
     $(document).ready(function(){
-            $("#messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
+            $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
 
     });
     </script>
@@ -97,32 +97,41 @@ if(isset($_POST['submit'])) //when the user submits their message
   </script>
   </head>
   <body>
+
   <div class="limiter">
-    <div class="container-login100">
-      <div class="wrappedChat p-l-55 p-r-55 p-t-65 p-b-50">
+    <div class="logoDiv">
+      <div class="goBackButton"> <a href="mainmenu.php"><img src="images/back.png" class="goBackIcon"></a></div>
+      <div class="logoChatWrapper">
+        <a href="mainmenu.php">
+            <img class="logoChat" src="images/logo_white.png" alt="Logo" />
+        </a>
+      </div>
+    </div>
 
-        <h1><?php echo $courseName." - Group Chat";?> </h1>
+    <div class="container-chat">
+      <div class="wrappedChat p-l-55 p-r-55 p-b-50" style="padding-top: 10px;">
 
-        <button  onclick="goBack()"><img src="images/back.png" style="height: 28px; width: 28px; margin-bottom: 10px;"></button>
+        <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "><?php echo $courseName." - Group Chat";?> </h1>
 
         <!-- Messages will be placed here -->
-        <div id="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden;">
+        <div class="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden; width: 100%;">
         </div>
-
+        </div>
 
         <div class="login100-form validate-form">
           <span class="chatHeading p-b-33">
             <h3 class="messageChat">Your message:</h3>
             <form action=""groupChat.php" method="post">
               <div class="wrap-input100 validate-input" data-validate="" style="border: 2px solid #e6e6e6;">
-                <input class="input100" type="text" name="formMessage" placeholder="Type your message here.">
+                <input class="input100 messageContent" type="text" name="formMessage" placeholder="Type your message here.">
                 <span class="focus-input100-1"></span>
                 <span class="focus-input100-2"></span>
-                <input class="login100-form-btn" type="submit" name="submit" value="Submit" style="margin-top: 10px; "/>
+                <input class="buttonChat" type="submit" name="submit" value="Report" style="margin-top: 10px; float: left;"/>
+                <input class="buttonChat" type="submit" name="submit" value="Send" style="margin-top: 10px; float: right;"/>
               </form>
             </div>
           </div>
-        </div>
+
       </div>
     </body>
     </html>

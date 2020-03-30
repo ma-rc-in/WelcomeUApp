@@ -147,6 +147,7 @@ iframe {
 .limiter {
   width: 100%;
   margin: 0 auto;
+  background-color: black;
 }
 
 .container-login100 {
@@ -165,6 +166,24 @@ iframe {
     padding-bottom: 70px;
 }
 
+.container-chat {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #000000;
+  padding-bottom: 70px;
+  position: absolute;
+
+}
+
 .wrap-login100 {
   width: 500px;
   height: 600px;
@@ -179,8 +198,8 @@ iframe {
 }
 
 .wrappedChat {
-  width: 500px;
-  height: 100%;
+  width: 100vw;
+  height: 50%;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -189,6 +208,7 @@ iframe {
   -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 .messageBox {

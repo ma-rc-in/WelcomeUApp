@@ -4,6 +4,7 @@ require_once("functions.php");
 require_once("groupChatFunctions.php");
 $db = getConnection();//returns the connection for the database.
 
+
 //needs to display the information, and show the users name, also needs to redirect if the user hasn't enrolled
 
 //CHANGE LATER, BUT RETURNS USER IF STUDENT ID IS SET
@@ -95,15 +96,16 @@ if(isset($_POST['submitReport'])) //when the user submits their message
     <script>
         //every 1000ms call the load function
     $(document).ready(function(){
-      setInterval(function() {
+      setInterval(function()
+      {
         $(".messageBox").load("groupChatLoad.php");
-      }, 2000);
+        alertFunction();
+      }, 1000);
     });
 
     //loads all the data when the form loads
     $(document).ready(function(){
             $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
-
     });
     </script>
 
@@ -114,8 +116,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
   </script>
   </head>
   <body>
-
-  <div class="limiter">
+  <div class="limiter" id="limiter">
     <div class="logoDiv">
       <div class="goBackButton"> <a href="mainmenu.php"><img src="images/back.png" class="goBackIcon"></a></div>
       <div class="logoChatWrapper">

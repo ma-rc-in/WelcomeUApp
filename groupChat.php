@@ -30,7 +30,7 @@ if(isset($_POST['submit'])) //when the user submits their message
   $senderStudentID = $studentID;
   //$sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"  //timeSent ,'{$sendTime}')
   //sends this to the database when user clicks send
-  $groupChatInsert = $db->query("INSERT INTO tbl_groupchat (
+  $groupChatInsert = $db->query("INSERT INTO tbl_groupChat (
     chatRoomName, chatMessage, senderStudentID)
     VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
 }

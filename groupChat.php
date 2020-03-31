@@ -33,6 +33,7 @@ if(isset($_POST['submit'])) //when the user submits their message
   $groupChatInsert = $db->query("INSERT INTO tbl_groupChat (
     chatRoomName, chatMessage, senderStudentID)
     VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
+    header('location:groupChat.php');
 }
 
 if(isset($_POST['submitReport'])) //when the user submits their message
@@ -45,6 +46,8 @@ if(isset($_POST['submitReport'])) //when the user submits their message
 
     $groupChatInsert = $db->query("INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
     VALUES('{$reportType}','{$reportedStudentID}','{$reportComment}','$reporterStudentID')");
+
+    echo '.<Script> alert("Your report has been submitted."); </Script>.';
 }
   ?>
 

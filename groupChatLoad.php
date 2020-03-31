@@ -10,9 +10,11 @@
     $studentLastName = $studentInfo['lastName']; //lastname
     $studentID = $studentInfo['studentID'];//student ID
     $studentCourseID = $studentInfo['courseID'];//courseID
+
     $courseName = courseNameConversion($studentCourseID); //conversion for course ID
 
     $messages = groupChatMessage($courseName);//gets all the messages associated with the courseName
+
 
     while ($row = $messages->fetchObject()) { //fetchObject
         //shows information for users
@@ -28,7 +30,6 @@
         echo "\n";
         echo '</div>';
     }
-
 ?>
 
 

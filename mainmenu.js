@@ -23,7 +23,6 @@ function mainmenuAlert() { //currentInt, currentString
 
     //updates the page
     if (amountint < current && check != 0){ //there is a new message and it isn't from the current user
-        document.title = 'New! - WelcomeU';
         localStorage.setItem("mainMenuMessageNew", current); //updates the local message amount
         document.getElementById("groupChat").src="images/chatNotification.png"; //updates the image
     }

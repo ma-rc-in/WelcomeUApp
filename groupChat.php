@@ -61,7 +61,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
-      <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+    <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <style>
     @media only screen and (max-width: 600px) {
@@ -94,18 +94,19 @@ if(isset($_POST['submitReport'])) //when the user submits their message
 
       <!--AJAX Script-->
     <script>
+
+     //loads all the data when the form loads
+    $(document).ready(function(){
+         $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
+    });
+
         //every 1000ms call the load function
     $(document).ready(function(){
       setInterval(function()
       {
         $(".messageBox").load("groupChatLoad.php");
         alertFunction();
-      }, 1000);
-    });
-
-    //loads all the data when the form loads
-    $(document).ready(function(){
-            $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
+      }, 3000);
     });
     </script>
 

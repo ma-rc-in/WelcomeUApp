@@ -13,9 +13,10 @@ else
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>WelcomeU Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="mainmenu.js"></script>;
+    <title>WelcomeU</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <style>
 
@@ -217,9 +218,25 @@ Media Queries
 }
 </style>
 </head>
+
+<script>
+    //load the form up
+    $(document).ready(function(){
+        $(".groupChatPlaceHolder").load("mainmenuCheck.php");//checks to see if there are new messages
+        mainmenuAlert();
+    });
+
+    //every 10 seconds check
+    $(document).ready(function(){
+        setInterval(function()
+        {
+            $(".groupChatPlaceHolder").load("mainmenuCheck.php");//checks to see if there are new messages
+            mainmenuAlert();
+        }, 5000);
+    });
+</script>
+
 <body>
-
-
 <div class="patch-container">
 
     <div class="logoMain">
@@ -237,8 +254,9 @@ Media Queries
 
     <div class="patch-item patch-button">
         <a href="groupChat.php">
-            <img class="logo" src="images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
+            <img class="logo" id="groupChat" src="images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
             <h5 class="textIcons">Group Chat</h5>
+            <div class="groupChatPlaceHolder"></div>
         </a>
     </div>
 

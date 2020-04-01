@@ -1,4 +1,6 @@
 function alertFunction() { //currentInt, currentString
+
+    //variables
     //gets the variable
     var amount = localStorage.getItem("messageAmount"); //old message amount
     var current = localStorage.getItem("messageAmountLoad"); //new message count;
@@ -14,19 +16,25 @@ function alertFunction() { //currentInt, currentString
 
     var amountint = parseInt(amount);
 
+    //If the User clicks the page - used to reset the message function.
+    var page = document.getElementById('limiter');
+    page.onclick = function () {
+        document.title = 'WelcomeU Group Chat';
+    }
+
+    //updates the page
     if (amountint < current && check != 0){ //there is a new message and it isn't from the current user
         document.title = 'New Message! - WelcomeU Group Chat';
 
-            //If the User Clicks the page.
-            var page = document.getElementById('limiter');
-            page.onclick = function () {
-                document.title = 'WelcomeU Group Chat';
-                localStorage.setItem("messageAmount", current); //updates the local message amount
-            }
+        //Notification Source https://notificationsounds.com/notification-sounds/when-604
+        let source = 'sounds/notification.mp3';
+        let notification = new Audio(source);
+        notification.loop = false;
+        notification.play();
+        localStorage.setItem("messageAmount", current); //updates the local message amount
     }
+
     else{
-        document.title = 'WelcomeU Group Chat';
-        //updates the variable
         localStorage.setItem("messageAmount", current); //updates the local message amount
     }
 }

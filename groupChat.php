@@ -114,6 +114,8 @@ if(isset($_POST['submitReport'])) //when the user submits their message
       window.history.back();
     }
   </script>
+
+
   </head>
   <body>
   <div class="limiter" id="limiter">

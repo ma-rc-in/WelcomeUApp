@@ -16,4 +16,15 @@ function usersInChat($courseID)
     $message = "SELECT studentID, firstName, lastName FROM tbl_student WHERE courseID='$courseID'";
     return $message;
 }
+
+function newMessageCheck($courseID) //this is used to check how many messages there
+{
+    $messageAmount = 0;
+    $messages = groupChatMessage($courseID);
+    while ($row = $messages->fetchObject()) {
+        $messageAmount = $messageAmount + 1;
+    }
+
+    return $messageAmount;
+}
 ?>

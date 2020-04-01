@@ -32,18 +32,25 @@
         echo '</div>';
 
         $messageAmount = $messageAmount + 1;
+        $lastSenderID = $row->senderStudentID; //used to get the last sender
+
     }
 
     //sets the load amount to messageAmountLoad
     $messageAmountString = strval($messageAmount);
+    $currentStudentString = strval($studentID);
+    $lastSenderIDString = strval($lastSenderID);
+
     echo '<Script> 
         var message = "'; echo $messageAmountString; echo'";
-        localStorage.setItem("messageAmountLoad", message);    
+        localStorage.setItem("messageAmountLoad", message);
+        
+        var currentStudent = "'; echo $currentStudentString; echo'";
+        localStorage.setItem("currentStudent", currentStudent);
+        
+        var lastStudent = "'; echo $lastSenderIDString; echo'";
+        localStorage.setItem("lastStudent", lastStudent);
     </Script>';
-
-    //javascript - uncomment these for fixed version
-    //$messageAmountString = strval($messageAmount);
-    //echo '<script> alertFunction('; echo $messageAmount; echo','; echo $messageAmountString; echo') </script>';
 ?>
 
 

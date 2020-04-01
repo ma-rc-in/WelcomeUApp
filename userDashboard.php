@@ -9,6 +9,7 @@ if(isset($_SESSION['sessionStudentID'])) {
     $student = $_SESSION['sessionStudentID'];
     $students = getStudentDetails();
     $password = $students['password'];
+    $pin = $students['PIN'];
     $message = "";
 }
   else
@@ -21,6 +22,25 @@ $CheckPassword = $_POST['CheckPass'];
   if (count($_POST) > 0) {
       if (password_verify($oldPassword, $password)) {
           if ($newPassword == $CheckPassword) {
+              $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
+              $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
+              $message = "Password Changed";
+              //display if the password is correct
+          } else
+              $message = "Current Password is not correct";
+      }
+      else
+      {
+          //do something if the password isn't correct
+      }
+  }
+
+  $newPin = $_POST['newPin'];
+  $checkPin = $_POST['checkPin'];
+
+  if (count($_POST) > 0) {
+      // if (pin_change($oldPassword, $password)) {
+          if ($newPin == $checkPin) {
               $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
               $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
               $message = "Password Changed";
@@ -436,7 +456,7 @@ $CheckPassword = $_POST['CheckPass'];
       <div class="iconPass">
         <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
       </div>
-      <h3 class="textIcons">Remove data</h3>
+      <h3 class="textIcons">Delete account</h3>
       <a href="#" id="myBtn" class="button" data-abbr=" data">Remove</a>
       </div>
 
@@ -447,6 +467,12 @@ $CheckPassword = $_POST['CheckPass'];
       <h3 class="textIcons">Set PIN</h3>
       <a href="#" id="myBtn" class="button" data-abbr=" PIN">Set</a>
       </div>
+
+
+      /* ==========================
+      MODAL FOR CHANING PASSWORD
+      ========================== */
+
 
       <div id="myModal" class="modal">
       <div class="modal-content">
@@ -505,6 +531,81 @@ $CheckPassword = $_POST['CheckPass'];
             </div>
                 <input name="submit" class="submitPass" type="submit" value="Submit"/>
       </form>
+
+
+      /* ==========================
+      MODAL FOR CHANING PASSWORD
+      ========================== */
+
+
+      /* ==========================
+      MODAL FOR ACCOUNT REMOVAL
+      ========================== */
+
+
+      <div id="myModal" class="modal">
+      <div class="modal-content">
+      <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Change password</h4>
+      </div>
+      <div class="modal-body">
+
+      <form class="formPass" method="post">
+        <div class="formPassWrapper">
+        <h5 class="formHeading"></h5>
+          <input type="password" class="formPassInput" id="oldPassInput" name="OldPass" placeholder="Enter your old password" autocomplete="off"/>
+        </div>
+          <div class="formPassWrapper">
+          <h5 class="formHeading"></h5h5>
+            <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new password" autocomplete="off"/>
+          </div>
+            <div class="formPassWrapper">
+            <h5 class="formHeading"></h5>
+              <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off"/>
+            </div>
+                <input name="submit" class="submitPass" type="submit" value="Submit"/>
+      </form>
+
+
+      /* ==========================
+      MODAL FOR ACCOUNT REMOVAL
+      ========================== */
+
+
+      /* ==========================
+      MODAL FOR CHANING PIN
+      ========================== */
+
+
+      <div id="myModal" class="modal">
+      <div class="modal-content">
+      <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Change password</h4>
+      </div>
+      <div class="modal-body">
+
+      <form class="formPass" method="post">
+        <div class="formPassWrapper">
+        <h5 class="formHeading"></h5>
+          <input type="password" class="formPassInput" id="oldPassInput" name="OldPass" placeholder="Enter your old password" autocomplete="off"/>
+        </div>
+          <div class="formPassWrapper">
+          <h5 class="formHeading"></h5h5>
+            <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new password" autocomplete="off"/>
+          </div>
+            <div class="formPassWrapper">
+            <h5 class="formHeading"></h5>
+              <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off"/>
+            </div>
+                <input name="submit" class="submitPass" type="submit" value="Submit"/>
+      </form>
+
+
+      /* ==========================
+      MODAL FOR CHANING PIN
+      ========================== */
 
 
       </div>

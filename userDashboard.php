@@ -312,7 +312,7 @@ $CheckPassword = $_POST['CheckPass'];
       color: white;
       font-weight: bold;
       float: left;
-      width: 45%;
+      width: 35%;
       display: none;
     }
 
@@ -329,6 +329,7 @@ $CheckPassword = $_POST['CheckPass'];
     .button[data-abbr]::after {
       content: attr(data-abbr);
     }
+  }
 
 
     /* .imgPass {
@@ -346,65 +347,6 @@ $CheckPassword = $_POST['CheckPass'];
     width: 30%;
     }*/
 
-
-    @media only screen and (min-width: 900px) {
-      .patch-container {
-        max-width: 100%;
-      }
-
-      .patch-item {
-        margin: 0.6667%;
-        margin: calc(4% / 6);
-        float: left;
-        width: 33.33%;        }
-
-        .patch-panel {
-          margin: 0.6667%;
-          margin: calc(4% / 6);
-          width: 98.6666%;
-          width: calc(100% - (4% / 6) * 2);
-        }
-
-        .logout-box {
-          padding-top: 30px;
-          float: left;
-          height: 100px;
-          width: 100%;
-
-        }
-
-        .textIcons {
-          color: white;
-          float: right;
-          font-weight: bold;
-          float: left;
-          width: 33.33%;
-
-        }
-
-        .iconPass {
-          float: left;
-          width: 33.33%;
-        }
-
-        .logoIcon {
-          float: center;
-        }
-
-        .resize {
-          margin: 50px auto -2%;
-        }
-        .wide {
-          margin: 0.6667%;
-          margin: calc(4% / 6);
-          width: 48.6666%;
-          width: calc(50% - (4% / 6) * 2);
-        }
-        .thin {
-          width: 23.6666%;
-          width: calc(25% - (4% / 6) * 2);
-        }
-      }
 
       @media all and (max-width:700px){
         a.button{
@@ -449,15 +391,15 @@ $CheckPassword = $_POST['CheckPass'];
          <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons">Change password</h3>
-       <a href="#" id="myBtn" class="button" data-abbr=" password">Change</a>
+       <a href="#" id="firstBtn" class="button" data-abbr=" password">Change</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
        <div class="iconPass">
          <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons">Remove data</h3>
-       <a href="#" id="myBtn" class="button" data-abbr=" data">Remove</a>
+       <h3 class="textIcons">Delete account</h3>
+       <a href="#" id="secondBtn" class="button" data-abbr=" account">Delete</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
@@ -465,50 +407,16 @@ $CheckPassword = $_POST['CheckPass'];
          <img class="imgPass" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons">Set PIN</h3>
-       <a href="#" id="myBtn" class="button" data-abbr=" PIN">Set</a>
+       <a href="#" id="thirdBtn" class="button" data-abbr=" PIN">Set</a>
        </div>
 
-       <div id="myModal" class="modal">
+       <div id="firstModal" class="modal">
        <div class="modal-content">
        <div class="modal-header">
-       <span class="close">&times;</span>
-       <h4>Change password</h4>
+       <span class="close firstClose" id="">&times;</span>
+       <h4>Change Password</h4>
        </div>
        <div class="modal-body">
-
-       <!--/* <form name="frmChange" method="post" action=""
-           onSubmit="return validatePassword()">
-           <div style="width: 500px;">
-               <div class="message"><?php if(isset($message)) { echo $message; } ?></div>
-               <table border="0" cellpadding="10" cellspacing="0"
-                   width="500" align="center" class="tblSaveForm">
-                   <tr class="tableheader">
-                       <td colspan="2">Change Password</td>
-                   </tr>
-                   <tr>
-                       <td width="40%"><label>Current Password</label></td>
-                       <td width="60%"><input type="password"
-                           name="currentPassword" class="txtField" /><span
-                           id="currentPassword" class="required"></span></td>
-                   </tr>
-                   <tr>
-                       <td><label>New Password</label></td>
-                       <td><input type="password" name="newPassword"
-                           class="txtField" /><span id="newPassword"
-                           class="required"></span></td>
-                   </tr>
-                   <td><label>Confirm Password</label></td>
-                   <td><input type="password" name="confirmPassword"
-                       class="txtField" /><span id="confirmPassword"
-                       class="required"></span></td>
-                   </tr>
-                   <tr>
-                       <td colspan="2"><input type="submit" name="submit"
-                           value="Submit" class="btnSubmit"></td>
-                   </tr>
-               </table>
-           </div>
-       </form>  */-->
 
        <form class="formPass" method="post">
          <div class="formPassWrapper">
@@ -530,19 +438,97 @@ $CheckPassword = $_POST['CheckPass'];
        </div>
        </div>
        </div>
+
+       <div id="secondModal" class="modal">
+       <div class="modal-content">
+       <div class="modal-header">
+       <span class="close secondClose" id="">&times;</span>
+       <h4>Delete Account</h4>
+       </div>
+       <div class="modal-body">
+
+       <form class="formPass" method="post">
+             <div class="formPassWrapper">
+             <h5 class="formHeading"></h5>
+               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
+             </div>
+                 <input name="submit" class="submitPass" type="submit" value="Submit"/>
+       </form>
+
+
+       </div>
+       </div>
+       </div>
+
+
+       <div id="thirdModal" class="modal">
+       <div class="modal-content">
+       <div class="modal-header">
+       <span class="close thirdClose" id="">&times;</span>
+       <h4>Set PIN</h4>
+       </div>
+       <div class="modal-body">
+
+       <form class="formPass" method="post">
+           <div class="formPassWrapper">
+           <h5 class="formHeading"></h5h5>
+             <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new PIN" autocomplete="off"/>
+           </div>
+             <div class="formPassWrapper">
+             <h5 class="formHeading"></h5>
+               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new PIN" autocomplete="off"/>
+             </div>
+                 <input name="submit" class="submitPass" type="submit" value="Submit"/>
+       </form>
+
+
+       </div>
+       </div>
+       </div>
+
+
+
+
        </div>
        <script>
-       var modal = document.getElementById("myModal");
-       var btn = document.getElementById("myBtn");
-       var span = document.getElementsByClassName("close")[0];
-       btn.onclick = function() {
-         modal.style.display = "block";}
-         span.onclick = function() {
-           modal.style.display = "none";}
+       var modal1 = document.getElementById("firstModal");
+       var btn1 = document.getElementById("firstBtn");
+       var span1 = document.getElementsByClassName("close firstClose")[0];
+       btn1.onclick = function() {
+         modal1.style.display = "block";}
+         span1.onclick = function() {
+           modal1.style.display = "none";}
            window.onclick = function(event) {
-             if (event.target == modal) {
-               modal.style.display = "none"; }}
+             if (event.target == modal1) {
+               modal1.style.display = "none"; }}
                </script>
+
+               <script>
+               var modal2 = document.getElementById("secondModal");
+               var btn2 = document.getElementById("secondBtn");
+               var span2 = document.getElementsByClassName("close secondClose")[0];
+               btn2.onclick = function() {
+                 modal2.style.display = "block";}
+                 span2.onclick = function() {
+                   modal2.style.display = "none";}
+                   window.onclick = function(event) {
+                     if (event.target == modal2) {
+                       modal2.style.display = "none"; }}
+              </script>
+
+
+              <script>
+              var modal3 = document.getElementById("thirdModal");
+              var btn3 = document.getElementById("thirdBtn");
+              var span3 = document.getElementsByClassName("close thirdClose")[0];
+              btn3.onclick = function() {
+                modal3.style.display = "block";}
+                span3.onclick = function() {
+                  modal3.style.display = "none";}
+                  window.onclick = function(event) {
+                    if (event.target == modal3) {
+                      modal3.style.display = "none"; }}
+             </script>
                </div>
                </div>
                </body>

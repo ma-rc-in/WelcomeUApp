@@ -114,7 +114,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
     $(document).ready(function(){
       setInterval(function()
       {
-        $(".messageBox").load("groupChatLoad.php");
+        $(".messageBox").load("groupChatLoad.php"); //updates this every 3 seconds
         alertFunction();
       }, 3000);
     });

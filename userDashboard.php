@@ -35,24 +35,24 @@ $CheckPassword = $_POST['CheckPass'];
       }
   }
 
-  // $newPin = $_POST['newPin'];
-  // $checkPin = $_POST['checkPin'];
-  //
-  // if (count($_POST) > 0) {
-  //     // if (pin_change($oldPassword, $password)) {
-  //         if ($newPin == $checkPin) {
-  //             $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
-  //             $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-  //             $message = "Password Changed";
-  //             //display if the password is correct
-  //         } else
-  //             $message = "Current Password is not correct";
-  //     }
-  //     else
-  //     {
-  //         //do something if the password isn't correct
-  //     }
-  // }
+  $newPin = $_POST['NewPin'];
+  $checkPin = $_POST['CheckPin'];
+
+  if (count($_POST) > 0) {
+      // if (pin_change($oldPassword, $password)) {
+          if ($newPin == $checkPin) {
+              $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
+              $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
+              $message = "Password Changed";
+              //display if the password is correct
+          } else
+              $message = "Current Password is not correct";
+      }
+      else
+      {
+          //do something if the password isn't correct
+      }
+  }
 
 
   ?> -->
@@ -472,11 +472,11 @@ $CheckPassword = $_POST['CheckPass'];
        <form class="formPass" method="post">
            <div class="formPassWrapper">
            <h5 class="formHeading"></h5h5>
-             <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new PIN" autocomplete="off"/>
+             <input type="password" class="formPassInput" id="newPassInput" name="NewPin" placeholder="Enter your new PIN" autocomplete="off"/>
            </div>
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new PIN" autocomplete="off"/>
+               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPin" placeholder="Repeat your new PIN" autocomplete="off"/>
              </div>
                  <input name="submit" class="submitPass" type="submit" value="Submit"/>
        </form>

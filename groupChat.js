@@ -40,6 +40,6 @@ function alertFunction() { //currentInt, currentString
 }
 
 function scrollBottom() {
-    var objDiv = document.getElementById("messageBox");
-    objDiv.scrollTop = objDiv.scrollHeight;
+   var element = document.getElementById('messageBox');
+   element.scrollTop = element.scrollHeight;
 }

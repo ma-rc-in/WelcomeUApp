@@ -39,7 +39,7 @@
     } else {
         $lastSenderID = 0;
         echo '<div id=messageSent>';
-        echo "No messages has been sent yet. Why don't you be the first to do so?";
+        echo "No messages have been sent yet. Why don't you be the first to do so?";
         echo '</div>';
     }
 

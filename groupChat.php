@@ -28,13 +28,18 @@ if(isset($_POST['submit'])) //when the user submits their message
   $RoomName = $courseName;
 
   $Message = $_POST['formMessage'];//message is assigned to what the user writes
-  $senderStudentID = $studentID;
-  //$sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"  //timeSent ,'{$sendTime}')
-  //sends this to the database when user clicks send
-  $groupChatInsert = $db->query("INSERT INTO tbl_groupChat (
-    chatRoomName, chatMessage, senderStudentID)
-    VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
-    header('location:groupChat.php');
+    if (strlen($Message) >= 500) { //if more than 255 charaters
+        // user has too many charactersd
+    } else {
+        $senderStudentID = $studentID;
+        //$sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"  //timeSent ,'{$sendTime}')
+        //sends this to the database when user clicks send
+        $groupChatInsert = $db->query("INSERT INTO tbl_groupChat (
+        chatRoomName, chatMessage, senderStudentID)
+        VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
+        header('location:groupChat.php');
+    }
+
 }
 
 if(isset($_POST['submitReport'])) //when the user submits their message
@@ -45,10 +50,13 @@ if(isset($_POST['submitReport'])) //when the user submits their message
     $reportType = $_POST['reportType'];
     $reportComment = $_POST['reportComment'];
 
-    $groupChatInsert = $db->query("INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
-    VALUES('{$reportType}','{$reportedStudentID}','{$reportComment}','$reporterStudentID')");
-
-    echo '.<Script> alert("Your report has been submitted."); </Script>.';
+    if (strlen($reportComment) >= 500) { //if more than 255 charaters
+        // user has too many characters
+    } else {
+        $groupChatInsert = $db->query("INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
+        VALUES('{$reportType}','{$reportedStudentID}','{$reportComment}','$reporterStudentID')");
+        echo '.<Script> alert("Your report has been submitted."); </Script>.';
+    }
 }
   ?>
 

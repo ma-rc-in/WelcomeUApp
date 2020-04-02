@@ -98,6 +98,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
      //loads all the data when the form loads
     $(document).ready(function(){
          $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
+         scrollBottom();
     });
 
         //every 1000ms call the load function
@@ -135,7 +136,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
         <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "><?php echo $courseName." - Group Chat";?> </h1>
 
         <!-- Messages will be placed here -->
-        <div class="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden; width: 100%;">
+        <div class="messageBox" id="messageBox" style="overflow:scroll; height:400px; overflow-x:hidden; width: 100%;">
         </div>
         </div>
 

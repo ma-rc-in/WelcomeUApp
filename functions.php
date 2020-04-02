@@ -3,6 +3,14 @@ require_once("connection.php");//gets the connections.php
 
 ?>
 <?php
+function inputTest($input) //tests user input https://www.w3schools.com/php/php_form_validation.asp
+{
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars($input);
+    return $input;
+}
+
 function logout()
 {
     session_start();

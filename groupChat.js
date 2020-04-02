@@ -38,3 +38,8 @@ function alertFunction() { //currentInt, currentString
         localStorage.setItem("messageAmount", current); //updates the local message amount
     }
 }
+
+function scrollBottom() {
+    var objDiv = document.getElementById("messageBox");
+    objDiv.scrollTop = objDiv.scrollHeight;
+}

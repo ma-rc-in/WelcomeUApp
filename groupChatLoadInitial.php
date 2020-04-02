@@ -52,6 +52,9 @@
         var message = "'; echo $messageAmountString; echo'";
         localStorage.setItem("messageAmountLoad", message);
         
+        var message = "'; echo $messageAmountString; echo'"; //sets the initial messsage amount
+        localStorage.setItem("messageAmount", message);
+        
         var currentStudent = "'; echo $currentStudentString; echo'";
         localStorage.setItem("currentStudent", currentStudent);
         

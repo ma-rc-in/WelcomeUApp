@@ -119,11 +119,6 @@ if(isset($_POST['submitReport'])) //when the user submits their message
       }, 3000);
     });
     </script>
-
-    <script>
-    function goBack() {
-      window.history.back();
-    }
   </script>
 
 

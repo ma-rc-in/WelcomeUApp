@@ -13,19 +13,20 @@ $courseName = courseNameConversion($studentCourseID); //conversion for course ID
 
     $messageAmount = 0;
     $messages = groupChatMessage($courseName);
-    while ($row = $messages->fetchObject()) {
-        $messageAmount = $messageAmount + 1;
-        $lastSenderID = $row->senderStudentID; //used to get the last sender
+    $messageCount = messageCount($courseName);
+    if ($messageCount != 0) {
+        while ($row = $messages->fetchObject()) {
+            $messageAmount = $messageAmount + 1;
+            $lastSenderID = $row->senderStudentID;
+            //used to get the last sender
+        }
+    }else {
+        $lastSenderID = 0;
     }
 
     $messageAmountString = strval($messageAmount);
     $currentStudentString = strval($studentID);
     $lastSenderIDString = strval($lastSenderID);
-
-    if($lastSenderIDString == null)
-    {
-        $lastSenderIDString = "0";
-    }
 
 echo '<Script> 
             var message = "'; echo $messageAmountString; echo'";

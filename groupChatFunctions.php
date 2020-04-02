@@ -12,6 +12,17 @@ function groupChatMessage($courseName)
     return $messeageselect;
 }
 
+function messageCount($courseName)
+{
+    $db = getConnection();
+    $messagequery = "SELECT * FROM tbl_groupChat WHERE chatRoomName=:courseName";
+    $messeageselect = $db->prepare($messagequery);
+    $messeageselect->bindParam('courseName', $courseName, PDO::PARAM_STR);
+    $messeageselect->execute(array(":courseName" => $courseName));
+    $num_rows = count($messeageselect->fetchAll());
+    return $num_rows;
+}
+
 function usersInChat($courseID)
 {
     $db = getConnection();

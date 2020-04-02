@@ -35,10 +35,20 @@ $CheckPassword = $_POST['CheckPass'];
       }
   }
 
+    $checkPassword = $_POST['CheckPass'];
+    if (isset($_POST['submitDelete'])) {
+        if (password_verify($checkPassword, $password)) {
+            $db->query("DELETE from tbl_student where studentID='$student'");
+            $db->query("DELETE from tbl_groupchat where senderStudentID='$student'");
+            //$db->query("DELETE from tbl_selfEnrolment where senderStudentID='$student'"); //will need to update senderStudentID
+            logout();
+        } else {
+            //do something if the password is incorrect.
+        }
+    }
+
   $newPin = $_POST['NewPin'];
   $checkPin = $_POST['CheckPin'];
-
-
     if(isset($_POST['submitPin'])) {
         if (strlen($newPin) > 4 || is_numeric($newPin) == false) { //if more than 4 characters
             //display when there is more than numbers or the user is not entering a number
@@ -452,7 +462,7 @@ $CheckPassword = $_POST['CheckPass'];
              <h5 class="formHeading"></h5>
                <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
              </div>
-                 <input name="submit" class="submitPass" type="submit" value="Submit"/>
+                 <input name="submitDelete" class="submitPass" type="submit" value="Submit"/>
        </form>
 
 

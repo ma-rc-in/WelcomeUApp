@@ -14,13 +14,8 @@
         $ID = $_SESSION['sessionStudentID'];
         $PersonalEmail = $_POST['personalEmail'];
 
-
-        echo $ID;
-        echo $PersonalEmail;
-
-        $studentDB = $db->query("UPDATE tbl_student 
-                                SET personalEmail = '$PersonalEmail'
-                                WHERE studentID='$ID'");
+        $db->query("UPDATE tbl_student SET personalEmail='$PersonalEmail'WHERE studentID='$ID'");
+        header('location:UploadPhoto.php');
     }
 ?>
 
@@ -65,7 +60,7 @@
                     <label for "personalEmail">Personal Email Address:</label>
                     <input type = "text" name = "personalEmail">
                 <br /><br />
-                    <input formaction="UploadPhoto.php" type="submit" name="submit" value="Submit"/>
+                    <input formaction="selfEnrolmentForm.php" type="submit" name="submit" value="Submit"/>
                 </fieldset>
 
 

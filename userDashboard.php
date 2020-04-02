@@ -43,10 +43,7 @@ $CheckPassword = $_POST['CheckPass'];
           if ($newPin == $checkPin) {
               $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
               $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-              $message = "Password Changed";
-              //display if the password is correct
-          } else
-              $message = "Current Password is not correct";
+              $message = "Pin is now set.";
       }
       else
       {

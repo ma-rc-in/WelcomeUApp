@@ -38,17 +38,20 @@ $CheckPassword = $_POST['CheckPass'];
   $newPin = $_POST['NewPin'];
   $checkPin = $_POST['CheckPin'];
 
+
     if(isset($_POST['submitPin'])) {
-      // if (pin_change($oldPassword, $password)) {
-          if ($newPin == $checkPin) {
-              $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
-              $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-              $message = "Pin is now set.";
-      }
-      else
-      {
-          //do something if the password isn't correct
-      }
+        if (strlen($newPin) > 4 || is_numeric($newPin) == false) { //if more than 4 characters
+            //display when there is more than numbers or the user is not entering a number
+        } else {
+            // if (pin_change($oldPassword, $password)) {
+            if ($newPin == $checkPin) {
+                $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
+                $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
+                $message = "Pin is now set.";
+            } else {
+                //do something if the password isn't correct
+            }
+        }
   }
 
 

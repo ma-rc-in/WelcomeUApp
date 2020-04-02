@@ -186,16 +186,9 @@ iframe {
   margin-left: 5%;
 }
 
-
-
 .logoDiv {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 90px;
-  width: 330px;
+  max-width: 100%;
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .logoChatWrapper {
@@ -217,7 +210,6 @@ iframe {
   transition: all 0.8s;
   float: left;
   margin-top: 40px;
-  display: none;
 }
 
 .goBackButton:hover {
@@ -225,6 +217,25 @@ iframe {
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
   transition: all 0.8s;
+}
+
+@media only screen and (max-width: 600px) {
+
+.goBackButton{
+
+  display: none;
+  }
+
+.logoDiv {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 330px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 }
 
 .goBackIcon {
@@ -235,7 +246,7 @@ iframe {
 }
 
 .container-chat {
-  width: 100%;
+  width: 90%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -248,8 +259,8 @@ iframe {
   padding: 15px;
   background: #000000;
   padding-bottom: 70px;
-  position: absolute;
-
+  margin-top: 50px;
+  margin-left: 5%;
 }
 
 .wrap-login100 {
@@ -293,12 +304,10 @@ iframe {
   border-radius: 5px;
   padding: 10px;
   margin: 2px 0;
-
 }
 
 #timestamp{
   float: right;
-
 }
 
 .messageRecord {

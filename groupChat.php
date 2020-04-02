@@ -63,7 +63,10 @@ if(isset($_POST['submitReport'])) //when the user submits their message
   <html lang="en">
   <head>
     <title>WelcomeU Group Chat</title>
-      <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <!--Scripts-->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">

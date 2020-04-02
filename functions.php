@@ -32,8 +32,11 @@ function getStudentDetails()//gets the info of the current user based on the ses
 {
     $db = getConnection();//returns the connection for the database
     $student = $_SESSION['sessionStudentID'];
-    $studentinfo = $db->query("select * from tbl_student where studentID='$student'");
-    $row = $studentinfo->fetch(PDO::FETCH_ASSOC);
+    $studentquery = "select * from tbl_student where studentID=:student";
+    $studentselect = $db->prepare($studentquery);
+    $studentselect->bindParam('student', $student, PDO::PARAM_STR);
+    $studentselect->execute(array(":student" => $student));
+    $row = $studentselect->fetch(PDO::FETCH_ASSOC);
     return $row;
 }
 

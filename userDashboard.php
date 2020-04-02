@@ -456,8 +456,8 @@ $CheckPassword = $_POST['CheckPass'];
        <div class="iconPass">
          <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons">Remove data</h3>
-       <a href="#" id="myBtn" class="button" data-abbr=" data">Remove</a>
+       <h3 class="textIcons">Delete account</h3>
+       <a href="#" id="myBtn" class="button" data-abbr=" account">Delete</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">

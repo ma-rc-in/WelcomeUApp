@@ -64,7 +64,6 @@ $CheckPassword = $_POST['CheckPass'];
   <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <title>WelcomeU Login</title>
@@ -457,8 +456,8 @@ $CheckPassword = $_POST['CheckPass'];
        <div class="iconPass">
          <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons">Delete account</h3>
-       <a href="#" id="myBtn" class="button" data-abbr=" account">Delete</a>
+       <h3 class="textIcons">Remove data</h3>
+       <a href="#" id="myBtn" class="button" data-abbr=" data">Remove</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
@@ -476,6 +475,40 @@ $CheckPassword = $_POST['CheckPass'];
        <h4>Change password</h4>
        </div>
        <div class="modal-body">
+
+       <!--/* <form name="frmChange" method="post" action=""
+           onSubmit="return validatePassword()">
+           <div style="width: 500px;">
+               <div class="message"><?php if(isset($message)) { echo $message; } ?></div>
+               <table border="0" cellpadding="10" cellspacing="0"
+                   width="500" align="center" class="tblSaveForm">
+                   <tr class="tableheader">
+                       <td colspan="2">Change Password</td>
+                   </tr>
+                   <tr>
+                       <td width="40%"><label>Current Password</label></td>
+                       <td width="60%"><input type="password"
+                           name="currentPassword" class="txtField" /><span
+                           id="currentPassword" class="required"></span></td>
+                   </tr>
+                   <tr>
+                       <td><label>New Password</label></td>
+                       <td><input type="password" name="newPassword"
+                           class="txtField" /><span id="newPassword"
+                           class="required"></span></td>
+                   </tr>
+                   <td><label>Confirm Password</label></td>
+                   <td><input type="password" name="confirmPassword"
+                       class="txtField" /><span id="confirmPassword"
+                       class="required"></span></td>
+                   </tr>
+                   <tr>
+                       <td colspan="2"><input type="submit" name="submit"
+                           value="Submit" class="btnSubmit"></td>
+                   </tr>
+               </table>
+           </div>
+       </form>  */-->
 
        <form class="formPass" method="post">
          <div class="formPassWrapper">

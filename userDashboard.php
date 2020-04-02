@@ -19,7 +19,7 @@ $newPassword = $_POST['NewPass'];
 $oldPassword = $_POST['OldPass'];
 $CheckPassword = $_POST['CheckPass'];
 
-  if (count($_POST) > 0) {
+  if (isset($_POST['submitPass'])) { //submitPass (count($_POST) > 0)
       if (password_verify($oldPassword, $password)) {
           if ($newPassword == $CheckPassword) {
               $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
@@ -38,11 +38,11 @@ $CheckPassword = $_POST['CheckPass'];
   $newPin = $_POST['NewPin'];
   $checkPin = $_POST['CheckPin'];
 
-  if (count($_POST) > 0) {
+    if(isset($_POST['submitPin'])) {
       // if (pin_change($oldPassword, $password)) {
           if ($newPin == $checkPin) {
-              $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
-              $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
+              $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
+              $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
               $message = "Pin is now set.";
       }
       else
@@ -428,7 +428,7 @@ $CheckPassword = $_POST['CheckPass'];
              <h5 class="formHeading"></h5>
                <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off"/>
              </div>
-                 <input name="submit" class="submitPass" type="submit" value="Submit"/>
+                 <input name="submitPass" class="submitPass" type="submit" value="Submit"/>
        </form>
 
 
@@ -475,7 +475,7 @@ $CheckPassword = $_POST['CheckPass'];
              <h5 class="formHeading"></h5>
                <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPin" placeholder="Repeat your new PIN" autocomplete="off"/>
              </div>
-                 <input name="submit" class="submitPass" type="submit" value="Submit"/>
+                 <input name="submitPin" class="submitPass" type="submit" value="Submit"/>
        </form>
 
 

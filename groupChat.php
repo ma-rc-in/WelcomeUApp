@@ -121,7 +121,6 @@ if(isset($_POST['submitReport'])) //when the user submits their message
     </script>
   </script>
 
-
   </head>
   <body>
   <div class="limiter" id="limiter">

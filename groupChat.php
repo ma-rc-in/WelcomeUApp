@@ -28,8 +28,8 @@ if(isset($_POST['submit'])) //when the user submits their message
   $RoomName = $courseName;
 
   $Message = $_POST['formMessage'];//message is assigned to what the user writes
-    if (strlen($Message) >= 500) { //if more than 255 charaters
-        // user has too many charactersd
+    if (strlen($Message) >= 500) { //if more than 255 characters
+        // user has too many characters
     } else {
         $senderStudentID = $studentID;
         //$sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"  //timeSent ,'{$sendTime}')
@@ -39,7 +39,6 @@ if(isset($_POST['submit'])) //when the user submits their message
         VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
         header('location:groupChat.php');
     }
-
 }
 
 if(isset($_POST['submitReport'])) //when the user submits their message
@@ -58,7 +57,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
         echo '.<Script> alert("Your report has been submitted."); </Script>.';
     }
 }
-  ?>
+?>
 
   <!DOCTYPE html>
   <html lang="en">
@@ -106,7 +105,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
      //loads all the data when the form loads
     $(document).ready(function(){
          $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
-         scrollBottom();
+         //scrollBottom();
     });
 
         //every 1000ms call the load function
@@ -182,8 +181,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
                               $studentCourseID = $studentInfo['courseID'];
 
                               $users = usersInChat($studentCourseID);
-                              $results = $db->query($users);
-                              while ($row = $results->fetchObject())
+                              while ($row = $users->fetchObject())
                               {
                                   $id = $row->studentID;
                                   $firstName = $row->firstName;

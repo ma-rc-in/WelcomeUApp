@@ -16,7 +16,6 @@
     $messages = groupChatMessage($courseName);//gets all the messages associated with the courseName
 
     $messageAmount = 0;
-
     while ($row = $messages->fetchObject()) { //fetchObject
         //shows information for users
         $sendID = $row->senderStudentID;

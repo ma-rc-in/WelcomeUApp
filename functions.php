@@ -40,23 +40,27 @@ function getStudentDetails()//gets the info of the current user based on the ses
 function courseNameConversion($courseID)//converts to courseName to course ID
 {
     $db = getConnection();//returns the connection for the database.
-    $courseName = $db->query("SELECT * FROM tbl_course WHERE courseID='$courseID'");
-    $row = $courseName->fetch(PDO::FETCH_ASSOC);
+    $coursequery = "SELECT * FROM tbl_course WHERE courseID=:courseID";
+    $courseselect = $db->prepare($coursequery);
+    $courseselect->bindParam('courseID', $courseID, PDO::PARAM_STR);
+    $courseselect->execute(array(":courseID" => $courseID));
+    $row = $courseselect->fetch(PDO::FETCH_ASSOC);
     $courseName = $row['courseName'];
-
     if($courseName == null)
     {
        $courseName = "Unknown Course";
     }
-
     return $courseName;
 }
 
 function studentName($studentName)//for first and last name
 {
     $db = getConnection();
-    $studentinfo = $db->query("SELECT firstName, lastName from tbl_student where studentID='$studentName'");
-    $row = $studentinfo->fetch(PDO::FETCH_ASSOC);
+    $studentquery = "SELECT firstName, lastName from tbl_student where studentID=:studentName";
+    $studentselect = $db->prepare($studentquery);
+    $studentselect->bindParam('studentName', $studentName, PDO::PARAM_STR);
+    $studentselect->execute(array(":studentName" => $studentName));
+    $row = $studentselect->fetch(PDO::FETCH_ASSOC);
     return $row;
 }
 

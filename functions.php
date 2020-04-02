@@ -19,15 +19,6 @@ function logout()
     header('Location: loginform.php');
 }
 
-function previousLogin() //this destorys the session, not checks
-{
-    if(isset($_SESSION['sessionStudentID'])) {
-        header('Location: mainmenu.php'); //returns to the main menu
-    }
-    else{}
-
-}
-
 function getStudentDetails()//gets the info of the current user based on the sessionStudentID, call this to return all student data
 {
     $db = getConnection();//returns the connection for the database

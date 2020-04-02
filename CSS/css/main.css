@@ -170,7 +170,7 @@ iframe {
 
 .container-chat {
   width: 90%;
-  min-height: 90vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -182,12 +182,20 @@ iframe {
   padding: 15px;
   background: #000000;
   padding-bottom: 70px;
-  margin-top: 5px;
+  margin-top: 50px;
   margin-left: 5%;
 }
 
+
+
 .logoDiv {
-  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 330px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .logoChatWrapper {
@@ -209,6 +217,7 @@ iframe {
   transition: all 0.8s;
   float: left;
   margin-top: 40px;
+  display: none;
 }
 
 .goBackButton:hover {

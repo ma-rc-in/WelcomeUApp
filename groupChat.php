@@ -94,7 +94,6 @@ if(isset($_POST['submitReport'])) //when the user submits their message
         clear: both;
         display: table;
       }
-
     }
     </style>
 
@@ -105,6 +104,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
      //loads all the data when the form loads
     $(document).ready(function(){
          $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
+         window.scrollTo(0,document.querySelector(".messageBox").scrollHeight);
          //scrollBottom();
     });
 

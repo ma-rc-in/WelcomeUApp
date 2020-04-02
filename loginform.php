@@ -8,6 +8,13 @@ $db = getConnection();//returns the connection for the database.
 //NEEDS TO INCLUDE VALIDATION, Error Handling
 ?>
 <?php
+
+session_start();
+if(isset($_SESSION['sessionStudentID'])) { //redirects the user if they're already logged in.
+    header('Location: mainmenu.php'); //returns to the main menu
+}
+else{}
+
 $ID = $PW = "";
 if(isset($_POST['submit']))
 {

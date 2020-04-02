@@ -22,6 +22,11 @@ $courseName = courseNameConversion($studentCourseID); //conversion for course ID
     $currentStudentString = strval($studentID);
     $lastSenderIDString = strval($lastSenderID);
 
+    if($lastSenderIDString == null)
+    {
+        $lastSenderIDString = "0";
+    }
+
 echo '<Script> 
             var message = "'; echo $messageAmountString; echo'";
             localStorage.setItem("mainMenuMessageOld", message); //amount load is now old

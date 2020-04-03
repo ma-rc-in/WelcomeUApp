@@ -25,12 +25,7 @@ function alertFunction() { //currentInt, currentString
     //updates the page
     if (amountint < current && check != 0){ //there is a new message and it isn't from the current user
         document.title = 'New Message! - WelcomeU Group Chat';
-
-        //Notification Source https://notificationsounds.com/notification-sounds/when-604
-        let source = 'sounds/notification.mp3';
-        let notification = new Audio(source);
-        notification.loop = false;
-        notification.play();
+        notificationAlert();
         localStorage.setItem("messageAmount", current); //updates the local message amount
     }
 
@@ -40,6 +35,42 @@ function alertFunction() { //currentInt, currentString
 }
 
 function scrollBottom() {
-    var objDiv = document.getElementById("messageBox");
-    objDiv.scrollTop = objDiv.scrollHeight;
+   var element = document.getElementById('messageBox');
+   element.scrollTop = element.scrollHeight;
+}
+
+function notificationAlert() {
+    //Notification Source https://notificationsounds.com/notification-sounds/when-604
+    let source = 'sounds/notification.mp3';
+    let notification = new Audio(source);
+    notification.loop = false;
+    notification.volume = getVolume();
+    notification.play();
+
+}
+
+function getVolume() {
+    var volumeCheck = localStorage.getItem("volume");
+    if(volumeCheck == "off"){
+        if (document.getElementById("notificationSwitch") != null) {
+            document.getElementById("notificationSwitch").checked = false;
+        }
+        var volume = 0;
+    } else {
+        if (document.getElementById("notificationSwitch") != null) {
+            document.getElementById("notificationSwitch").checked = true;
+        }
+        var volume = 1;
+    }
+    return volume;
+}
+
+function setVolume() {
+    if (document.getElementById("notificationSwitch").checked == true) {
+        localStorage.setItem("volume", "on"); //updates the local message amount
+    }
+    else{
+        localStorage.setItem("volume", "off"); //updates the local message amount
+    }
+
 }

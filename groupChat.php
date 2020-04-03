@@ -101,32 +101,25 @@ if(isset($_POST['submitReport'])) //when the user submits their message
     </style>
 
 
+
       <!--AJAX Script-->
     <script>
 
      //loads all the data when the form loads
     $(document).ready(function(){
-         $(".messageBox").load("groupChatLoad.php"); //can get the initial amount of messages
-         window.scrollTo(0,document.querySelector(".messageBox").scrollHeight);
-         //scrollBottom();
+         $(".messageBox").load("groupChatLoadInitial.php");//can get the initial amount of messages
     });
 
         //every 1000ms call the load function
     $(document).ready(function(){
       setInterval(function()
       {
-        $(".messageBox").load("groupChatLoad.php");
+        $(".messageBox").load("groupChatLoad.php"); //updates this every 3 seconds
         alertFunction();
       }, 3000);
     });
     </script>
-
-    <script>
-    function goBack() {
-      window.history.back();
-    }
   </script>
-
 
   </head>
   <body>
@@ -163,7 +156,6 @@ if(isset($_POST['submitReport'])) //when the user submits their message
               </form>
             </div>
           </div>
-
       <!--PopupBoxPage reportButton close-->
       <!--JavaScript for report function-->
       <!--Pop Up Box HTML-->

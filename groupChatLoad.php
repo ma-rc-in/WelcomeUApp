@@ -14,25 +14,33 @@
 
     $courseName = courseNameConversion($studentCourseID); //conversion for course ID
     $messages = groupChatMessage($courseName);//gets all the messages associated with the courseName
+    $messageCount = messageCount($courseName);//used to determine how it should handle message amount
 
     $messageAmount = 0;
-    while ($row = $messages->fetchObject()) { //fetchObject
-        //shows information for users
-        $sendID = $row->senderStudentID;
-        $studentNames = studentName($sendID);
 
+    if ($messageCount != 0) {
+        while ($row = $messages->fetchObject()) { //fetchObject
+            //shows information for users
+            $sendID = $row->senderStudentID;
+            $studentNames = studentName($sendID);
+
+            echo '<div id=messageSent>';
+            echo $studentNames['firstName'] . " " . $studentNames['lastName'] . " (" . $row->senderStudentID . "):\n";
+            echo $row->chatMessage . "\n";
+            echo '<div id=timestamp>';
+            echo $row->timeSent . "<br />\n";
+            echo '</div>';
+            echo "\n";
+            echo '</div>';
+
+            $messageAmount = $messageAmount + 1;
+            $lastSenderID = $row->senderStudentID; //used to get the last sender
+        }
+    } else {
+        $lastSenderID = 0;
         echo '<div id=messageSent>';
-        echo $studentNames['firstName'] . " " . $studentNames['lastName'] . " (" . $row->senderStudentID . "):\n";
-        echo $row->chatMessage . "\n";
-        echo '<div id=timestamp>';
-        echo $row->timeSent ."<br />\n";
+        echo "No messages have been sent yet. Why don't you be the first to do so?";
         echo '</div>';
-        echo "\n";
-        echo '</div>';
-
-        $messageAmount = $messageAmount + 1;
-        $lastSenderID = $row->senderStudentID; //used to get the last sender
-
     }
 
     //sets the load amount to messageAmountLoad

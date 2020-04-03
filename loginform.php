@@ -8,13 +8,6 @@ $db = getConnection();//returns the connection for the database.
 //NEEDS TO INCLUDE VALIDATION, Error Handling
 ?>
 <?php
-
-session_start();
-if(isset($_SESSION['sessionStudentID'])) { //redirects the user if they're already logged in.
-    header('Location: mainmenu.php'); //returns to the main menu
-}
-else{}
-
 $ID = $PW = "";
 if(isset($_POST['submit']))
 {
@@ -31,20 +24,27 @@ if(isset($_POST['submit']))
    }
 
   //student ID from tbl_student
-  $studentquery = "select password, studentID from tbl_student where studentID=:SID"; //gets all from tbl_student
+  $studentquery = "select password, studentID, isBanned from tbl_student where studentID=:SID"; //gets all from tbl_student
   $studentselect = $db->prepare($studentquery);
   $studentselect->bindParam('SID', $ID, PDO::PARAM_STR);
   $studentselect->execute(array(":SID" => $ID));
   $select = $studentselect->fetchObject();
   $pwobject = $select->password;
+  $isBannedobject = $select->isBanned;
 
   //This is pulling both numbers and strings from the DB.
   if(password_verify($PW, $pwobject)) //['password'] //$obj->fetch->password uses a hash //serialize converts it to string
   {
-    session_start();
-    $userobject = $select->studentID; //gets the user ID
-    $_SESSION["sessionStudentID"] = $userobject; //sets the session to the user ID
-    header("Location:mainmenu.php"); //going to the main menu
+
+      if ($isBannedobject == 0)
+      {
+          session_start();
+          $userobject = $select->studentID; //gets the user ID
+          $_SESSION["sessionStudentID"] = $userobject; //sets the session to the user ID
+          header("Location:mainmenu.php"); //going to the main menu
+      } else {
+          //need to display an error so that the user knows they're banned
+      }
   }
   else
   {

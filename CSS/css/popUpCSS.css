@@ -331,3 +331,18 @@
   color: white;
   font-family: OpenSans-Regular, sans-serif;
 }
+
+.deleteNote {
+  float: left;
+  margin-top: 20px;
+  margin-left: 9%;
+  width: 80%;
+  height: 170px;
+  margin-bottom: 15px;
+  padding: 4px 12px;
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+  border-right: 6px solid #f44336;
+  color: black;
+
+}

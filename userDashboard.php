@@ -74,6 +74,7 @@ $CheckPassword = $_POST['CheckPass'];
   <html lang="en">
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <title>WelcomeU Login</title>
@@ -186,6 +187,11 @@ $CheckPassword = $_POST['CheckPass'];
        <h4>Delete Account</h4>
        </div>
        <div class="modal-body">
+
+      <div class="deleteNote">
+        <h4> WARNING</h4>
+        You are about to delete all data related to your account, so you will no longer be able to use this application.<br>Do you want to continue?
+      </div>
 
        <form class="formPass" method="post">
              <div class="formPassWrapper">

@@ -39,7 +39,7 @@ $CheckPassword = $_POST['CheckPass'];
     if (isset($_POST['submitDelete'])) {
         if (password_verify($checkPassword, $password)) {
             $db->query("DELETE from tbl_student where studentID='$student'");
-            $db->query("DELETE from tbl_groupchat where senderStudentID='$student'");
+            $db->query("DELETE from tbl_groupChat where senderStudentID='$student'");
             //$db->query("DELETE from tbl_selfEnrolment where senderStudentID='$student'"); //will need to update senderStudentID
             logout();
         } else {

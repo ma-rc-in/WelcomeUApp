@@ -16,13 +16,14 @@ else
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+    <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
+    <script src="groupChat.js"></script>
     <title>WelcomeU Login</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <style>
 
 </style>
 </head>
-<body>
 <body>
  <div class="patch-container">
  <div class="logoMain">
@@ -53,13 +54,15 @@ else
     <div class="modal-content">
     <div class="modal-header">
     <span class="close firstClose" id="">&times;</span>
-    <h4>Change notifications settings</h4>
+    <h4>Notification Settings</h4>
     </div>
+
     <div class="modal-body">
-
-    modal bodyyyy
-
-
+        <h5 class="formHeading">Enable notification alert sound?</h5>
+        <label class="switch"  onchange="setVolume()">
+            <input type="checkbox" id="notificationSwitch">
+         <span class="slider"></span>
+        </label>
     </div>
     </div>
     </div>
@@ -73,7 +76,8 @@ else
   var btn1 = document.getElementById("firstBtn");
   var span1 = document.getElementsByClassName("close firstClose")[0];
   btn1.onclick = function() {
-    modal1.style.display = "block";}
+    modal1.style.display = "block";
+    getVolume();}
     span1.onclick = function() {
       modal1.style.display = "none";}
       window.onclick = function(event) {

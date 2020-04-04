@@ -64,6 +64,10 @@ $CheckPassword = $_POST['CheckPass'];
         }
   }
 
+  if (checkAccessType() != "Student") {
+        header('Location:userDashboardAdmin.php');
+    }
+
 
   ?> -->
 

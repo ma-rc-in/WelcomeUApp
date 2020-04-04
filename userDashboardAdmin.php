@@ -73,17 +73,14 @@ $CheckPassword = $_POST['CheckPass'];
     $db->query("UPDATE tbl_student SET isBanned='1' WHERE studentID='$ID'"); //sets the user to banned status
     $db->query("DELETE from tbl_report where reportedStudentID='$ID'");//removes the reports from the table, could be used as evidence against the user in a later version
     $db->query("DELETE from tbl_groupChat where senderStudentID='$ID'");
-    header('location:userDashboard.php');
+    header('location:userDashboardAdmin.php');
 }
 
 if(isset($_POST['dismissButton'])){
     $ID = $_POST['dismissButton'];
     $db->query("DELETE from tbl_report where reportID='$ID'");
-    header('location:testReport.php');
+    header('location:userDashboardAdmin.php');
 }
-
-
-
   ?> -->
 
 

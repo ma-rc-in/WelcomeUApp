@@ -242,31 +242,6 @@
     }*/
 
 
-      @media all and (max-width:700px){
-        a.button{
-          float: center;
-          text-align: center;
-
-        }
-        .imgPass {
-          float: left;
-          margin-left: 39%;
-        }
-
-        .iconPass {
-          float: left;
-          width: 100%;
-        }
-
-        .imgLogo {
-          float: center;
-          cursor: default;
-          height: 90px;
-          width: 330px;
-          margin-top: 10px;
-        }
-      }
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -337,7 +312,7 @@
   margin-top: 20px;
   margin-left: 9%;
   width: 80%;
-  height: 170px;
+  height: 140px;
   margin-bottom: 15px;
   padding: 4px 12px;
   background-color: #ffdddd;
@@ -345,4 +320,43 @@
   border-right: 6px solid #f44336;
   color: black;
 
+}
+
+@media all and (max-width:700px){
+  a.button{
+    float: center;
+    text-align: center;
+
+  }
+  .imgPass {
+    float: left;
+    margin-left: 39%;
+  }
+
+  .iconPass {
+    float: left;
+    width: 100%;
+  }
+
+  .imgLogo {
+    float: center;
+    cursor: default;
+    height: 90px;
+    width: 330px;
+    margin-top: 10px;
+  }
+
+  .deleteNote {
+    float: left;
+    margin-top: 20px;
+    margin-left: 9%;
+    width: 80%;
+    height: 195px;
+    margin-bottom: 15px;
+    padding: 4px 12px;
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    border-right: 6px solid #f44336;
+    color: black;
+}
 }

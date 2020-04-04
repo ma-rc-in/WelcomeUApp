@@ -5,7 +5,11 @@ $db = getConnection();//returns the connection for the database.
 ?>
 <?php
 session_start();
-if(isset($_SESSION['sessionStudentID'])) {}
+if(isset($_SESSION['sessionStudentID'])) {
+    if (checkAccessType() != "Student") {
+        header('Location:mainmenuLecturer.php');
+    }
+}
 else
 {header('Location:loginform.php');}  //return user to login
 ?>

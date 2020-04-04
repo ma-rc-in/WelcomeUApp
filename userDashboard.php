@@ -194,7 +194,7 @@ $CheckPassword = $_POST['CheckPass'];
 
       <div class="deleteNote">
         <h4> WARNING</h4>
-        You are about to delete all data related to your account, so you will no longer be able to use this application.<br>Do you want to continue?
+        You are about to delete all data related to your account, so you will no longer be able to use this application.<br>If so, please enter your current password below and click on "submit".
       </div>
 
        <form class="formPass" method="post">

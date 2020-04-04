@@ -158,14 +158,6 @@ if(isset($_POST['dismissButton'])){
        <a href="#" id="secondBtn" class="button" data-abbr=" access type">Assign</a>
        </div>
 
-       <div class="patch-item patch-button" style="width: 100%; float: left;">
-       <div class="iconPass">
-         <img class="imgPass" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
-       </div>
-       <h3 class="textIcons">Set PIN</h3>
-       <a href="#" id="thirdBtn" class="button" data-abbr=" PIN">Set</a>
-       </div>
-
        <div id="firstModal" class="modal">
        <div class="modal-content">
        <div class="modal-header">
@@ -251,24 +243,6 @@ if(isset($_POST['dismissButton'])){
        </div>
 
 
-       <div id="thirdModal" class="modal">
-       <div class="modal-content">
-       <div class="modal-header">
-       <span class="close thirdClose" id="">&times;</span>
-       <h4>Set PIN</h4>
-       </div>
-       <div class="modal-body">
-
-       </form>
-
-
-       </div>
-       </div>
-       </div>
-
-
-
-
        </div>
        <script>
        var modal1 = document.getElementById("firstModal");
@@ -295,20 +269,6 @@ if(isset($_POST['dismissButton'])){
                      if (event.target == modal2) {
                        modal2.style.display = "none"; }}
               </script>
-
-
-              <script>
-              var modal3 = document.getElementById("thirdModal");
-              var btn3 = document.getElementById("thirdBtn");
-              var span3 = document.getElementsByClassName("close thirdClose")[0];
-              btn3.onclick = function() {
-                modal3.style.display = "block";}
-                span3.onclick = function() {
-                  modal3.style.display = "none";}
-                  window.onclick = function(event) {
-                    if (event.target == modal3) {
-                      modal3.style.display = "none"; }}
-             </script>
                </div>
                </div>
                </body>

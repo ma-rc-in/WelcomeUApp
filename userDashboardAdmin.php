@@ -6,6 +6,10 @@ $db = getConnection();//returns the connection for the database.
 <?php
 session_start();
 if(isset($_SESSION['sessionStudentID'])) {
+
+if (checkAccessType() == "Student") {
+        header('Location:userDashboard.php');
+    }
     $student = $_SESSION['sessionStudentID'];
     $students = getStudentDetails();
     $password = $students['password'];
@@ -79,9 +83,6 @@ if(isset($_POST['dismissButton'])){
     header('location:testReport.php');
 }
 
-if (checkAccessType() == "Student") {
-        header('Location:userDashboard.php');
-    }
 
 
   ?> -->

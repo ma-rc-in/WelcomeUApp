@@ -6,8 +6,7 @@ $db = getConnection();//returns the connection for the database.
 <?php
 session_start();
 if(isset($_SESSION['sessionStudentID'])) {
-
-if (checkAccessType() == "Student") {
+    if (checkAccessType() == "Student") {
         header('Location:userDashboard.php');
     }
     $student = $_SESSION['sessionStudentID'];

@@ -12,13 +12,13 @@ $ID = $PW = "";
 if(isset($_POST['submit']))
 {
   if (empty($_POST['formStudentID'])){
-      //form is empty
+      //TODO ERROR MESSAGE
   } else {
       $ID = inputTest($_POST['formStudentID']); //$_POST['studentID']; //$ID= $_POST->studentID; //checks if this is not emptys
   }
 
    if (empty($_POST['formPassword'])){
-       //form is empty
+       //TODO ERROR MESSAGE
    } else {
        $PW = inputTest($_POST['formPassword']); //$_POST['password']; !empty
    }
@@ -31,6 +31,8 @@ if(isset($_POST['submit']))
   $select = $studentselect->fetchObject();
   $pwobject = $select->password;
   $isBannedobject = $select->isBanned;
+
+    //TODO Validation for the user
 
   //This is pulling both numbers and strings from the DB.
   if(password_verify($PW, $pwobject)) //['password'] //$obj->fetch->password uses a hash //serialize converts it to string

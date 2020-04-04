@@ -33,6 +33,7 @@ if(isset($_POST['submit'])) //when the user submits their message
   $Message = $_POST['formMessage'];//message is assigned to what the user writes
     if (strlen($Message) >= 500) { //if more than 255 characters
         // user has too many characters
+        //TODO ERROR MESSAGE
     } else {
         $senderStudentID = $studentID;
         //$sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"  //timeSent ,'{$sendTime}')
@@ -54,9 +55,11 @@ if(isset($_POST['submitReport'])) //when the user submits their message
 
     if (strlen($reportComment) >= 500) { //if more than 255 charaters
         // user has too many characters
+        //TODO ERROR MESSAGE
     } else {
         $groupChatInsert = $db->query("INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
         VALUES('{$reportType}','{$reportedStudentID}','{$reportComment}','$reporterStudentID')");
+        //TODO SUCCESS MESSAGE
         echo '.<Script> alert("Your report has been submitted."); </Script>.';
     }
 }

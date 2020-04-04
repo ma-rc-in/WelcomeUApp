@@ -9,13 +9,20 @@
     session_start();
     $StudentInfo = getStudentDetails();
   //  echo $StudentInfo['firstName'];
-    if(isset($_POST['submit']))
-    {
+    $EmailErr = "";
+    $personalEmail = "";
+    if(isset($_POST['submit'])) {
         $ID = $_SESSION['sessionStudentID'];
-        $PersonalEmail = $_POST['personalEmail'];
+        //$PersonalEmail = $_POST['personalEmail'];
+        $_POST['personalEmail'] = filter_var($_POST['personalEmail'], FILTER_SANITIZE_EMAIL);
+        if (filter_var($_POST['personalEmail'] , FILTER_VALIDATE_EMAIL)) {
+            $PersonalEmail = $_POST['personalEmail'];
+            $db->query("UPDATE tbl_student SET personalEmail='$PersonalEmail'WHERE studentID='$ID'");
+            header('location:UploadPhoto.php');
+        } else {
+            $EmailErr = "**Invalid Email Address!";
+        }
 
-        $db->query("UPDATE tbl_student SET personalEmail='$PersonalEmail'WHERE studentID='$ID'");
-        header('location:UploadPhoto.php');
     }
 ?>
 
@@ -32,17 +39,16 @@
                <img src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
            </center>
         </a>
-
-        <h1 style="color:#FFFFFF">Self-enrolment Form</h1>
+        <br/>
+        <h1 style="color:#FFFFFF; text-align: center">Self-enrolment Form</h1>
         <br/>
 
 
-        <h2 style="color:#FFFFFF">Step 1</h2>
-        <h2 style="color:#FFFFFF">Please fill in the details</h2>
+        <h2 style="color:#FFFFFF">Step 1 _ Please fill in the details</h2>
         <div class="container">
             <form action="selfEnrolmentForm.php" method="POST">
                 <fieldset>
-                <legend> Personal Details </legend>
+                <legend style="font-size: x-large; font-weight: bold"> Personal Details </legend>
 
                     <label for "title">Title: </label>
                     <input  type = "text" name = "title" readonly value="<?php echo $StudentInfo['title'];?>"/>
@@ -58,9 +64,10 @@
                     <input type = "text" name = "gender" readonly value="<?php echo $StudentInfo['gender'];?>">
                 <br /><br />
                     <label for "personalEmail">Personal Email Address:</label>
-                    <input type = "text" name = "personalEmail">
+                    <input type = "text" name = "personalEmail" value="<?php echo $StudentInfo['personalEmail'];?>" required>
+                    <p class="errorTxt"><?php echo $EmailErr; ?></p>
                 <br /><br />
-                    <input formaction="selfEnrolmentForm.php" type="submit" name="submit" value="Submit"/>
+                    <input formaction="selfEnrolmentForm.php" type="submit" name="submit" value="Save & Next"/>
                 </fieldset>
 
 
@@ -75,6 +82,10 @@
         box-sizing: border-box;
     }
 
+    .errorTxt{
+        color: darkred;
+    }
+
     input[type=text], select, textarea {
         width: 100%;
         padding: 12px;
@@ -86,6 +97,7 @@
     label {
         padding: 12px 12px 12px 0;
         display: inline-block;
+        font-size: large;
     }
 
     input[type=submit] {

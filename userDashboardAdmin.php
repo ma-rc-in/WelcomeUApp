@@ -152,10 +152,10 @@ if(isset($_POST['dismissButton'])){
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
        <div class="iconPass">
-         <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
+         <img class="imgPass" src="images/accessType.png" alt="accessType" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons">Delete account</h3>
-       <a href="#" id="secondBtn" class="button" data-abbr=" account">Delete</a>
+       <h3 class="textIcons">Assign access type</h3>
+       <a href="#" id="secondBtn" class="button" data-abbr=" access type">Assign</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
@@ -215,17 +215,36 @@ if(isset($_POST['dismissButton'])){
        <div class="modal-content">
        <div class="modal-header">
        <span class="close secondClose" id="">&times;</span>
-       <h4>Delete Account</h4>
+       <h4>Assign access type</h4>
        </div>
        <div class="modal-body">
 
-      <div class="deleteNote">
-        <h4> WARNING</h4>
-        You are about to delete all data related to your account, so you will no longer be able to use this application.<br>Do you want to continue?
-      </div>
+         <form class="formAccess" method="post">
+            <div class="formAccessWrapper">
+                <h5 class="formHeading">Access Type</h5>
+                <select id="accessID" name="accessID">
+                <option value="">Please select a user.</option>';
+                <?php
+                $studentidquery = "select studentID, firstName, lastName, accessType from tbl_student";
+                $student = $db->query($studentidquery);
+                while ($row = $student->fetchObject())
+                {
+                    $id = $row->studentID;
+                    $firstName = $row->firstName;
+                    $lastName = $row->lastName;
+                    $type = $row->accessType;
 
-
-
+                    echo '<option value="'.$id.'">'.$id." (".$firstName." ".$lastName.": ".$type.")".'</option>'; //'.$id.'
+                }
+                ?>
+                </select>
+                <select id="accessType" name="accessType">
+                    <option value="Student">Student</option>';
+                    <option value="Lecturer">Lecturer</option>';
+                </select>
+            <input name="submitAccessChange" type="submit" value="Update"/>
+            </div>
+        </form>
 
        </div>
        </div>

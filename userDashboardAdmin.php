@@ -66,8 +66,7 @@ $CheckPassword = $_POST['CheckPass'];
                 //do something if the password isn't correct
             }
         }
-  }
-
+      }
 
   if(isset($_POST['suspendButton'])){
     $ID = $_POST['suspendButton'];
@@ -183,7 +182,7 @@ if(isset($_POST['dismissButton'])){
        <th>Description</th>
        <th>Reporter ID</th>
     </tr>
-       <form action="testReport.php" method="post">
+       <form action="userDashboardAdmin.php" method="post">
                <?php
                $reportquery = "select * from tbl_report";
                $report = $db->query($reportquery);

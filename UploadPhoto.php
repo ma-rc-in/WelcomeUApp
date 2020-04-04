@@ -6,11 +6,11 @@
 <?php
     session_start();
     $StudentInfo = getStudentDetails();
+    $FileErr = '';
 
     if(isset($_POST['submit'])) {
         $ID = $_SESSION['sessionStudentID'];
         $upload_url = "UploadedPhoto/" . $_FILES["myfile"]["name"];
-        $FileErr = '';
         if (empty($upload_url)) {
             $FileErr = "Please choose a photo";
         } else {

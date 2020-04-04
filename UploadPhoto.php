@@ -34,6 +34,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Self-enrolment</title>
+    <script src="UploadPhotoJS.js"></script>
 </head>
 <body style="background-color:#000000;">
 <h2>Upload SmartCard Photo</h2>
@@ -56,11 +57,17 @@
                 <input type="file" name= "myfile" id="myfile" />
                 <p class="errorTxt"><?php echo $FileErr; ?></p>
                 <br/><br/>
-                <input type="submit" name="submit" value="Submit" />
+                <input type="submit" name="submit" id="submit" value="Submit" />
             </fieldset>
         </form>
     </div>
 </body>
+<script>
+    function timer() {
+    imageEmptyCheck();
+    setTimeout(timer, 500); //refresh the timer every 500 ms
+    } timer();
+</script>
 </html>
 <style>
     * {

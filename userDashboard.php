@@ -6,11 +6,15 @@ $db = getConnection();//returns the connection for the database.
 <?php
 session_start();
 if(isset($_SESSION['sessionStudentID'])) {
+  if (checkAccessType() != "Student") {
+        header('Location:userDashboardAdmin.php');
+    }
     $student = $_SESSION['sessionStudentID'];
     $students = getStudentDetails();
     $password = $students['password'];
     $pin = $students['PIN'];
     $message = "";
+
 }
   else
   {header('Location:loginform.php');}  //return user to login

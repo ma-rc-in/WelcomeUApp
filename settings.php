@@ -16,7 +16,7 @@ else
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
-    <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
+  <!-- <link rel="stylesheet" type="text/css" href="CSS/css/main.css"> -->
     <script src="groupChat.js"></script>
     <title>WelcomeU Login</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>

@@ -10,6 +10,9 @@ $db = getConnection();//returns the connection for the database.
 //CHANGE LATER, BUT RETURNS USER IF STUDENT ID IS SET
 session_start();
 if(isset($_SESSION['sessionStudentID'])) { //requires functions
+    if (checkAccessType() != "Student") {
+        header('Location:mainmenuLecturer.php');
+    }
 
   //this is used to get the students information required to use the chat
   $studentInfo = getStudentDetails(); //gets all student details

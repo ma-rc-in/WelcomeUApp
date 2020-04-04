@@ -65,4 +65,17 @@ function deleteUser($studentID)
     $db->query("DELETE from tbl_groupchat where senderStudentID='$studentID'");
     //$db->query("DELETE from tbl_selfenrolment where student='$studentID'"); //update once Kee Wen has finished self enrolment
 }
+
+function checkAccessType()
+{
+    $db = getConnection();//returns the connection for the database
+    $student = $_SESSION['sessionStudentID'];
+    $studentquery = "select accessType from tbl_student where studentID=:student";
+    $studentselect = $db->prepare($studentquery);
+    $studentselect->bindParam('student', $student, PDO::PARAM_STR);
+    $studentselect->execute(array(":student" => $student));
+    $row = $studentselect->fetch(PDO::FETCH_ASSOC);
+    $accessType = $row['accessType'];
+    return $accessType;
+}
 ?>

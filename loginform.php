@@ -41,7 +41,12 @@ if(isset($_POST['submit']))
           session_start();
           $userobject = $select->studentID; //gets the user ID
           $_SESSION["sessionStudentID"] = $userobject; //sets the session to the user ID
-          header("Location:mainmenu.php"); //going to the main menu
+          if (checkAccessType() != "Student") {
+              header('Location:mainmenuLecturer.php');//sents to the lecturer version of the menu
+          }
+          else{
+              header("Location:mainmenu.php"); //going to the main menu
+          }
       } else {
           //need to display an error so that the user knows they're banned
       }

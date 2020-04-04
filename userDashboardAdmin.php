@@ -79,7 +79,9 @@ if(isset($_POST['dismissButton'])){
     header('location:testReport.php');
 }
 
-?>
+if (checkAccessType() == "Student") {
+        header('Location:userDashboard.php');
+    }
 
 
   ?> -->

@@ -11,6 +11,9 @@ if(isset($_SESSION['sessionStudentID'])) {
     $password = $students['password'];
     $pin = $students['PIN'];
     $message = "";
+    if (checkAccessType() != "Student") {
+          header('Location:userDashboardAdmin.php');
+      }
 }
   else
   {header('Location:loginform.php');}  //return user to login
@@ -63,10 +66,6 @@ $CheckPassword = $_POST['CheckPass'];
             }
         }
   }
-
-  if (checkAccessType() != "Student") {
-        header('Location:userDashboardAdmin.php');
-    }
 
 
   ?> -->

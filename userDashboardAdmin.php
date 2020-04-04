@@ -158,6 +158,14 @@ if(isset($_POST['dismissButton'])){
        <a href="#" id="secondBtn" class="button" data-abbr=" access type">Assign</a>
        </div>
 
+       <div class="patch-item patch-button" style="width: 100%; float: left;">
+       <div class="iconPass">
+         <img class="imgPass" src="images/ban.png" alt="PasswordKey" width= "90px" height= "90px"/>
+       </div>
+       <h3 class="textIcons">Ban user accounts</h3>
+       <a href="#" id="thirdBtn" class="button" data-abbr=" accounts">Ban</a>
+       </div>
+
        <div id="firstModal" class="modal">
        <div class="modal-content">
        <div class="modal-header">
@@ -243,6 +251,48 @@ if(isset($_POST['dismissButton'])){
        </div>
 
 
+       <div id="thirdModal" class="modal">
+       <div class="modal-content">
+       <div class="modal-header">
+       <span class="close thirdClose" id="">&times;</span>
+       <h4></h4>
+       </div>
+       <div class="modal-body">
+
+         <form class="formBan" method="post">
+           <div class="formBanWrapper">
+               <h5 class="formHeading">Please select the users ID you wish to Ban:</h5>
+               <select id="banID" name="banID">
+               <option value="">Please select a user.</option>';
+               <?php
+               $studentidquery = "select studentID, firstName, lastName, isBanned from tbl_student";
+               $student = $db->query($studentidquery);
+               while ($row = $student->fetchObject())
+               {
+                   $id = $row->studentID;
+                   $firstName = $row->firstName;
+                   $lastName = $row->lastName;
+                   $isBanned = $row->isBanned;
+
+                   if ($isBanned == 0) {
+                       $bannedDisplay = "No";
+                   } else {
+                       $bannedDisplay = "Yes";
+                   }
+                   echo '<option value="'.$id.'">'.$id." (".$firstName." ".$lastName.". Is suspended?: ".$bannedDisplay.")".'</option>'; //'.$id.'
+               }
+               ?>
+           </select>
+           <input name="submitBan" type="submit" value="Submit"/>
+           </div>
+       </form>
+
+
+       </div>
+       </div>
+       </div>
+
+
        </div>
        <script>
        var modal1 = document.getElementById("firstModal");
@@ -269,6 +319,19 @@ if(isset($_POST['dismissButton'])){
                      if (event.target == modal2) {
                        modal2.style.display = "none"; }}
               </script>
+
+              <script>
+              var modal3 = document.getElementById("thirdModal");
+              var btn3 = document.getElementById("thirdBtn");
+              var span3 = document.getElementsByClassName("close thirdClose")[0];
+              btn3.onclick = function() {
+                modal3.style.display = "block";}
+                span3.onclick = function() {
+                  modal3.style.display = "none";}
+                  window.onclick = function(event) {
+                    if (event.target == modal3) {
+                      modal3.style.display = "none"; }}
+             </script>
                </div>
                </div>
                </body>

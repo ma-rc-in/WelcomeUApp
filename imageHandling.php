@@ -10,7 +10,10 @@
     $ID = $_SESSION['sessionStudentID'];
 
     $upload_url = "UploadedPhoto/" . $_FILES["myfile"]["name"];
-
+    $FileErr = '';
+if (empty($upload_url)) {
+    $FileErr = "Please choose a photo";
+} else {
     $filename = $_FILES["myfile"]["name"];
     //move file
     move_uploaded_file($_FILES["myfile"]["tmp_name"], $upload_url);
@@ -19,5 +22,8 @@
     $studentDB = $db->query("UPDATE tbl_student 
                                 SET uploadedPhoto = '$upload_url'
                                 WHERE studentID='$ID'");
+}
+
+
 
 ?>

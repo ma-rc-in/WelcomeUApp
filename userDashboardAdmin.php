@@ -197,10 +197,8 @@ if(isset($_POST['dismissButton'])){
                        echo '<td>'.$type.'</td>';
                        echo '<td>'.$reported.'</td>';
                        echo '<td>'.$comment.'</td>';
-                       echo '<td>'.$reporter.'</td>';
-                       <br>
-                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'">Dismiss</button>';
-                       <br>
+                       echo '<td>'.$reporter.'</td><br>';
+                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'">Dismiss</button><br>';
                        echo '<button class="adminButtons" type="submit" name="suspendButton" id="suspendButton" value="'.$reported.'">Suspend</button></td>';
                    echo '</tr>';
                }

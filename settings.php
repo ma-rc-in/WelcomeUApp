@@ -58,9 +58,9 @@ else
     </div>
 
     <div class="modal-body">
-        <h5 class="formHeading">Enable notification alert sound?</h5>
+        <h4 class="formHeading">Enable notification alert sound?</h4>
         <label class="switch"  onchange="setVolume()">
-            <input type="checkbox" id="notificationSwitch">
+            <input type="checkbox" id="notificationSwitch" class="formPassInput">
          <span class="slider"></span>
         </label>
     </div>

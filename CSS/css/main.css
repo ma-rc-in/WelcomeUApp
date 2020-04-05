@@ -348,9 +348,9 @@ input:focus::placeholder {
   padding: 0 20px;
   width: 40%;
   height: 60px;
-  background-color: #AAAAAA;
+  background-color: #333333;
   font-family: OpenSans-Regular, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
@@ -361,11 +361,6 @@ input:focus::placeholder {
   border-radius: 5px;
 }
 
-.buttonChat {
-  background-color: #333333;
-  font-size: 1em;
-  font-weight: lighter;
-}
 
 
 /*==================================================================

@@ -170,7 +170,7 @@ if(isset($_POST['dismissButton'])){
        <div class="modal-content">
        <div class="modal-header">
        <span class="close firstClose" id="">&times;</span>
-       <h4>View reports</h4>
+       <h4 class="formHeading">View reports</h4>
        </div>
        <div class="modal-body">
 
@@ -198,8 +198,10 @@ if(isset($_POST['dismissButton'])){
                        echo '<td>'.$reported.'</td>';
                        echo '<td>'.$comment.'</td>';
                        echo '<td>'.$reporter.'</td>';
-                       echo '<td><button type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'">Dismiss</button>'; //used to dismiss the report, deleting it from the table
-                       echo '<button type="submit" name="suspendButton" id="suspendButton" value="'.$reported.'">Suspend</button></td>';
+                       <br>
+                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'">Dismiss</button>';
+                       <br>
+                       echo '<button class="adminButtons" type="submit" name="suspendButton" id="suspendButton" value="'.$reported.'">Suspend</button></td>';
                    echo '</tr>';
                }
                ?>
@@ -219,11 +221,11 @@ if(isset($_POST['dismissButton'])){
        </div>
        <div class="modal-body">
 
-         <form class="formAccess" method="post">
-            <div class="formAccessWrapper">
-                <h5 class="formHeading">Access Type</h5>
-                <select id="accessID" name="accessID">
-                <option value="">Please select a user.</option>';
+         <form class="formPass" method="post">
+            <div class="formPassWrapper">
+                <h4 class="formHeading">Access Type</h4>
+                <select class="formPassInput" name="accessID">
+                <option value="" hidden>Please select a user</option>';
                 <?php
                 $studentidquery = "select studentID, firstName, lastName, accessType from tbl_student";
                 $student = $db->query($studentidquery);
@@ -238,11 +240,14 @@ if(isset($_POST['dismissButton'])){
                 }
                 ?>
                 </select>
-                <select id="accessType" name="accessType">
+                <br>
+                <select class="formPassInput" name="accessType">
+                    <option value="" hidden>Please select access type for the user</option>;
                     <option value="Student">Student</option>';
                     <option value="Lecturer">Lecturer</option>';
                 </select>
-            <input name="submitAccessChange" type="submit" value="Update"/>
+                <br>
+            <input class="adminButtons" name="submitAccessChange" type="submit" value="Update"/>
             </div>
         </form>
 
@@ -255,15 +260,15 @@ if(isset($_POST['dismissButton'])){
        <div class="modal-content">
        <div class="modal-header">
        <span class="close thirdClose" id="">&times;</span>
-       <h4></h4>
+       <h4>Ban a user</h4>
        </div>
        <div class="modal-body">
 
-         <form class="formBan" method="post">
-           <div class="formBanWrapper">
-               <h5 class="formHeading">Please select the users ID you wish to Ban:</h5>
-               <select id="banID" name="banID">
-               <option value="">Please select a user.</option>';
+         <form class="formPass" method="post">
+           <div class="formPassWrapper">
+               <h4 class="formHeading">Please select the users ID you wish to Ban:</h4>
+               <select class="formPassInput" name="banID">
+               <option value="" hidden>Please select a user.</option>';
                <?php
                $studentidquery = "select studentID, firstName, lastName, isBanned from tbl_student";
                $student = $db->query($studentidquery);
@@ -283,7 +288,8 @@ if(isset($_POST['dismissButton'])){
                }
                ?>
            </select>
-           <input name="submitBan" type="submit" value="Submit"/>
+           <br>
+           <input class="adminButtons"name="submitBan" type="submit" value="Submit"/>
            </div>
        </form>
 

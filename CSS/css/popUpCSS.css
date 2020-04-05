@@ -163,6 +163,23 @@
     text-align: center;
   }
 
+
+  .adminButtons {
+    border: 1px solid #a3a3a3;
+    background: rgba(20, 20, 20, 0.6);
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+    margin-bottom: 25px;
+  }
+  .adminButtons:hover {
+    background: rgba(20, 20, 20, 0.8);
+  }
+
+
   .submitPass {
     border: 1px solid #a3a3a3;
     background: rgba(20, 20, 20, 0.6);
@@ -305,6 +322,7 @@
   background-color: #383838;
   color: white;
   font-family: OpenSans-Regular, sans-serif;
+
 }
 
 .deleteNote {

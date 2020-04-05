@@ -165,17 +165,19 @@ if(isset($_POST['submitReport'])) //when the user submits their message
       <!--PopupBoxPage reportButton close-->
       <!--JavaScript for report function-->
       <!--Pop Up Box HTML-->
-      <div id="PopupBoxPage" class="modal">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <span class="close">&times;</span>
-                  <h4>Report User</h4>
-              </div>
-              <div class="modal-body"> <!--report form-->
-                  <form class="formReport" method="post">
-                      <div class="formReportWrapper">
-                          <h5 class="formHeading">Please select the users ID you wish to report:</h5>
-                          <select id="reportUserID" name="reportUserID">
+
+<div id="PopupBoxPage" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<span class="close firstClose" id="">&times;</span>
+<h4 class="formHeading">View reports</h4>
+</div>
+<div class="modal-body">
+                  <form class="formPass" method="post">
+                      <div class="formPassWrapper">
+                          <h4 class="formHeading">Please select the users ID you wish to report:</h4>
+                          <br>
+                          <select class="formPassInput" id="reportUserID" name="reportUserID">
                               <?php
                               //php to select the ID
                               $studentInfo = getStudentDetails();
@@ -192,20 +194,22 @@ if(isset($_POST['submitReport'])) //when the user submits their message
                               ?>
                           </select>
                       </div>
-                      <div class="formReportWrapper">
-                          <h5 class="formHeading">Please select your reason for reporting:</h5>
-                          <select id="reportType" name="reportType"> <!--class="formReportInput"-->
+                      <div class="formPassWrapper">
+                          <h4 class="formHeading">Please select your reason for reporting:</h4>
+                          <br>
+                          <select class="formPassInput"id="reportType" name="reportType"> <!--class="formReportInput"-->
                               <option value="Spam">Spam</option>
                               <option value="Abuse">Abusive Language/Content</option>
                               <option value="Violence">Inciting Violence</option>
                               <option value="Other">Other (Please Comment Below)</option>
                           </select>
                       </div>
-                      <div class="formReportWrapper">
-                          <h5 class="formHeading">Please explain why you are making this report:</h5>
+                      <div class="formPassWrapper">
+                          <h4 class="formHeading">Please explain why you are making this report:</h4>
                           <textarea id="reportComment" class="formReportInput"  name="reportComment" placeholder="Please comment here:" rows="10" cols="140"></textarea>
                       </div>
-                      <input name="submitReport" type="submit" value="Submit"/>
+                      <br>
+                      <input class="adminButtons" name="submitReport" type="submit" value="Submit"/>
                   </form>
               </div>
           </div>

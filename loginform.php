@@ -9,20 +9,15 @@ $db = getConnection();//returns the connection for the database.
 ?>
 <?php
 $ID = $PW = "";
+$ErrorMessage="";
+
 if(isset($_POST['submit']))
 {
-  if (empty($_POST['formStudentID'])){
-      //TODO ERROR MESSAGE
+  if (empty($_POST['formStudentID']) ||empty($_POST['formPassword'])) {
+      $ErrorMessage="Please enter your Student ID or Password.";
   } else {
       $ID = inputTest($_POST['formStudentID']); //$_POST['studentID']; //$ID= $_POST->studentID; //checks if this is not emptys
-  }
-
-   if (empty($_POST['formPassword'])){
-       //TODO ERROR MESSAGE
-   } else {
-       $PW = inputTest($_POST['formPassword']); //$_POST['password']; !empty
-   }
-
+      $PW = inputTest($_POST['formPassword']); //$_POST['password']; !empty
   //student ID from tbl_student
   $studentquery = "select password, studentID, isBanned from tbl_student where studentID=:SID"; //gets all from tbl_student
   $studentselect = $db->prepare($studentquery);
@@ -31,8 +26,6 @@ if(isset($_POST['submit']))
   $select = $studentselect->fetchObject();
   $pwobject = $select->password;
   $isBannedobject = $select->isBanned;
-
-    //TODO Validation for the user
 
   //This is pulling both numbers and strings from the DB.
   if(password_verify($PW, $pwobject)) //['password'] //$obj->fetch->password uses a hash //serialize converts it to string
@@ -50,6 +43,7 @@ if(isset($_POST['submit']))
               header("Location:mainmenu.php"); //going to the main menu
           }
       } else {
+          $ErrorMessage="Your account is currently suspended.";
           //need to display an error so that the user knows they're banned
       }
   }
@@ -57,6 +51,7 @@ if(isset($_POST['submit']))
   {
     session_start();
     $_SESSION["LogInFail"] = "Yes";
+  }
   }
 }
 ?>
@@ -88,7 +83,7 @@ if(isset($_POST['submit']))
             WelcomeU
           </span>
           <h5> Please login with your university login</h5>
-
+          <p class="errorTxt"><?php echo $ErrorMessage; ?></p>
           <div class="wrap-input100 validate-input" data-validate="Student ID is required">
             <input class="input100" type="text" name="formStudentID" placeholder="StudentID">
             <span class="focus-input100-1"></span>

@@ -290,6 +290,12 @@ iframe {
   margin-bottom: 10px;
 }
 
+/* .wrappedChat {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+} */
+
 .messageBox {
   margin: 0 auto;
   padding: 0 20px;
@@ -413,11 +419,7 @@ input:focus::placeholder {
   line-height: 1.2;
 }
 
-.wrappedChat {
-  width: 100%;
-  position: relative;
-  background-color: #fff;
-}
+
 
 
 /*---------------------------------------------*/

@@ -129,6 +129,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
 
   </head>
   <body>
+<div class="patch-container">
   <div class="limiter" id="limiter">
     <div class="logoDiv">
       <div class="goBackButton"> <a href="mainmenu.php"><img src="images/back.png" class="goBackIcon"></a></div>
@@ -170,7 +171,7 @@ if(isset($_POST['submitReport'])) //when the user submits their message
 <div class="modal-content">
 <div class="modal-header">
 <span class="close firstClose" id="">&times;</span>
-<h4 class="formHeading">View reports</h4>
+<h4>View reports</h4>
 </div>
 <div class="modal-body">
                   <form class="formPass" method="post">
@@ -214,7 +215,9 @@ if(isset($_POST['submitReport'])) //when the user submits their message
               </div>
           </div>
       </div>
-
+    </div>
+    </div>
+   </div>
       <script>
           var modal = document.getElementById("PopupBoxPage");
           var btn = document.getElementById("reportButton");

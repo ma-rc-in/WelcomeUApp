@@ -19,7 +19,7 @@
             move_uploaded_file($_FILES["myfile"]["tmp_name"], $upload_url);
             echo $ID;
 
-            $studentDB = $db->query("UPDATE tbl_student 
+            $studentDB = $db->query("UPDATE tbl_student
                                     SET uploadedPhoto = '$upload_url'
                                     WHERE studentID='$ID'");
         }
@@ -41,7 +41,7 @@
 
     <a href="mainmenu.php" >
         <center>
-            <img src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
+            <img src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
         </center>
     </a>
     <br/>

@@ -44,7 +44,7 @@ if(isset($_POST['submit']))
           }
       } else {
           $ErrorMessage="Your account is currently suspended.";
-          //need to display an error so that the user knows they're banned
+          //displays an error.
       }
   }
   else

@@ -81,7 +81,7 @@ if(isset($_POST['submit']))
     <div class="container-login100">
       <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
         <div class="imgWrapper">
-          <img class="imglogo" src="Images/uni_logo.png" alt="logo" width= "250px" height= "75px" />
+          <img class="imglogo" src="images/uni_logo.png" alt="logo" width= "250px" height= "75px" />
         </div>
         <form action="loginform.php" method="POST" class="login100-form validate-form">
           <span class="login100-form-title p-b-33">

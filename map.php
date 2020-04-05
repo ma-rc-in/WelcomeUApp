@@ -176,12 +176,6 @@ else
                 width: 46%;
             }
 
-            .logout-box {
-                padding-top: 30px;
-                float: left;
-                height: 100px;
-                width: 100%;
-            }
 
             .textIcons {
 

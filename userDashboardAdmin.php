@@ -80,6 +80,36 @@ if(isset($_POST['dismissButton'])){
     $db->query("DELETE from tbl_report where reportID='$ID'");
     header('location:userDashboardAdmin.php');
 }
+
+if(isset($_POST['submitBan'])){
+    $ID = $_POST['banID'];
+    if($ID != null){
+        $banquery = "select isBanned from tbl_student WHERE studentID='$ID'";
+        $banned = $db->query($banquery);
+        $row = $banned->fetch(PDO::FETCH_OBJ);
+        $checkBanned = $row->isBanned;
+        if ($checkBanned == 0) {
+            $ban = 1;
+            $db->query("UPDATE tbl_student SET isBanned='$ban' WHERE studentID='$ID'");
+        }
+        else{
+            $ban = 0;
+            $db->query("UPDATE tbl_student SET isBanned='$ban' WHERE studentID='$ID'");
+        }
+    }else{
+        //if null
+    }
+}
+
+if(isset($_POST['submitAccessChange'])){
+    $ID = $_POST['accessID'];
+    $type = $_POST['accessType'];
+    if($ID != null){
+        $db->query("UPDATE tbl_student SET accessType='$type' WHERE studentID='$ID'");
+    }else{
+
+    }
+}
   ?> -->
 
 

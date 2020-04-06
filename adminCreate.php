@@ -19,11 +19,12 @@ if(isset($_POST['submit']))
     $SEM = $_POST['formSEmail'];
     $PIN = $_POST['formPin'];
     $Course = $_POST['formCourse'];
+    $AT = $_POST['formAccess'];
 
     $StorePassword = password_hash($PW, PASSWORD_BCRYPT,array('cost'=>10));
     $studentDB = $db->query("INSERT INTO tbl_student (
-        studentID, password, title, firstName, lastName, gender, DOB, address,studentEmail, PIN, courseID) 
-        VALUES('{$ID}','{$StorePassword}','{$TL}','{$FN}','{$LN}','{$G}','{$DOB}','{$Address}','{$SEM}','{$PIN}','{$Course}')");
+        studentID, password, title, firstName, lastName, gender, DOB, address,studentEmail, PIN, courseID, accessType) 
+        VALUES('{$ID}','{$StorePassword}','{$TL}','{$FN}','{$LN}','{$G}','{$DOB}','{$Address}','{$SEM}','{$PIN}','{$Course}','$AT')");
     //header('Location: loginform.php');
 }
 ?>
@@ -71,6 +72,9 @@ if(isset($_POST['submit']))
 
     <label for formCourse">Course:</label>
     <input type = "text" name = "formCourse">
+
+    <label for formAccess">Access:</label>
+    <input type = "text" name = "formAccess">
 
     <input type="submit" name="submit" value="Submit"/>
 </form>

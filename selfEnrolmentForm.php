@@ -16,7 +16,7 @@
         if (filter_var($_POST['personalEmail'] , FILTER_VALIDATE_EMAIL)) {
             $PersonalEmail = $_POST['personalEmail'];
             $db->query("UPDATE tbl_student SET personalEmail='$PersonalEmail'WHERE studentID='$ID'");
-            header('location:UploadPhoto.php');
+            header('location:uploadPhoto.php');
         } else {
             $EmailErr = "**Invalid Email Address!";
         }

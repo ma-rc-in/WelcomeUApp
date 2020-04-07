@@ -7,6 +7,6 @@ function imageEmptyCheck() {
     }else {
         var button = document.getElementById("submit")
         button.disabled = true;
-        button.style.background='#000000';
+        button.style.background='#555555';
     }
 }

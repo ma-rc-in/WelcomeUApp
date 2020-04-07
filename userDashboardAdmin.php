@@ -223,7 +223,7 @@ if(isset($_POST['submitAccessChange'])){
                    $comment = $row->reportComment;
                    $reporter = $row->reporterStudentID;
 
-                   echo '<tr id="reportRow">';
+                   echo '<tr>';
                        echo '<td>'.$type.'</td>';
                        echo '<td>'.$reported.'</td>';
                        echo '<td>'.$comment.'</td>';

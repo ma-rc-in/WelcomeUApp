@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Self-enrolment</title>
-    <script src="UploadPhotoJS.js"></script>
+    <script src="uploadPhotoJS.js"></script>
 </head>
 <body style="background-color:#000000;">
 
@@ -92,7 +92,7 @@ function displayImage(){
     <div class="container">
         <legend style="font-size: x-large; font-weight: bold"> Current SmartCard Photo </legend>
         <?php displayImage(); ?>
-        <form action="UploadPhoto.php" method="post" enctype="multipart/form-data">
+        <form action="uploadPhoto.php" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend style="font-size: x-large; font-weight: bold"> Upload SmartCard Photo </legend>
 

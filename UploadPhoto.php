@@ -2,28 +2,39 @@
     require_once("connection.php");//gets the connections.php
     require_once("functions.php");
     $db = getConnection();//returns the connection for the database.
-?>
-<?php
+
     session_start();
     $StudentInfo = getStudentDetails();
+    $student = $StudentInfo['studentID'];//student ID
     $FileErr = '';
 
-    if(isset($_POST['submit'])) {
-        $ID = $_SESSION['sessionStudentID'];
-        $upload_url = "UploadedPhoto/" . $_FILES["myfile"]["name"];
-        if (empty($upload_url)) {
+if(isset($_POST['submit'])){
+    if($_FILES["myfile"]["size"] < 1000000) { //checks size
+        $filename = addslashes($_FILES["myfile"]["name"]); //get the name of the file
+        $data = addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
+        $imgtype = addslashes($_FILES["myfile"]["type"]); //gets the type of the file
+        if (empty($data)) { //checks to see if it is not empty
             $FileErr = "Please choose a photo";
-        } else {
-            $filename = $_FILES["myfile"]["name"];
-            //move file
-            move_uploaded_file($_FILES["myfile"]["tmp_name"], $upload_url);
-            echo $ID;
-
-            $studentDB = $db->query("UPDATE tbl_student
-                                    SET uploadedPhoto = '$upload_url'
-                                    WHERE studentID='$ID'");
+        } else{
+            list(, , $imgtype,) = getimagesize($_FILES['myfile']['tmp_name']); //gets the file type
+            if ($imgtype == 3) // checking image type
+                $ext = "png";   // to use it later in HTTP headers
+            elseif ($imgtype == 2)
+                $ext = "jpeg";
+            elseif ($imgtype == 1)
+                $ext = "gif";
+            else{
+                $FileErr = "Please choose a valid photo type";
+            }
+            //uploads the data
+            $insert = "UPDATE tbl_student SET uploadedPhoto='$data',uploadedPhotoName='$filename',uploadedPhotoType='$ext' WHERE studentID='$student'";
+            $studentDB = $db->query($insert);
         }
     }
+    else{
+        $FileErr = "The image is too large";
+    }
+}
 
 
 ?>
@@ -37,18 +48,50 @@
     <script src="UploadPhotoJS.js"></script>
 </head>
 <body style="background-color:#000000;">
-<h2>Upload SmartCard Photo</h2>
+
+<div class="wrapperBody">
+  <h2>Upload SmartCard Photo</h2>
 
     <a href="mainmenu.php" >
         <center>
-            <img src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
+            <img src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
         </center>
     </a>
+
+<?php
+function displayImage(){
+    $db = getConnection();
+    $student = $_SESSION['sessionStudentID'];
+    $studentquery = "select * from tbl_student where studentID=:student";
+    $studentselect = $db->prepare($studentquery);
+    $studentselect->bindParam('student', $student, PDO::PARAM_STR);
+    $studentselect->execute(array(":student" => $student));
+    $row = $studentselect->fetch(PDO::FETCH_ASSOC);
+    $photo = $row['uploadedPhoto'];
+    if ($photo == null)
+    {
+        //TODO Show placeholder image
+        echo' <div class="imgWrapper">
+          <img src="images/userPlaceholder.png" width="300" height="300" style="align-items: center; border:1px solid #021a40;"/>
+        </div>';
+
+    } else{
+        echo '
+        <div class="imgWrapper">
+          <img src="data:image/jpg;base64,'.base64_encode( $photo ).'" width="300" height="300" style="align-items: center; border:1px solid #021a40;"/>
+        </div>';
+    }
+}
+?>
+
     <br/>
     <h1 style="color:#FFFFFF; text-align: center">Self-enrolment Form</h1>
     <br/>
     <h2 style="color:#FFFFFF">Step 2 _ Please upload a photos of you for your Student ID</h2>
+
     <div class="container">
+        <legend style="font-size: x-large; font-weight: bold"> Current SmartCard Photo </legend>
+        <?php displayImage(); ?>
         <form action="UploadPhoto.php" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend style="font-size: x-large; font-weight: bold"> Upload SmartCard Photo </legend>
@@ -61,6 +104,7 @@
             </fieldset>
         </form>
     </div>
+  </div>
 </body>
 <script>
     function timer() {
@@ -110,6 +154,18 @@
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;
+    }
+
+    .imgWrapper {
+    width: 100%;
+
+    }
+
+    .wrapperBody {
+      overflow: auto;
+      position: relative;
+      text-align: center;
+      zoom: 1;
     }
 
 

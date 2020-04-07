@@ -35,8 +35,7 @@ $CheckPassword = $_POST['CheckPass'];
       }
       else
       {
-          //do something if the password isn't correct
-      }
+        $_SESSION["passFail"] = "Yes";      }
   }
 
     $checkPassword = $_POST['CheckPass'];
@@ -89,9 +88,9 @@ $CheckPassword = $_POST['CheckPass'];
     function validatePassword() {
     var currentPassword,newPassword,confirmPassword,output = true;
 
-    currentPassword = document.frmChange.currentPassword;
-    newPassword = document.frmChange.newPassword;
-    confirmPassword = document.frmChange.confirmPassword;
+    currentPassword = document.passwordForm.OldPass;
+    newPassword = document.passwordForm.NewPass;
+    confirmPassword = document.passwordForm.CheckPass;
 
     if(!currentPassword.value) {
     	currentPassword.focus();
@@ -163,20 +162,35 @@ $CheckPassword = $_POST['CheckPass'];
        </div>
        <div class="modal-body">
 
-       <form class="formPass" method="post">
+       <form id="passChangeForm" class="formPass" method="post" name="passwordForm">
          <div class="formPassWrapper">
          <h5 class="formHeading"></h5>
-           <input type="password" class="formPassInput" id="oldPassInput" name="OldPass" placeholder="Enter your old password" autocomplete="off"/>
+           <input type="password" class="formPassInput" id="oldPassInput" name="OldPass" placeholder="Enter your old password" autocomplete="off" required/>
          </div>
            <div class="formPassWrapper">
            <h5 class="formHeading"></h5h5>
-             <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new password" autocomplete="off"/>
+             <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new password" autocomplete="off" required/>
            </div>
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off"/>
+               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" required/>
              </div>
                  <input name="submitPass" class="submitPass" type="submit" value="Submit"/>
+
+
+                 <form method="post" action="">
+ 						<?php if (isset($_SESSION["passFail"])){?>
+ 							<div class="alert alert-danger" style="padding-left: 100px; margin: 0px 40px 30px 40px;">
+ 								Your current password is incorrect. Please try again!
+ 							</div>
+ 						<?php } ?>
+
+            <script>
+            $("#passChangeForm").submit(function(e) {
+                e.preventDefault();
+            });
+            </script>
+
        </form>
 
 
@@ -235,10 +249,6 @@ $CheckPassword = $_POST['CheckPass'];
        </div>
        </div>
        </div>
-
-
-
-
        </div>
        <script>
        var modal1 = document.getElementById("firstModal");

@@ -21,6 +21,55 @@ else
     <title>WelcomeU Login</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <style>
+    .soundButton
+    {
+        position: relative;
+        background: rgba(26, 26, 26, 0.5);
+        width: 110px;
+        height: 40px;
+        -webkit-appearance: initial;
+        border-radius: 5px;
+        outline: none;
+        font-size: 15px;
+        font-family: sans-serif;
+        font-weight: 700;
+        cursor:pointer;
+    }
+    .soundButton:after
+    {
+        position:absolute;
+        top:5%;
+        display:block;
+        line-height: 35px;
+        width: 42%;
+        height: 90%;
+        box-sizing:border-box;
+        text-align:center;
+        transition: all 0.3s ease-in 0s;
+        color: white;
+        background: rgba(56, 56, 56, 0.8);
+        border-radius:5px;
+    }
+    .soundButton:after
+    {
+        left:2%;
+        content: "OFF";
+    }
+    .soundButton:checked:after
+    {
+        left:56%;
+        content: "ON";
+    }
+
+
+    .soundButton:checked {
+        background: rgba(0, 255, 106, 0.8);
+    }
+
+    .soundButton:not(:checked) {
+        background: rgba(255, 0, 0, 0.8);
+    }
+
 
 </style>
 </head>
@@ -60,14 +109,12 @@ else
     <div class="modal-body">
         <h4 class="formHeading">Enable notification alert sound?</h4>
         <label class="switch"  onchange="setVolume()">
-            <input type="checkbox" id="notificationSwitch" class="formPassInput">
+            <input type="checkbox" id="notificationSwitch" class="soundButton">
          <span class="slider"></span>
         </label>
     </div>
     </div>
     </div>
-
-
   </div>
 
 

@@ -80,6 +80,38 @@ if (isset($_POST['submitReport'])) //when the user submits their message
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet'
           type='text/css'>
     <style>
+
+        .close {
+            color: white;
+            float: right;
+            font-size: 38px;
+            line-height: 15px;
+            font-weight: bold;
+            -webkit-text-stroke-width: 0.3px;
+            -webkit-text-stroke-color: white;
+        }
+
+        .modal-header {
+            padding: 30px 16px;
+            background-color: #474747;
+            color: white;
+        }
+
+        .formReportInput {
+            height: 200px;
+            width: 90%;
+            font-weight:400;
+            border-radius: 6px;
+            line-height:2em;
+            border:none;
+            box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
+            font-size: 20px;
+            font-family: sans-serif;
+            background:#e3e3e3;
+            padding: 15px;
+            color: black;
+        }
+
         @media only screen and (max-width: 600px) {
             .messageBox {
                 margin: 0 auto;
@@ -170,14 +202,14 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         <div id="PopupBoxPage" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close firstClose" id="">&times;</span>
+                    <span class="close" id="" style="padding-bottom: 10px;">&times;</span>
                     <h4>View reports</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="margin-bottom: 120px;">
                     <form class="formPass" method="post">
                         <div class="formPassWrapper">
-                            <h4 class="formHeading">Please select the users ID you wish to report:</h4>
                             <br>
+                            <h4 class="formHeading">Please select the users ID you wish to report:</h4>
                             <select class="formPassInput" id="reportUserID" name="reportUserID">
                                 <?php
                                 //php to select the ID
@@ -195,8 +227,8 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                             </select>
                         </div>
                         <div class="formPassWrapper">
-                            <h4 class="formHeading">Please select your reason for reporting:</h4>
                             <br>
+                            <h4 class="formHeading">Please select your reason for reporting:</h4>
                             <select class="formPassInput" id="reportType" name="reportType">
                                 <!--class="formReportInput"-->
                                 <option value="Spam">Spam</option>
@@ -206,9 +238,12 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                             </select>
                         </div>
                         <div class="formPassWrapper">
+                            <br>
+                            <br>
                             <h4 class="formHeading">Please explain why you are making this report:</h4>
+                            <br>
                             <textarea id="reportComment" class="formReportInput" name="reportComment"
-                                      placeholder="Please comment here:" rows="10" cols="140"></textarea>
+                                      placeholder="Please comment here:" rows="10" cols="140" contentEditable=true data-text="Enter text here"></textarea>
                         </div>
                         <br>
                         <input class="adminButtons" name="submitReport" type="submit" value="Submit"/>

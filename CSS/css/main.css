@@ -316,6 +316,7 @@ iframe {
 
 #timestamp{
   float: right;
+  margin-top: 5px;
 }
 
 .messageRecord {

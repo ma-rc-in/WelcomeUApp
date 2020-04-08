@@ -14,7 +14,18 @@ if(isset($_POST['submit'])){
         $data = addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
         $imgtype = addslashes($_FILES["myfile"]["type"]); //gets the type of the file
         if (empty($data)) { //checks to see if it is not empty
-            $FileErr = "Please choose a photo";
+            $studentquery = "select * from tbl_student where studentID=:student";
+            $studentselect = $db->prepare($studentquery);
+            $studentselect->bindParam('student', $student, PDO::PARAM_STR);
+            $studentselect->execute(array(":student" => $student));
+            $row = $studentselect->fetch(PDO::FETCH_ASSOC);
+            $photo = $row['uploadedPhoto'];
+            if($photo != null){
+                header('location:selfEnrolmentCompleted.php');
+            }
+            else {
+                $FileErr = "Please choose a photo";
+            }
         } else{
             list(, , $imgtype,) = getimagesize($_FILES['myfile']['tmp_name']); //gets the file type
             if ($imgtype == 3) // checking image type
@@ -36,8 +47,6 @@ if(isset($_POST['submit'])){
         $FileErr = "The image is too large";
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -71,14 +80,12 @@ function displayImage(){
     $photo = $row['uploadedPhoto'];
     if ($photo == null)
     {
-        //TODO Show placeholder image
         echo' <div class="imgWrapper">
           <img src="images/userPlaceholder.png" width="300" height="300" style="align-items: center; border:1px solid #021a40;"/>
         </div>';
-
     } else{
         echo '
-        <div class="imgWrapper">
+        <div class="imgWrapper" id="uploadedImage">
           <img src="data:image/jpg;base64,'.base64_encode( $photo ).'" width="300" height="300" style="align-items: center; border:1px solid #021a40;"/>
         </div>';
     }

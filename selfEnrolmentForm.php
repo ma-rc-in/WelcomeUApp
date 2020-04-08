@@ -11,9 +11,19 @@
     $PersonalEmail = "";
     $UKMobile = "";
     $UkMobileErr = "";
+    $EmergencyPerson = "";
+
     if(isset($_POST['submit'])) {
-        $ID = $_SESSION['sessionStudentID'];
-        //Email Validation
+
+    $ID = $_SESSION['sessionStudentID'];
+        $EmergencyPerson = $_POST['emergencyPerson'];
+        $EmergencyRelationship = $_POST['emergencyRelationship'];
+        $EmergencyContact = $_POST['emergencyContact'];
+        $db->query("UPDATE tbl_student 
+                        SET emergencyPerson='$EmergencyPerson', emergencyRelationship='$EmergencyRelationship',
+                        emergencyContact='$EmergencyContact'
+                        WHERE studentID='$ID'");
+    //Email Validation
         $_POST['personalEmail'] = filter_var($_POST['personalEmail'], FILTER_SANITIZE_EMAIL);
         if (filter_var($_POST['personalEmail'] , FILTER_VALIDATE_EMAIL)) {
             $PersonalEmail = $_POST['personalEmail'];
@@ -23,10 +33,10 @@
             $EmailErr = "**Invalid Email Address!";
         }
         //ukMobile input validation
-        $phoneLength = strlen((string)$_POST['ukMobile']);
+        $phoneLength = $_POST['ukMobile'];
         //$pattern = "/^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/";
         //$match = preg_match($pattern,$_POST['ukMobile']);
-        if ($phoneLength < 10 || $phoneLength > 11) {
+        if (strlen($phoneLength) < 10 || strlen($phoneLength) > 11) {
             // We have an invalid phone number
             $validUkMobile = false;
             $UkMobileErr = "**Invalid phone number";
@@ -38,7 +48,7 @@
         }
 
         // if all user input are valid
-        if($validEmail && $validUkMobile = true) {
+        if($validEmail == true && $validUkMobile == true) {
             $db->query("UPDATE tbl_student 
                         SET personalEmail='$PersonalEmail', ukMobile='$UKMobile'
                         WHERE studentID='$ID'");
@@ -90,11 +100,27 @@
                     <p class="errorTxt"><?php echo $EmailErr; ?></p>
                 <br /><br />
                     <label for "ukMobile">UK Mobile No.:</label>
-                    <input type = "number" name = "ukMobile" value="<?php echo '+44',$StudentInfo['ukMobile'];?>" required>
+                    <input type = "number" name = "ukMobile" value="+44 <?php echo $StudentInfo['ukMobile'];?>" required>
                     <p class="errorTxt"><?php echo $UkMobileErr; ?></p>
                 <br /><br />
-                    <input type="submit" name="submit" value="Save & Next"/>
                 </fieldset>
+                <br />
+                <fieldset>
+                    <legend style="font-size: x-large; font-weight: bold"> Emergency Contact Details </legend>
+                    <label for "emergencyPerson">Emergency Contact Person: </label>
+                    <input type = "text" name = "emergencyPerson" value="<?php echo $StudentInfo['emergencyPerson'];?>" required>
+                    <br /><br />
+                    <label for "emergencyRelationship">Relationship: </label>
+                    <select id="country" name="emergencyRelationship" value="<?php echo $StudentInfo['emergencyRelationship'];?>" required>
+                        <option value="Parents">Parents</option>
+                        <option value="Guardian">Guardian</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <br /><br />
+                    <label for "ukMobile">Contact No.:</label>
+                    <input type = "number" name = "emergencyContact" value="<?php echo $StudentInfo['emergencyContact'];?>" required>
+                </fieldset>
+                <input type="submit" name="submit" value="Save & Next"/>
 
 
             </form>

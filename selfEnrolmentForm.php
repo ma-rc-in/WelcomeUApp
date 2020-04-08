@@ -22,6 +22,7 @@
             $validEmail = true;
            // header('location:uploadPhoto.php');
         } else {
+            $validEmail = false;
             $EmailErr = "**Invalid Email Address!";
             return;
         }
@@ -37,6 +38,7 @@
             $validUkMobile = true;
         } else {
             // We have an invalid phone number
+            $validUkMobile = false;
             $UkMobileErr = "**Invalid phone number";
             return;
         }
@@ -46,7 +48,6 @@
             $db->query("UPDATE tbl_student 
                         SET personalEmail='$PersonalEmail', ukMobile='$UKMobile'
                         WHERE studentID='$ID'");
-            $validUkMobile = true;
             header('location:uploadPhoto.php');
         }
     }

@@ -6,21 +6,49 @@
 <?php
     session_start();
     $StudentInfo = getStudentDetails();
-  //  echo $StudentInfo['firstName'];
+
     $EmailErr = "";
     $personalEmail = "";
+    $UkMobileErr = "";
     if(isset($_POST['submit'])) {
         $ID = $_SESSION['sessionStudentID'];
-        //$PersonalEmail = $_POST['personalEmail'];
+        //Email Validation
         $_POST['personalEmail'] = filter_var($_POST['personalEmail'], FILTER_SANITIZE_EMAIL);
         if (filter_var($_POST['personalEmail'] , FILTER_VALIDATE_EMAIL)) {
             $PersonalEmail = $_POST['personalEmail'];
-            $db->query("UPDATE tbl_student SET personalEmail='$PersonalEmail'WHERE studentID='$ID'");
-            header('location:uploadPhoto.php');
+            /*$db->query("UPDATE tbl_student
+                        SET personalEmail='$PersonalEmail'
+                        WHERE studentID='$ID'");*/
+            $validEmail = true;
+           // header('location:uploadPhoto.php');
         } else {
             $EmailErr = "**Invalid Email Address!";
+            return;
+        }
+        //ukMobile input validation
+        $pattern = "/^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/";
+        $match = preg_match($pattern,$_POST['ukMobile']);
+        if ($match != false) {
+            // We have a valid phone number
+            $UKMobile = $_POST['ukMobile'];
+            /*$db->query("UPDATE tbl_student
+                        SET ukMobile='$UKMobile'
+                        WHERE studentID='$ID'");*/
+            $validUkMobile = true;
+        } else {
+            // We have an invalid phone number
+            $UkMobileErr = "**Invalid phone number";
+            return;
         }
 
+        // if all user input are valid
+        if($validEmail && $validUkMobile = true) {
+            $db->query("UPDATE tbl_student 
+                        SET personalEmail='$PersonalEmail', ukMobile='$UKMobile'
+                        WHERE studentID='$ID'");
+            $validUkMobile = true;
+            header('location:uploadPhoto.php');
+        }
     }
 ?>
 
@@ -65,6 +93,10 @@
                     <label for "personalEmail">Personal Email Address:</label>
                     <input type = "text" name = "personalEmail" value="<?php echo $StudentInfo['personalEmail'];?>" required>
                     <p class="errorTxt"><?php echo $EmailErr; ?></p>
+                <br /><br />
+                    <label for "ukMobile">UK Mobile No.:</label>
+                    <input type = "text" name = "ukMobile" value="<?php echo $StudentInfo['ukMobile'];?>" required>
+                    <p class="errorTxt"><?php echo $UkMobileErr; ?></p>
                 <br /><br />
                     <input formaction="selfEnrolmentForm.php" type="submit" name="submit" value="Save & Next"/>
                 </fieldset>

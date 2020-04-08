@@ -8,7 +8,8 @@
     $StudentInfo = getStudentDetails();
 
     $EmailErr = "";
-    $personalEmail = "";
+    $PersonalEmail = "";
+    $UKMobile = "";
     $UkMobileErr = "";
     if(isset($_POST['submit'])) {
         $ID = $_SESSION['sessionStudentID'];
@@ -16,31 +17,24 @@
         $_POST['personalEmail'] = filter_var($_POST['personalEmail'], FILTER_SANITIZE_EMAIL);
         if (filter_var($_POST['personalEmail'] , FILTER_VALIDATE_EMAIL)) {
             $PersonalEmail = $_POST['personalEmail'];
-            /*$db->query("UPDATE tbl_student
-                        SET personalEmail='$PersonalEmail'
-                        WHERE studentID='$ID'");*/
             $validEmail = true;
-           // header('location:uploadPhoto.php');
         } else {
             $validEmail = false;
             $EmailErr = "**Invalid Email Address!";
-            return;
         }
         //ukMobile input validation
-        $pattern = "/^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/";
-        $match = preg_match($pattern,$_POST['ukMobile']);
-        if ($match != false) {
-            // We have a valid phone number
-            $UKMobile = $_POST['ukMobile'];
-            /*$db->query("UPDATE tbl_student
-                        SET ukMobile='$UKMobile'
-                        WHERE studentID='$ID'");*/
-            $validUkMobile = true;
-        } else {
+        $phoneLength = strlen((string)$_POST['ukMobile']);
+        //$pattern = "/^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/";
+        //$match = preg_match($pattern,$_POST['ukMobile']);
+        if ($phoneLength < 10 || $phoneLength > 11) {
             // We have an invalid phone number
             $validUkMobile = false;
             $UkMobileErr = "**Invalid phone number";
-            return;
+
+        } else {
+            // We have a valid phone number
+            $UKMobile = $_POST['ukMobile'];
+            $validUkMobile = true;
         }
 
         // if all user input are valid
@@ -63,7 +57,7 @@
     <body style="background-color:#000000;">
         <a href="mainmenu.php" >
            <center>
-               <img src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
+               <img src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
            </center>
         </a>
         <br/>
@@ -96,10 +90,10 @@
                     <p class="errorTxt"><?php echo $EmailErr; ?></p>
                 <br /><br />
                     <label for "ukMobile">UK Mobile No.:</label>
-                    <input type = "text" name = "ukMobile" value="<?php echo $StudentInfo['ukMobile'];?>" required>
+                    <input type = "number" name = "ukMobile" value="<?php echo '+44',$StudentInfo['ukMobile'];?>" required>
                     <p class="errorTxt"><?php echo $UkMobileErr; ?></p>
                 <br /><br />
-                    <input formaction="selfEnrolmentForm.php" type="submit" name="submit" value="Save & Next"/>
+                    <input type="submit" name="submit" value="Save & Next"/>
                 </fieldset>
 
 
@@ -119,6 +113,14 @@
     }
 
     input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    input[type=number] {
         width: 100%;
         padding: 12px;
         border: 1px solid #ccc;

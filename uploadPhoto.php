@@ -29,6 +29,7 @@ if(isset($_POST['submit'])){
             //uploads the data
             $insert = "UPDATE tbl_student SET uploadedPhoto='$data',uploadedPhotoName='$filename',uploadedPhotoType='$ext' WHERE studentID='$student'";
             $studentDB = $db->query($insert);
+            header('location:selfEnrolmentCompleted.php');
         }
     }
     else{

@@ -209,6 +209,11 @@
     padding: 10px 80px;
   }
 
+  .submitPass[disabled=disabled], .submitPass:disabled {
+    background: red;
+    padding: 10px 80px;
+  }
+
 
   @media only screen and (max-width: 900px) {
     h2 {

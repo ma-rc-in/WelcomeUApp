@@ -80,17 +80,20 @@ $CheckPassword = $_POST['CheckPass'];
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+
     <title>WelcomeU Login</title>
     <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
     <script>
     function validatePassword() {
     var currentPassword,newPassword,confirmPassword,output = true;
 
-    currentPassword = document.passwordForm.OldPass;
-    newPassword = document.passwordForm.NewPass;
-    confirmPassword = document.passwordForm.CheckPass;
+    currentPassword = document.passChangeForm.OldPass;
+    newPassword = document.passChangeForm.NewPass;
+    confirmPassword = document.passChangeForm.CheckPass;
 
     if(!currentPassword.value) {
     	currentPassword.focus();
@@ -117,6 +120,35 @@ $CheckPassword = $_POST['CheckPass'];
     return output;
     }
     </script>
+    <script>
+    function checkForPassword() {
+  var password = $("#newPassInput").val();
+  var confirmPassword = $("#repeatPassInput").val();
+  var button = $('#submitButtonForPass');
+
+  if (password != confirmPassword)
+    $("#error").html("Passwords are not the same!!!");
+  else
+  $("#error").html("Passwords match, you can now submit it.");
+
+  if (password == confirmPassword)
+  $(button).removeAttr('disabled');
+  $("#error").html("");
+}
+
+$(document).ready(function() {
+  $("#repeatPassInput").keyup(checkForPassword);
+  $("#disabledText").text("Please fill in the form to be able to submit your new password");
+
+  $('#firstModal').on('hidden', function () {
+   $('#passChangeForm').find('input[type="password"]').val('');
+});
+});
+
+</script>
+
+
+
     <style>
       </style>
       </head>
@@ -173,23 +205,12 @@ $CheckPassword = $_POST['CheckPass'];
            </div>
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" required/>
+               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" onChange="checkForPassword();"  required/>
              </div>
-                 <input name="submitPass" class="submitPass" type="submit" value="Submit"/>
-
-
-                 <form method="post" action="">
- 						<?php if (isset($_SESSION["passFail"])){?>
- 							<div class="alert alert-danger" style="padding-left: 100px; margin: 0px 40px 30px 40px;">
- 								Your current password is incorrect. Please try again!
- 							</div>
- 						<?php } ?>
-
-            <script>
-            $("#passChangeForm").submit(function(e) {
-                e.preventDefault();
-            });
-            </script>
+                 <button id="submitButtonForPass" name="submitPass" class="submitPass" type="submit" disabled>Submit</button>
+                 <br>
+                 <div id="error"/>
+                 <div id="disabledText"/>
 
        </form>
 
@@ -208,7 +229,7 @@ $CheckPassword = $_POST['CheckPass'];
 
       <div class="deleteNote">
         <h4> WARNING</h4>
-        You are about to delete all data related to your account, so you will no longer be able to use this application.<br>If so, please enter your current password below and click on "submit".
+        You are about to delete all data related to your account, so you will no longer be able to use this application.<br>If you want to continue, please enter your current password below and click on "submit".
       </div>
 
        <form class="formPass" method="post">

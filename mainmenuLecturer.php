@@ -256,7 +256,7 @@ Media Queries
     </div>
 
      <div class="patch-item patch-button">
-        <a href="annoucements.php">
+        <a href="announcementsLecture.php">
             <img class="test" src="images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
             <h5 class="textIcons">Annoucements</h5>
         </a>

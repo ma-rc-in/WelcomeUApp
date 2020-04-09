@@ -1,7 +1,6 @@
 <?php
 require_once('connection.php');//gets the connections.php
 require_once("functions.php");
-require_once("groupChatFunctions.php");
 $db = getConnection();//returns the connection for the database.
 
 
@@ -67,7 +66,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WelcomeU Group Chat</title>
+    <title>WelcomeU Announcements</title>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -80,38 +79,6 @@ if (isset($_POST['submitReport'])) //when the user submits their message
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet'
           type='text/css'>
     <style>
-
-        .close {
-            color: white;
-            float: right;
-            font-size: 38px;
-            line-height: 15px;
-            font-weight: bold;
-            -webkit-text-stroke-width: 0.3px;
-            -webkit-text-stroke-color: white;
-        }
-
-        .modal-header {
-            padding: 30px 16px;
-            background-color: #474747;
-            color: white;
-        }
-
-        .formReportInput {
-            height: 200px;
-            width: 90%;
-            font-weight:400;
-            border-radius: 6px;
-            line-height:2em;
-            border:none;
-            box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
-            font-size: 20px;
-            font-family: sans-serif;
-            background:#e3e3e3;
-            padding: 15px;
-            color: black;
-        }
-
         @media only screen and (max-width: 600px) {
             .messageBox {
                 margin: 0 auto;
@@ -138,8 +105,8 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         }
     </style>
 
-
-    <!--AJAX Script-->
+<!--
+    AJAX Script
     <script>
 
         //loads all the data when the form loads
@@ -154,7 +121,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                 alertFunction();
             }, 3000);
         });
-    </script>
+    </script>-->
 
 </head>
 <body>
@@ -169,10 +136,10 @@ if (isset($_POST['submitReport'])) //when the user submits their message
             </div>
         </div>
 
-        <div class="container-chat">
+        <div class="container-box">
             <div class="wrappedChat p-l-55 p-r-55 p-b-50" style="padding-top: 10px;">
 
-                <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "><?php echo $courseName . " - Group Chat"; ?> </h1>
+                <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "> </h1>
 
                 <!-- Messages will be placed here -->
                 <div class="messageBox" id="messageBox"
@@ -180,6 +147,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                 </div>
             </div>
 
+<!--
             <div class="login100-form validate-form">
           <span class="chatHeading p-b-33">
             <h3 class="messageChat">Your message:</h3>
@@ -195,21 +163,22 @@ if (isset($_POST['submitReport'])) //when the user submits their message
               </form>
             </div>
         </div>
+-->
         <!--PopupBoxPage reportButton close-->
         <!--JavaScript for report function-->
         <!--Pop Up Box HTML-->
 
-        <div id="PopupBoxPage" class="modal">
+        <!--<div id="PopupBoxPage" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close" id="" style="padding-bottom: 10px;">&times;</span>
+                    <span class="close firstClose" id="">&times;</span>
                     <h4>View reports</h4>
                 </div>
-                <div class="modal-body" style="margin-bottom: 120px;">
+                <div class="modal-body">
                     <form class="formPass" method="post">
                         <div class="formPassWrapper">
-                            <br>
                             <h4 class="formHeading">Please select the users ID you wish to report:</h4>
+                            <br>
                             <select class="formPassInput" id="reportUserID" name="reportUserID">
                                 <?php
                                 //php to select the ID
@@ -226,31 +195,11 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                                 ?>
                             </select>
                         </div>
-                        <div class="formPassWrapper">
-                            <br>
-                            <h4 class="formHeading">Please select your reason for reporting:</h4>
-                            <select class="formPassInput" id="reportType" name="reportType">
-                                <!--class="formReportInput"-->
-                                <option value="Spam">Spam</option>
-                                <option value="Abuse">Abusive Language/Content</option>
-                                <option value="Violence">Inciting Violence</option>
-                                <option value="Other">Other (Please Comment Below)</option>
-                            </select>
-                        </div>
-                        <div class="formPassWrapper">
-                            <br>
-                            <br>
-                            <h4 class="formHeading">Please explain why you are making this report:</h4>
-                            <br>
-                            <textarea id="reportComment" class="formReportInput" name="reportComment"
-                                      placeholder="Please comment here:" rows="10" cols="140" contentEditable=true data-text="Enter text here"></textarea>
-                        </div>
-                        <br>
                         <input class="adminButtons" name="submitReport" type="submit" value="Submit"/>
                     </form>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 </div>
@@ -271,7 +220,5 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         }
     }
 </script>
-
-</div>
 </body>
 </html>

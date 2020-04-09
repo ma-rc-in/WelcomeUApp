@@ -14,15 +14,12 @@ if(isset($_SESSION['sessionStudentID'])) {
     $password = $students['password'];
     $pin = $students['PIN'];
     $message = "";
-
 }
   else
   {header('Location:loginform.php');}  //return user to login
-
 $newPassword = $_POST['NewPass'];
 $oldPassword = $_POST['OldPass'];
 $CheckPassword = $_POST['CheckPass'];
-
   if (isset($_POST['submitPass'])) { //submitPass (count($_POST) > 0)
       if (password_verify($oldPassword, $password)) {
           if ($newPassword == $CheckPassword) {
@@ -31,13 +28,13 @@ $CheckPassword = $_POST['CheckPass'];
               $message = "Password Changed";
               //display if the password is correct
           } else
-              $message = "Current Password is not correct";
+              $message = "Something went wrong. Please try again.";
       }
       else
       {
-        $_SESSION["passFail"] = "Yes";      }
+      $message = "Current password is wrong! Please try again!";
+       }
   }
-
     $checkPassword = $_POST['CheckPass'];
     if (isset($_POST['submitDelete'])) {
         if (password_verify($checkPassword, $password)) {
@@ -45,11 +42,11 @@ $CheckPassword = $_POST['CheckPass'];
             $db->query("DELETE from tbl_groupChat where senderStudentID='$student'");
             //$db->query("DELETE from tbl_selfEnrolment where senderStudentID='$student'"); //will need to update senderStudentID
             logout();
+            $message = "Your account has been delete. Good bye! :)";
         } else {
-            //do something if the password is incorrect.
+          $message = "Your current password is wrong. Plese try again.";
         }
     }
-
   $newPin = $_POST['NewPin'];
   $checkPin = $_POST['CheckPin'];
     if(isset($_POST['submitPin'])) {
@@ -62,16 +59,11 @@ $CheckPassword = $_POST['CheckPass'];
                 $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
                 $message = "Pin is now set.";
             } else {
-                //do something if the password isn't correct
+              $message = "Something went wrong. Plese try again.";
             }
         }
   }
-
-
   ?> -->
-
-
-
 
   <!DOCTYPE html>
   <html lang="en">
@@ -87,39 +79,8 @@ $CheckPassword = $_POST['CheckPass'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
-    <script>
-    function validatePassword() {
-    var currentPassword,newPassword,confirmPassword,output = true;
 
-    currentPassword = document.passChangeForm.OldPass;
-    newPassword = document.passChangeForm.NewPass;
-    confirmPassword = document.passChangeForm.CheckPass;
 
-    if(!currentPassword.value) {
-    	currentPassword.focus();
-    	document.getElementById("currentPassword").innerHTML = "required";
-    	output = false;
-    }
-    else if(!newPassword.value) {
-    	newPassword.focus();
-    	document.getElementById("newPassword").innerHTML = "required";
-    	output = false;
-    }
-    else if(!confirmPassword.value) {
-    	confirmPassword.focus();
-    	document.getElementById("confirmPassword").innerHTML = "required";
-    	output = false;
-    }
-    if(newPassword.value != confirmPassword.value) {
-    	newPassword.value="";
-    	confirmPassword.value="";
-    	newPassword.focus();
-    	document.getElementById("confirmPassword").innerHTML = "not same";
-    	output = false;
-    }
-    return output;
-    }
-    </script>
     <script>
     function checkForPassword() {
   var password = $("#newPassInput").val();
@@ -133,7 +94,7 @@ $CheckPassword = $_POST['CheckPass'];
 
   if (password == confirmPassword)
   $(button).removeAttr('disabled');
-  $("#error").html("");
+  //$("#error").html("");
 }
 
 $(document).ready(function() {
@@ -141,16 +102,72 @@ $(document).ready(function() {
   $("#disabledText").text("Please fill in the form to be able to submit your new password");
 
   $('#firstModal').on('hidden', function () {
-   $('#passChangeForm').find('input[type="password"]').val('');
+  //$('#passChangeForm').find('input[type="password"]').val('');
 });
 });
 
 </script>
+<style>
 
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
 
+.popup {
+  margin: 200px auto;
+  padding: 20px;
+  background: rgba(87, 87, 87, 1);
+  color: white;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
 
-    <style>
-      </style>
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 38px;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: white;
+  color: white;
+}
+.popup .close:hover {
+  color: #b8b8b8;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+</style>
       </head>
       <body>
        <div class="patch-container">
@@ -186,6 +203,15 @@ $(document).ready(function() {
        <a href="#" id="thirdBtn" class="button" data-abbr=" PIN">Set</a>
        </div>
 
+       <div id="errorMessage" class="overlay">
+        <div class="popup">
+          <a class="close" href="#" style="line-height: 1px;">&times;</a>
+          <div class="content" style="margin-top: 20px;">
+            <?php echo $message;?>
+          </div>
+        </div>
+       </div>
+
        <div id="firstModal" class="modal">
        <div class="modal-content">
        <div class="modal-header">
@@ -194,27 +220,22 @@ $(document).ready(function() {
        </div>
        <div class="modal-body">
 
-       <form id="passChangeForm" class="formPass" method="post" name="passwordForm">
+       <form id="passChangeForm" class="formPass" method="post" name="passwordForm" >
          <div class="formPassWrapper">
          <h5 class="formHeading"></h5>
            <input type="password" class="formPassInput" id="oldPassInput" name="OldPass" placeholder="Enter your old password" autocomplete="off" required/>
          </div>
            <div class="formPassWrapper">
-           <h5 class="formHeading"></h5h5>
+           <h5 class="formHeading"></h5>
              <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new password" autocomplete="off" required/>
            </div>
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" onChange="checkForPassword();"  required/>
+               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" onChange="checkForPassword();" required/>
              </div>
-                 <button id="submitButtonForPass" name="submitPass" class="submitPass" type="submit" disabled>Submit</button>
-                 <br>
-                 <div id="error"/>
-                 <div id="disabledText"/>
+                 <button onclick="window.location.href='#errorMessage'" id="submitButtonForPass" name="submitPass" class="submitPass" type="submit" disabled>Submit</button><br/><span id="error"/><br/><span id="disabledText"/><br><span id="currentPassCheck"/>
 
        </form>
-
-
        </div>
        </div>
        </div>
@@ -237,14 +258,11 @@ $(document).ready(function() {
              <h5 class="formHeading"></h5>
                <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
              </div>
-                 <input name="submitDelete" class="submitPass" type="submit" value="Submit"/>
+                 <input onclick="window.location.href='#errorMessage'" name="submitDelete" class="submitPass" type="submit" value="Submit"/>
        </form>
-
-
        </div>
        </div>
        </div>
-
 
        <div id="thirdModal" class="modal">
        <div class="modal-content">

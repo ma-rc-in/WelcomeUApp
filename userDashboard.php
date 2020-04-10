@@ -41,13 +41,15 @@ $CheckPassword = $_POST['CheckPass'];
             $db->query("DELETE from tbl_student where studentID='$student'");
             $db->query("DELETE from tbl_groupChat where senderStudentID='$student'");
             //$db->query("DELETE from tbl_selfEnrolment where senderStudentID='$student'"); //will need to update senderStudentID
-            $message = "Your account has been deleted. Good bye! :)";
-            sleep(3);
+            sleep(1);
             logout();
+          }
+          $message = "Your current password is wrong. Plese try again!";
+
         } else {
           $message = "Your current password is wrong. Plese try again!";
         }
-    }
+
   $newPin = $_POST['NewPin'];
   $checkPin = $_POST['CheckPin'];
     if(isset($_POST['submitPin'])) {
@@ -220,7 +222,7 @@ $(document).ready(function() {
        <div class="modal-content">
        <div class="modal-header">
        <span class="close firstClose" id="">&times;</span>
-       <h4>Change Password</h4>
+       <h3>Change Password</h3>
        </div>
        <div class="modal-body">
 
@@ -248,7 +250,7 @@ $(document).ready(function() {
        <div class="modal-content">
        <div class="modal-header">
        <span class="close secondClose" id="">&times;</span>
-       <h4>Delete Account</h4>
+       <h3>Delete Account</h3>
        </div>
        <div class="modal-body">
 
@@ -263,9 +265,6 @@ $(document).ready(function() {
                <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
              </div>
                  <button onclick="window.location.href='#errorMessage'" name="submitDelete" class="submitPass" type="submit">Submit</button>
-                 <div class="content" style="margin-top: 20px;">
-                   <?php echo $message;?>
-                 </div>
        </form>
        </div>
        </div>
@@ -275,13 +274,13 @@ $(document).ready(function() {
        <div class="modal-content">
        <div class="modal-header">
        <span class="close thirdClose" id="">&times;</span>
-       <h4>Set PIN</h4>
+       <h3>Set PIN</h3>
        </div>
        <div class="modal-body">
 
        <form class="formPass" method="post">
            <div class="formPassWrapper">
-           <h5 class="formHeading"></h5h5>
+           <h5 class="formHeading"></h5>
              <input type="password" class="formPassInput" id="newPassInput" name="NewPin" placeholder="Enter your new PIN" autocomplete="off"/>
            </div>
              <div class="formPassWrapper">

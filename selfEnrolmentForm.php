@@ -62,9 +62,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Self-enrolment</title>
     </head>
     <body style="background-color:#000000;">
+
         <a href="mainmenu.php" >
            <center>
                <img src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
@@ -77,7 +79,7 @@
 
 
         <h2 style="color:#FFFFFF">Step 1 _ Please fill in the details</h2>
-        <div class="container">
+        <div class="formContainer">
             <form action="selfEnrolmentForm.php" method="POST">
                 <fieldset>
                 <legend style="font-size: x-large; font-weight: bold"> Personal Details </legend>
@@ -100,7 +102,7 @@
                     <p class="errorTxt"><?php echo $EmailErr; ?></p>
                 <br /><br />
                     <label for "ukMobile">UK Mobile No.:</label>
-                    <input type = "number" name = "ukMobile" value="+44 <?php echo $StudentInfo['ukMobile'];?>" required>
+                    <p>Please continue after +44 XXXX XXXXXX</p><input type = "number" name = "ukMobile" value="<?php echo $StudentInfo['ukMobile'];?>" required>
                     <p class="errorTxt"><?php echo $UkMobileErr; ?></p>
                 <br /><br />
                 </fieldset>
@@ -120,8 +122,9 @@
                     <label for "ukMobile">Contact No.:</label>
                     <input type = "number" name = "emergencyContact" value="<?php echo $StudentInfo['emergencyContact'];?>" required>
                 </fieldset>
+                <br />
                 <input type="submit" name="submit" value="Save & Next"/>
-
+                <br /><br />
 
             </form>
         </div>
@@ -174,23 +177,13 @@
         background-color: #45a049;
     }
 
-    .container {
+    .formContainer {
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;
     }
 
-    .col-25 {
-        float: left;
-        width: 25%;
-        margin-top: 6px;
-    }
 
-    .col-75 {
-        float: left;
-        width: 75%;
-        margin-top: 6px;
-    }
 
     /* Clear floats after the columns */
     .row:after {
@@ -206,28 +199,6 @@
             margin-top: 0;
         }
     }
-    #containerWrapper {
-        place-content: center;
-    }
-    #container{
-        border-radius: 25px;
-        background: #FFFFFF;
-        border: 3px solid #000000;
-        //padding: 20px;
-       // width: 600px;
-        height: 60%;
-        margin: auto;
-        width: 60%;
-    }
-    .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto;
-    }
-    .grid-item {
-        grid-column: 1 / 3;
-    }
-    .grid-item2 {
-        grid-column: 2 / 5;
-    }
+
 
 </style>

@@ -27,7 +27,7 @@ else
 html, body {
 
   background-color: black;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', Arial, sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
 
 

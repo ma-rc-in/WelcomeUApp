@@ -172,7 +172,7 @@ if(isset($_POST['submitAccessChange'])){
        </div>
        <div class="modal-body">
 
-    <table id="reports">
+    <table class="reports">
     <tr>
        <th>Report Type</th>
        <th>Reported Student</th>
@@ -180,7 +180,7 @@ if(isset($_POST['submitAccessChange'])){
        <th>Reporter ID</th>
     </tr>
    </table>
-   <table id="formReports">
+   <table class="reports">
        <form action="userDashboardAdmin.php" method="post">
                <?php
                $reportquery = "select * from tbl_report";
@@ -198,8 +198,8 @@ if(isset($_POST['submitAccessChange'])){
                        echo '<td>'.$reported.'</td>';
                        echo '<td>'.$comment.'</td>';
                        echo '<td>'.$reporter.'</td><br>';
-                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'">Dismiss</button><br>';
-                       echo '<button class="adminButtons" type="submit" name="suspendButton" id="suspendButton" value="'.$reported.'">Suspend</button></td>';
+                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'"> Dismiss </button></td><br>';
+                       echo '<td><button class="adminButtons" type="submit" name="suspendButton" id="suspendButton" value="'.$reported.'">Suspend</button></td>';
                    echo '</tr>'; } ?>
        </form>
 </table>

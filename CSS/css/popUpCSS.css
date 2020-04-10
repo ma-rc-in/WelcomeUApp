@@ -189,10 +189,9 @@
     padding: 8px;
   }
 
-  #formReports {
+  .formReports {
     border-collapse: collapse;
     width: 90%;
-
   }
 
 

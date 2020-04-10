@@ -25,10 +25,10 @@ $CheckPassword = $_POST['CheckPass'];
           if ($newPassword == $CheckPassword) {
               $hashed_password = password_hash($newPassword, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
               $db->query("UPDATE tbl_student SET password='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-              $message = "Password Changed";
+              $message = "Password has been changed successfully!";
               //display if the password is correct
           } else
-              $message = "Something went wrong. Please try again.";
+              $message = "Something went wrong. Please try again!";
       }
       else
       {
@@ -41,10 +41,11 @@ $CheckPassword = $_POST['CheckPass'];
             $db->query("DELETE from tbl_student where studentID='$student'");
             $db->query("DELETE from tbl_groupChat where senderStudentID='$student'");
             //$db->query("DELETE from tbl_selfEnrolment where senderStudentID='$student'"); //will need to update senderStudentID
+            $message = "Your account has been deleted. Good bye! :)";
+            sleep(3);
             logout();
-            $message = "Your account has been delete. Good bye! :)";
         } else {
-          $message = "Your current password is wrong. Plese try again.";
+          $message = "Your current password is wrong. Plese try again!";
         }
     }
   $newPin = $_POST['NewPin'];
@@ -52,14 +53,17 @@ $CheckPassword = $_POST['CheckPass'];
     if(isset($_POST['submitPin'])) {
         if (strlen($newPin) > 4 || is_numeric($newPin) == false) { //if more than 4 characters
             //display when there is more than numbers or the user is not entering a number
-        } else {
+            $message = "Something went wrong. Please try again!";
+
+        } else
+         {
             // if (pin_change($oldPassword, $password)) {
             if ($newPin == $checkPin) {
                 $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
                 $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-                $message = "Pin is now set.";
+                $message = "Pin has been set!";
             } else {
-              $message = "Something went wrong. Plese try again.";
+              $message = "Something went wrong. Plese try again!";
             }
         }
   }
@@ -258,7 +262,10 @@ $(document).ready(function() {
              <h5 class="formHeading"></h5>
                <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
              </div>
-                 <input onclick="window.location.href='#errorMessage'" name="submitDelete" class="submitPass" type="submit" value="Submit"/>
+                 <button onclick="window.location.href='#errorMessage'" name="submitDelete" class="submitPass" type="submit">Submit</button>
+                 <div class="content" style="margin-top: 20px;">
+                   <?php echo $message;?>
+                 </div>
        </form>
        </div>
        </div>
@@ -281,7 +288,7 @@ $(document).ready(function() {
              <h5 class="formHeading"></h5>
                <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPin" placeholder="Repeat your new PIN" autocomplete="off"/>
              </div>
-                 <input name="submitPin" class="submitPass" type="submit" value="Submit"/>
+                 <button onclick="window.location.href='#errorMessage'" name="submitPin" class="submitPass" type="submit">Submit</button>
        </form>
 
 

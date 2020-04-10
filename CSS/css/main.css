@@ -6,7 +6,7 @@
 [ FONT ]*/
 
 @font-face {
-  font-family: OpenSans-Regular;
+  font-family: 'Open Sans', Arial, sans-serif;
   src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
 }
 

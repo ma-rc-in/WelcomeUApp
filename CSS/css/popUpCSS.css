@@ -2,7 +2,7 @@
     html, body {
 
       background-color: black;
-      font-family: 'Open Sans';
+      font-family: 'Open Sans', Arial, sans-serif;
       -webkit-font-smoothing: subpixel-antialiased;
     }
 
@@ -180,18 +180,21 @@
   }
 
   #reports {
-      border: 1px solid #CCC;
-      border-collapse: collapse;
-      margin-top: 15px;
-      margin-bottom: 15px;
+    border-collapse: collapse;
+    width: 100%;
   }
 
-  td {
-      border: none;
-      padding: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
+  th, td {
+    text-align: left;
+    padding: 8px;
   }
+
+  .formReports {
+    border-collapse: collapse;
+    width: 90%;
+  }
+
+
 
   .submitPass {
     border: 1px solid #a3a3a3;
@@ -207,6 +210,17 @@
   .submitPass:hover {
     background: rgba(20, 20, 20, 0.8);
     padding: 10px 80px;
+  }
+
+  .submitPass[disabled=disabled], .submitPass:disabled {
+    background: red;
+    padding: 10px 80px;
+  }
+
+  .errorMessageText {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 80px;
   }
 
 

@@ -126,39 +126,7 @@ if(isset($_POST['submitAccessChange'])){
     <script src="jquery-3.4.1.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
-    <script>
-    function validatePassword() {
-    var currentPassword,newPassword,confirmPassword,output = true;
 
-    currentPassword = document.frmChange.currentPassword;
-    newPassword = document.frmChange.newPassword;
-    confirmPassword = document.frmChange.confirmPassword;
-
-    if(!currentPassword.value) {
-    	currentPassword.focus();
-    	document.getElementById("currentPassword").innerHTML = "required";
-    	output = false;
-    }
-    else if(!newPassword.value) {
-    	newPassword.focus();
-    	document.getElementById("newPassword").innerHTML = "required";
-    	output = false;
-    }
-    else if(!confirmPassword.value) {
-    	confirmPassword.focus();
-    	document.getElementById("confirmPassword").innerHTML = "required";
-    	output = false;
-    }
-    if(newPassword.value != confirmPassword.value) {
-    	newPassword.value="";
-    	confirmPassword.value="";
-    	newPassword.focus();
-    	document.getElementById("confirmPassword").innerHTML = "not same";
-    	output = false;
-    }
-    return output;
-    }
-    </script>
     <style>
       </style>
       </head>
@@ -200,17 +168,19 @@ if(isset($_POST['submitAccessChange'])){
        <div class="modal-content">
        <div class="modal-header">
        <span class="close firstClose" id="">&times;</span>
-       <h4 class="formHeading">View reports</h4>
+       <h3>View reports</h3>
        </div>
        <div class="modal-body">
 
-    <table id="reports" width="100%">
+    <table class="reports">
     <tr>
        <th>Report Type</th>
        <th>Reported Student</th>
        <th>Description</th>
        <th>Reporter ID</th>
     </tr>
+   </table>
+   <table class="reports">
        <form action="userDashboardAdmin.php" method="post">
                <?php
                $reportquery = "select * from tbl_report";
@@ -228,15 +198,11 @@ if(isset($_POST['submitAccessChange'])){
                        echo '<td>'.$reported.'</td>';
                        echo '<td>'.$comment.'</td>';
                        echo '<td>'.$reporter.'</td><br>';
-                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'">Dismiss</button><br>';
-                       echo '<button class="adminButtons" type="submit" name="suspendButton" id="suspendButton" value="'.$reported.'">Suspend</button></td>';
-                   echo '</tr>';
-               }
-               ?>
+                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="dismissButton" value="'.$ID.'"> Dismiss </button></td><br>';
+                       echo '<td><button class="adminButtons" type="submit" name="suspendButton" id="suspendButton" value="'.$reported.'">Suspend</button></td>';
+                   echo '</tr>'; } ?>
        </form>
-   </table>
-
-
+</table>
        </div>
        </div>
        </div>
@@ -245,13 +211,13 @@ if(isset($_POST['submitAccessChange'])){
        <div class="modal-content">
        <div class="modal-header">
        <span class="close secondClose" id="">&times;</span>
-       <h4>Assign access type</h4>
+       <h3>Assign access type</h3>
        </div>
        <div class="modal-body">
 
          <form class="formPass" method="post">
             <div class="formPassWrapper">
-                <h4 class="formHeading">Access Type</h4>
+                <h4>Access Type</h4>
                 <select class="formPassInput" name="accessID">
                 <option value="" hidden>Please select a user</option>';
                 <?php
@@ -288,7 +254,7 @@ if(isset($_POST['submitAccessChange'])){
        <div class="modal-content">
        <div class="modal-header">
        <span class="close thirdClose" id="">&times;</span>
-       <h4>Ban a user</h4>
+       <h3>Ban a user</h3>
        </div>
        <div class="modal-body">
 

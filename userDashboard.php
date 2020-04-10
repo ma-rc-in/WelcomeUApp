@@ -44,10 +44,9 @@ $CheckPassword = $_POST['CheckPass'];
             sleep(1);
             logout();
           }
-          $message = "Your current password is wrong. Plese try again!";
+          $message = "Operation aborted, your current password is wrong. Plese try again!";
 
         } else {
-          $message = "Your current password is wrong. Plese try again!";
         }
 
   $newPin = $_POST['NewPin'];
@@ -63,7 +62,7 @@ $CheckPassword = $_POST['CheckPass'];
             if ($newPin == $checkPin) {
                 $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
                 $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-                $message = "Pin has been set!";
+                $message = "Modal Pin - Pin has been set!";
             } else {
               $message = "Something went wrong. Plese try again!";
             }

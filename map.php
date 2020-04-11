@@ -46,11 +46,12 @@ else
     <div id="map" style="width:100%;height:100%"></div>
 </div>
 <script>
+
     var map;
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 54.977811, lng: -1.608458},
-            zoom: 17,
+            maxZoom: 16,
             styles: [
                 {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
                 {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -132,9 +133,8 @@ else
                 }
             ]
         });
-        infoWindow = new google.maps.InfoWindow;
 
-        // Try HTML5 geolocation.
+        infoWindow = new google.maps.InfoWindow;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {

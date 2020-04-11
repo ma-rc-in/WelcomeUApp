@@ -123,6 +123,7 @@ else
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 54.977811, lng: -1.608458},
             maxZoom: 16,
+            mapTypeId: 'roadmap',
             styles: [
                 {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
                 {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -292,7 +293,7 @@ else
 
 </script>
 <script
-    src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAR74Eta1Ce36l5wvfuY4IaNKL9jWyfmMo&sensor=SET_TO_TRUE_OR_FALSE&callback=initMap&language=en-GB&region=GB"async defer>
+    src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAR74Eta1Ce36l5wvfuY4IaNKL9jWyfmMo&sensor=SET_TO_TRUE_OR_FALSE&libraries=places&callback=initMap&language=en-GB&region=GB"async defer>
 </script>
 </body>
 </html>

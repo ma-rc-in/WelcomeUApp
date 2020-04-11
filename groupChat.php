@@ -58,7 +58,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
     } else {
         $groupChatInsert = $db->query("INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
         VALUES('{$reportType}','{$reportedStudentID}','{$reportComment}','$reporterStudentID')");
-        //TODO SUCCESS MESSAGE
+        //TODO SUCCESS MESSAGE, ALSO CHANGE THE INPUT TO PDO
         echo '.<Script> alert("Your report has been submitted."); </Script>.';
     }
 }
@@ -77,6 +77,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+    <script src="settings.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet'
           type='text/css'>
     <style>
@@ -145,6 +146,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         //loads all the data when the form loads
         $(document).ready(function () {
             $(".messageBox").load("groupChatLoadInitial.php");//can get the initial amount of messages
+            languageChange();
         });
 
         //every 1000ms call the load function
@@ -172,7 +174,9 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         <div class="container-chat">
             <div class="wrappedChat p-l-55 p-r-55 p-b-50" style="padding-top: 10px;">
 
-                <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "><?php echo $courseName . " - Group Chat"; ?> </h1>
+
+                <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "><?php echo $courseName?></h1>
+                <h1 id="gcCourseNameTitle" style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; ">- Group Chat</h1>
 
                 <!-- Messages will be placed here -->
                 <div class="messageBox" id="messageBox"
@@ -182,15 +186,15 @@ if (isset($_POST['submitReport'])) //when the user submits their message
 
             <div class="login100-form validate-form">
           <span class="chatHeading p-b-33">
-            <h3 class="messageChat">Your message:</h3>
+            <h3 class="messageChat" id="gcYourMessage">Your message:</h3>
             <form action="groupChat.php" method="post">
               <div class="wrap-input100 validate-input" data-validate="" style="border: 2px solid #e6e6e6;">
-                <input class="input100 messageContent" type="text" name="formMessage"
+                <input class="input100 messageContent" type="text" name="formMessage" id="gcMessageContentBox"
                        placeholder="Type your message here.">
                 <span class="focus-input100-1"></span>
                 <span class="focus-input100-2"></span>
-                <button type="button" class="buttonChat" id="reportButton" style="margin-top: 10px; float: left" ;>Report</button>
-                <input class="buttonChat" type="submit" name="submit" value="Send"
+                <button type="button" class="buttonChat" id="gcReportButton" style="margin-top: 10px; float: left" ;>Report</button>
+                <input class="buttonChat" type="submit" id="gcSendButton" name="submit" value="Send"
                        style="margin-top: 10px; float: right;"/>
               </form>
             </div>
@@ -203,13 +207,13 @@ if (isset($_POST['submitReport'])) //when the user submits their message
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close" id="" style="padding-bottom: 10px;">&times;</span>
-                    <h4>View reports</h4>
+                    <h4 id="gcReportUser">Report a user</h4>
                 </div>
                 <div class="modal-body" style="margin-bottom: 120px;">
                     <form class="formPass" method="post">
                         <div class="formPassWrapper">
                             <br>
-                            <h4 class="formHeading">Please select the users ID you wish to report:</h4>
+                            <h4 class="formHeading" id="gcUserID">Please select the users ID you wish to report:</h4>
                             <select class="formPassInput" id="reportUserID" name="reportUserID">
                                 <?php
                                 //php to select the ID
@@ -228,7 +232,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                         </div>
                         <div class="formPassWrapper">
                             <br>
-                            <h4 class="formHeading">Please select your reason for reporting:</h4>
+                            <h4 class="formHeading" id="gcReasonTitle">Please select your reason for reporting:</h4>
                             <select class="formPassInput" id="reportType" name="reportType">
                                 <!--class="formReportInput"-->
                                 <option value="Spam">Spam</option>
@@ -240,13 +244,13 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                         <div class="formPassWrapper">
                             <br>
                             <br>
-                            <h4 class="formHeading">Please explain why you are making this report:</h4>
+                            <h4 class="formHeading" id="gcReason">Please explain why you are making this report:</h4>
                             <br>
                             <textarea id="reportComment" class="formReportInput" name="reportComment"
                                       placeholder="Please comment here:" rows="10" cols="140" contentEditable=true data-text="Enter text here"></textarea>
                         </div>
                         <br>
-                        <input class="adminButtons" name="submitReport" type="submit" value="Submit"/>
+                        <input class="adminButtons" name="submitReport" id="gcReportSubmit" type="submit" value="Submit"/>
                     </form>
                 </div>
             </div>
@@ -256,7 +260,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
 </div>
 <script>
     var modal = document.getElementById("PopupBoxPage");
-    var btn = document.getElementById("reportButton");
+    var btn = document.getElementById("gcReportButton");
     var span = document.getElementsByClassName("close")[0];
 
     btn.onclick = function () {

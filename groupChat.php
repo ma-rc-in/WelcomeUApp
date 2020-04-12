@@ -146,7 +146,6 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         //loads all the data when the form loads
         $(document).ready(function () {
             $(".messageBox").load("groupChatLoadInitial.php");//can get the initial amount of messages
-            languageChange();
         });
 
         //every 1000ms call the load function
@@ -160,19 +159,19 @@ if (isset($_POST['submitReport'])) //when the user submits their message
 
 </head>
 <body>
-<div class="patch-container">
+<div class="patch-container" id="gcContainer">
     <div class="limiter" id="limiter">
         <div class="logoDiv">
-            <div class="goBackButton"><a href="mainmenu.php"><img src="images/back.png" class="goBackIcon"></a></div>
+            <div class="goBackButton"><a href="mainmenu.php"><img src="images/back.png" id="gcBack" class="goBackIcon"></a></div>
             <div class="logoChatWrapper">
                 <a href="mainmenu.php">
-                    <img class="logoChat" src="images/logo_white.png" alt="Logo"/>
+                    <img class="logoChat" id="gcLogo" src="images/logo_white.png" alt="Logo"/>
                 </a>
             </div>
         </div>
 
-        <div class="container-chat">
-            <div class="wrappedChat p-l-55 p-r-55 p-b-50" style="padding-top: 10px;">
+        <div class="container-chat" id="gcChatContainer">
+            <div class="wrappedChat p-l-55 p-r-55 p-b-50" id="gcBackground" style="padding-top: 10px;">
 
 
                 <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "><?php echo $courseName?></h1>
@@ -279,3 +278,9 @@ if (isset($_POST['submitReport'])) //when the user submits their message
 </div>
 </body>
 </html>
+
+<script>
+    languageChange(); //changes the lanugage (default is english)
+    themeChange();
+    highContrast();
+</script>

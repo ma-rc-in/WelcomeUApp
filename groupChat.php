@@ -174,7 +174,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
             <div class="wrappedChat p-l-55 p-r-55 p-b-50" id="gcBackground" style="padding-top: 10px;">
 
 
-                <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; "><?php echo $courseName?></h1>
+                <h1 style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; " id="gcCourseNameEcho"><?php echo $courseName?></h1>
                 <h1 id="gcCourseNameTitle" style="margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; text-align: center; ">- Group Chat</h1>
 
                 <!-- Messages will be placed here -->

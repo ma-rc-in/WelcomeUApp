@@ -27,6 +27,76 @@ else
             height: 80%;
             width: 95%;
         }
+        #description {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        #infowindow-content .title {
+            font-weight: bold;
+        }
+
+        #infowindow-content {
+            display: none;
+        }
+
+        #map #infowindow-content {
+            display: inline;
+        }
+
+        .pac-card {
+            margin: 10px 10px 0 0;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+
+        #pac-container {
+            padding-bottom: 12px;
+            margin-right: 12px;
+        }
+
+        .pac-controls {
+            display: inline-block;
+            padding: 5px 11px;
+        }
+
+        .pac-controls label {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        #pac-input {
+            background-color: #fff;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 12px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 400px;
+        }
+
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+
+        #title {
+            color: #fff;
+            background-color: #4d90fe;
+            font-size: 25px;
+            font-weight: 500;
+            padding: 6px 12px;
+        }
+        #target {
+            width: 345px;
+        }
 
         @media only screen and (min-width: 900px) {
                 .maps {
@@ -43,14 +113,17 @@ else
     </div>
 </div>
 <div class="maps">
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map" style="width:100%;height:100%"></div>
 </div>
 <script>
+
     var map;
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 54.977811, lng: -1.608458},
-            zoom: 17,
+            maxZoom: 16,
+            mapTypeId: 'roadmap',
             styles: [
                 {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
                 {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -132,9 +205,63 @@ else
                 }
             ]
         });
-        infoWindow = new google.maps.InfoWindow;
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+        });
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+            var places = searchBox.getPlaces();
 
-        // Try HTML5 geolocation.
+            if (places.length == 0) {
+                return;
+            }
+
+            // Clear out the old markers.
+            markers.forEach(function(marker) {
+                marker.setMap(null);
+            });
+            markers = [];
+
+            // For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            places.forEach(function(place) {
+                if (!place.geometry) {
+                    console.log("Returned place contains no geometry");
+                    return;
+                }
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
+
+                // Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                }));
+
+                if (place.geometry.viewport) {
+                    // Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+                } else {
+                    bounds.extend(place.geometry.location);
+                }
+            });
+            map.fitBounds(bounds);
+        });
+
+        infoWindow = new google.maps.InfoWindow;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
@@ -153,6 +280,7 @@ else
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
+
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -165,7 +293,7 @@ else
 
 </script>
 <script
-    src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAR74Eta1Ce36l5wvfuY4IaNKL9jWyfmMo&sensor=SET_TO_TRUE_OR_FALSE&callback=initMap&language=en-GB&region=GB"async defer>
+    src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAR74Eta1Ce36l5wvfuY4IaNKL9jWyfmMo&sensor=SET_TO_TRUE_OR_FALSE&libraries=places&callback=initMap&language=en-GB&region=GB"async defer>
 </script>
 </body>
 </html>

@@ -86,6 +86,11 @@ $CheckPassword = $_POST['CheckPass'];
 
 <script src="settings.js"></script>
 
+<script>
+    languageChange();
+    themeChange();
+    highContrast();
+</script>
 
     <script>
     function checkForPassword() {

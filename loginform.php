@@ -24,12 +24,19 @@ if(isset($_POST['submit']))
   $studentselect->bindParam('SID', $ID, PDO::PARAM_STR);
   $studentselect->execute(array(":SID" => $ID));
   $select = $studentselect->fetchObject();
-  $pwobject = $select->password;
-  $isBannedobject = $select->isBanned;
+
+  $num_rows = count($studentselect->fetchAll());
+  if($num_rows > 0){
+      $pwobject = $select->password;
+  } else {
+      $ErrorMessage="Incorrect Student ID or Password.";
+      $pwobject = "null";
+  }
 
   //This is pulling both numbers and strings from the DB.
   if(password_verify($PW, $pwobject)) //['password'] //$obj->fetch->password uses a hash //serialize converts it to string
   {
+      $isBannedobject = $select->isBanned;
 
       if ($isBannedobject == 0)
       {

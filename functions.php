@@ -11,6 +11,16 @@ function inputTest($input) //tests user input https://www.w3schools.com/php/php_
     return $input;
 }
 
+function studentCount($ID){
+    $db = getConnection();//returns the connection for the database
+    $studentquery = "select password, studentID, isBanned from tbl_student where studentID=:SID"; //gets all from tbl_student
+    $studentselect = $db->prepare($studentquery);
+    $studentselect->bindParam('SID', $ID, PDO::PARAM_STR);
+    $studentselect->execute(array(":SID" => $ID));
+    $num_rows = count($studentselect->fetchAll());
+    return $num_rows;
+}
+
 function logout()
 {
     session_start();

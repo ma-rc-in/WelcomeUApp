@@ -98,7 +98,7 @@ function displayImage(){
     <br/>
     <h2 style="color:#FFFFFF" id="eeStepTwo">Step 2 _ Please upload a photos of you for your Student ID</h2>
 
-    <div class="container">
+    <div class="formContainer" id="eeContainer">
         <legend style="font-size: x-large; font-weight: bold" id="eeSmartCardCurrent"> Current SmartCard Photo </legend>
         <?php displayImage(); ?>
         <form action="uploadPhoto.php" method="post" enctype="multipart/form-data">
@@ -159,7 +159,7 @@ function displayImage(){
         background-color: #45a049;
     }
 
-    .container {
+    .formContainer {
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;

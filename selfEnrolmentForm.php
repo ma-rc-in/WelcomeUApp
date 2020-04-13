@@ -79,7 +79,7 @@
 
 
         <h2 style="color:#FFFFFF" id="eeStepOne">Step 1 _ Please fill in the details</h2>
-        <div class="formContainer">
+        <div class="formContainer" id="eeContainer">
             <form action="selfEnrolmentForm.php" method="POST">
                 <fieldset>
                 <legend style="font-size: x-large; font-weight: bold" id="eePersonalDetails"> Personal Details </legend>

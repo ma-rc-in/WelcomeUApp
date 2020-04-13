@@ -19,14 +19,15 @@ else
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="mainmenu.js"></script>;
+    <script src="mainmenu.js"></script>
+    <script src="settings.js"></script>
     <title>WelcomeU</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <style>
 
 html, body {
 
-  background-color: black;
+  /*background-color: black;*/
   font-family: 'Open Sans', Arial, sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
 
@@ -228,6 +229,9 @@ Media Queries
     $(document).ready(function(){
         $(".groupChatPlaceHolder").load("mainmenuCheck.php");//checks to see if there are new messages
         mainmenuAlert();
+        languageChange(); //changes the lanugage (default is english)
+        themeChange();
+        highContrast();
     });
 
     //every 10 seconds check
@@ -241,60 +245,60 @@ Media Queries
 </script>
 
 <body>
-<div class="patch-container">
+<div class="patch-container" id="mmbackground">
 
     <div class="logoMain">
         <a href="mainmenu.php">
-            <img class="test" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+            <img class="test" id="mmNULogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
 
-    <div class="patch-item patch-button">
+    <div class="patch-item patch-button" id="mmMapBackground">
         <a href="map.php">
-            <img class="test" src="images/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
-            <h5 class="textIcons">Map</h5>
+            <img class="test" id="mmMapLogo" src="images/maps-and-flags.png" alt="Map" width= "120px" height= "120px" />
+            <h5 class="textIcons" id="mapMenu">Map</h5>
         </a>
     </div>
 
-    <div class="patch-item patch-button">
+    <div class="patch-item patch-button" id="mmGroupChatBackground">
         <a href="groupChat.php">
             <img class="logo" id="groupChat" src="images/chat.png" alt="Group Chat" width= "120px" height= "120px" />
-            <h5 class="textIcons">Group Chat</h5>
+            <h5 class="textIcons" id="groupChatMenu">Group Chat</h5>
             <div class="groupChatPlaceHolder"></div>
         </a>
     </div>
 
-    <div class="patch-item patch-button">
+    <div class="patch-item patch-button" id="mmHelpBackground">
         <a href="help.php">
-            <img class="test" src="images/question.png" alt="Help" width= "120px" height= "120px" />
-            <h5 class="textIcons">Help</h5>
+            <img class="test" id="mmHelpLogo" src="images/question.png" alt="Help" width= "120px" height= "120px" />
+            <h5 class="textIcons" id="helpMenu">Help</h5>
         </a>
     </div>
 
-     <div class="patch-item patch-button">
+     <div class="patch-item patch-button" id="mmAnnoucementsBackground">
         <a href="announcementsStudent.php">
-            <img class="test" src="images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
-            <h5 class="textIcons">Annoucements</h5>
+            <img class="test" id="mmAnnoucementsLogo" src="images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
+            <h5 class="textIcons" id="annoucementsMenu">Annoucements</h5>
         </a>
     </div>
 
-    <div class="patch-item patch-button">
+    <div class="patch-item patch-button" id="mmEnrolmentBackground">
         <a href="selfEnrolmentForm.php">
-            <img class="test" src="images/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
-            <h5 class="textIcons">Self Enrolment</h5>
+            <img class="test" id="mmEnrolmentLogo" src="images/checklist.png" alt="Self Enrolment" width= "120px" height= "120px" />
+            <h5 class="textIcons" id="enrolmentMenu">Self Enrolment</h5>
         </a>
     </div>
 
-    <div class="patch-item patch-button">
+    <div class="patch-item patch-button" id="mmSettingsBackground">
         <a href="settings.php">
-            <img class="test" src="images/settings.png" alt="Settings" width= "120px" height= "120px" />
-            <h5 class="textIcons">Settings</h5>
+            <img class="test" id="mmSettingsLogo" src="images/settings.png" alt="Settings" width= "120px" height= "120px" />
+            <h5 class="textIcons" id="settingsMenu">Settings</h5>
         </a>
     </div>
 
     <div class="logout-box">
         <a href="logout.php">
-            <img class="test" src="images/logout.png" alt="Logout" width= "44px" height= "44px" />
+            <img class="test" id="mmLogoutLogo" src="images/logout.png" alt="Logout" width= "44px" height= "44px" />
         </a>
     </div>
 
@@ -302,3 +306,9 @@ Media Queries
 
 </body>
 </html>
+<script>
+    languageChange(); //changes the lanugage (default is english)
+    themeChange();
+    highContrast();
+</script>
+

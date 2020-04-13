@@ -411,3 +411,49 @@ select option {
     color: black;
 }
 }
+
+
+  .faqContainer {
+      margin: 20px auto;
+      width: 90%;
+  }
+  .accordion input {
+  	display: none;
+    background-color: black;
+  }
+  .accordion label {
+  	background: #474747;
+  	border-radius: .25em;
+  	cursor: pointer;
+  	display: block;
+  	margin-bottom: .125em;
+  	padding: .25em 1em;
+  	z-index: 20;
+    font-family: Arial, sans-serif;
+  }
+  .accordion label:hover {
+  	background: #4f4f4f;
+  }
+
+  .accordion input:checked + label {
+  	background: #4f4f4f;
+  	border-bottom-right-radius: 0;
+  	border-bottom-left-radius: 0;
+  	color: white;
+  	margin-bottom: 0;
+  }
+  .accordion article {
+  	background: #6e6e6e;
+  	height:0px;
+  	overflow:hidden;
+  	z-index:10;  }
+
+  .accordion article p {padding: 1em; }
+  .accordion input:checked article { }
+
+  .accordion input:checked ~ article {
+  	border-bottom-left-radius: .25em;
+  	border-bottom-right-radius: .25em;
+  	height: auto;
+  	margin-bottom: .125em;
+}

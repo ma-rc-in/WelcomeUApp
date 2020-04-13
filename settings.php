@@ -177,7 +177,7 @@ if (isset($_SESSION['sessionStudentID'])) {
 
     <div class="patch-item patch-button" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/.png" alt="languageSetting" width="90px" height="90px"/>
+            <img class="imgPass" src="images/language.png" alt="languageSetting" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextLanguage">Change language</h3>
         <a href="#" id="ssSecondBtn" class="button" data-abbr=" language">Change</a>
@@ -185,7 +185,7 @@ if (isset($_SESSION['sessionStudentID'])) {
 
     <div class="patch-item patch-button" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/changeTheme.png" alt="changeTheme" width="90px" height="90px"/>
+            <img class="imgPass" src="images/theme.png" alt="changeTheme" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextTheme">Change theme</h3>
         <a href="#" id="ssThirdBtn" class="button" data-abbr=" theme">Change</a>
@@ -193,7 +193,7 @@ if (isset($_SESSION['sessionStudentID'])) {
 
     <div class="patch-item patch-button" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/changeContrast.png" alt="changeContrast" width="90px" height="90px"/>
+            <img class="imgPass" src="images/contrast.png" alt="changeContrast" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextContrast">Change contrast</h3>
         <a href="#" id="ssFourthBtn" class="button" data-abbr=" contrast">Change</a>
@@ -259,6 +259,19 @@ if (isset($_SESSION['sessionStudentID'])) {
         </div>
     </div>
 
+    <!--Contrast-->
+    <div id="fourthModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close fourthClose" id="">&times;</span>
+                <h3 id="ssTextContrast">Change contrast</h3>
+            </div>
+            <div class="modal-body">
+                contrast
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
@@ -314,6 +327,25 @@ if (isset($_SESSION['sessionStudentID'])) {
         }
     }
 </script>
+<script>
+    var modal4 = document.getElementById("fourthModal");
+    var btn4 = document.getElementById("ssFourthBtn");
+    var span4 = document.getElementsByClassName("close fourthClose")[0];
+    btn4.onclick = function () {
+        modal4.style.display = "block";
+
+    }
+    span4.onclick = function () {
+        modal4.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal4) {
+            modal4.style.display = "none";
+        }
+    }
+</script>
+
+
 </body>
 </html>
 

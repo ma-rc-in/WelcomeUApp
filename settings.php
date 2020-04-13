@@ -199,6 +199,7 @@ if (isset($_SESSION['sessionStudentID'])) {
         <a href="#" id="ssFourthBtn" class="button" data-abbr=" contrast">Change</a>
     </div>
 
+    <!--Notification Settings-->
     <div id="firstModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -235,48 +236,6 @@ if (isset($_SESSION['sessionStudentID'])) {
             </div>
         </div>
     </div>
-
-
-    <div id="thirdModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close thirdClose" id="">&times;</span>
-                <h3 id="ssTextTheme">Change theme</h3>
-            </div>
-            <div class="modal-body">
-                <br>
-                <label class="labelTheme"><p class="textTheme" id="ssThemeDark">Dark theme</p>
-                    <input type="radio" checked="checked" id="dark" name="theme" onchange="setTheme()">
-                    <span class="checkmark"></span>
-                </label>
-                <br>
-                <label class="labelTheme"><p class="textTheme" id="ssThemeLight">Light theme</p>
-                    <input type="radio" id="light" name="theme" onchange="setTheme()">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="fourthModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close fourthClose" id="">&times;</span>
-            <h4 id="ssTextNotifications">High Contrast</h4>
-        </div>
-
-        <div class="modal-body">
-            <h4 class="formHeading" id="ssTextModalNotifications">Enable high contrast setting?</h4>
-            <label class="switch" onchange="setHighContrast()">
-                <input type="checkbox" id="contrastSwitch" class="soundButton">
-                <span class="slider"></span>
-            </label>
-        </div>
-    </div>
-</div>
-
-
 </div>
 
 
@@ -314,43 +273,6 @@ if (isset($_SESSION['sessionStudentID'])) {
         }
     }
 </script>
-
-<script>
-    var modal3 = document.getElementById("thirdModal");
-    var btn3 = document.getElementById("ssThirdBtn");
-    var span3 = document.getElementsByClassName("close thirdClose")[0];
-    btn3.onclick = function () {
-        modal3.style.display = "block";
-        getTheme();
-    }
-    span3.onclick = function () {
-        modal3.style.display = "none";
-    }
-    window.onclick = function (event) {
-        if (event.target == modal3) {
-            modal3.style.display = "none";
-        }
-    }
-</script>
-
-<script>
-    var modal4 = document.getElementById("fourthModal");
-    var btn4 = document.getElementById("ssFourthBtn");
-    var span4 = document.getElementsByClassName("close fourthClose")[0];
-    btn4.onclick = function () {
-        modal4.style.display = "block";
-        getHighContrast();
-    }
-    span4.onclick = function () {
-        modal4.style.display = "none";
-    }
-    window.onclick = function (event) {
-        if (event.target == modal4) {
-            modal4.style.display = "none";
-        }
-    }
-</script>
-
 </body>
 </html>
 

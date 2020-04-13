@@ -58,12 +58,13 @@ else
 
         #pac-container {
             padding-bottom: 12px;
-            margin-right: 12px;
+            margin: auto;
         }
 
         .pac-controls {
             display: inline-block;
             padding: 5px 11px;
+
         }
 
         .pac-controls label {
@@ -77,8 +78,9 @@ else
             font-family: 'Open Sans', Arial, sans-serif;
             font-size: 15px;
             font-weight: 300;
-            margin-left: 12px;
-            padding: 0 11px 0 13px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 11px 0 11px;
             text-overflow: ellipsis;
             width: 400px;
         }
@@ -99,9 +101,43 @@ else
         }
 
         @media only screen and (min-width: 900px) {
-                .maps {
-                    max-width: 95%;
-                }
+            .maps {
+                max-width: 95%;
+            }
+            #pac-container {
+                max-width: 70%;
+            }
+
+            .pac-controls {
+                display: inline-block;
+                max-width: 70%;
+
+            }
+
+            .pac-controls label {
+                max-width: 70%;
+            }
+
+            #pac-input.controls {
+                max-width: 20px;
+            }
+
+            #pac-input:focus {
+                border-color: #4d90fe;
+            }
+
+            #title {
+                color: #fff;
+                background-color: #4d90fe;
+                font-size: 25px;
+                font-weight: 500;
+                padding: 6px 12px;
+            }
+            #target {
+                width: 345px;
+            }
+
+
     </style>
 </head>
 <body>
@@ -112,18 +148,57 @@ else
         </a>
     </div>
 </div>
+
 <div class="maps">
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <input id="pac-input" class="controls" type="text" placeholder="Type Northumbria...">
     <div id="map" style="width:100%;height:100%"></div>
 </div>
 <script>
 
     var map;
+    function CenterControl(controlDiv, map) {
+
+        // Set CSS for the control border.
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = '#fff';
+        controlUI.style.border = '2px solid #fff';
+        controlUI.style.borderRadius = '3px';
+        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.margin = '11px';
+        controlUI.style.textAlign = 'center';
+        controlUI.title = 'Click to recenter the map';
+        controlDiv.appendChild(controlUI);
+
+        // Set CSS for the control interior.
+        var controlText = document.createElement('div');
+        controlText.style.color = 'rgb(25,25,25)';
+        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText.style.fontSize = '30px';
+        controlText.style.lineHeight = '40px';
+        controlText.style.lineWidth = '40px';
+        controlText.style.paddingLeft = '8px';
+        controlText.style.paddingRight = '8px';
+        controlText.innerHTML = '&#164';
+        controlUI.appendChild(controlText);
+
+        // Setup the click event listeners: simply set the map to Chicago.
+        controlUI.addEventListener('click', function () {
+            getLocation();
+        });
+    }
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 54.977811, lng: -1.608458},
-            maxZoom: 16,
-            mapTypeId: 'roadmap',
+            center: {lat: 54.978452, lng: -1.608278},
+            minZoom: 17,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.BOTTOM_CENTER
+            },
+            fullscreenControl: false,
+            streetViewControl: false,
+
             styles: [
                 {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
                 {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -142,6 +217,16 @@ else
                     featureType: 'poi.park',
                     elementType: 'geometry',
                     stylers: [{color: '#263c3f'}]
+                },
+                {
+                    featureType: 'poi.school',
+                    elementType: 'geometry',
+                    stylers: [{color: '#457365'}]
+                },
+                {
+                    featureType: 'landscape.man_made',
+                    elementType: 'geometry.stroke',
+                    stylers: [{color: '#3a5748'}]
                 },
                 {
                     featureType: 'poi.park',
@@ -205,11 +290,12 @@ else
                 }
             ]
         });
+
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
+        map.addListener('bounds_changed', function () {
             searchBox.setBounds(map.getBounds());
         });
         var markers = [];
@@ -221,13 +307,11 @@ else
             if (places.length == 0) {
                 return;
             }
-
             // Clear out the old markers.
             markers.forEach(function(marker) {
                 marker.setMap(null);
             });
             markers = [];
-
             // For each place, get the icon, name and location.
             var bounds = new google.maps.LatLngBounds();
             places.forEach(function(place) {
@@ -261,9 +345,16 @@ else
             map.fitBounds(bounds);
         });
 
-        infoWindow = new google.maps.InfoWindow;
+        var centerControlDiv = document.createElement('div');
+        var centerControl = new CenterControl(centerControlDiv, map);
+        centerControlDiv.index = 1;
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+    }
+
+    function getLocation() {
+        var infoWindow = new google.maps.InfoWindow;
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
@@ -273,7 +364,7 @@ else
                 infoWindow.setContent('Location found.');
                 infoWindow.open(map);
                 map.setCenter(pos);
-            }, function() {
+            }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
         } else {
@@ -282,7 +373,6 @@ else
         }
 
     }
-
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?

@@ -84,13 +84,19 @@ $CheckPassword = $_POST['CheckPass'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
+<script src="settings.js"></script>
 
+<script>
+    languageChange();
+    themeChange();
+    highContrast();
+</script>
 
     <script>
     function checkForPassword() {
   var password = $("#newPassInput").val();
   var confirmPassword = $("#repeatPassInput").val();
-  var button = $('#submitButtonForPass');
+  var button = $('#udBttonTextSubmitButtonForPass');
 
   if (password != confirmPassword)
     $("#error").html("Passwords are not the same!!!");
@@ -188,24 +194,24 @@ $(document).ready(function() {
        <div class="iconPass">
          <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons">Change password</h3>
-       <a href="#" id="firstBtn" class="button" data-abbr=" password">Change</a>
+       <h3 class="textIcons" id="udTextHeaderPass">Change password</h3>
+       <a href="#" id="udButtonTextFirstBtn" class="button" data-abbr=" password">Change</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
        <div class="iconPass">
          <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons">Delete account</h3>
-       <a href="#" id="secondBtn" class="button" data-abbr=" account">Delete</a>
+       <h3 class="textIcons" id="udTextHeaderAccount">Delete account</h3>
+       <a href="#" id="udButtonTextSecondBtn" class="button" data-abbr=" account">Delete</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
        <div class="iconPass">
          <img class="imgPass" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons">Set PIN</h3>
-       <a href="#" id="thirdBtn" class="button" data-abbr=" PIN">Set</a>
+       <h3 class="textIcons" id="udTextHeaderPin">Set PIN</h3>
+       <a href="#" id="udButtonTextThirdBtn" class="button" data-abbr=" PIN">Set</a>
        </div>
 
        <div id="errorMessage" class="overlay">
@@ -221,24 +227,24 @@ $(document).ready(function() {
        <div class="modal-content">
        <div class="modal-header">
        <span class="close firstClose" id="">&times;</span>
-       <h3>Change Password</h3>
+       <h3 id="udTextHeaderPass">Change Password</h3>
        </div>
        <div class="modal-body">
 
        <form id="passChangeForm" class="formPass" method="post" name="passwordForm" >
          <div class="formPassWrapper">
          <h5 class="formHeading"></h5>
-           <input type="password" class="formPassInput" id="oldPassInput" name="OldPass" placeholder="Enter your old password" autocomplete="off" required/>
+           <input type="password" class="formPassInput" id="udTextModalOldPassPlaceholder" name="OldPass" placeholder="Enter your current password" autocomplete="off" required/>
          </div>
            <div class="formPassWrapper">
            <h5 class="formHeading"></h5>
-             <input type="password" class="formPassInput" id="newPassInput" name="NewPass" placeholder="Enter your new password" autocomplete="off" required/>
+             <input type="password" class="formPassInput" id="udTextModalNewPassPlaceholder" name="NewPass" placeholder="Enter your new password" autocomplete="off" required/>
            </div>
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" onChange="checkForPassword();" required/>
+               <input type="password" class="formPassInput" id="udTextModalRepeatNewPassPlaceholder" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" onChange="checkForPassword();" required/>
              </div>
-                 <button onclick="window.location.href='#errorMessage'" id="submitButtonForPass" name="submitPass" class="submitPass" type="submit" disabled>Submit</button><br/><span id="error"/><br/><span id="disabledText"/><br><span id="currentPassCheck"/>
+                 <button onclick="window.location.href='#errorMessage'" id="udButtonTextSubmitButtonForPass" name="submitPass" class="submitPass" type="submit" disabled>Submit</button><br/><span id="error"/><br/><span id="disabledText"/><br><span id="currentPassCheck"/>
 
        </form>
        </div>
@@ -249,21 +255,21 @@ $(document).ready(function() {
        <div class="modal-content">
        <div class="modal-header">
        <span class="close secondClose" id="">&times;</span>
-       <h3>Delete Account</h3>
+       <h3 id="udTextHeaderAccount">Delete Account</h3>
        </div>
        <div class="modal-body">
 
-      <div class="deleteNote">
-        <h4> WARNING</h4>
+      <div id="udModalTextBodyWarningNote" class="deleteNote">
+        <h4 id="udModalTextHeaderWarning">WARNING</h4>
         You are about to delete all data related to your account, so you will no longer be able to use this application.<br>If you want to continue, please enter your current password below and click on "submit".
       </div>
 
        <form class="formPass" method="post">
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
+               <input type="password" class="formPassInput" id="udTextModalRepeatPassDeleteAccountPlaceholder" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
              </div>
-                 <button onclick="window.location.href='#errorMessage'" name="submitDelete" class="submitPass" type="submit">Submit</button>
+                 <button onclick="window.location.href='#errorMessage'" id="udButtonTextSubmitButtonForDeleteAccount" name="submitDelete" class="submitPass" type="submit">Submit</button>
        </form>
        </div>
        </div>
@@ -273,20 +279,20 @@ $(document).ready(function() {
        <div class="modal-content">
        <div class="modal-header">
        <span class="close thirdClose" id="">&times;</span>
-       <h3>Set PIN</h3>
+       <h3 id="udTextHeaderPin">Set PIN</h3>
        </div>
        <div class="modal-body">
 
        <form class="formPass" method="post">
            <div class="formPassWrapper">
            <h5 class="formHeading"></h5>
-             <input type="password" class="formPassInput" id="newPassInput" name="NewPin" placeholder="Enter your new PIN" autocomplete="off"/>
+             <input type="password" class="formPassInput" id="udTextModalNewPinPlaceholder" name="NewPin" placeholder="Enter your new PIN" autocomplete="off"/>
            </div>
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="repeatPassInput" name="CheckPin" placeholder="Repeat your new PIN" autocomplete="off"/>
+               <input type="password" class="formPassInput" id="udTextModalRepeatPinPlaceholder" name="CheckPin" placeholder="Repeat your new PIN" autocomplete="off"/>
              </div>
-                 <button onclick="window.location.href='#errorMessage'" name="submitPin" class="submitPass" type="submit">Submit</button>
+                 <button onclick="window.location.href='#errorMessage'" id="udButtonTextSubmitButtonForChangePin" name="submitPin" class="submitPass" type="submit">Submit</button>
        </form>
 
 
@@ -296,7 +302,7 @@ $(document).ready(function() {
        </div>
        <script>
        var modal1 = document.getElementById("firstModal");
-       var btn1 = document.getElementById("firstBtn");
+       var btn1 = document.getElementById("udButtonTextFirstBtn");
        var span1 = document.getElementsByClassName("close firstClose")[0];
        btn1.onclick = function() {
          modal1.style.display = "block";}
@@ -309,7 +315,7 @@ $(document).ready(function() {
 
                <script>
                var modal2 = document.getElementById("secondModal");
-               var btn2 = document.getElementById("secondBtn");
+               var btn2 = document.getElementById("udButtonTextSecondBtn");
                var span2 = document.getElementsByClassName("close secondClose")[0];
                btn2.onclick = function() {
                  modal2.style.display = "block";}
@@ -323,7 +329,7 @@ $(document).ready(function() {
 
               <script>
               var modal3 = document.getElementById("thirdModal");
-              var btn3 = document.getElementById("thirdBtn");
+              var btn3 = document.getElementById("udButtonTextThirdBtn");
               var span3 = document.getElementsByClassName("close thirdClose")[0];
               btn3.onclick = function() {
                 modal3.style.display = "block";}
@@ -332,6 +338,12 @@ $(document).ready(function() {
                   window.onclick = function(event) {
                     if (event.target == modal3) {
                       modal3.style.display = "none"; }}
+             </script>
+
+             <script>
+                 languageChange();
+                 themeChange();
+                 highContrast();
              </script>
                </div>
                </div>

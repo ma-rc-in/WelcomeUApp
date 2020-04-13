@@ -417,6 +417,8 @@ select option {
       margin: 20px auto;
       width: 90%;
   }
+
+
   .accordion input {
   	display: none;
     background-color: black;
@@ -430,6 +432,9 @@ select option {
   	padding: .25em 1em;
   	z-index: 20;
     font-family: Arial, sans-serif;
+    height: 40px;
+    padding-top: 30px;
+
   }
   .accordion label:hover {
   	background: #4f4f4f;

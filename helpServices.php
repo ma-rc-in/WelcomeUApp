@@ -23,6 +23,13 @@ if (isset($_SESSION['sessionStudentID'])) {
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet'
   type='text/css'>
 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+</script>
+
 </head>
 <body>
   <div class="patch-container">
@@ -35,7 +42,7 @@ if (isset($_SESSION['sessionStudentID'])) {
       </a>
     </div>
 
-    <div class="patch-item patch-button" style="width: 100%; float: ;">      
+    <div class="patch-item patch-button" style="width: 100%; float: ;">
       <a href="#" id="hsButtonText" class="button" data-abbr="">See FAQ</a>
     </div>
 
@@ -57,14 +64,14 @@ if (isset($_SESSION['sessionStudentID'])) {
         					<p>Lorem ipsum </p>
         				</article>
         			</div>
-        			<div>
+              <div class="insideAccordion">
         				<input type="checkbox" id="check-2" />
         				<label for="check-2">Question 2</label>
         				<article>
         					<p>Lorem ipsum </p>
         				</article>
         			</div>
-        			<div>
+              <div class="insideAccordion">
         				<input type="checkbox" id="check-3" />
         				<label for="check-3">Question 3</label>
         				<article>

@@ -340,7 +340,11 @@ $(document).ready(function() {
                       modal3.style.display = "none"; }}
              </script>
 
-            
+             <script>
+                 languageChange();
+                 themeChange();
+                 highContrast();
+             </script>
                </div>
                </div>
                </body>

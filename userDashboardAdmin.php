@@ -341,7 +341,11 @@ if(isset($_POST['submitAccessChange'])){
                     if (event.target == modal3) {
                       modal3.style.display = "none"; }}
              </script>
-             
+             <script>
+                 languageChange();
+                 themeChange();
+                 highContrast();
+             </script>
                </div>
                </div>
                </body>

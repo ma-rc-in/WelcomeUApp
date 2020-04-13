@@ -62,7 +62,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="settings.js"></script>
         <title>Self-enrolment</title>
     </head>
     <body style="background-color:#000000;">
@@ -74,56 +74,55 @@
         </a>
         <br/>
 
-        <h1 style="color:#FFFFFF; text-align: center">Self-enrolment Form</h1>
+        <h1 style="color:#FFFFFF; text-align: center" id="eeTitleOne">Self-enrolment Form</h1>
         <br/>
 
 
-        <h2 style="color:#FFFFFF">Step 1 _ Please fill in the details</h2>
+        <h2 style="color:#FFFFFF" id="eeStepOne">Step 1 _ Please fill in the details</h2>
         <div class="formContainer">
             <form action="selfEnrolmentForm.php" method="POST">
                 <fieldset>
-                <legend style="font-size: x-large; font-weight: bold"> Personal Details </legend>
-
-                    <label for "title">Title: </label>
+                <legend style="font-size: x-large; font-weight: bold" id="eePersonalDetails"> Personal Details </legend>
+                    <label id="eeTitle">Title: </label>
                     <input  type = "text" name = "title" readonly value="<?php echo $StudentInfo['title'];?>"/>
 
                 <br /><br />
-                    <label for "firstName">First Name: </label>
+                    <label id="eeFirstName">First Name: </label>
                     <input type = "text" name = "firstName" readonly value="<?php echo $StudentInfo['firstName'];?>">
                 <br /><br />
-                    <label for "lastName">Last Name: </label>
+                    <label id="eeLastName">Last Name: </label>
                     <input type = "text" name = "lastName" readonly value="<?php echo $StudentInfo['lastName'];?>">
                 <br /><br />
-                    <label for "lastName">Gender: </label>
+                    <label id="eeGender">Gender: </label>
                     <input type = "text" name = "gender" readonly value="<?php echo $StudentInfo['gender'];?>">
                 <br /><br />
-                    <label for "personalEmail">Personal Email Address:</label>
+                    <label id="eePersonalEmail">Personal Email Address:</label>
                     <input type = "text" name = "personalEmail" value="<?php echo $StudentInfo['personalEmail'];?>" required>
                     <p class="errorTxt"><?php echo $EmailErr; ?></p>
                 <br /><br />
-                    <label for "ukMobile">UK Mobile No.:</label>
-                    <p>Please continue after +44 XXXX XXXXXX</p><input type = "number" name = "ukMobile" value="<?php echo $StudentInfo['ukMobile'];?>" required>
+                    <label id="eeukMobile">UK Mobile No.:</label>
+                    <p id="eeukMobile2">Please continue after +44 XXXX XXXXXX</p><input type = "number" name = "ukMobile" value="<?php echo $StudentInfo['ukMobile'];?>" required>
                     <p class="errorTxt"><?php echo $UkMobileErr; ?></p>
                 <br /><br />
                 </fieldset>
                 <br />
                 <fieldset>
-                    <legend style="font-size: x-large; font-weight: bold"> Emergency Contact Details </legend>
-                    <label for "emergencyPerson">Emergency Contact Person: </label>
+                    <legend style="font-size: x-large; font-weight: bold" id="eeEmergenceTitle"> Emergency Contact Details </legend>
+                    <label id="eeEmergencyPerson">Emergency Contact Person: </label>
                     <input type = "text" name = "emergencyPerson" value="<?php echo $StudentInfo['emergencyPerson'];?>" required>
                     <br /><br />
-                    <label for "emergencyRelationship">Relationship: </label>
+                    <label id="eeEmergencyRelationship">Relationship: </label>
                     <select id="country" name="emergencyRelationship" value="<?php echo $StudentInfo['emergencyRelationship'];?>" required>
                         <option value="Parents">Parents</option>
                         <option value="Guardian">Guardian</option>
                         <option value="Others">Others</option>
                     </select>
                     <br /><br />
-                    <label for "ukMobile">Contact No.:</label>
+                    <label id="eeContactNo">Contact No.:</label>
                     <input type = "number" name = "emergencyContact" value="<?php echo $StudentInfo['emergencyContact'];?>" required>
                 </fieldset>
                 <br />
-                <input type="submit" name="submit" value="Save & Next"/>
+                <input type="submit" name="submit" id="submit" value="Save & Next"/>
                 <br /><br />
 
             </form>
@@ -202,3 +201,8 @@
 
 
 </style>
+<script>
+    languageChange(); //changes the lanugage (default is english)
+    themeChange();
+    highContrast();
+</script>

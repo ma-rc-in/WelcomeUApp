@@ -56,6 +56,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Self-enrolment</title>
     <script src="uploadPhotoJS.js"></script>
+    <script src="settings.js"></script>
 </head>
 <body style="background-color:#000000;">
 
@@ -93,18 +94,18 @@ function displayImage(){
 ?>
 
     <br/>
-    <h1 style="color:#FFFFFF; text-align: center">Self-enrolment Form</h1>
+    <h1 style="color:#FFFFFF; text-align: center" id="eeTitleTwo">Self-enrolment Form</h1>
     <br/>
-    <h2 style="color:#FFFFFF">Step 2 _ Please upload a photos of you for your Student ID</h2>
+    <h2 style="color:#FFFFFF" id="eeStepTwo">Step 2 _ Please upload a photos of you for your Student ID</h2>
 
     <div class="container">
-        <legend style="font-size: x-large; font-weight: bold"> Current SmartCard Photo </legend>
+        <legend style="font-size: x-large; font-weight: bold" id="eeSmartCardCurrent"> Current SmartCard Photo </legend>
         <?php displayImage(); ?>
         <form action="uploadPhoto.php" method="post" enctype="multipart/form-data">
             <fieldset>
-                <legend style="font-size: x-large; font-weight: bold"> Upload SmartCard Photo </legend>
+                <legend style="font-size: x-large; font-weight: bold" id="eeSmartCardUpload"> Upload SmartCard Photo </legend>
 
-                <label for="file">Filename:</label>
+                <label id="eeFilename">Filename:</label>
                 <input type="file" name= "myfile" id="myfile" />
                 <p class="errorTxt"><?php echo $FileErr; ?></p>
                 <br/><br/>
@@ -178,3 +179,8 @@ function displayImage(){
 
 
 </style>
+<script>
+    languageChange(); //changes the lanugage (default is english)
+    themeChange();
+    highContrast();
+</script>

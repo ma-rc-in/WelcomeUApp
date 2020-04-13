@@ -84,6 +84,7 @@ $CheckPassword = $_POST['CheckPass'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
+<script src="settings.js"></script>
 
 
     <script>
@@ -332,6 +333,12 @@ $(document).ready(function() {
                   window.onclick = function(event) {
                     if (event.target == modal3) {
                       modal3.style.display = "none"; }}
+             </script>
+
+             <script>
+                 languageChange();
+                 themeChange();
+                 highContrast();
              </script>
                </div>
                </div>

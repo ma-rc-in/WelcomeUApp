@@ -125,8 +125,7 @@ if(isset($_POST['submitAccessChange'])){
     <title>WelcomeU Login</title>
     <script src="jquery-3.4.1.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
-
-
+<script src="settings.js"></script>
     <style>
       </style>
       </head>
@@ -331,6 +330,11 @@ if(isset($_POST['submitAccessChange'])){
                   window.onclick = function(event) {
                     if (event.target == modal3) {
                       modal3.style.display = "none"; }}
+             </script>
+             <script>
+                 languageChange();
+                 themeChange();
+                 highContrast();
              </script>
                </div>
                </div>

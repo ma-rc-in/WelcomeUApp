@@ -305,7 +305,7 @@ if(isset($_POST['submitAccessChange'])){
        </div>
        <script>
        var modal1 = document.getElementById("firstModal");
-       var btn1 = document.getElementById("firstBtn");
+       var btn1 = document.getElementById("udaButtonTextFirstBtn");
        var span1 = document.getElementsByClassName("close firstClose")[0];
        btn1.onclick = function() {
          modal1.style.display = "block";}
@@ -318,7 +318,7 @@ if(isset($_POST['submitAccessChange'])){
 
                <script>
                var modal2 = document.getElementById("secondModal");
-               var btn2 = document.getElementById("secondBtn");
+               var btn2 = document.getElementById("udaButtonTextSecondBtn");
                var span2 = document.getElementsByClassName("close secondClose")[0];
                btn2.onclick = function() {
                  modal2.style.display = "block";}
@@ -331,7 +331,7 @@ if(isset($_POST['submitAccessChange'])){
 
               <script>
               var modal3 = document.getElementById("thirdModal");
-              var btn3 = document.getElementById("thirdBtn");
+              var btn3 = document.getElementById("udaButtonTextThirdBtn");
               var span3 = document.getElementsByClassName("close thirdClose")[0];
               btn3.onclick = function() {
                 modal3.style.display = "block";}

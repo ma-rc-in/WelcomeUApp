@@ -798,6 +798,11 @@ function highContrast() {
     var enrolmentMenuText = document.getElementById("enrolmentMenu");
     var settingsMenuText = document.getElementById("settingsMenu");
 
+    //login
+    var llWelcomeU = document.getElementById("llWelcomeU");
+    var llLoginMessage  = document.getElementById("llLoginMessage");
+    var llsubmit= document.getElementById("llSubmit");
+
     //GroupChat
     var gcCourseNameEcho = document.getElementById("gcCourseNameEcho");
     var courseNameTitleGroupChat = document.getElementById("gcCourseNameTitle");

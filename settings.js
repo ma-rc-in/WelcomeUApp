@@ -628,6 +628,10 @@ function themeChange() {
     var gcContainer = document.getElementById("gcContainer");
     var gcLimiter = document.getElementById("limiter");
     var gcChatContainer = document.getElementById("gcChatContainer");
+    //map
+    var mapLogo = document.getElementById("mapLogo");
+    var mapContainer = document.getElementById("mapContainer");
+    var mpSearch = document.getElementById("pac-input");
 
 
     //Light Theme
@@ -689,6 +693,14 @@ function themeChange() {
             gcYourMessage.style.color = "black";
             gcMessageContentBox.style.backgroundColor = "grey";
         } catch (e) {}
+
+        //map
+        try {
+            mapLogo.src="images/logoBlack.png";
+            mapContainer.style.backgroundColor = "white";
+            mpSearch.style.backgroundColor = "grey";
+        } catch (e) {}
+
     }
 
     //Dark theme

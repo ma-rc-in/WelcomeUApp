@@ -28,18 +28,18 @@ if (isset($_SESSION['sessionStudentID'])) { //requires functions
 if (isset($_POST['submit'])) //when the user submits their message
 {
     $RoomName = $courseName;
-
     $Message = $_POST['formMessage'];//message is assigned to what the user writes
     if (strlen($Message) >= 500) { //if more than 255 characters
         // user has too many characters
         //TODO ERROR MESSAGE
     } else {
         $senderStudentID = $studentID;
-        //$sendTime = date("Y-m-d H:i:s"); //"Y-m-d H:i:s" was"y-m-d h:i A"  //timeSent ,'{$sendTime}')
-        //sends this to the database when user clicks send
-        $groupChatInsert = $db->query("INSERT INTO tbl_groupChat (
-        chatRoomName, chatMessage, senderStudentID)
-        VALUES('{$RoomName}','{$Message}','{$senderStudentID}')");
+        $query = "INSERT INTO tbl_groupChat(chatRoomName, chatMessage, senderStudentID) VALUES (:chatName, :chatMessage, :senderStudentID)";
+        $groupChatInsert = $db->prepare($query);
+        $groupChatInsert->bindParam('chatName', $RoomName, PDO::PARAM_STR);
+        $groupChatInsert->bindParam('chatMessage', $Message, PDO::PARAM_STR);
+        $groupChatInsert->bindParam('senderStudentID', $senderStudentID, PDO::PARAM_STR);
+        $groupChatInsert->execute(array(":chatName" => $RoomName, ":chatMessage" =>$Message, ":senderStudentID" => $senderStudentID));
         header('location:groupChat.php');
     }
 }
@@ -56,9 +56,16 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         // user has too many characters
         //TODO ERROR MESSAGE
     } else {
-        $groupChatInsert = $db->query("INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
-        VALUES('{$reportType}','{$reportedStudentID}','{$reportComment}','$reporterStudentID')");
-        //TODO SUCCESS MESSAGE, ALSO CHANGE THE INPUT TO PDO
+        $query = "INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID) 
+        VALUES (:reportType, :reportedStudentID, :reportComment, :reporterStudentID)";
+        $groupChatInsert = $db->prepare($query);
+        $groupChatInsert->bindParam('reportType', $reportType, PDO::PARAM_STR);
+        $groupChatInsert->bindParam('reportedStudentID', $reportedStudentID, PDO::PARAM_STR);
+        $groupChatInsert->bindParam('reportComment', $reportComment, PDO::PARAM_STR);
+        $groupChatInsert->bindParam('reporterStudentID', $reporterStudentID, PDO::PARAM_STR);
+        $groupChatInsert->execute(array(":reportType" => $reportType, ":reportedStudentID" =>$reportedStudentID, ":reportComment" => $reportComment, ":reporterStudentID" => $reporterStudentID));
+
+        //TODO SUCCESS MESSAGE
         echo '.<Script> alert("Your report has been submitted."); </Script>.';
     }
 }

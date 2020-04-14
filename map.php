@@ -18,6 +18,7 @@ else
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+    <script src =“settings.js” > </script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <style>
         .maps {
@@ -370,3 +371,8 @@ else
 </script>
 </body>
 </html>
+<script>
+    languageChange(); //changes the lanugage (default is english)
+    themeChange();
+    highContrast();
+</script>

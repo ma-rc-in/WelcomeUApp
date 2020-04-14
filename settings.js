@@ -403,9 +403,81 @@ function languageChange() {
         try {
             mpSearch.placeholder = "Napisz Northumbria...";
         } catch (e) {}
+        //Chinese
+        if (language == "Chinese") {
+            //Main Menu
+            try {
+                mapMenu.innerHTML = "地图";
+                groupChatMenu.innerHTML = "群聊";
+                helpMenu.innerHTML = "帮助";
+                annoucementsMenu.innerHTML = "通知";
+                enrolmentMenu.innerHTML = "自助注册";
+                settingsMenu.innerHTML = "设置";
+            } catch (e) {
+            }
 
+        //login
+            try {
+                llWelcomeU.innerHTML = "欢迎你";
+                llLoginMessage.innerHTML = "请登陆您的学校账号";
+                llStudentID.placeholder = "学生ID";
+                llPassword.placeholder = "密码";
+                llsubmit.value = "提交";
+            } catch (e) {
+            }
+        //settings
+            try {
+                ssTextSecurity.innerHTML = "安全设置";
+                ssButtonSecurity.innerHTML = "更改";
+                ssTextNotifications.innerHTML = "通知设置";
+                ssFirstBtn.innerHTML = "通知设置";
+                ssTextLanguage.innerHTML = "更改语言";
+                ssSecondBtn.innerHTML = "语言";
+                ssTextModalNotifications.innerHTML = "是否允许通知时启用铃声？";
+                ssTextTheme.innerHTML = "更换主题";
+                ssThirdBtn.innerHTML = "更换主题";
+                ssThemeDark.innerHTML = "暗夜主题";
+                ssThemeLight.innerHTML = "白日主题";
+                ssTextContrast.innerHTML = "高对比度";
+                ssTextContrastModal.innerHTML = "允许高对比度设置？";
+                ssTextContrast.innerHTML = "更改对比度";
+                ssFourthBtn.value = "更改";
+            } catch (e) {
+            }
 
-    }
-}
+            //userDashboard
+            try {
+                udTextHeaderPass.innerHTML = "修改密码";
+                udButtonTextFirstBtn.innerHTML = "修改";
+                udTextHeaderAccount.innerHTML = "删除账户";
+                udButtonTextSecondBtn.innerHTML = "删除";
+                udTextHeaderPin.innerHTML = "设置PIN码";
+                udButtonTextThirdBtn.innerHTML = "设置";
+
+                //ERROR MESSAGE ID TRANSLATION????
+
+                udTextModalOldPassPlaceholder.placeholder = "输入你现在的密码";
+                udTextModalNewPassPlaceholder.placeholder = "输入你的新密码";
+                udTextModalRepeatNewPassPlaceholder.placeholder = "再次输入你的新密码";
+                udButtonTextSubmitButtonForPass.innerHTML = "提交";
+
+                udModalTextHeaderWarningNote.innerHTML = "警告";
+                udModalTextBodyWarningNote.innerHTML = "你正在删除你账户的所有数据, 这意味着你将无法再次使用本应用。 如果你决定继续, 请在下方输入你现在的密码并点击 '提交'.";
+                udTextModalRepeatPassDeleteAccountPlaceholder.placeholder = "输入密码以删除账户";
+                udButtonTextSubmitButtonForDeleteAccount.innerHTML = "提交";
+
+                udTextModalNewPinPlaceholder.placeholder = "输入你的新PIN码";
+                udTextModalRepeatPinPlaceholder.placeholder = "再次输入你的新PIN码";
+                udButtonTextSubmitButtonForChangePin.innerHTML = "提交";
+            } catch (e) {
+            }
+
+            //map
+            try {
+                mpSearch.placeholder = "输入 Northumbria...";
+            } catch (e) {
+            }
+
+        }
 
 }

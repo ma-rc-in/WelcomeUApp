@@ -636,7 +636,6 @@ function themeChange() {
     var mmlgroupChat = document.getElementById("mmlgroupChat");
     var mmEnrolmentLogoBlocked = document.getElementById("mmEnrolmentLogoBlocked");
 
-
     //Login
     var llLogo = document.getElementById("llLogo");
     var llWrapLogin  = document.getElementById("llWrapLogin");
@@ -657,6 +656,7 @@ function themeChange() {
     var mapLogo = document.getElementById("mapLogo");
     var mapContainer = document.getElementById("mapContainer");
     var mpSearch = document.getElementById("pac-input");
+
 
 
     //Light Theme
@@ -781,20 +781,53 @@ function themeChange() {
             gcMessageContentBox.style.backgroundColor = "white";
         } catch (e) {}
     }
-    function highContrast() {
-        var text = localStorage.getItem("textContrast");
-        if (text == null){//checks to see if the user has a preference set, if not
-            var defaultText = "off";
-            localStorage.setItem("textContrast", defaultText); //sets the default to off (needs to be enabled by the user)
-        }
+}
 
-        //main menu
-        var mapMenuText= document.getElementById("mapMenu");
-        var groupChatMenuText = document.getElementById("groupChatMenu");
-        var helpMenuText = document.getElementById("helpMenu");
-        var annoucementsMenuText= document.getElementById("annoucementsMenu");
-        var enrolmentMenuText = document.getElementById("enrolmentMenu");
-        var settingsMenuText= document.getElementById("settingsMenu");
+function highContrast() {
+    var text = localStorage.getItem("textContrast");
+    if (text == null) {//checks to see if the user has a preference set, if not
+        var defaultText = "off";
+        localStorage.setItem("textContrast", defaultText); //sets the default to off (needs to be enabled by the user)
     }
 
+    //main menu
+    var mapMenuText = document.getElementById("mapMenu");
+    var groupChatMenuText = document.getElementById("groupChatMenu");
+    var helpMenuText = document.getElementById("helpMenu");
+    var annoucementsMenuText = document.getElementById("annoucementsMenu");
+    var enrolmentMenuText = document.getElementById("enrolmentMenu");
+    var settingsMenuText = document.getElementById("settingsMenu");
+
+    //GroupChat
+    var gcCourseNameEcho = document.getElementById("gcCourseNameEcho");
+    var courseNameTitleGroupChat = document.getElementById("gcCourseNameTitle");
+    var yourMessageGroupChat = document.getElementById("gcYourMessage");
+    var MessageContentBoxGroupChat = document.getElementById("gcMessageContentBox");
+    var reportButtonGroupChat = document.getElementById("gcReportButton");
+    var sendButtonGroupChat = document.getElementById("gcSendButton");
+    var reportUserGroupChat = document.getElementById("gcReportUser");
+    var userIDGroupChat = document.getElementById("gcUserID");
+    var reasonLabelGroupChat = document.getElementById("gcReasonTitle");
+    var reasonGroupChat = document.getElementById("gcReason");
+    var reportSubmitGroupChat = document.getElementById("gcReportSubmit");
+
+    //TODO CHange
+    if (text == "on") {
+
+
+        //groupChat
+        try {
+            gcCourseNameEcho.style.color = "black";
+            courseNameTitleGroupChat.style.color = "black";
+            yourMessageGroupChat.style.color = "yellow";
+            MessageContentBoxGroupChat.style.color = "yellow";
+            reportButtonGroupChat.style.color = "yellow";
+            sendButtonGroupChat.style.color = "yellow";
+            reportUserGroupChat.style.color = "yellow";
+            userIDGroupChat.style.color = "yellow";
+            reasonLabelGroupChat.style.color = "yellow";
+            reasonGroupChat.style.color = "yellow";
+            reportSubmitGroupChat.style.color = "yellow";
+        }catch (e) {}
+    }
 }

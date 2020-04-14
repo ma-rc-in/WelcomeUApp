@@ -94,9 +94,9 @@ $CheckPassword = $_POST['CheckPass'];
 
     <script>
     function checkForPassword() {
-  var password = $("#newPassInput").val();
-  var confirmPassword = $("#repeatPassInput").val();
-  var button = $('#udBttonTextSubmitButtonForPass');
+  var password = $("#udTextModalNewPassPlaceholder").val();
+  var confirmPassword = $("#udTextModalRepeatNewPassPlaceholder").val();
+  var button = $('#udButtonTextSubmitButtonForPass');
 
   if (password != confirmPassword)
     $("#error").html("Passwords are not the same!!!");
@@ -109,7 +109,7 @@ $CheckPassword = $_POST['CheckPass'];
 }
 
 $(document).ready(function() {
-  $("#repeatPassInput").keyup(checkForPassword);
+  $("#udTextModalRepeatNewPassPlaceholder").keyup(checkForPassword);
   $("#disabledText").text("Please fill in the form to be able to submit your new password");
 
   $('#firstModal').on('hidden', function () {

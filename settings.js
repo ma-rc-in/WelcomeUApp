@@ -16,6 +16,7 @@ function setTheme() {
     }
 }
 
+
 function getTheme() {
     var themeCheck = localStorage.getItem("theme");
     var dark = document.getElementById("dark");
@@ -28,6 +29,30 @@ function getTheme() {
         light.checked = true;
     }
 }
+
+
+function setHighContrast() {
+    if (document.getElementById("contrastSwitch").checked == true) {
+        localStorage.setItem("textContrast", "on"); //updates the local message amount
+    }
+    else{
+        localStorage.setItem("textContrast", "off"); //updates the local message amount
+    }
+}
+
+function getHighContrast() {
+    var contrastCheck = localStorage.getItem("textContrast");
+    if(contrastCheck == "off"){
+        if (document.getElementById("contrastSwitch") != null) {
+            document.getElementById("contrastSwitch").checked = false;
+        }
+    } else {
+        if (document.getElementById("contrastSwitch") != null) {
+            document.getElementById("contrastSwitch").checked = true;
+        }
+    }
+}
+
 
 function languageChange() {
     var language = localStorage.getItem("language");
@@ -745,4 +770,3 @@ function themeChange() {
         } catch (e) {}
     }
 }
-

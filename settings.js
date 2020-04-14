@@ -8,7 +8,7 @@ function setLanguage() {
 
 function languageChange() {
     var language = localStorage.getItem("language");
-    if (language == null){//checks to see if the user has a preference set, if not
+    if (language == null) {//checks to see if the user has a preference set, if not
         var defaultLanguage = "English";
         localStorage.setItem("language", defaultLanguage); //sets the default language to English (for first time users)
 
@@ -16,19 +16,19 @@ function languageChange() {
 
     //gets the IDs of all menu areas
     //main Menu
-    var mapMenu= document.getElementById("mapMenu");
+    var mapMenu = document.getElementById("mapMenu");
     var groupChatMenu = document.getElementById("groupChatMenu");
     var helpMenu = document.getElementById("helpMenu");
-    var annoucementsMenu= document.getElementById("annoucementsMenu");
+    var annoucementsMenu = document.getElementById("annoucementsMenu");
     var enrolmentMenu = document.getElementById("enrolmentMenu");
-    var settingsMenu= document.getElementById("settingsMenu");
+    var settingsMenu = document.getElementById("settingsMenu");
 
     //login
     var llWelcomeU = document.getElementById("llWelcomeU");
-    var llLoginMessage  = document.getElementById("llLoginMessage");
+    var llLoginMessage = document.getElementById("llLoginMessage");
     var llStudentID = document.getElementById("llStudentID");
     var llPassword = document.getElementById("llPassword");
-    var llsubmit= document.getElementById("llSubmit");
+    var llsubmit = document.getElementById("llSubmit");
 
     //groupChat
     var courseNameTitleGroupChat = document.getElementById("gcCourseNameTitle");
@@ -46,29 +46,29 @@ function languageChange() {
 
     //self enrolment
     //selfEnrolmentForm
-    var eeTitleOne= document.getElementById("eeTitleOne");
+    var eeTitleOne = document.getElementById("eeTitleOne");
     var eeStepOne = document.getElementById("eeStepOne");
     var eePersonalDetails = document.getElementById("eePersonalDetails");
-    var eeTitle= document.getElementById("eeTitle");
+    var eeTitle = document.getElementById("eeTitle");
     var eeFirstName = document.getElementById("eeFirstName");
-    var eeLastName= document.getElementById("eeLastName");
-    var eeGender= document.getElementById("eeGender");
+    var eeLastName = document.getElementById("eeLastName");
+    var eeGender = document.getElementById("eeGender");
     var eePersonalEmail = document.getElementById("eePersonalEmail");
     var eeukMobile = document.getElementById("eeukMobile");
     var eeukMobile2 = document.getElementById("eeukMobile2");
     var eeEmergenceTitle = document.getElementById("eeEmergenceTitle");
-    var eeEmergencyPerson= document.getElementById("eeEmergencyPerson");
+    var eeEmergencyPerson = document.getElementById("eeEmergencyPerson");
     var eeEmergencyRelationship = document.getElementById("eeEmergencyRelationship");
-    var country= document.getElementById("country");
+    var country = document.getElementById("country");
     var eeContactNo = document.getElementById("eeContactNo");
-    var eesubmit= document.getElementById("submit");
+    var eesubmit = document.getElementById("submit");
     //uploadPhoto
     var eeTitleTwo = document.getElementById("eeTitleTwo");
-    var eeStepTwo= document.getElementById("eeStepTwo");
+    var eeStepTwo = document.getElementById("eeStepTwo");
     var eeSmartCardCurrent = document.getElementById("eeSmartCardCurrent");
-    var eeSmartCardUpload= document.getElementById("eeSmartCardUpload");
+    var eeSmartCardUpload = document.getElementById("eeSmartCardUpload");
     var eeFilename = document.getElementById("eeFilename");
-    var eesubmitTwo= document.getElementById("submit");
+    var eesubmitTwo = document.getElementById("submit");
     //selfEnrolmentCompleted
     var eeSuccess = document.getElementById("eeSuccess");
     var eeComplete = document.getElementById("eeComplete");
@@ -133,7 +133,7 @@ function languageChange() {
     //Map
     var mpSearch = document.getElementById("pac-input");
     //English
-    if (language == "English"){ //each page needs a try catch so that it can load without the other pages elements
+    if (language == "English") { //each page needs a try catch so that it can load without the other pages elements
         //Main Menu
         try {
             mapMenu.innerHTML = "Map";
@@ -142,7 +142,8 @@ function languageChange() {
             annoucementsMenu.innerHTML = "Annoucements";
             enrolmentMenu.innerHTML = "Self Enrolment";
             settingsMenu.innerHTML = "Settings";
-        } catch (e) {}
+        } catch (e) {
+        }
 
         //groupchat
         try {
@@ -153,7 +154,7 @@ function languageChange() {
             sendButtonGroupChat.value = "Send";
             reportUserGroupChat.innerHTML = "Report a user";
             userIDGroupChat.innerHTML = "Please select the users ID you wish to report:";
-            reasonLabelGroupChat.innerHTML =  "Please select why you are making this report:";
+            reasonLabelGroupChat.innerHTML = "Please select why you are making this report:";
             reasonGroupChat.innerHTML = "Please explain why you are making this report:";
             reasonSelectGroupChat.options[0].text = "Spam";
             reasonSelectGroupChat.options[1].text = "Abusive Language/Content";
@@ -161,7 +162,8 @@ function languageChange() {
             reasonSelectGroupChat.options[3].text = "Other (Please Comment Below)";
             commentGroupChat.placeholder = "Please comment here:";
             reportSubmitGroupChat.value = "Submit";
-        }catch (e) {}
+        } catch (e) {
+        }
 
         //login
         try {
@@ -170,7 +172,8 @@ function languageChange() {
             llStudentID.placeholder = "StudentID";
             llPassword.placeholder = "Password";
             llsubmit.value = "submit";
-        } catch (e) {}
+        } catch (e) {
+        }
 
         //selfEnrolmentForm
         try {
@@ -192,7 +195,8 @@ function languageChange() {
             country.options[2].text = "Others";
             eeContactNo.innerHTML = "Contact No.:;";
             eesubmit.value = "Save & Next";
-        }catch (e) {}
+        } catch (e) {
+        }
         //uploadPhoto
         try {
             eeTitleTwo.innerHTML = "Self-enrolment Form";
@@ -201,13 +205,15 @@ function languageChange() {
             eeSmartCardUpload.innerHTML = "Upload SmartCard Photo";
             eeFilename.innerHTML = "Filename:";
             eesubmitTwo.value = "Submit";
-        }catch (e) {}
+        } catch (e) {
+        }
         //selfEnrolmentCompleted
         try {
             eeSuccess.innerHTML = "Congratulation!";
             eeComplete.innerHTML = "You have completed self-enrolment process.";
             eeLink.innerHTML = "Please click this <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">link</a> to view your programme induction timetable";
-        }catch (e) {}
+        } catch (e) {
+        }
 
         //settings
         try {
@@ -226,7 +232,8 @@ function languageChange() {
             ssTextContrastModal.innerHTML = "Enable high contrast setting?";
             ssTextContrast.innerHTML = "Change contrast";
             ssFourthBtn.value = "Change";
-        } catch (e) {}
+        } catch (e) {
+        }
 
         //userDashboard
         try {
@@ -252,12 +259,14 @@ function languageChange() {
             udTextModalNewPinPlaceholder.placeholder = "Enter your new PIN";
             udTextModalRepeatPinPlaceholder.placeholder = "Repeat your new PIN";
             udButtonTextSubmitButtonForChangePin.innerHTML = "Submit";
-        } catch (e) {}
+        } catch (e) {
+        }
 
         //map
         try {
             mpSearch.placeholder = "Type Northumbria...";
-        } catch (e) {}
+        } catch (e) {
+        }
 
     }
 
@@ -382,7 +391,8 @@ function languageChange() {
             country.options[2].text = "Inne";
             eeContactNo.innerHTML = "Numer kontaktowy.:;";
             eesubmit.value = "Zapisz & Przejdź dalej";
-        }catch (e) {}
+        } catch (e) {
+        }
         //uploadPhoto
         try {
             eeTitleTwo.innerHTML = "Formularz rejerstracji";
@@ -391,18 +401,21 @@ function languageChange() {
             eeSmartCardUpload.innerHTML = "Wgraj 'SmartCard' zdjęcie";
             eeFilename.innerHTML = "Nazwa pliku:";
             eesubmitTwo.value = "Prześlij";
-        }catch (e) {}
+        } catch (e) {
+        }
         //selfEnrolmentCompleted
         try {
             eeSuccess.innerHTML = "Gratulacje!";
             eeComplete.innerHTML = "Zakończyłeś proces rejerstracji pomyślnie.";
             eeLink.innerHTML = "Kliknij tutaj <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">link</a>, aby zobaczyć plan zajęć wprowadzających.";
-        }catch (e) {}
+        } catch (e) {
+        }
 
         //map
         try {
             mpSearch.placeholder = "Napisz Northumbria...";
-        } catch (e) {}
+        } catch (e) {
+        }
         //Chinese
         if (language == "Chinese") {
             //Main Menu
@@ -415,8 +428,26 @@ function languageChange() {
                 settingsMenu.innerHTML = "设置";
             } catch (e) {
             }
-
-        //login
+            //groupchat
+            try {
+                courseNameTitleGroupChat.innerHTML = "- 群聊";
+                yourMessageGroupChat.innerHTML = "你的信息:";
+                MessageContentBoxGroupChat.placeholder = "在此输入你的信息";
+                reportButtonGroupChat.innerHTML = "举报";
+                sendButtonGroupChat.value = "发送";
+                reportUserGroupChat.innerHTML = "举报用户";
+                userIDGroupChat.innerHTML = "请选择你要举报的用户ID:";
+                reasonLabelGroupChat.innerHTML = "请选择你举报的原因:";
+                reasonGroupChat.innerHTML = "请说明举报的原因:";
+                reasonSelectGroupChat.options[0].text = "垃圾邮件";
+                reasonSelectGroupChat.options[1].text = "辱骂语言/内容";
+                reasonSelectGroupChat.options[2].text = "煽动暴力";
+                reasonSelectGroupChat.options[3].text = "其他（请在下面评论）";
+                commentGroupChat.placeholder = "请在这里评论:";
+                reportSubmitGroupChat.value = "发送";
+            } catch (e) {
+            }
+            //login
             try {
                 llWelcomeU.innerHTML = "欢迎你";
                 llLoginMessage.innerHTML = "请登陆您的学校账号";
@@ -425,7 +456,7 @@ function languageChange() {
                 llsubmit.value = "提交";
             } catch (e) {
             }
-        //settings
+            //settings
             try {
                 ssTextSecurity.innerHTML = "安全设置";
                 ssButtonSecurity.innerHTML = "更改";
@@ -442,6 +473,46 @@ function languageChange() {
                 ssTextContrastModal.innerHTML = "允许高对比度设置？";
                 ssTextContrast.innerHTML = "更改对比度";
                 ssFourthBtn.value = "更改";
+            } catch (e) {
+            }
+
+            //selfEnrolmentForm
+            try {
+                eeTitleOne.innerHTML = "自我注册表格";
+                eeStepOne.innerHTML = "步骤1 _请填写详细信息";
+                eePersonalDetails.innerHTML = "个人详细信息";
+                eeTitle.innerHTML = "标题:";
+                eeFirstName.innerHTML = "名字:";
+                eeLastName.innerHTML = "姓氏:";
+                eeGender.innerHTML = "性别:";
+                eePersonalEmail.innerHTML = "个人电子邮件地址:";
+                eeukMobile.innerHTML = "英国手机号码:";
+                eeukMobile2.innerHTML = "请在+44 XXXX XXXXXX之后继续";
+                eeEmergenceTitle.innerHTML = "紧急联系方式";
+                eeEmergencyPerson.innerHTML = "紧急联系人:";
+                eeEmergencyRelationship.innerHTML = "关系:";
+                country.options[0].text = "父母";
+                country.options[1].text = "监护人";
+                country.options[2].text = "其他";
+                eeContactNo.innerHTML = "联络号码:;";
+                eesubmit.value = "保存并继续";
+            } catch (e) {
+            }
+            //uploadPhoto
+            try {
+                eeTitleTwo.innerHTML = "自我注册表格";
+                eeStepTwo.innerHTML = "步骤2 _请上传您的照片作为您的学生证";
+                eeSmartCardCurrent.innerHTML = "目前所上传的学生证照片";
+                eeSmartCardUpload.innerHTML = "上传照片";
+                eeFilename.innerHTML = "文件名:";
+                eesubmitTwo.value = "完成";
+            } catch (e) {
+            }
+            //selfEnrolmentCompleted
+            try {
+                eeSuccess.innerHTML = "恭喜!";
+                eeComplete.innerHTML = "您已完成自我注册过程";
+                eeLink.innerHTML = "请点击这个 <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">链接</a> 查看您的新学期时间表";
             } catch (e) {
             }
 
@@ -480,4 +551,5 @@ function languageChange() {
 
         }
 
+    }
 }

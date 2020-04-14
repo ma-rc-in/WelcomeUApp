@@ -82,7 +82,7 @@ else
             margin-right: auto;
             padding: 0 11px 0 11px;
             text-overflow: ellipsis;
-            width: 400px;
+            width: 50%;
         }
 
         #pac-input:focus {
@@ -118,24 +118,8 @@ else
                 max-width: 70%;
             }
 
-            #pac-input.controls {
-                max-width: 20px;
-            }
 
-            #pac-input:focus {
-                border-color: #4d90fe;
-            }
 
-            #title {
-                color: #fff;
-                background-color: #4d90fe;
-                font-size: 25px;
-                font-weight: 500;
-                padding: 6px 12px;
-            }
-            #target {
-                width: 345px;
-            }
 
 
     </style>
@@ -154,10 +138,9 @@ else
     <div id="map" style="width:100%;height:100%"></div>
 </div>
 <script>
-
     var map;
-    function CenterControl(controlDiv, map) {
-
+    initMap();
+    function LocationControl(controlDiv) {
         // Set CSS for the control border.
         var controlUI = document.createElement('div');
         controlUI.style.backgroundColor = '#fff';
@@ -167,7 +150,7 @@ else
         controlUI.style.cursor = 'pointer';
         controlUI.style.margin = '11px';
         controlUI.style.textAlign = 'center';
-        controlUI.title = 'Click to recenter the map';
+        controlUI.title = 'Find user location';
         controlDiv.appendChild(controlUI);
 
         // Set CSS for the control interior.
@@ -345,10 +328,10 @@ else
             map.fitBounds(bounds);
         });
 
-        var centerControlDiv = document.createElement('div');
-        var centerControl = new CenterControl(centerControlDiv, map);
-        centerControlDiv.index = 1;
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+        var locationControlDiv = document.createElement('div');
+        LocationControl(locationControlDiv);
+        locationControlDiv.index = 1;
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(locationControlDiv);
     }
 
     function getLocation() {
@@ -383,7 +366,7 @@ else
 
 </script>
 <script
-    src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAR74Eta1Ce36l5wvfuY4IaNKL9jWyfmMo&sensor=SET_TO_TRUE_OR_FALSE&libraries=places&callback=initMap&language=en-GB&region=GB"async defer>
+    src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAR74Eta1Ce36l5wvfuY4IaNKL9jWyfmMo&sensor=SET_TO_TRUE_OR_FALSE&callback=initMap&libraries=places&language=en-GB&region=GB"async defer>
 </script>
 </body>
 </html>

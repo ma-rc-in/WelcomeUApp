@@ -629,9 +629,43 @@ function themeChange() {
     var gcLimiter = document.getElementById("limiter");
     var gcChatContainer = document.getElementById("gcChatContainer");
 
+    //self-enrolment form
+    var eeLogo = document.getElementById("eeLogo");
+    var eeTitleOne = document.getElementById("eeTitleOne");
+    var eeStepOne = document.getElementById("eeStepOne");
+    var eeTitleTwo = document.getElementById("eeTitleTwo");
+    var eeStepTwo = document.getElementById("eeStepTwo");
+    var eeSuccess = document.getElementById("eeSuccess");
+    var eeComplete = document.getElementById("eeComplete");
+    var eeLink = document.getElementById("eeLink");
 
     //Light Theme
     if (theme == "light"){
+        // Self Enrolment form
+        document.body.style.backgroundColor = "white";
+        try {
+            eeLogo.src = "images/logoBlack.png";
+            eeTitleOne.style.color = "black";
+            eeStepOne.style.color = "black";
+        } catch (e) {
+
+        }
+        try {
+            eeLogo.src = "images/logoBlack.png";
+            eeTitleTwo.style.color = "black";
+            eeStepTwo.style.color = "black";
+        } catch (e) {
+
+        }
+        try {
+            eeLogo.src = "images/logoBlack.png";
+            eeSuccess.style.color = "black";
+            eeComplete.style.color = "black";
+            eeLink.style.color = "black";
+        } catch (e) {
+
+        }
+
         //Main Menu
         try {
             document.body.style.backgroundColor = "white";

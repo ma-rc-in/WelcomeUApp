@@ -269,7 +269,7 @@ Media Queries
     </div>
 
     <div class="patch-item patch-button" id="mmHelpBackground">
-        <a href="help.php">
+        <a href="helpServices.php">
             <img class="test" id="mmHelpLogo" src="images/question.png" alt="Help" width= "120px" height= "120px" />
             <h5 class="textIcons" id="helpMenu">Help</h5>
         </a>

@@ -119,17 +119,13 @@ else
                 max-width: 70%;
             }
 
-
-
-
-
     </style>
 </head>
 <body>
-<div class="patch-container">
+<div class="patch-container" id="gcContainer">
     <div class="logoMain">
         <a href="mainmenu.php">
-            <img class="test" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+            <img class="test" id="gcLogo" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
 </div>

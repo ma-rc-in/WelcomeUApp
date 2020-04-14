@@ -6,6 +6,29 @@ function setLanguage() {
     }
 }
 
+function setTheme() {
+    var dark = document.getElementById("dark");
+
+    if (dark.checked == true){
+        localStorage.setItem("theme", "dark");//saves the value
+    } else {
+        localStorage.setItem("theme", "light");//saves the value
+    }
+}
+
+function getTheme() {
+    var themeCheck = localStorage.getItem("theme");
+    var dark = document.getElementById("dark");
+    var light = document.getElementById("light");
+    if (themeCheck == "dark"){
+        dark.checked = true;
+        light.checked = false;
+    }else {
+        dark.checked = false;
+        light.checked = true;
+    }
+}
+
 function languageChange() {
     var language = localStorage.getItem("language");
     if (language == null) {//checks to see if the user has a preference set, if not
@@ -416,6 +439,7 @@ function languageChange() {
             mpSearch.placeholder = "Napisz Northumbria...";
         } catch (e) {
         }
+    }
         //Chinese
         if (language == "Chinese") {
             //Main Menu
@@ -550,6 +574,4 @@ function languageChange() {
             }
 
         }
-
-    }
 }

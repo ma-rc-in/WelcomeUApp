@@ -209,7 +209,6 @@ if (isset($_SESSION['sessionStudentID'])) {
   var span1 = document.getElementsByClassName("close firstClose")[0];
   btn1.onclick = function () {
     modal1.style.display = "block";
-    getVolume();
   }
   span1.onclick = function () {
     modal1.style.display = "none";

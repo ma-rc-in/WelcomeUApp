@@ -259,6 +259,153 @@ function languageChange() {
             mpSearch.placeholder = "Type Northumbria...";
         } catch (e) {}
 
+    }
+
+    //Polish
+    if (language == "Polish") {
+        //Main Menu
+        try {
+            mapMenu.innerHTML = "Mapa";
+            groupChatMenu.innerHTML = "Czat grupowy";
+            helpMenu.innerHTML = "Wsparcie";
+            annoucementsMenu.innerHTML = "Ogłoszenia";
+            enrolmentMenu.innerHTML = "Rejestracja";
+            settingsMenu.innerHTML = "Ustawienia";
+        } catch (e) {
+        }
+
+        //groupchat
+        try {
+            courseNameTitleGroupChat.innerHTML = "- Czat grupowy";
+            yourMessageGroupChat.innerHTML = "Twoja wiadomość:";
+            MessageContentBoxGroupChat.placeholder = "Wprowadź swoją wiadomość.";
+            reportButtonGroupChat.innerHTML = "Zgłoś";
+            sendButtonGroupChat.value = "Wyślij";
+            reportUserGroupChat.innerHTML = "Zgłoś użytkownika";
+            userIDGroupChat.innerHTML = "Wybierz użytkownika, którego chcesz zgłosić:";
+            reasonLabelGroupChat.innerHTML = "Wybierz powód zgłoszenia:";
+            reasonGroupChat.innerHTML = "Wyjaśnij czemu chcesz dokonać tego zgłoszenia:";
+            reasonSelectGroupChat.options[0].text = "Spam";
+            reasonSelectGroupChat.options[1].text = "Obraźliwy język/treści";
+            reasonSelectGroupChat.options[2].text = "Podżeganie";
+            reasonSelectGroupChat.options[3].text = "Inne (podaj więcej szczegółów poniżej)";
+            commentGroupChat.placeholder = "Podaj więcej szczegółów dotyczących zgłoszenia:";
+            reportSubmitGroupChat.value = "Wyślij";
+        } catch (e) {
+        }
+
+        //settings
+        try {
+            ssTextSecurity.innerHTML = "Ustawienia bezpieczeństwa";
+            ssButtonSecurity.innerHTML = "Zmień";
+            ssTextNotifications.innerHTML = "Ustawienia powiadomień";
+            ssFirstBtn.innerHTML = "Zmień powiadomienia";
+            ssTextLanguage.innerHTML = "Zmień wyświetlany język";
+            ssSecondBtn.innerHTML = "Zmień język";
+            ssTextModalNotifications.innerHTML = "Czy chcesz włączyć dźwięk powiadomień?";
+            ssTextTheme.innerHTML = "Ustawienia motywów";
+            ssThirdBtn.innerHTML = "Zmień motyw";
+            ssThemeDark.innerHTML = "Ciemny motyw";
+            ssThemeLight.innerHTML = "Jasny motyw";
+        } catch (e) {
+        }
+
+        //userDashboard
+        try {
+            udTextHeaderPass.innerHTML = "Zmiana hasła";
+            udButtonTextFirstBtn.innerHTML = "Zmień hasło";
+            udTextHeaderAccount.innerHTML = "Funkcja usuwania konta";
+            udButtonTextSecondBtn.innerHTML = "Usuń konto";
+            udTextHeaderPin.innerHTML = "Funkcja zmiany PINu";
+            udButtonTextThirdBtn.innerHTML = "Zmień PIN";
+
+            //ERROR MESSAGE ID TRANSLATION????
+
+            udTextModalOldPassPlaceholder.placeholder = "Wprowadź obecne hasło";
+            udTextModalNewPassPlaceholder.placeholder = "Wprowadź nowe hasło";
+            udTextModalRepeatNewPassPlaceholder.placeholder = "Powtórz nowe hasło";
+            udButtonTextSubmitButtonForPass.innerHTML = "Potwierdź";
+
+            udModalTextHeaderWarningNote.innerHTML = "UWAGA";
+            udModalTextBodyWarningNote.innerHTML = "Ta procedura wiąże się z usunięciem jakichkolwiek informacji związanych z tym kontem, co uniemożliwi dalesze korzystanie z serwisu. Jeśli chcesz kontynuować, wprowadź swoje hasło poniżej i kliknij 'Potwierdź'";
+            udTextModalRepeatPassDeleteAccountPlaceholder.placeholder = "Wprowadź obecne hasło, aby dokończyć procedurę usunięcia konta";
+            udButtonTextSubmitButtonForDeleteAccount.innerHTML = "Potwierdź";
+
+            udTextModalNewPinPlaceholder.placeholder = "Wprowadź nowy PIN";
+            udTextModalRepeatPinPlaceholder.placeholder = "Potwierdź nowy PIN";
+            udButtonTextSubmitButtonForChangePin.innerHTML = "Potwierdź";
+        } catch (e) {
+        }
+
+        //userDashboardAdmin
+        try {
+            udTextHeaderPass.innerHTML = "Zmiana hasła";
+            udButtonTextFirstBtn.innerHTML = "Zmień hasło";
+            udTextHeaderAccount.innerHTML = "Funkcja usuwania konta";
+            udButtonTextSecondBtn.innerHTML = "Usuń konto";
+            udTextHeaderPin.innerHTML = "Funkcja zmiany PINu";
+            udButtonTextThirdBtn.innerHTML = "Zmień PIN";
+
+            udTextModalOldPassPlaceholder.placeholder = "Wprowadź obecne hasło";
+            udTextModalNewPassPlaceholder.placeholder = "Wprowadź nowe hasło";
+            udTextModalRepeatNewPassPlaceholder.placeholder = "Powtórz nowe hasło";
+            udButtonTextSubmitButtonForPass.innerHTML = "Potwierdź";
+
+            udModalTextHeaderWarningNote.innerHTML = "UWAGA";
+            udModalTextBodyWarningNote.innerHTML = "Ta procedura wiąże się z usunięciem jakichkolwiek informacji związanych z tym kontem, co uniemożliwi dalesze korzystanie z serwisu. Jeśli chcesz kontynuować, wprowadź swoje hasło poniżej i kliknij 'Potwierdź'";
+            udTextModalRepeatPassDeleteAccountPlaceholder.placeholder = "Wprowadź obecne hasło, aby dokończyć procedurę usunięcia konta";
+            udButtonTextSubmitButtonForDeleteAccount.innerHTML = "Potwierdź";
+
+            udTextModalNewPinPlaceholder.placeholder = "Wprowadź nowy PIN";
+            udTextModalRepeatPinPlaceholder.placeholder = "Potwierdź nowy PIN";
+            udButtonTextSubmitButtonForChangePin.innerHTML = "Potwierdź";
+        } catch (e) {
+        }
+
+        //selfEnrolmentForm
+        try {
+            eeTitleOne.innerHTML = "Formularz rejerstracji";
+            eeStepOne.innerHTML = "Krok 1 _ Wypełnij podaną formę";
+            eePersonalDetails.innerHTML = "Dane osobowe";
+            eeTitle.innerHTML = "Zwrot:";
+            eeFirstName.innerHTML = "Imię:";
+            eeLastName.innerHTML = "Nazwisko:";
+            eeGender.innerHTML = "Płeć:";
+            eePersonalEmail.innerHTML = "Prywatny adres email:";
+            eeukMobile.innerHTML = "Telefon komórkowy (UK).:";
+            eeukMobile2.innerHTML = "Podaj numer komórkowy bez numeru kierunkowego - +44 XXXX XXXXXX";
+            eeEmergenceTitle.innerHTML = "Telefon alarmowy do zaufanej osoby:";
+            eeEmergencyPerson.innerHTML = "Dane personalne zaufanej osoby:";
+            eeEmergencyRelationship.innerHTML = "Powiązanie z zaufaną osobą:";
+            country.options[0].text = "Rodzic";
+            country.options[1].text = "Opiekun";
+            country.options[2].text = "Inne";
+            eeContactNo.innerHTML = "Numer kontaktowy.:;";
+            eesubmit.value = "Zapisz & Przejdź dalej";
+        }catch (e) {}
+        //uploadPhoto
+        try {
+            eeTitleTwo.innerHTML = "Formularz rejerstracji";
+            eeStepTwo.innerHTML = "Krok 2 _ Wgraj zdjęcie do twojej legitymacji studenckiej";
+            eeSmartCardCurrent.innerHTML = "Obecne 'SmartCard' zdjęcie";
+            eeSmartCardUpload.innerHTML = "Wgraj 'SmartCard' zdjęcie";
+            eeFilename.innerHTML = "Nazwa pliku:";
+            eesubmitTwo.value = "Prześlij";
+        }catch (e) {}
+        //selfEnrolmentCompleted
+        try {
+            eeSuccess.innerHTML = "Gratulacje!";
+            eeComplete.innerHTML = "Zakończyłeś proces rejerstracji pomyślnie.";
+            eeLink.innerHTML = "Kliknij tutaj <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">link</a>, aby zobaczyć plan zajęć wprowadzających.";
+        }catch (e) {}
+
+        //map
+        try {
+            mpSearch.placeholder = "Napisz Northumbria...";
+        } catch (e) {}
+
 
     }
+}
+
 }

@@ -575,3 +575,174 @@ function languageChange() {
 
         }
 }
+
+function themeChange() {
+    var theme = localStorage.getItem("theme");
+    if (theme == null){//checks to see if the user has a preference set, if not
+        var defaultTheme = "dark";
+        localStorage.setItem("theme", defaultTheme); //sets the default theme to dark (for first time users)
+    }
+
+    //main menu
+    //Background
+    var backgroundMenu = document.getElementById("mmbackground");
+    var mapMenu= document.getElementById("mmMapBackground");
+    var groupChatMenu = document.getElementById("mmGroupChatBackground");
+    var helpMenu = document.getElementById("mmHelpBackground");
+    var annoucementsMenu= document.getElementById("mmAnnoucementsBackground");
+    var enrolmentMenu = document.getElementById("mmEnrolmentBackground");
+    var settingsMenu= document.getElementById("mmSettingsBackground");
+    //Text
+    var mapMenuText= document.getElementById("mapMenu");
+    var groupChatMenuText = document.getElementById("groupChatMenu");
+    var helpMenuText = document.getElementById("helpMenu");
+    var annoucementsMenuText= document.getElementById("annoucementsMenu");
+    var enrolmentMenuText = document.getElementById("enrolmentMenu");
+    var settingsMenuText= document.getElementById("settingsMenu");
+    //ICONS
+    var menuLogo = document.getElementById("mmNULogo");
+    var mapLogo = document.getElementById("mmMapLogo");
+    var groupChatLogo = document.getElementById("groupChat");
+    var helpLogo = document.getElementById("mmHelpLogo");
+    var annoucementsLogo = document.getElementById("mmAnnoucementsLogo");
+    var enrolmentLogo = document.getElementById("mmEnrolmentLogo");
+    var settingsLogo = document.getElementById("mmSettingsLogo");
+    var logoutLogo = document.getElementById("mmLogoutLogo");
+    var mmlgroupChat = document.getElementById("mmlgroupChat");
+    var mmEnrolmentLogoBlocked = document.getElementById("mmEnrolmentLogoBlocked");
+
+
+    //Login
+    var llLogo = document.getElementById("llLogo");
+    var llWrapLogin  = document.getElementById("llWrapLogin");
+    var llContainerLogin  = document.getElementById("llContainerLogin");
+    var llWelcomeU = document.getElementById("llWelcomeU");
+    var llLoginMessage  = document.getElementById("llLoginMessage");
+
+    //groupChat
+    var gcBack= document.getElementById("gcBack");
+    var gcLogo = document.getElementById("gcLogo");
+    var gcBackground = document.getElementById("gcBackground");
+    var gcYourMessage= document.getElementById("gcYourMessage");
+    var gcMessageContentBox = document.getElementById("gcMessageContentBox");
+    var gcContainer = document.getElementById("gcContainer");
+    var gcLimiter = document.getElementById("limiter");
+    var gcChatContainer = document.getElementById("gcChatContainer");
+
+
+    //Light Theme
+    if (theme == "light"){
+        //Main Menu
+        try {
+            document.body.style.backgroundColor = "white";
+            backgroundMenu.style.backgroundColor = "white";
+            mapMenu.style.backgroundColor = "white";
+            groupChatMenu.style.backgroundColor = "white";
+            helpMenu.style.backgroundColor = "white";
+            annoucementsMenu.style.backgroundColor = "white";
+            enrolmentMenu.style.backgroundColor = "white";
+            settingsMenu.style.backgroundColor = "white";
+            mapMenuText.style.color = "black";
+            groupChatMenuText.style.color = "black";
+            helpMenuText.style.color = "black";
+            annoucementsMenuText.style.color = "black";
+            enrolmentMenuText.style.color = "black";
+            settingsMenuText.style.color = "black";
+            menuLogo.src="images/logoBlack.png";
+            mapLogo.src="images/maps-and-flagsBlack.png";
+            helpLogo.src="images/questionBlack.png";
+            annoucementsLogo.src="images/speakerBlack.png";
+            settingsLogo.src="images/settingsBlack.png";
+            logoutLogo.src="images/lockBlack.png";
+            try{
+                groupChatLogo.src="images/chatBlack.png";
+                enrolmentLogo.src="images/checklistBlack.png";
+            }catch (e) {}
+            try{
+                mmEnrolmentLogoBlocked.src="images/checklistBlocked.png";
+                mmlgroupChat.src="images/chatBlocked.png";
+            }catch (e) {}
+
+        } catch (e) {}
+
+        //login
+        try {
+            llLogo.src="images/logo_white.png";
+            llWrapLogin.style.backgroundColor = "black";
+            llContainerLogin.style.backgroundColor = "white";
+            llWelcomeU.style.backgroundColor = "black";
+            llLoginMessage.style.backgroundColor = "black";
+            llWelcomeU.style.color = "white";
+            llLoginMessage.style.color = "white";
+        } catch (e) {}
+
+        //GroupChat
+        try {
+            document.body.style.backgroundColor = "white";
+            gcBack.src="images/backBlack.png";
+            gcLogo.src="images/logoBlack.png";
+            gcContainer.style.backgroundColor = "white";
+            gcLimiter.style.backgroundColor = "white";
+            gcChatContainer.style.backgroundColor = "white";
+            gcBackground.style.backgroundColor = "grey";
+            gcYourMessage.style.backgroundColor = "white";
+            gcYourMessage.style.color = "black";
+            gcMessageContentBox.style.backgroundColor = "grey";
+        } catch (e) {}
+    }
+
+    //Dark theme
+    if (theme == "dark"){
+        //Main Menu
+        try {
+            document.body.style.backgroundColor = "black";
+            backgroundMenu.style.backgroundColor = "black";
+            mapMenu.style.backgroundColor = "black";
+            groupChatMenu.style.backgroundColor = "black";
+            helpMenu.style.backgroundColor = "black";
+            annoucementsMenu.style.backgroundColor = "black";
+            enrolmentMenu.style.backgroundColor = "black";
+            settingsMenu.style.backgroundColor = "black";
+            mapMenuText.style.color = "white";
+            groupChatMenuText.style.color = "white";
+            helpMenuText.style.color = "white";
+            annoucementsMenuText.style.color = "white";
+            enrolmentMenuText.style.color = "white";
+            settingsMenuText.style.color = "white";
+            menuLogo.src="images/logo_white.png";
+            mapLogo.src="images/maps-and-flags.png";
+            groupChatLogo.src="images/chat.png";
+            helpLogo.src="images/question.png";
+            annoucementsLogo.src="images/speaker.png";
+            enrolmentLogo.src="images/checklist.png";
+            settingsLogo.src="images/settings.png";
+            logoutLogo.src="images/lock.png";
+        } catch (e) {}
+
+        //login
+        try {
+            llLogo.src="images/logoBlack.png";
+            llWrapLogin.style.backgroundColor = "white";
+            llContainerLogin.style.backgroundColor = "black";
+            llWelcomeU.style.backgroundColor = "white";
+            llLoginMessage.style.backgroundColor = "white";
+            llWelcomeU.style.color = "grey";
+            llLoginMessage.style.color = "black";
+        } catch (e) {}
+
+        //GroupChat
+        try {
+            document.body.style.backgroundColor = "black";
+            gcBack.src="images/back.png";
+            gcLogo.src="images/logo_white.png";
+            gcContainer.style.backgroundColor = "black";
+            gcLimiter.style.backgroundColor = "black";
+            gcChatContainer.style.backgroundColor = "black";
+            gcBackground.style.backgroundColor = "white";
+            gcYourMessage.style.backgroundColor = "black";
+            gcYourMessage.style.color = "white";
+            gcMessageContentBox.style.backgroundColor = "white";
+        } catch (e) {}
+    }
+}
+

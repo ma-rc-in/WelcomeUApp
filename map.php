@@ -18,7 +18,7 @@ else
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
-    <script src =“settings.js” > </script>
+    <script src ="settings.js"> </script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <style>
         .maps {
@@ -122,21 +122,21 @@ else
     </style>
 </head>
 <body>
-<div class="patch-container" id="gcContainer">
+<div class="patch-container" id="mapContainer">
     <div class="logoMain">
         <a href="mainmenu.php">
-            <img class="test" id="gcLogo" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+            <img class="test" id="mapLogo" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
 </div>
 
 <div class="maps">
-    <input id="pac-input" class="controls" type="text" placeholder="Type Northumbria...">
+    <input id="pac-input" class="controls" type="text"  placeholder="Type Northumbria...">
     <div id="map" style="width:100%;height:100%"></div>
 </div>
 <script>
     var map;
-    initMap();
+
     function LocationControl(controlDiv) {
         // Set CSS for the control border.
         var controlUI = document.createElement('div');

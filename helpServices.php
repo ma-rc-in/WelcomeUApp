@@ -2,13 +2,23 @@
 require_once("connection.php");//gets the connections.php
 require_once("functions.php");
 $db = getConnection();//returns the connection for the database.
-?>
-<?php
+
 session_start();
 if (isset($_SESSION['sessionStudentID'])) {
+    $studentInfo = getStudentDetails(); //gets all student details
+    $studentEmail = $studentInfo['studentEmail'];//gets the student email
 } else {
-  header('Location:loginform.php');
-}  //return user to login
+    header('Location:loginform.php');
+}//return user to login
+
+
+if(isset($_POST['submit'])) { //change
+    $db = getConnection();//returns the connection for the database
+    $studentquery = "select password, studentID, isBanned from tbl_student where studentID=:SID"; //gets all from tbl_student
+    $studentselect = $db->prepare($studentquery);
+    $studentselect->bindParam('SID', $ID, PDO::PARAM_STR);
+    $studentselect->execute(array(":SID" => $ID));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,14 +148,22 @@ if (isset($_SESSION['sessionStudentID'])) {
       </a>
     </div>
 
+      <form>
+          <label id="hhEmail">Student Email Address:</label>
+          <input type = "text" name = "studentEmail" value="<?php echo $studentEmail;?>" required><br>
+
+          <label id="hhQuery">Your query:</label>
+          <textarea placeholder="Please write your query here..." id="hhQueryInput" name="hhQueryInput" class="hhQueryInput" required></textarea><br>
+
+          <input type="submit" name="submit" id="submit" value="Submit"/>
+      </form>
+
+
     <div class="patch-item patch-button" style="width: 100%; float: ;">
       <a href="#" id="hsButtonText" class="button" data-abbr="">See FAQ</a>
     </div>
 
       <button class="openChatbotBox" id="openChat" type="button">Chatbot</button>
-
-
-
       <div class="chatbotBoxInside" id="chatBotInside">
           <form action="" class="chatbotBoxInsideForm">
               <div class="messageChat">WelcomeU<br>Chatbot<br><br></div>

@@ -12,10 +12,4 @@ function chat() {
     else{
         chatOutput.value = "I do not know what you are trying to ask, please try again.";
     }
-
-
-    //<a href='https://libraryanswers.northumbria.ac.uk/index.php'>here</a>
-
-    //if more than 2 trys, try click here
-    // error
 }

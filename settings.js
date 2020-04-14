@@ -643,6 +643,23 @@ function themeChange() {
     var llWelcomeU = document.getElementById("llWelcomeU");
     var llLoginMessage  = document.getElementById("llLoginMessage");
 
+    //mainMenu
+    try {
+            mapMenuText.style.color = "yellow";
+            groupChatMenuText.style.color = "yellow";
+            helpMenuText.style.color = "yellow";
+            annoucementsMenuText.style.color = "yellow";
+            enrolmentMenuText.style.color = "yellow";
+            settingsMenuText.style.color = "yellow";
+    }catch (e) {}
+
+        //login
+        try {
+        llWelcomeU.style.color = "orange";
+        llLoginMessage.style.color = "orange";
+        llsubmit.style.color = "orange";
+    }catch (e) {}
+    
     //groupChat
     var gcBack= document.getElementById("gcBack");
     var gcLogo = document.getElementById("gcLogo");

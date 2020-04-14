@@ -7,17 +7,18 @@ session_start();
 if (isset($_SESSION['sessionStudentID'])) {
     $studentInfo = getStudentDetails(); //gets all student details
     $studentEmail = $studentInfo['studentEmail'];//gets the student email
-} else {
+} else { //return user to login
     header('Location:loginform.php');
-}//return user to login
-
+}
 
 if(isset($_POST['submit'])) { //change
-    $db = getConnection();//returns the connection for the database
-    $studentquery = "select password, studentID, isBanned from tbl_student where studentID=:SID"; //gets all from tbl_student
-    $studentselect = $db->prepare($studentquery);
-    $studentselect->bindParam('SID', $ID, PDO::PARAM_STR);
-    $studentselect->execute(array(":SID" => $ID));
+    $email = $_POST['studentEmail'];
+    $input = $_POST['hhQueryInput'];
+    $query = "INSERT INTO tbl_query (studentEmail, query) VALUES (:email, :query)";
+    $queryInsert = $db->prepare($query);
+    $queryInsert->bindParam('email', $email, PDO::PARAM_STR);
+    $queryInsert->bindParam('query', $input, PDO::PARAM_STR);
+    $queryInsert->execute(array(":email" => $email, ":query" =>$input));
 }
 ?>
 <!DOCTYPE html>
@@ -147,10 +148,9 @@ if(isset($_POST['submit'])) { //change
         </div>
       </a>
     </div>
-
-      <form>
+      <form action="helpServices.php" method="POST">
           <label id="hhEmail">Student Email Address:</label>
-          <input type = "text" name = "studentEmail" value="<?php echo $studentEmail;?>" required><br>
+          <input type = "text" name="studentEmail" value="<?php echo $studentEmail;?>" required><br>
 
           <label id="hhQuery">Your query:</label>
           <textarea placeholder="Please write your query here..." id="hhQueryInput" name="hhQueryInput" class="hhQueryInput" required></textarea><br>

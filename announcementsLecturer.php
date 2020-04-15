@@ -22,7 +22,7 @@ if(isset($_POST['submit'])) {
     $moduleID = $_POST['selectModule'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $query = "INSERT INTO tbl_announcements (selectModule, announcementSubject, announcmentMessage) VALUES (:selectModule, :announcementSubject, :announcmentMessage)";
+    $query = "INSERT INTO tbl_announcements (moduleID, announcementSubject, announcmentMessage) VALUES (:selectModule, :announcementSubject, :announcmentMessage)";
     $queryInsert = $db->prepare($query);
     $queryInsert->bindParam('selectModule', $moduleID, PDO::PARAM_STR);
     $queryInsert->bindParam('announcementSubject', $subject, PDO::PARAM_STR);
@@ -115,7 +115,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 <div class="container">
-    <form action="announcementsLecturer.php">
+    <form action="announcementsLecturer.php" method="POST">
 
         <label for="fname">Module Code</label>
 

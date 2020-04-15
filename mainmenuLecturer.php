@@ -257,7 +257,7 @@ Media Queries
     </div>
 
      <div class="patch-item patch-button" id="mmAnnoucementsBackground">
-        <a href="announcementsLecture.php">
+        <a href="announcementsLecturer.php">
             <img class="test" id="mmAnnoucementsLogo" src="images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
             <h5 class="textIcons" id="annoucementsMenu">Annoucements</h5>
         </a>

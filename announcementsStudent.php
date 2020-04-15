@@ -4,7 +4,7 @@ require_once("functions.php");
 $db = getConnection();//returns the connection for the database.
 
 session_start();
-
+//annoucements
 ?>
 
 <!DOCTYPE html>
@@ -82,6 +82,7 @@ session_start();
                 </a>
             </div>
         </div>
+
 
 <div class="dropdown">
   <span>Mouse over me</span>

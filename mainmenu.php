@@ -5,6 +5,7 @@ $db = getConnection();//returns the connection for the database.
 ?>
 <?php
 session_start();
+$StudentInfo = getStudentDetails();
 if(isset($_SESSION['sessionStudentID'])) {
     if (checkAccessType() == "Lecturer") {
         header('Location:mainmenuLecturer.php');
@@ -251,6 +252,10 @@ Media Queries
         <a href="mainmenu.php">
             <img class="test" id="mmNULogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
+    </div>
+
+    <div>
+        <h5 id="mmSmartCardBalance">Balance: <?php echo $StudentInfo['smartCardBalance'];?></h5>
     </div>
 
     <div class="patch-item patch-button" id="mmMapBackground">

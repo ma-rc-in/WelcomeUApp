@@ -72,6 +72,14 @@ function languageChange() {
     var enrolmentMenu = document.getElementById("enrolmentMenu");
     var settingsMenu = document.getElementById("settingsMenu");
 
+    var mmTextHeadermainMenuModal = document.getElementById("mmTextHeadermainMenuModal");
+    var mmHelpMap = document.getElementById("mmHelpMap");
+    var mmHelpGroupChat = document.getElementById("mmHelpGroupChat");
+    var mmHelpHelp = document.getElementById("mmHelpHelp");
+    var mmHelpAnnouncements = document.getElementById("mmHelpAnnouncements");
+    var mmHelpEnrolment = document.getElementById("mmHelpEnrolment");
+    var mmHelpSettings = document.getElementById("mmHelpSettings");
+
     //login
     var llWelcomeU = document.getElementById("llWelcomeU");
     var llLoginMessage = document.getElementById("llLoginMessage");
@@ -185,13 +193,21 @@ function languageChange() {
     if (language == "English") { //each page needs a try catch so that it can load without the other pages elements
         //Main Menu
         try {
-            mmSmartCardBalance.innerHTML = "Smart Card Balance";
+            mmSmartCardBalance.innerHTML = "Smart Card Balance:";
             mapMenu.innerHTML = "Map";
             groupChatMenu.innerHTML = "Group Chat";
             helpMenu.innerHTML = "Help";
             annoucementsMenu.innerHTML = "Annoucements";
             enrolmentMenu.innerHTML = "Self Enrolment";
             settingsMenu.innerHTML = "Settings";
+
+            mmTextHeadermainMenuModal.innerHTML = "User Guide";
+            mmHelpMap.innerHTML = "Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.";
+            mmHelpGroupChat.innerHTML = "Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.";
+            mmHelpHelp.innerHTML = "Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.";
+            mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
+            mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
+            mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
         } catch (e) {
         }
 
@@ -331,6 +347,14 @@ function languageChange() {
             annoucementsMenu.innerHTML = "Ogłoszenia";
             enrolmentMenu.innerHTML = "Rejestracja";
             settingsMenu.innerHTML = "Ustawienia";
+
+            mmTextHeadermainMenuModal.innerHTML = "User Guide";
+            mmHelpMap.innerHTML = "Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.";
+            mmHelpGroupChat.innerHTML = "Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.";
+            mmHelpHelp.innerHTML = "Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.";
+            mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
+            mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
+            mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
         } catch (e) {
         }
 
@@ -479,6 +503,14 @@ function languageChange() {
                 annoucementsMenu.innerHTML = "通知";
                 enrolmentMenu.innerHTML = "自助注册";
                 settingsMenu.innerHTML = "设置";
+
+                mmTextHeadermainMenuModal.innerHTML = "User Guide";
+                mmHelpMap.innerHTML = "Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.";
+                mmHelpGroupChat.innerHTML = "Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.";
+                mmHelpHelp.innerHTML = "Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.";
+                mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
+                mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
+                mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
             } catch (e) {
             }
             //groupchat
@@ -810,6 +842,14 @@ function highContrast() {
     var enrolmentMenuText = document.getElementById("enrolmentMenu");
     var settingsMenuText = document.getElementById("settingsMenu");
 
+    var mmTextHeadermainMenuModal = document.getElementById("mmTextHeadermainMenuModal");
+    var mmHelpMap = document.getElementById("mmHelpMap");
+    var mmHelpGroupChat = document.getElementById("mmHelpGroupChat");
+    var mmHelpHelp = document.getElementById("mmHelpHelp");
+    var mmHelpAnnouncements = document.getElementById("mmHelpAnnouncements");
+    var mmHelpEnrolment = document.getElementById("mmHelpEnrolment");
+    var mmHelpSettings = document.getElementById("mmHelpSettings");
+
     //login
     var llWelcomeU = document.getElementById("llWelcomeU");
     var llLoginMessage  = document.getElementById("llLoginMessage");
@@ -842,6 +882,13 @@ function highContrast() {
             annoucementsMenuText.style.color = "yellow";
             enrolmentMenuText.style.color = "yellow";
             settingsMenuText.style.color = "yellow";
+            mmTextHeadermainMenuModal.style.color = "yellow";
+            mmHelpMap.style.color = "yellow";
+            mmHelpGroupChat.style.color = "yellow";
+            mmHelpHelp.style.color = "yellow";
+            mmHelpAnnouncements.style.color = "yellow";
+            mmHelpEnrolment.style.color = "yellow";
+            mmHelpSettings.style.color = "yellow";
         }catch (e) {}
 
         //login

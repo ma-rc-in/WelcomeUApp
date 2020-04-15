@@ -323,7 +323,7 @@ Media Queries
 
    <div style="width: 100%; color: white">
         <h5 id="mmSmartCardBalance" style="display: inline-block;">Smart Card Balance:</h5>
-        <h5 id="mmBalance" style="display: inline-block;">sdsd<?php echo $StudentInfo['smartCardBalance'];?></h5>
+        <h5 id="mmBalance" style="display: inline-block;"><?php echo $StudentInfo['smartCardBalance'];?></h5>
    </div>
 
     <div class="patch-item patch-button" id="mmMapBackground">
@@ -383,10 +383,16 @@ Media Queries
             <div class="modal-content">
             <div class="modal-header">
             <span class="close" id="">&times;</span>
-            <h3 id="udTextHeadermainMenuModal">...</h3>
+            <h3 id="mmTextHeadermainMenuModal">User Guide</h3>
+
             </div>
             <div class="modal-body">
-dfsfd
+                <p id="mmHelpMap">Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.</p>
+                <p id="mmHelpGroupChat">Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.</p>
+                <p id="mmHelpHelp">Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.</p>
+                <p id="mmHelpAnnouncements">Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.</p>
+                <p id="mmHelpEnrolment">Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.</p>
+                <p id="mmHelpSettings">Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.</p>
             </div>
             </div>
             </div>

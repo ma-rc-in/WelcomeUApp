@@ -17,7 +17,17 @@ function convertModuleID($ID){ //this converts the module ID into a name
 if (checkAccessType() != "Lecturer") {
     header('Location:announcmentsStudent.php');
 }
-else
+if(isset($_POST['submit'])) { //change
+    $moduleID = $_POST['selectModule'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $query = "INSERT INTO tbl_announcements (selectModule, announcementSubject, announcmentMessage) VALUES (:selectModule, :announcementSubject, :announcmentMessage)";
+    $queryInsert = $db->prepare($query);
+    $queryInsert->bindParam('selectModule', $moduleID, PDO::PARAM_STR);
+    $queryInsert->bindParam('announcementSubject', $subject, PDO::PARAM_STR);
+    $queryInsert->bindParam('announcmentMessage', $message, PDO::PARAM_STR);
+    $queryInsert->execute(array(":selectModule" => $moduleID, ":announcementSubject" =>$subject, ":announcmentMessage" =>$message));
+}
 
 ?>
 
@@ -103,7 +113,7 @@ else
 </head>
 <body>
 <div class="container">
-    <form action="action_page.php">
+    <form action="announcementsLecturer.php">
 
         <label for="fname">Module Code</label>
 
@@ -143,7 +153,7 @@ else
         </select>
 
         <label for="subject"> Subject </label>
-        <input type="text" id="subject" name="Subject" placeholder="Type a subject..">
+        <input type="text" id="subject" name="subject" placeholder="Type a subject..">
 
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Type your message.." style="height:200px"></textarea>

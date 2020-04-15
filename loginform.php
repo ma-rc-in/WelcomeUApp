@@ -71,6 +71,17 @@ if (isset($_POST['submit'])) {
     <script src="settings.js"></script>
     <!--===============================================================================================-->
 </head>
+<style>
+#capsLockInfo {
+  font-family: Arial, sans-serif;
+  color: red;
+  text-align: center;
+  display:inline-block;
+  margin-bottom: 5px;
+  display: none;
+
+}
+</style>
 <body>
 
 
@@ -86,14 +97,16 @@ if (isset($_POST['submit'])) {
           </span>
                 <h5 id="llLoginMessage"> Please login with your university login</h5>
                 <p class="errorTxt"><?php echo $ErrorMessage; ?></p>
+                <p id="capsLockInfo">*Be careful with your login and password, Caps Lock is ON*</p>
+
                 <div class="wrap-input100 validate-input" data-validate="Student ID is required">
-                    <input class="input100" type="text" id="llStudentID" name="formStudentID" placeholder="StudentID">
+                    <input id="inputTextCapsLockLogin" class="input100" type="text" id="llStudentID" name="formStudentID" placeholder="StudentID">
                     <span class="focus-input100-1"></span>
                     <span class="focus-input100-2"></span>
                 </div>
 
                 <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" id="llPassword" name="formPassword" placeholder="Password">
+                    <input id="inputTextCapsLockPass" class="input100" type="password" id="llPassword" name="formPassword" placeholder="Password">
                     <span class="focus-input100-1"></span>
                     <span class="focus-input100-2"></span>
                 </div>
@@ -113,3 +126,27 @@ if (isset($_POST['submit'])) {
     highContrast();
 </script>
 
+<script>
+var checkInput = document.getElementById("inputTextCapsLockLogin");
+var capsNote = document.getElementById("capsLockInfo");
+checkInput.addEventListener("keyup", function(event) {
+
+  if (event.getModifierState("CapsLock")) {
+    capsNote.style.display = "block";
+  } else {
+    capsNote.style.display = "none"
+  }
+});
+</script>
+<script>
+var checkInput = document.getElementById("inputTextCapsLockPass");
+var capsNote = document.getElementById("capsLockInfo");
+checkInput.addEventListener("keyup", function(event) {
+
+  if (event.getModifierState("CapsLock")) {
+    capsNote.style.display = "block";
+  } else {
+    capsNote.style.display = "none"
+  }
+});
+</script>

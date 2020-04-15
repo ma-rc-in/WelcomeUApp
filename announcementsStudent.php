@@ -17,7 +17,7 @@ function convertModuleID($ID)
 }
 
 if (checkAccessType() == "Lecturer") {
-        header('Location:userDashboardAdmin.php');
+        header('Location:announcementsStudent.php');
     }
 
 if (isset($_POST['viewModule'])) {
@@ -123,7 +123,7 @@ if (isset($_POST['viewModule'])) {
                     echo '<option value="' . $module7ID . '">' . $module7ID . " - " . $module7 . '</option>';
                     $module8ID = $row->module8;
                     $module8 = convertModuleID($module8ID);
-                    echo '<option value="' . $module8IDID . '">' . $module8ID . " - " . $module8 . '</option>';
+                    echo '<option value="' . $module8ID . '">' . $module8ID . " - " . $module8 . '</option>';
                 }
                 ?>
             </select>

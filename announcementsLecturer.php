@@ -6,8 +6,9 @@ $db = getConnection();//returns the connection for the database.
 session_start();
 
 if (checkAccessType() != "Lecturer") {
-        header('Location:userDashboard.php');
+        header('Location:announcmentsStudent.php');
     }
+else
 
 ?>
 
@@ -93,6 +94,14 @@ if (checkAccessType() != "Lecturer") {
 
     <label for="fname">Module Code</label>
     <select id="courseID ='$CourseID'";
+            $studentInfo = getStudentDetails(); //gets all student details
+      $ID = $studentInfo['studentID'];
+
+      //gets the course ID of the student
+      $studentidquery = "select courseID from tbl_student where studentID='$ID'";
+      $student = $db->query($studentidquery);
+      $row = $student->fetch(PDO::FETCH_ASSOC);
+      $CourseID = $row['courseID'];
                 $course = $db->query($coursequery);
                 while ($row = $course->fetchObject()) {
                     $module1ID = $row->module1;
@@ -122,11 +131,11 @@ if (checkAccessType() != "Lecturer") {
                 }
     </select>
 
-    <label for="lname"> Subject </label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="subject"> Subject </label>
+    <input type="text" id="subject" name="Subject" placeholder="Type a subject..">
 
-    <label for="subject">Message</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Type your message.." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
 

@@ -5,6 +5,7 @@ $db = getConnection();//returns the connection for the database.
 ?>
 <?php
 session_start();
+$StudentInfo = getStudentDetails();
 if(isset($_SESSION['sessionStudentID'])) {
     if (checkAccessType() == "Lecturer") {
         header('Location:mainmenuLecturer.php');
@@ -21,6 +22,7 @@ else
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="mainmenu.js"></script>
     <script src="settings.js"></script>
+
     <title>WelcomeU</title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <style>
@@ -221,6 +223,72 @@ Media Queries
     width: calc(25% - (4% / 6) * 2);
   }
 }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,10); /* Fallback color */
+  background-color: rgba(0,0,0,.95); /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 38px;
+  font-weight: bold;
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: white;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #474747;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  background-color: #383838;
+  color: white;
+  font-family: OpenSans-Regular, sans-serif;
+
+}
 </style>
 </head>
 
@@ -252,6 +320,11 @@ Media Queries
             <img class="test" id="mmNULogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
+
+   <div style="width: 100%; color: white">
+        <h5 id="mmSmartCardBalance" style="display: inline-block;">Smart Card Balance:</h5>
+        <h5 id="mmBalance" style="display: inline-block;">sdsd<?php echo $StudentInfo['smartCardBalance'];?></h5>
+   </div>
 
     <div class="patch-item patch-button" id="mmMapBackground">
         <a href="map.php">
@@ -300,9 +373,37 @@ Media Queries
         <a href="logout.php">
             <img class="test" id="mmLogoutLogo" src="images/logout.png" alt="Logout" width= "44px" height= "44px" />
         </a>
-    </div>
+        <button img class="test" id="mmHelpGuide" src="images/question.png" alt="Logout" width= "44px" height= "44px"/>
 
     </div>
+
+
+
+            <div id="mainMenuModal" class="modal">
+            <div class="modal-content">
+            <div class="modal-header">
+            <span class="close" id="">&times;</span>
+            <h3 id="udTextHeadermainMenuModal">...</h3>
+            </div>
+            <div class="modal-body">
+dfsfd
+            </div>
+            </div>
+            </div>
+    </div>
+
+    <script>
+    var modal = document.getElementById("mainMenuModal");
+    var btn = document.getElementById("mmHelpGuide");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";}
+      span.onclick = function() {
+        modal.style.display = "none";}
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none"; }}
+            </script>
 
 </body>
 </html>
@@ -311,4 +412,3 @@ Media Queries
     themeChange();
     highContrast();
 </script>
-

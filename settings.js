@@ -64,6 +64,7 @@ function languageChange() {
 
     //gets the IDs of all menu areas
     //main Menu
+    var mmSmartCardBalance = document.getElementById("mmSmartCardBalance");
     var mapMenu = document.getElementById("mapMenu");
     var groupChatMenu = document.getElementById("groupChatMenu");
     var helpMenu = document.getElementById("helpMenu");
@@ -184,6 +185,7 @@ function languageChange() {
     if (language == "English") { //each page needs a try catch so that it can load without the other pages elements
         //Main Menu
         try {
+            mmSmartCardBalance.innerHTML = "Smart Card Balance";
             mapMenu.innerHTML = "Map";
             groupChatMenu.innerHTML = "Group Chat";
             helpMenu.innerHTML = "Help";
@@ -322,6 +324,7 @@ function languageChange() {
     if (language == "Polish") {
         //Main Menu
         try {
+            mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
             mapMenu.innerHTML = "Mapa";
             groupChatMenu.innerHTML = "Czat grupowy";
             helpMenu.innerHTML = "Wsparcie";
@@ -469,6 +472,7 @@ function languageChange() {
         if (language == "Chinese") {
             //Main Menu
             try {
+                mmSmartCardBalance.innerHTML = "学生卡余额";
                 mapMenu.innerHTML = "地图";
                 groupChatMenu.innerHTML = "群聊";
                 helpMenu.innerHTML = "帮助";
@@ -610,6 +614,8 @@ function themeChange() {
 
     //main menu
     //Background
+    var mmSmartCardBalance = document.getElementById("mmSmartCardBalance");
+    var mmBalance = document = document.getElementById("mmBalance");
     var backgroundMenu = document.getElementById("mmbackground");
     var mapMenu= document.getElementById("mmMapBackground");
     var groupChatMenu = document.getElementById("mmGroupChatBackground");
@@ -643,23 +649,6 @@ function themeChange() {
     var llWelcomeU = document.getElementById("llWelcomeU");
     var llLoginMessage  = document.getElementById("llLoginMessage");
 
-    //mainMenu
-    try {
-            mapMenuText.style.color = "yellow";
-            groupChatMenuText.style.color = "yellow";
-            helpMenuText.style.color = "yellow";
-            annoucementsMenuText.style.color = "yellow";
-            enrolmentMenuText.style.color = "yellow";
-            settingsMenuText.style.color = "yellow";
-    }catch (e) {}
-
-        //login
-        try {
-        llWelcomeU.style.color = "orange";
-        llLoginMessage.style.color = "orange";
-        llsubmit.style.color = "orange";
-    }catch (e) {}
-
     //groupChat
     var gcBack= document.getElementById("gcBack");
     var gcLogo = document.getElementById("gcLogo");
@@ -682,6 +671,8 @@ function themeChange() {
         try {
             document.body.style.backgroundColor = "white";
             backgroundMenu.style.backgroundColor = "white";
+            mmSmartCardBalance.style.color = "black";
+            mmBalance.style.color = "black";
             mapMenu.style.backgroundColor = "white";
             groupChatMenu.style.backgroundColor = "white";
             helpMenu.style.backgroundColor = "white";
@@ -752,6 +743,8 @@ function themeChange() {
             document.body.style.backgroundColor = "black";
             backgroundMenu.style.backgroundColor = "black";
             mapMenu.style.backgroundColor = "black";
+            mmSmartCardBalance.style.color = "white";
+            mmBalance.style.color = "white";
             groupChatMenu.style.backgroundColor = "black";
             helpMenu.style.backgroundColor = "black";
             annoucementsMenu.style.backgroundColor = "black";
@@ -808,6 +801,8 @@ function highContrast() {
     }
 
     //main menu
+    var mmSmartCardBalance = document.getElementById("mmSmartCardBalance");
+    var mmBalance = document.getElementById("mmBalance");
     var mapMenuText = document.getElementById("mapMenu");
     var groupChatMenuText = document.getElementById("groupChatMenu");
     var helpMenuText = document.getElementById("helpMenu");
@@ -833,9 +828,28 @@ function highContrast() {
     var reasonGroupChat = document.getElementById("gcReason");
     var reportSubmitGroupChat = document.getElementById("gcReportSubmit");
 
+
+
     //TODO CHange
     if (text == "on") {
+        //mainMenu
+        try {
+            mmSmartCardBalance.style.color = "yellow";
+            mmBalance.style.color = "yellow";
+            mapMenuText.style.color = "yellow";
+            groupChatMenuText.style.color = "yellow";
+            helpMenuText.style.color = "yellow";
+            annoucementsMenuText.style.color = "yellow";
+            enrolmentMenuText.style.color = "yellow";
+            settingsMenuText.style.color = "yellow";
+        }catch (e) {}
 
+        //login
+        try {
+            llWelcomeU.style.color = "orange";
+            llLoginMessage.style.color = "orange";
+            llsubmit.style.color = "orange";
+        }catch (e) {}
 
         //groupChat
         try {

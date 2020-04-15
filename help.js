@@ -6,7 +6,7 @@ function chat() {
     //reset password
     if(chat.indexOf('change') != -1 || chat.indexOf('reset') != -1
         && chat.indexOf('password') != -1) {
-        chatOutput.value = "You can change the password by contacting ";
+        chatOutput.value = "You can change your password by contacting....";
     }
 
     else{

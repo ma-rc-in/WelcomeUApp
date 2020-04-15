@@ -4,11 +4,13 @@ require_once("functions.php");
 $db = getConnection();//returns the connection for the database.
 
 session_start();
+$studentEmail = "";
 if (isset($_SESSION['sessionStudentID'])) {
     $studentInfo = getStudentDetails(); //gets all student details
     $studentEmail = $studentInfo['studentEmail'];//gets the student email
+
 } else { //return user to login
-    header('Location:loginform.php');
+    //header('Location:loginform.php');
 }
 
 if(isset($_POST['submit'])) { //change

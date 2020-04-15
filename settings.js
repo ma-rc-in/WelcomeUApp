@@ -324,7 +324,7 @@ function languageChange() {
     if (language == "Polish") {
         //Main Menu
         try {
-            mmSmartCardBalance.innerHTML = "Smart Card Balance";
+            mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
             mapMenu.innerHTML = "Mapa";
             groupChatMenu.innerHTML = "Czat grupowy";
             helpMenu.innerHTML = "Wsparcie";

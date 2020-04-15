@@ -705,8 +705,8 @@ function themeChange() {
                 enrolmentLogo.src="images/checklistBlack.png";
             }catch (e) {}
             try{
-                mmEnrolmentLogoBlocked.src="images/checklistBlocked.png";
-                mmlgroupChat.src="images/chatBlocked.png";
+                mmEnrolmentLogoBlocked.src="images/checklistBlock.png";
+                mmlgroupChat.src="images/chatBlock.png";
             }catch (e) {}
 
         } catch (e) {}

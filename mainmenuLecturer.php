@@ -243,7 +243,7 @@ Media Queries
 
     <div class="patch-item patch-button" id="mmGroupChatBackground">
         <a href="mainmenuLecturer.php">
-            <img class="logo" id="mmlgroupChat" src="images/chatBlocked.png" alt="Group Chat" width= "120px" height= "120px" />
+            <img class="logo" id="mmlgroupChat" src="images/chatBlock.png" alt="Group Chat" width= "120px" height= "120px" />
             <h5 class="textIcons" id="groupChatMenu">Group Chat</h5>
             <div class="groupChatPlaceHolder"></div>
         </a>
@@ -265,7 +265,7 @@ Media Queries
 
     <div class="patch-item patch-button" id="mmEnrolmentBackground">
         <a href="mainmenuLecturer.php">
-            <img class="test" id="mmEnrolmentLogoBlocked" src="images/checklistBlocked.png" alt="Self Enrolment" width= "120px" height= "120px" />
+            <img class="test" id="mmEnrolmentLogoBlocked" src="images/checklistBlock.png" alt="Self Enrolment" width= "120px" height= "120px" />
             <h5 class="textIcons" id="enrolmentMenu">Self Enrolment</h5>
         </a>
     </div>

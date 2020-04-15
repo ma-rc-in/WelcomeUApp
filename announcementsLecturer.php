@@ -133,8 +133,6 @@ if (checkAccessType() != "Lecturer") {
   </form>
 </div>
 
-
-
 <script>
 
 </script>

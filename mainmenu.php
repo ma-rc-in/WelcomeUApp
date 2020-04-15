@@ -254,9 +254,9 @@ Media Queries
         </a>
     </div>
 
-    <div>
-        <h5 id="mmSmartCardBalance">Balance: <?php echo $StudentInfo['smartCardBalance'];?></h5>
-    </div>
+   // <div>
+   //     <h5 id="mmSmartCardBalance">Balance: <?php echo $StudentInfo['smartCardBalance'];?></h5>
+   // </div>
 
     <div class="patch-item patch-button" id="mmMapBackground">
         <a href="map.php">

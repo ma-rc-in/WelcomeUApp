@@ -305,9 +305,46 @@ Media Queries
         <a href="logout.php">
             <img class="test" id="mmLogoutLogo" src="images/logout.png" alt="Logout" width= "44px" height= "44px" />
         </a>
+        <button img class="test" id="mmHelpGuide" src="images/question.png" alt="Logout" width= "44px" height= "44px"/>
+    </div>
+
+    <!--Notification Settings-->
+    <div id="firstModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close firstClose" id="">&times;</span>
+                <h4 id="ssTextNotifications">Notification Settings</h4>
+            </div>
+
+            <div class="modal-body">
+                <h4 class="formHeading" id="ssTextModalNotifications">Enable notification alert sound?</h4>
+                <label class="switch" onchange="setVolume()">
+                    <input type="checkbox" id="notificationSwitch" class="soundButton">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
     </div>
 
     </div>
+
+<script>
+    var modal1 = document.getElementById("firstModal");
+    var btn1 = document.getElementById("mmHelpGuide");
+    var span1 = document.getElementsByClassName("close firstClose")[0];
+    function loadPage() {
+        modal1.style.display = "block";
+        getVolume();
+    }
+    span1.onclick = function () {
+        modal1.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>

@@ -84,15 +84,16 @@ else
         .container {
           border-radius: 5px;
           background-color: #f2f2f2;
-          padding: 20px;
+          padding: 120px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-  <form action="action_page.php">
+  <form action="announcementsLecturer.php">
 
     <label for="fname">Module Code</label>
+      <?php
     <select id="courseID ='$CourseID'";
             $studentInfo = getStudentDetails(); //gets all student details
       $ID = $studentInfo['studentID'];
@@ -129,6 +130,7 @@ else
                     $module8 = convertModuleID($module8ID);
                     echo '<option value="' . $module7ID . '">' . $module7ID . " - " . $module7 . '</option>';
                 }
+                ?>
     </select>
 
     <label for="subject"> Subject </label>

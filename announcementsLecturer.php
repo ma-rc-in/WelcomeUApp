@@ -17,7 +17,8 @@ function convertModuleID($ID){ //this converts the module ID into a name
 if (checkAccessType() != "Lecturer") {
     header('Location:announcmentsStudent.php');
 }
-if(isset($_POST['submit'])) { //change
+if(isset($_POST['submit'])) {
+    echo"1234";
     $moduleID = $_POST['selectModule'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
@@ -28,6 +29,7 @@ if(isset($_POST['submit'])) { //change
     $queryInsert->bindParam('announcmentMessage', $message, PDO::PARAM_STR);
     $queryInsert->execute(array(":selectModule" => $moduleID, ":announcementSubject" =>$subject, ":announcmentMessage" =>$message));
 }
+
 
 ?>
 
@@ -86,7 +88,7 @@ if(isset($_POST['submit'])) { //change
 
 
         input[type=submit] {
-            background-color: #555555;
+            background-color: #c4c3c3;
             color: white;
             padding: 12px 20px;
             border: none;
@@ -147,7 +149,7 @@ if(isset($_POST['submit'])) { //change
                 $module7ID = $row->module7; $module7 = convertModuleID($module7ID);
                 echo '<option value="'.$module7ID.'">'.$module7ID." - ".$module7.'</option>';
                 $module8ID = $row->module8; $module8 = convertModuleID($module8ID);
-                echo '<option value="'.$module7ID.'">'.$module7ID." - ".$module7.'</option>';
+                echo '<option value="'.$module8ID.'">'.$module8ID." - ".$module8.'</option>';
             }
             ?>
         </select>
@@ -158,7 +160,7 @@ if(isset($_POST['submit'])) { //change
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Type your message.." style="height:200px"></textarea>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" name="submit">
 
     </form>
 </div>

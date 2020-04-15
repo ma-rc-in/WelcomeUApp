@@ -98,6 +98,7 @@ if (isset($_POST['submit'])) {
                     <span class="focus-input100-2"></span>
                 </div>
                 <input name="submit" class="login100-form-btn" id="llSubmit" type="submit" value="submit"/>
+                <a style="color: #3498DB" href="helpServices.php">Forgot Password?</a>
             </form>
         </div>
     </div>

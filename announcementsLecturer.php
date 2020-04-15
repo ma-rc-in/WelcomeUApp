@@ -67,9 +67,9 @@ else
 
         /* Style the submit button with a specific background color etc */
         input[type=submit] {
-          background-color: #9e9e9e;
+          background-color: #4CAF50;
           color: white;
-          padding: 12px 120px;
+          padding: 12px 20px;
           border: none;
           border-radius: 4px;
           cursor: pointer;
@@ -77,23 +77,22 @@ else
 
         /* When moving the mouse over the submit button, add a darker green color */
         input[type=submit]:hover {
-          background-color: #9e9e9e;
+          background-color: #45a049;
         }
 
         /* Add a background color and some padding around the form */
         .container {
           border-radius: 5px;
           background-color: #f2f2f2;
-          padding: 120px;
+          padding: 20px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-  <form action="announcementsLecturer.php">
+  <form action="action_page.php">
 
     <label for="fname">Module Code</label>
-      //<?php
     <select id="courseID ='$CourseID'";
             $studentInfo = getStudentDetails(); //gets all student details
       $ID = $studentInfo['studentID'];
@@ -130,7 +129,6 @@ else
                     $module8 = convertModuleID($module8ID);
                     echo '<option value="' . $module7ID . '">' . $module7ID . " - " . $module7 . '</option>';
                 }
-                ?>
     </select>
 
     <label for="subject"> Subject </label>

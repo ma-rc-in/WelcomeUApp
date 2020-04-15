@@ -659,7 +659,7 @@ function themeChange() {
         llLoginMessage.style.color = "orange";
         llsubmit.style.color = "orange";
     }catch (e) {}
-    
+
     //groupChat
     var gcBack= document.getElementById("gcBack");
     var gcLogo = document.getElementById("gcLogo");

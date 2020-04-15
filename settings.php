@@ -75,7 +75,6 @@ if (isset($_SESSION['sessionStudentID'])) {
         .labelTheme {
           display: inline-block;
           position: relative;
-          padding-left: 35px;
           margin-bottom: 12px;
           cursor: pointer;
           font-size: 22px;
@@ -83,6 +82,7 @@ if (isset($_SESSION['sessionStudentID'])) {
           -moz-user-select: none;
           -ms-user-select: none;
           user-select: none;
+          width: 18%;
         }
 
         .labelTheme input {

@@ -96,8 +96,7 @@ else
             padding: 20px;
             margin-top: 170px;
             margin-bottom: 20px;
-            margin-right: 180px;
-            margin-left: 180px
+
 
         }
     </style>

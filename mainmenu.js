@@ -18,13 +18,21 @@ function mainmenuAlert() { //currentInt, currentString
 
     var page = document.getElementById('groupChat');
     page.onclick = function () {
+        var theme = localStorage.getItem("theme");
         document.getElementById("groupChat").src="images/chat.png"; //updates the image
+        if (theme == "light"){
+            document.getElementById("groupChat").src="images/chatBlack.png"; //updates the image
+        }
     }
 
     //updates the page
     if (amountint < current && check != 0){ //there is a new message and it isn't from the current user
+        var theme = localStorage.getItem("theme");
         localStorage.setItem("mainMenuMessageNew", current); //updates the local message amount
         document.getElementById("groupChat").src="images/chatNotification.png"; //updates the image
+        if (theme == "light"){
+            document.getElementById("groupChat").src="images/chatNotificationBlack.png"; //updates the image
+        }
     }
 
     else{

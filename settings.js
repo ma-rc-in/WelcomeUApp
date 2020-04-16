@@ -664,7 +664,7 @@ function themeChange() {
     var settingsMenuText= document.getElementById("settingsMenu");
     //ICONS
     var menuLogo = document.getElementById("mmNULogo");
-    var mapLogo = document.getElementById("mmMapLogo");
+    var mmmapLogo = document.getElementById("mmMapLogo");
     var groupChatLogo = document.getElementById("groupChat");
     var helpLogo = document.getElementById("mmHelpLogo");
     var annoucementsLogo = document.getElementById("mmAnnoucementsLogo");
@@ -718,7 +718,7 @@ function themeChange() {
             enrolmentMenuText.style.color = "black";
             settingsMenuText.style.color = "black";
             menuLogo.src="images/logoBlack.png";
-            mapLogo.src="images/maps-and-flagsBlack.png";
+            mmmapLogo.src="images/maps-and-flagsBlack.png";
             helpLogo.src="images/questionBlack.png";
             annoucementsLogo.src="images/speakerBlack.png";
             settingsLogo.src="images/settingsBlack.png";
@@ -728,8 +728,8 @@ function themeChange() {
                 enrolmentLogo.src="images/checklistBlack.png";
             }catch (e) {}
             try{
-                mmEnrolmentLogoBlocked.src="images/checklistBlock.png";
-                mmlgroupChat.src="images/chatBlock.png";
+                mmEnrolmentLogoBlocked.src="images/checklistBlockBlack.png";
+                mmlgroupChat.src="images/chatBlockBlack.png";
             }catch (e) {}
 
         } catch (e) {}
@@ -789,7 +789,7 @@ function themeChange() {
             enrolmentMenuText.style.color = "white";
             settingsMenuText.style.color = "white";
             menuLogo.src="images/logo_white.png";
-            mapLogo.src="images/maps-and-flags.png";
+            mmmapLogo.src="images/maps-and-flags.png";
             groupChatLogo.src="images/chat.png";
             helpLogo.src="images/question.png";
             annoucementsLogo.src="images/speaker.png";

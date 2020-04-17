@@ -100,6 +100,10 @@ function languageChange() {
     var reasonSelectGroupChat = document.getElementById("reportType");
     var commentGroupChat = document.getElementById("reportComment");
     var reportSubmitGroupChat = document.getElementById("gcReportSubmit");
+    var gcPinText = document.getElementById("gcPinText");
+    var gcTextPinCheck = document.getElementById("gcTextPinCheck");
+    var gcPinInput = document.getElementById("gcPinInput");
+    var gcSubmitPin = document.getElementById("gcSubmitPin");
 
     //self enrolment
     //selfEnrolmentForm
@@ -228,6 +232,11 @@ function languageChange() {
             reasonSelectGroupChat.options[3].text = "Other (Please Comment Below)";
             commentGroupChat.placeholder = "Please comment here:";
             reportSubmitGroupChat.value = "Submit";
+
+            gcPinText.innerHTML = "Pin Verification";
+            gcTextPinCheck.innerHTML = "Please verify your PIN to continue:";
+            gcPinInput.placeholder = "Enter your PIN";
+            gcSubmitPin.value = "Submit";
         } catch (e) {
         }
 
@@ -375,6 +384,12 @@ function languageChange() {
             reasonSelectGroupChat.options[3].text = "Inne (podaj więcej szczegółów poniżej)";
             commentGroupChat.placeholder = "Podaj więcej szczegółów dotyczących zgłoszenia:";
             reportSubmitGroupChat.value = "Wyślij";
+
+            //TODO
+            gcPinText.innerHTML = "Pin Verification";
+            gcTextPinCheck.innerHTML = "Please verify your PIN to continue:";
+            gcPinInput.placeholder = "Enter your PIN";
+            gcSubmitPin.value = "Submit";
         } catch (e) {
         }
 
@@ -530,6 +545,12 @@ function languageChange() {
                 reasonSelectGroupChat.options[3].text = "其他（请在下面评论）";
                 commentGroupChat.placeholder = "请在这里评论:";
                 reportSubmitGroupChat.value = "发送";
+
+                //TODO
+                gcPinText.innerHTML = "Pin Verification";
+                gcTextPinCheck.innerHTML = "Please verify your PIN to continue:";
+                gcPinInput.placeholder = "Enter your PIN";
+                gcSubmitPin.value = "Submit";
             } catch (e) {
             }
             //login
@@ -867,6 +888,9 @@ function highContrast() {
     var reasonLabelGroupChat = document.getElementById("gcReasonTitle");
     var reasonGroupChat = document.getElementById("gcReason");
     var reportSubmitGroupChat = document.getElementById("gcReportSubmit");
+    var gcPinText = document.getElementById("gcPinText");
+    var gcTextPinCheck = document.getElementById("gcTextPinCheck");
+    var gcSubmitPin = document.getElementById("gcSubmitPin");
 
 
 
@@ -911,6 +935,9 @@ function highContrast() {
             reasonLabelGroupChat.style.color = "yellow";
             reasonGroupChat.style.color = "yellow";
             reportSubmitGroupChat.style.color = "yellow";
+            gcPinText.style.color = "yellow";
+            gcTextPinCheck.style.color = "yellow";
+            gcSubmitPin.style.color = "yellow";
         }catch (e) {}
     }
 }

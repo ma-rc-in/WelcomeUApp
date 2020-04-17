@@ -18,16 +18,15 @@ if (checkAccessType() != "Lecturer") {
     header('Location:announcmentsStudent.php');
 }
 if(isset($_POST['submit'])) {
-    echo"1234";
     $moduleID = $_POST['selectModule'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $query = "INSERT INTO tbl_announcements (moduleID, announcementSubject, announcmentMessage) VALUES (:selectModule, :announcementSubject, :announcmentMessage)";
+    $query = "INSERT INTO tbl_announcement (moduleID, announcementMessage, announcementSubject) VALUES (:selectModule, :announcementMessage, :announcementSubject)";
     $queryInsert = $db->prepare($query);
     $queryInsert->bindParam('selectModule', $moduleID, PDO::PARAM_STR);
+    $queryInsert->bindParam('announcementMessage', $message, PDO::PARAM_STR);
     $queryInsert->bindParam('announcementSubject', $subject, PDO::PARAM_STR);
-    $queryInsert->bindParam('announcmentMessage', $message, PDO::PARAM_STR);
-    $queryInsert->execute(array(":selectModule" => $moduleID, ":announcementSubject" =>$subject, ":announcmentMessage" =>$message));
+    $queryInsert->execute(array(":selectModule" => $moduleID, ":announcementMessage" =>$message, ":announcementSubject" =>$subject));
 }
 
 

@@ -68,7 +68,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         // user has too many characters
         //TODO ERROR MESSAGE
     } else {
-        $query = "INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID) 
+        $query = "INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
         VALUES (:reportType, :reportedStudentID, :reportComment, :reporterStudentID)";
         $groupChatInsert = $db->prepare($query);
         $groupChatInsert->bindParam('reportType', $reportType, PDO::PARAM_STR);
@@ -157,6 +157,13 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                 display: table;
             }
         }
+
+
+        input::-webkit-input-placeholder { color: white;}
+        input:-moz-placeholder { color: white;}
+        input::-moz-placeholder { color: white;}
+        input:-ms-input-placeholder { color: white;}
+
     </style>
 
 
@@ -286,6 +293,8 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         <!--Pin Popup-->
         <div id="PinPopupBoxPage" class="modal">
             <div class="modal-content">
+              <div class="goBackButton" style="margin-top: 30px;"><a href="mainmenu.php"><img src="images/back.png" id="gcBack" class="goBackIcon"></a></div>
+
                 <div class="modal-header">
                     <h4 id="gcPinText">Pin Verification</h4>
                 </div>
@@ -327,11 +336,17 @@ if (isset($_POST['submitReport'])) //when the user submits their message
 <!--Pin Popup Script-->
 <script>
     var modalPin = document.getElementById("PinPopupBoxPage");
+    var gcSendButton = document.getElementById("gcSendButton");
+    var gcReportButton = document.getElementById("gcReportButton");
     function pinCheck() {
         modalPin.style.display = "block";
+        gcSendButton.disabled = true;
+        gcReportButton.disabled = true;
     }
     function pinClose(){
         modalPin.style.display = "none";
+        gcSendButton.disabled = false;
+        gcReportButton.disabled = false;
     }
     window.onclick = function (event) {
         if (event.target == modalPin) {

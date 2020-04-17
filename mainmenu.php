@@ -289,6 +289,63 @@ Media Queries
   font-family: OpenSans-Regular, sans-serif;
 
 }
+
+.logoDiv {
+  width: 100%;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.logoMain {
+  width: 350px;
+  height: 100px;
+  margin-left: 38%;
+  margin-left: auto;
+}
+
+.guideButton {
+  opacity: .7;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  margin-top: -76px;
+  float: right;
+  margin-right: auto;
+}
+
+.guideButton:hover {
+  opacity: 1;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.guideIcon {
+  height: 48px;
+  width: 48px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .guideButton {
+    width: 100%;
+    display: block;
+    margin-top: 40px;
+  }
+
+  .guideIcon {
+    height: 58px;
+    width: 58px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+
+}
 </style>
 </head>
 
@@ -315,11 +372,15 @@ Media Queries
 <body>
 <div class="patch-container" id="mmbackground">
 
-    <div class="logoMain">
+<div class="logoDiv">
+    <div class="logoChatWrapper">
         <a href="mainmenu.php">
-            <img class="test" id="mmNULogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+            <img class="logoMain" id="gcLogo" src="images/logo_white.png" alt="Logo"/>
         </a>
     </div>
+    <div class="guideButton"><img src="images/guide.png" id="mmHelpGuide" class="guideIcon"></div>
+
+</div>
 
    <div style="width: 100%; color: white">
         <h5 id="mmSmartCardBalance" style="display: inline-block;">Smart Card Balance:</h5>
@@ -373,7 +434,6 @@ Media Queries
         <a href="logout.php">
             <img class="test" id="mmLogoutLogo" src="images/logout.png" alt="Logout" width= "44px" height= "44px" />
         </a>
-        <button img class="test" id="mmHelpGuide" src="images/question.png" alt="Logout" width= "44px" height= "44px"/>
 
     </div>
 

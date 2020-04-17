@@ -44,30 +44,32 @@ $CheckPassword = $_POST['CheckPass'];
             sleep(1);
             logout();
           }
-          $message = "Operation aborted, your current password is wrong. Plese try again!";
+          $message = "The password you have entered is wrong, please try again.";
 
         } else {
         }
 
+  $checkPassword = $_POST['CheckPass'];
   $newPin = $_POST['NewPin'];
   $checkPin = $_POST['CheckPin'];
-    if(isset($_POST['submitPin'])) {
+
+      if(isset($_POST['submitPin'])) {
+      if (password_verify($checkPassword, $password)) {
         if (strlen($newPin) > 4 || is_numeric($newPin) == false) { //if more than 4 characters
             //display when there is more than numbers or the user is not entering a number
-            $message = "Something went wrong. Please try again!";
+            $message = "Your PIN needs to have at least 4 characters. Please try again!";
 
         } else
-         {
-            // if (pin_change($oldPassword, $password)) {
-            if ($newPin == $checkPin) {
-                $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
-                $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-                $message = "Modal Pin - Pin has been set!";
-            } else {
-              $message = "Something went wrong. Plese try again!";
-            }
-        }
-  }
+       {
+          // if (pin_change($oldPassword, $password)) {
+          if ($newPin == $checkPin) {
+              $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
+              $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
+              $message = "Pin has been set!";
+          } else {
+            $message = "Something went wrong. Plese try again!";
+          }
+      }
   ?> -->
 
   <!DOCTYPE html>
@@ -267,7 +269,7 @@ $(document).ready(function() {
        <form class="formPass" method="post">
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="udTextModalRepeatPassDeleteAccountPlaceholder" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/>
+               <input type="password" class="formPassInput" id="udTextModalRepeatPassDeleteAccountPlaceholder" name="CheckPass" placeholder="Enter your password to delete your account" autocomplete="off"/ required>
              </div>
                  <button onclick="window.location.href='#errorMessage'" id="udButtonTextSubmitButtonForDeleteAccount" name="submitDelete" class="submitPass" type="submit">Submit</button>
        </form>
@@ -284,13 +286,17 @@ $(document).ready(function() {
        <div class="modal-body">
 
        <form class="formPass" method="post">
+         <div class="formPassWrapper">
+         <h5 class="formHeading"></h5>
+           <input type="password" class="formPassInput" id="udTextModalOldPassPlaceholder" name="OldPass" placeholder="Enter your current password to set new PIN" autocomplete="off" required/>
+         </div>
            <div class="formPassWrapper">
            <h5 class="formHeading"></h5>
-             <input type="password" class="formPassInput" id="udTextModalNewPinPlaceholder" name="NewPin" placeholder="Enter your new PIN" autocomplete="off"/>
+             <input type="password" class="formPassInput" id="udTextModalNewPinPlaceholder" name="NewPin" placeholder="Enter your new PIN" autocomplete="off"/ required>
            </div>
              <div class="formPassWrapper">
              <h5 class="formHeading"></h5>
-               <input type="password" class="formPassInput" id="udTextModalRepeatPinPlaceholder" name="CheckPin" placeholder="Repeat your new PIN" autocomplete="off"/>
+               <input type="password" class="formPassInput" id="udTextModalRepeatPinPlaceholder" name="CheckPin" placeholder="Repeat your new PIN" autocomplete="off"/ required>
              </div>
                  <button onclick="window.location.href='#errorMessage'" id="udButtonTextSubmitButtonForChangePin" name="submitPin" class="submitPass" type="submit">Submit</button>
        </form>

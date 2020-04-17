@@ -21,9 +21,21 @@ if (isset($_SESSION['sessionStudentID'])) { //requires functions
     $studentID = $studentInfo['studentID'];//student ID
     $studentCourseID = $studentInfo['courseID'];//courseID
     $courseName = courseNameConversion($studentCourseID); //conversion for course ID
+
+    echo '.<Script> localStorage.setItem("pinCheck", "false"); //updates the pin check</Script>.';
+
 } else { //return user to login
     header('Location:mainmenu.php');
 }
+
+if(isset($_POST['gcSubmitPin'])){
+    $studentPin = $studentInfo['PIN'];//courseID
+    $checkPin = $_POST['gcPinInput'];
+    if (password_verify($checkPin, $studentPin)) {
+        echo '.<Script> localStorage.setItem("pinCheck", "true"); //updates the pin check</Script>.';
+    }
+}
+
 
 if (isset($_POST['submit'])) //when the user submits their message
 {
@@ -40,7 +52,7 @@ if (isset($_POST['submit'])) //when the user submits their message
         $groupChatInsert->bindParam('chatMessage', $Message, PDO::PARAM_STR);
         $groupChatInsert->bindParam('senderStudentID', $senderStudentID, PDO::PARAM_STR);
         $groupChatInsert->execute(array(":chatName" => $RoomName, ":chatMessage" =>$Message, ":senderStudentID" => $senderStudentID));
-        header('location:groupChat.php');
+        echo '.<Script> localStorage.setItem("pinCheck", "true"); //updates the pin check</Script>.';
     }
 }
 
@@ -64,6 +76,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         $groupChatInsert->bindParam('reportComment', $reportComment, PDO::PARAM_STR);
         $groupChatInsert->bindParam('reporterStudentID', $reporterStudentID, PDO::PARAM_STR);
         $groupChatInsert->execute(array(":reportType" => $reportType, ":reportedStudentID" =>$reportedStudentID, ":reportComment" => $reportComment, ":reporterStudentID" => $reporterStudentID));
+        echo '.<Script> localStorage.setItem("pinCheck", "true"); //updates the pin check</Script>.';
 
         //TODO SUCCESS MESSAGE
         echo '.<Script> alert("Your report has been submitted."); </Script>.';
@@ -153,6 +166,14 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         //loads all the data when the form loads
         $(document).ready(function () {
             $(".messageBox").load("groupChatLoadInitial.php");//can get the initial amount of messages
+
+            var pinVer = localStorage.getItem("pinCheck"); //new message count;
+            if(pinVer == "true"){
+                pinClose();
+            } else {
+                pinCheck();
+            }
+
         });
 
         //every 1000ms call the load function
@@ -199,10 +220,10 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                        placeholder="Type your message here.">
                 <span class="focus-input100-1"></span>
                 <span class="focus-input100-2"></span>
-                <button type="button" class="buttonChat" id="gcReportButton" style="margin-top: 10px; float: left" ;>Report</button>
                 <input class="buttonChat" type="submit" id="gcSendButton" name="submit" value="Send"
                        style="margin-top: 10px; float: right;"/>
               </form>
+              <button type="button" class="buttonChat" id="gcReportButton" style="margin-top: 10px; float: left" ;>Report</button>
             </div>
         </div>
         <!--PopupBoxPage reportButton close-->
@@ -261,6 +282,28 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                 </div>
             </div>
         </div>
+
+        <!--Pin Popup-->
+        <div id="PinPopupBoxPage" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="gcPinText">Pin Verification</h4>
+                </div>
+                <div class="modal-body" style="margin-bottom: 0px;">
+                    <form class="formPin" method="post">
+                        <div class="formPassWrapper">
+                            <br>
+                            <br>
+                            <h4 class="formHeading" id="gcTextPinCheck">Please verify your PIN to continue:</h4>
+                            <input type="password" class="formPassInput" id="gcPinInput" name="gcPinInput" placeholder="Enter your PIN" autocomplete="off"/>
+                        </div>
+                        </div>
+                        <input class="adminButtons" name="gcSubmitPin" id="gcSubmitPin" type="submit" value="Submit"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--End of Modal-->
     </div>
 </div>
 </div>
@@ -282,12 +325,28 @@ if (isset($_POST['submitReport'])) //when the user submits their message
     }
 </script>
 
+<!--Pin Popup Script-->
+<script>
+    var modalPin = document.getElementById("PinPopupBoxPage");
+    function pinCheck() {
+        modalPin.style.display = "block";
+    }
+    function pinClose(){
+        modalPin.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modalPin) {
+            modalPin.style.display = "block";
+        }
+    }
+</script>
+
 </div>
 </body>
 </html>
 
 <script>
-    languageChange(); //changes the lanugage (default is english)
+    languageChange(); //changes the language (default is english)
     themeChange();
     highContrast();
 </script>

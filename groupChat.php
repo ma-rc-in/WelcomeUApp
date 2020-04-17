@@ -297,7 +297,6 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                             <h4 class="formHeading" id="gcTextPinCheck">Please verify your PIN to continue:</h4>
                             <input type="password" class="formPassInput" id="gcPinInput" name="gcPinInput" placeholder="Enter your PIN" autocomplete="off"/>
                         </div>
-                        </div>
                         <input class="adminButtons" name="gcSubmitPin" id="gcSubmitPin" type="submit" value="Submit"/>
                     </form>
                 </div>

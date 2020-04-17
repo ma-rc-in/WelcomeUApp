@@ -28,8 +28,6 @@ if(isset($_POST['submit'])) {
     $queryInsert->bindParam('announcementSubject', $subject, PDO::PARAM_STR);
     $queryInsert->execute(array(":selectModule" => $moduleID, ":announcementMessage" =>$message, ":announcementSubject" =>$subject));
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +36,6 @@ if(isset($_POST['submit'])) {
     <title>WelcomeU Announcements</title>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <!--Scripts-->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
@@ -85,7 +81,6 @@ if(isset($_POST['submit'])) {
             resize: vertical
         }
 
-
         input[type=submit] {
             background-color: #c4c3c3;
             color: white;
@@ -94,25 +89,36 @@ if(isset($_POST['submit'])) {
             border-radius: 4px;
             cursor: pointer;
         }
-
-
-        input[type=submit]:hover {
-            background-color: #555555;
-        }
-
-
         .container {
             border-radius: 20px;
-            background-color: #ffffff;
+            background-color: #FFFFFF;
             padding: 20px;
-            margin-top: 170px;
+            margin-top: 60px;
             margin-bottom: 20px;
-
-
         }
+
+        input[type=submit]:hover {
+            background-color: #8d8d8d;;
+        }
+
     </style>
+
 </head>
 <body>
+
+<div class="patch-container">
+    <div class="logoMain">
+        <a href="mainmenu.php">
+            <div class="logoIcon">
+                <img class="imgLogo" src="images/logo_white.png" alt="Logo" width="350px" height="100px"
+                     style="margin-top: 25px;"/>
+                <h1 class="formHeading" color="#FFFFFF" align="center" >Please fill in the form below..
+                </h1>
+            </div>
+        </a>
+    </div>
+</div>
+
 <div class="container">
     <form action="announcementsLecturer.php" method="POST">
 
@@ -163,9 +169,5 @@ if(isset($_POST['submit'])) {
 
     </form>
 </div>
-
-<script>
-
-</script>
 </body>
 </html>

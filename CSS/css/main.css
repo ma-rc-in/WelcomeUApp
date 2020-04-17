@@ -51,6 +51,12 @@ a:hover {
 /*---------------------------------------------*/
 h1,h2,h3,h4,h6 {
   margin: 0px;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: OpenSans-Regular, sans-serif;
+  font-weight: normal;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 h5 {

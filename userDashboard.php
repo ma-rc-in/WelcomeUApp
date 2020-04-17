@@ -49,25 +49,29 @@ $CheckPassword = $_POST['CheckPass'];
         } else {
         }
 
-  $checkPassword = $_POST['CheckPass'];
+  //$checkPassword = $_POST['CheckPass'];
+  $checkpass = $_POST['OldPin'];
   $newPin = $_POST['NewPin'];
   $checkPin = $_POST['CheckPin'];
 
       if(isset($_POST['submitPin'])) {
-      if (password_verify($checkPassword, $password)) {
-        if (strlen($newPin) > 4 || is_numeric($newPin) == false) { //if more than 4 characters
-            //display when there is more than numbers or the user is not entering a number
-            $message = "Your PIN needs to have at least 4 characters. Please try again!";
+          if (password_verify($checkpass, $password)) {
+              if (strlen($newPin) > 4 || is_numeric($newPin) == false) { //if more than 4 characters
+                  //display when there is more than numbers or the user is not entering a number
+                  $message = "Your PIN needs to have at least 4 characters. Please try again!";
 
-        } else
-       {
-          // if (pin_change($oldPassword, $password)) {
-          if ($newPin == $checkPin) {
-              $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
-              $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
-              $message = "Pin has been set!";
+              } else {
+                  // if (pin_change($oldPassword, $password)) {
+                  if ($newPin == $checkPin) {
+                      $hashed_password = password_hash($newPin, PASSWORD_BCRYPT); //PASSWORD_BCRYPT
+                      $db->query("UPDATE tbl_student SET PIN='$hashed_password' WHERE studentID='$student'"); //='$hashed_password'
+                      $message = "Pin has been set!";
+                  } else {
+                      $message = "Something went wrong. Plese try again!";
+                  }
+              }
           } else {
-            $message = "Something went wrong. Plese try again!";
+              $message = "Your password is incorrect. Please try again";
           }
       }
   ?> -->
@@ -288,7 +292,7 @@ $(document).ready(function() {
        <form class="formPass" method="post">
          <div class="formPassWrapper">
          <h5 class="formHeading"></h5>
-           <input type="password" class="formPassInput" id="udTextModalOldPassPlaceholder" name="OldPass" placeholder="Enter your current password to set new PIN" autocomplete="off" required/>
+           <input type="password" class="formPassInput" id="udTextModalOldPassPlaceholder" name="OldPin" placeholder="Enter your current password to set new PIN" autocomplete="off" required/>
          </div>
            <div class="formPassWrapper">
            <h5 class="formHeading"></h5>

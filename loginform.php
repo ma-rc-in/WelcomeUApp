@@ -10,11 +10,20 @@ $db = getConnection();//returns the connection for the database.
 <?php
 $ID = $PW = "";
 $ErrorMessage = "";
+echo '<script> localStorage.setItem("login", "no"); </script>';
+
+$cookiename = "user";
+if (isset($_COOKIE[$cookiename])){
+    $ID = $_COOKIE[$cookiename];
+    echo '<script> localStorage.setItem("login", "yes"); </script>';
+}
+
 
 if (isset($_POST['submit'])) {
     if (empty($_POST['formStudentID']) || empty($_POST['formPassword'])) {
         $ErrorMessage = "Please enter your Student ID or Password.";
     } else {
+
         $ID = inputTest($_POST['formStudentID']); //$_POST['studentID']; //$ID= $_POST->studentID; //checks if this is not emptys
         $PW = inputTest($_POST['formPassword']); //$_POST['password']; !empty
         //student ID from tbl_student
@@ -38,6 +47,13 @@ if (isset($_POST['submit'])) {
             $isBannedobject = $select->isBanned;
 
             if ($isBannedobject == 0) {
+                $set = $_POST['cookieset'];
+                if($set == "set") {
+                    setcookie($cookiename, $ID );
+                } else {
+                    setcookie($cookiename, "", time() - 100);//delete the cookie
+                }
+
                 session_start();
                 $userobject = $select->studentID; //gets the user ID
                 $_SESSION["sessionStudentID"] = $userobject; //sets the session to the user ID
@@ -69,6 +85,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="settings.js"></script>
     <!--===============================================================================================-->
 </head>
@@ -80,11 +97,19 @@ if (isset($_POST['submit'])) {
   display:inline-block;
   margin-bottom: 5px;
   display: none;
-
 }
 </style>
 <body>
 
+<script>
+    $(document).ready(function () {
+        var check = localStorage.getItem("login");
+        if(check == "yes"){
+            var check = document.getElementById("llcookieset");
+            check.checked = true;
+        }
+    });
+</script>
 
 <div class="limiter">
     <div class="container-login100" id="llContainerLogin">
@@ -101,7 +126,7 @@ if (isset($_POST['submit'])) {
                 <p id="capsLockInfo">*Be careful with your login and password, Caps Lock is ON*</p>
 
                 <div class="wrap-input100 validate-input" data-validate="Student ID is required">
-                    <input id="inputTextCapsLockLogin" class="input100" type="text" id="llStudentID" name="formStudentID" placeholder="StudentID">
+                    <input id="inputTextCapsLockLogin" class="input100" type="text" id="llStudentID" name="formStudentID" placeholder="StudentID" value="<?php echo $ID ?>">
                     <span class="focus-input100-1"></span>
                     <span class="focus-input100-2"></span>
                 </div>
@@ -113,6 +138,8 @@ if (isset($_POST['submit'])) {
                 </div>
                 <input name="submit" class="login100-form-btn" id="llSubmit" type="submit" value="submit"/>
                 <a style="color: #3498DB" href="helpServices.php">Forgot Password?</a>
+                <p id="llcookieset">Remember Username?</p>
+                <input type="checkbox" id="llcookieset" name="cookieset" value="set">
             </form>
         </div>
     </div>

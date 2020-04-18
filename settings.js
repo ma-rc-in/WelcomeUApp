@@ -711,6 +711,7 @@ function themeChange() {
     var gcContainer = document.getElementById("gcContainer");
     var gcLimiter = document.getElementById("limiter");
     var gcChatContainer = document.getElementById("gcChatContainer");
+    var gcCourseNameEcho = document.getElementById("gcCourseNameEcho");
     //map
     var mapLogo = document.getElementById("mapLogo");
     var mapContainer = document.getElementById("mapContainer");
@@ -777,6 +778,7 @@ function themeChange() {
             gcBackground.style.backgroundColor = "grey";
             gcYourMessage.style.backgroundColor = "white";
             gcYourMessage.style.color = "black";
+            gcCourseNameEcho.style.color = "black";
             gcMessageContentBox.style.backgroundColor = "grey";
         } catch (e) {}
 
@@ -833,6 +835,7 @@ function themeChange() {
         //GroupChat
         try {
             document.body.style.backgroundColor = "black";
+            gcCourseNameEcho.style.color = "black";
             gcBack.src="images/back.png";
             gcLogo.src="images/logo_white.png";
             gcContainer.style.backgroundColor = "black";
@@ -924,7 +927,7 @@ function highContrast() {
 
         //groupChat
         try {
-            gcCourseNameEcho.style.color = "black";
+            gcCourseNameEcho.style.color = "yellow";
             courseNameTitleGroupChat.style.color = "black";
             yourMessageGroupChat.style.color = "yellow";
             MessageContentBoxGroupChat.style.color = "yellow";

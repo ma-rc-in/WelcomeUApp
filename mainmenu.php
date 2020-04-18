@@ -330,7 +330,7 @@ else
 
         <div style="width: 100%; color: white">
         <h5 id="mmSmartCardBalance" style="display: inline-block;">Smart Card Balance:</h5>
-        <h5 id="mmBalance" style="display: inline-block;"><?php echo $StudentInfo['smartCardBalance'];?></h5>
+        <h5 id="mmBalance" style="display: inline-block;">£<?php echo $StudentInfo['smartCardBalance'];?></h5>
         </div>
 
 
@@ -398,72 +398,133 @@ else
           template: "<div class='popover tour'><div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><nav class='popover-navigation'><div class='btn-group'><button class='btn btn-default' data-role='prev'>« Prev</button><button class='btn btn-default' data-role='next'>Next »</button></div><button class='btn btn-default btn-end' data-role='end'>Skip guide</button></nav></div>"
           });
 
-          // Add your steps. Not too many, you don't really want to get your users sleepy
-          tour.addSteps([
-          {
-          element: "#gcLogo", // string (jQuery selector) - html element next to which the step popover should be shown
-          title: "Logo", // string - title of the popover
-          placement: "bottom",
-          backdrop: true,
-          content: "Logo text" // string - content of the popover
-          },
-          {
-          element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
-          title: "SmartCard Balance", // string - title of the popover
-          placement: "bottom",
-          backdrop: true,
-          content: "SmartCard Balance text" // string - content of the popover
-          },
-          {
-          element: "#mmMapLogo",
-          title: "Map",
-          placement: "top",
-          backdrop: true,
-          content: "Map text"
-          },
-          {
-          element: "#groupChat",
-          title: "Group Chat",
-          placement: "top",
-          backdrop: true,
-          content: "Group chat text"
-          },
-          {
-          element: "#mmHelpLogo",
-          title: "Help Services",
-          placement: "top",
-          backdrop: true,
-          content: "Help Services text"
-          },
-          {
-          element: "#mmAnnoucementsLogo",
-          title: "Annoucements",
-          placement: "top",
-          backdrop: true,
-          content: "Annoucements text"
-          },
-          {
-          element: "#mmEnrolmentLogo",
-          title: "Self-Enrolment",
-          placement: "top",
-          backdrop: true,
-          content: "Self-Enrolment text"
-          },
-          {
-          element: "#mmSettingsLogo",
-          title: "Settings",
-          placement: "top",
-          backdrop: true,
-          content: "Settings text"
-          },
-          {
-          element: "#mmLogoutLogo",
-          title: "Logout",
-          placement: "top",
-          backdrop: true,
-          content: "Logout text"
+          var language = localStorage.getItem("language");
+          if (language == null) {//checks to see if the user has a preference set, if not
+              var defaultLanguage = "English";
+              localStorage.setItem("language", defaultLanguage); //sets the default language to English (for first time users)
           }
-          ]);
+
+          if (language == "English") {
+              tour.addSteps([
+                  {
+                      element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
+                      title: "SmartCard Balance", // string - title of the popover
+                      placement: "bottom",
+                      backdrop: true,
+                      content: "Users can view their smart card balance here." // string - content of the popover
+                  },
+                  {
+                      element: "#mmMapLogo",
+                      title: "Map",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination."
+                  },
+                  {
+                      element: "#groupChat",
+                      title: "Group Chat",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Students can use the group chat service to connect with other students on their course, where they are able to message each other."
+                  },
+                  {
+                      element: "#mmHelpLogo",
+                      title: "Help Services",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help."
+                  },
+                  {
+                      element: "#mmAnnoucementsLogo",
+                      title: "Annoucements",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed."
+                  },
+                  {
+                      element: "#mmEnrolmentLogo",
+                      title: "Self-Enrolment",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Users can enrol for their course by completing a quick form on the self enrolment system. Changes to student details can also be updated on this form."
+                  },
+                  {
+                      element: "#mmSettingsLogo",
+                      title: "Settings",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data."
+                  },
+                  {
+                      element: "#mmLogoutLogo",
+                      title: "Logout",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Users can click here to logout."
+                  }
+              ]);
+          }
+
+          if (language == "Chinese") {
+              tour.addSteps([
+                  {
+                      element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
+                      title: "SmartCard Balance", // string - title of the popover
+                      placement: "bottom",
+                      backdrop: true,
+                      content: "Users can view their smart card balance here." // string - content of the popover
+                  },
+                  {
+                      element: "#mmMapLogo",
+                      title: "地图",
+                      placement: "top",
+                      backdrop: true,
+                      content: "用户可以搜索诺森比亚大学纽卡斯尔校区以获得到他们的目的地的指南和方向。"
+                  },
+                  {
+                      element: "#groupChat",
+                      title: "群聊",
+                      placement: "top",
+                      backdrop: true,
+                      content: "学生可以使用群组聊天功能与课程上的其他学生联系，在群聊界面里学生可以互相发送信息。"
+                  },
+                  {
+                      element: "#mmHelpLogo",
+                      title: "帮助",
+                      placement: "top",
+                      backdrop: true,
+                      content: "用户可以通过提交查询、查看最常见的问题和与我们的聊天机器人请求帮助来获得解决办法。"
+                  },
+                  {
+                      element: "#mmAnnoucementsLogo",
+                      title: "通知",
+                      placement: "top",
+                      backdrop: true,
+                      content: "学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。"
+                  },
+                  {
+                      element: "#mmEnrolmentLogo",
+                      title: "自助注册",
+                      placement: "top",
+                      backdrop: true,
+                      content: "学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。"
+                  },
+                  {
+                      element: "#mmSettingsLogo",
+                      title: "设置",
+                      placement: "top",
+                      backdrop: true,
+                      content: "用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。"
+                  },
+                  {
+                      element: "#mmLogoutLogo",
+                      title: "Logout",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Users can click here to logout."
+                  }
+              ]);
+          }
 
           $("#userGuideButton").click(function(){
           // Start the tour

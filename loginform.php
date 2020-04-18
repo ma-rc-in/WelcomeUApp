@@ -68,6 +68,7 @@ if (isset($_POST['submit'])) {
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
     <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
+    <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <script src="settings.js"></script>
     <!--===============================================================================================-->
 </head>
@@ -115,6 +116,33 @@ if (isset($_POST['submit'])) {
             </form>
         </div>
     </div>
+
+    <!--Cookies Changes-->
+    <div id="cookiesWarning">
+        <div id="closecookiesWarning">x</div>
+        <p id="cookiewarning">This website is using cookies and javascript local storage to improve your experience.</p>
+        <button type="button" id="mmCookieMoreInfo" style="margin-top: 10px; float: left" ;>More Information</button>
+        <button type="button" id="mmCookieAccept" style="margin-top: 10px; float: left" ;>Accept</button>
+    </div>
+
+    <!--More Info Modal-->
+    <div id="CookieInfoPage" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="" style="padding-bottom: 10px;">&times;</span>
+                <h4 id="mmCookieInformationHeader">Cookie Information</h4>
+            </div>
+            <div class="modal-body" style="margin-bottom: 0px;">
+                <p id="mminfo">This website uses cookies and javascript local storage to enhance your experience while using this website.<p>
+                <p id="mminfo2">We do this by using cookies to:</p>
+                <p id="mminfo3">Store your username to make it easier for you to login.</br></p>
+                <p id="mminfo4">We also use javascript local storage to:</p>
+                <p id="mminfo5">Save various settings you may use in our website, such as the theme, language or contrast settings.</br></p>
+                <button type="button" id="mmCookieButtonClose" style="margin-top: 10px; float: left" ;>Close</button>
+            </div>
+        </div>
+    </div>
+    <!--End More Info Modal-->
 </div>
 
 </body>
@@ -149,4 +177,26 @@ checkInput.addEventListener("keyup", function(event) {
     capsNote.style.display = "none"
   }
 });
+</script>
+
+<script>
+    var modal = document.getElementById("CookieInfoPage");
+    var btn = document.getElementById("mmCookieMoreInfo");
+    var btnClose = document.getElementById("mmCookieButtonClose");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    btnClose.onclick = function () {
+        modal.style.display = "none";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 </script>

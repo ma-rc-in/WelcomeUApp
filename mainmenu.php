@@ -22,6 +22,7 @@ else
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="mainmenu.js"></script>
   <script src="settings.js"></script>
+  <script src="announcementNotif.js"></script>
 
   <title>WelcomeU</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -301,6 +302,7 @@ else
   $(document).ready(function(){
     $(".groupChatPlaceHolder").load("mainmenuCheck.php");//checks to see if there are new messages
     mainmenuAlert();
+    mainmenuAlertAnnouncement();
     languageChange(); //changes the lanugage (default is english)
     themeChange();
     highContrast();
@@ -311,10 +313,14 @@ else
       setInterval(function()
       {
         $(".groupChatPlaceHolder").load("mainmenuCheck.php");//checks to see if there are new messages
+        $(".AnnoucementsPlaceHolder").load("mainmenuAnnounce.php");//checks to see if there are new messages
         mainmenuAlert();
+        mainmenuAlertAnnouncement();
         }, 5000);
         });
+
         </script>
+
 
         <body>
         <div class="patch-container" id="mmbackground">
@@ -360,6 +366,7 @@ else
         <a href="announcementsStudent.php">
         <img class="test" id="mmAnnoucementsLogo" src="images/speaker.png" alt="Annoucements" width= "120px" height= "120px" />
         <h5 class="textIcons" id="annoucementsMenu">Annoucements</h5>
+        <div class="AnnoucementsPlaceHolder"></div>
         </a>
         </div>
 

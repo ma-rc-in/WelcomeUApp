@@ -198,7 +198,7 @@ if(isset($_POST['submitAccessChange'])){
        <h3 id="udaTextHeaderReports">View reports</h3>
        </div>
        <div class="modal-body scrollModal" style="min-width: 1000px;">
-
+         <h4 class="formHeading" id="udaTextHeaderBanUserModal">The 'Dismiss' button can be used to reject a report so that it will not be longer displayed.<br><br>The 'Suspend' button will block the reported ID user so that the user will no longer be able to log in.</h4>
 
   <table class="reports">
     <tr>

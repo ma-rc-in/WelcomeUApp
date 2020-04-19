@@ -113,7 +113,7 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         }
 
         .modal-header {
-            padding: 30px 16px;
+            padding: 30px 10px;
             background-color: #474747;
             color: white;
         }
@@ -156,6 +156,10 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                 clear: both;
                 display: table;
             }
+
+            .goBackButton{
+
+              display: flex;
         }
 
 

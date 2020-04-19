@@ -167,11 +167,11 @@ if(isset($_POST['submit'])) { //change
     <script src="settings.js"></script>
 </head>
 <body>
-  <div class="patch-container">
+  <div class="patch-container" id="hhBackground">
     <div class="logoMain">
       <a href="mainmenu.php">
         <div class="logoIcon">
-          <img class="imgLogo" src="images/logo_white.png" alt="Logo" width="350px" height="100px"
+          <img id="hhLogo" class="imgLogo" src="images/logo_white.png" alt="Logo" width="350px" height="100px"
           style="margin-top: 25px;"/>
         </div>
       </a>
@@ -204,11 +204,11 @@ if(isset($_POST['submit'])) { //change
   </div>
 
 
-    <div class="patch-item patch-button" style="width: 100%; max-height: 100px; padding-bottom: 0px">
+    <div class="patch-item patch-button" id="hhFAQbtn" style="width: 100%; max-height: 100px; padding-bottom: 0px">
       <a href="#" id="hsButtonText" class="button" data-abbr="" style="width: 63%">See FAQ</a>
     </div>
 
-    <div class="patch-item patch-button" style="width: 100%; max-height: 100px; padding-top: 0px">
+    <div class="patch-item patch-button" id="hhContactUsBtn" style="width: 100%; max-height: 100px; padding-top: 0px">
       <a href="#" id="hhContactBtn" class="button" data-abbr="" style="width: 63%">Contact Us</a>
     </div>
 
@@ -242,9 +242,9 @@ if(isset($_POST['submit'])) { //change
         		<section class="accordion">
         			<div class="insideAccordion">
         				<input type="checkbox" id="check-1" />
-        				<label for="check-1" id="hhFAQ1">Question 1: How do I change my password?</label>
+        				<label for="check-1" id="hhFAQ1">Question 1: How do I reset my password?</label>
         				<article>
-        					<p id="hhFAQans1">You can change your password by submitting a query to the admin team requesting a password change.</p>
+        					<p id="hhFAQans1">You can reset your password by submitting a query to the admin team requesting a password change.</p>
         				</article>
         			</div>
               <div class="insideAccordion">

@@ -403,10 +403,10 @@ function languageChange() {
             hhQueryInput.placeholder = "Please write your query here...";
             hsButtonText.innerHTML = "See FAQ";
             hsModalLabelText.innerHTML = "FAQ";
-            hhFAQ1.innerHTML = "Question 1: How do I change my password?";
+            hhFAQ1.innerHTML = "Question 1: How do I reset my password?";
             hhFAQ2.innerHTML = "Question 2: Where can I change the websites settings?";
             hhFAQ3.innerHTML = "Question 3: I have further questions, where can I find support?";
-            hhFAQans1.innerHTML = "You can change your password by submitting a query to the admin team requesting a password change.";
+            hhFAQans1.innerHTML = "You can reset your password by submitting a query to the admin team requesting a password change.";
             hhFAQans2.innerHTML = "You can change the various aspects of the website such as the theme and language in the settings menu.";
             hhFAQans3.innerHTML = "You could find find further frequently asked questions by searching here: https://libraryanswers.northumbria.ac.uk/search/";
             submit.value = "Submit";
@@ -888,6 +888,12 @@ function themeChange() {
     var enrolmentContainer = document.getElementById("eeContainer");
     var eeTitleOne = document.getElementById("eeTitleOne");
     var eeStepOne = document.getElementById("eeStepOne");
+
+    // help services
+    var hhLogo = document.getElementById("hhLogo");
+    var hhBackground = document.getElementById("hhBackground");
+    var hhFAQbtn = document.getElementById("hhFAQbtn");
+    var hhContactUsBtn = document.getElementById("hhContactUsBtn");
     //Light Theme
     if (theme == "light"){
         //Main Menu
@@ -995,12 +1001,25 @@ function themeChange() {
             mapContainer.style.backgroundColor = "white";
             mpSearch.style.backgroundColor = "grey";
         } catch (e) {}
+
         //enrolment
         try {
             eeLogo.src="images/logoBlack.png";
             enrolmentContainer.style.backgroundColor = "white";
             eeTitleOne.style.color = "black";
             eeStepOne.style.color = "black";
+        } catch (e) {}
+
+        // help services
+        try {
+            hhLogo.src="images/logoBlack.png";
+            hhBackground.style.backgroundColor = "white";
+            hhFAQbtn.style.backgroundColor = "white";
+            hhContactUsBtn.style.backgroundColor = "white";
+            hsButtonText.style.color = "black";
+            hhContactBtn.style.color = "black";
+            hsButtonText.style.borderColor = "grey";
+            hhContactBtn.style.borderColor = "grey";
         } catch (e) {}
 
     }
@@ -1059,6 +1078,18 @@ function themeChange() {
             gcYourMessage.style.backgroundColor = "black";
             gcYourMessage.style.color = "white";
             gcMessageContentBox.style.backgroundColor = "white";
+        } catch (e) {}
+
+        // help services
+        try {
+            hhLogo.src="images/logo_white.png";
+            hhBackground.style.backgroundColor = "black";
+            hhFAQbtn.style.backgroundColor = "black";
+            hhContactUsBtn.style.backgroundColor = "black";
+            hsButtonText.style.color = "white";
+            hhContactBtn.style.color = "white";
+            hsButtonText.style.borderColor = "white";
+            hhContactBtn.style.borderColor = "white";
         } catch (e) {}
     }
 }
@@ -1194,6 +1225,7 @@ function highContrast() {
             hsButtonText.style.color = "yellow";
             hsModalLabelText.style.color = "yellow";
             submit.style.color = "yellow";
+            hhContactBtn.style.color = "yellow";
         } catch (e) {
         }
     }

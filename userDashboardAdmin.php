@@ -126,16 +126,29 @@ if(isset($_POST['submitAccessChange'])){
     <script src="jquery-3.4.1.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 <script src="settings.js"></script>
-<<<<<<< HEAD
-=======
+
+<style>
+.adminButtons {
+  width: 130px;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.reports, td, th, tr {
+  border: 1px solid rgba(99, 99, 99, 0.5);
+  text-align: center;
+}
+
+</style>
+
 
 <script>
     languageChange();
     themeChange();
     highContrast();
 </script>
-
->>>>>>> be2d14e01bab9da115ba4712a99e46c28305aba7
     <style>
       </style>
       </head>
@@ -174,22 +187,22 @@ if(isset($_POST['submitAccessChange'])){
        </div>
 
        <div id="firstModal" class="modal">
-       <div class="modal-content">
-       <div class="modal-header">
+       <div class="modal-content" style="overflow-x: auto;">
+       <div class="modal-header" style="min-width: 1000px;">
        <span class="close firstClose" id="">&times;</span>
        <h3 id="udaTextHeaderReports">View reports</h3>
        </div>
-       <div class="modal-body">
+       <div class="modal-body" style="min-width: 1000px; overflow: auto;">
 
-    <table class="reports">
+
+  <table class="reports">
     <tr>
-       <th id="udaTableLabelReportType">Report Type</th>
-       <th id="udaTableLabelReportedStudent">Reported Student</th>
-       <th id="udaTableLabelDescription">Description</th>
-       <th id="udaTableLabelReporter">Reporter ID</th>
+       <th id="udaTableLabelReportType" style="min-width:150px">Report Type</th>
+       <th id="udaTableLabelReportedStudent" style="min-width:150px">Reported Student</th>
+       <th id="udaTableLabelDescription" style="min-width:150px">Description</th>
+       <th id="udaTableLabelReporter" style="min-width:150px">Reporter ID</th>
+       <th id="udaTableLabelReporter" style="min-width:150px">Choose action</th>
     </tr>
-   </table>
-   <table class="reports">
        <form action="userDashboardAdmin.php" method="post">
                <?php
                $reportquery = "select * from tbl_report";
@@ -203,15 +216,16 @@ if(isset($_POST['submitAccessChange'])){
                    $reporter = $row->reporterStudentID;
 
                    echo '<tr>';
-                       echo '<td>'.$type.'</td>';
-                       echo '<td>'.$reported.'</td>';
-                       echo '<td>'.$comment.'</td>';
-                       echo '<td>'.$reporter.'</td><br>';
-                       echo '<td><button class="adminButtons" type="submit" name="dismissButton" id="udaButtonTextSubmitButtonForDismiss" value="'.$ID.'"> Dismiss </button></td><br>';
-                       echo '<td><button class="adminButtons" type="submit" name="suspendButton" id="udaButtonTextSubmitButtonForSuspend" value="'.$reported.'">Suspend</button></td>';
+                       echo '<td style="min-width:150px">'.$type.'</td>';
+                       echo '<td style="min-width:150px">'.$reported.'</td>';
+                       echo '<td style="min-width:150px; max-width: 200px; overflow-wrap: break-word;">'.$comment.'</td>';
+                       echo '<td style="min-width:150px">'.$reporter.'</td><br>';
+                       echo '<td style="display: block; min-width:150px"><button class="adminButtons" type="submit" name="dismissButton" id="udaButtonTextSubmitButtonForDismiss" value="'.$ID.'"> Dismiss </button></td>';
+                       echo '<td style="display: block; min-width:150px"><button class="adminButtons" type="submit" name="suspendButton" id="udaButtonTextSubmitButtonForSuspend" value="'.$reported.'">Suspend</button></td>';
                    echo '</tr>'; } ?>
        </form>
-</table>
+     </table>
+
        </div>
        </div>
        </div>

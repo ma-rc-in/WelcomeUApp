@@ -170,30 +170,33 @@
     font-size: 18px;
     color: white;
     margin-top: 20px;
-    padding: 10px 50px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: .4s;
     margin-bottom: 25px;
   }
   .adminButtons:hover {
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(69, 69, 69);
   }
 
-  #reports {
+  .reports {
     border-collapse: collapse;
     width: 100%;
+    overflow-x: auto;
+    overflow-wrap: break-word;
   }
 
   th, td {
     text-align: left;
     padding: 8px;
+    overflow-x: auto;
+
   }
 
   .formReports {
     border-collapse: collapse;
     width: 90%;
-  }
-
+    }
 
 
   .submitPass {

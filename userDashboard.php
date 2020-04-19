@@ -183,6 +183,13 @@ $(document).ready(function() {
         width: 70%;
       }
     }
+
+    .labelStyleForPassChange {
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+
+    }
 </style>
       </head>
       <body>
@@ -200,7 +207,7 @@ $(document).ready(function() {
          <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udTextHeaderPass">Change password</h3>
-       <a href="#" id="udButtonTextFirstBtn" class="button" data-abbr=" password">Change</a>
+       <a href="#" id="udButtonTextFirstBtn" class="button">Change</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
@@ -208,7 +215,7 @@ $(document).ready(function() {
          <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udTextHeaderAccount">Delete account</h3>
-       <a href="#" id="udButtonTextSecondBtn" class="button" data-abbr=" account">Delete</a>
+       <a href="#" id="udButtonTextSecondBtn" class="button" >Delete</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
@@ -216,7 +223,7 @@ $(document).ready(function() {
          <img class="imgPass" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udTextHeaderPin">Set PIN</h3>
-       <a href="#" id="udButtonTextThirdBtn" class="button" data-abbr=" PIN">Set</a>
+       <a href="#" id="udButtonTextThirdBtn" class="button" data-abbr="">Set</a>
        </div>
 
        <div id="errorMessage" class="overlay">
@@ -238,7 +245,7 @@ $(document).ready(function() {
        </div>
        <div class="modal-body">
 
-       <form id="passChangeForm" class="formPass" method="post" name="passwordForm" >
+       <form id="passChangeForm" class="formPass" method="post" name="passwordForm" > <br/><span id="disabledText" class="labelStyleForPassChange"></span><br><span id="currentPassCheck"  class="labelStyleForPassChange"></span><br><span id="error" class="labelStyleForPassChange" ></span>
          <div class="formPassWrapper">
          <h5 class="formHeading"></h5>
            <input type="password" class="formPassInput" id="udTextModalOldPassPlaceholder" name="OldPass" placeholder="Enter your current password" autocomplete="off" required/>
@@ -251,7 +258,7 @@ $(document).ready(function() {
              <h5 class="formHeading"></h5>
                <input type="password" class="formPassInput" id="udTextModalRepeatNewPassPlaceholder" name="CheckPass" placeholder="Repeat your new password" autocomplete="off" onChange="checkForPassword();" required/>
              </div>
-                 <button onclick="window.location.href='#errorMessage'" id="udButtonTextSubmitButtonForPass" name="submitPass" class="submitPass" type="submit" disabled>Submit</button><br/><span id="error"/><br/><span id="disabledText"/><br><span id="currentPassCheck"/>
+                 <button onclick="window.location.href='#errorMessage'" id="udButtonTextSubmitButtonForPass" name="submitPass" class="submitPass" type="submit" disabled>Submit</button><br/>
 
        </form>
        </div>

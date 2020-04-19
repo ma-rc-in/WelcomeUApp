@@ -1189,7 +1189,23 @@ function highContrast() {
     var gcTextPinCheck = document.getElementById("gcTextPinCheck");
     var gcSubmitPin = document.getElementById("gcSubmitPin");
 
-
+    //settings
+    var ssTextSecurity = document.getElementById("ssTextSecurity");
+    var stContainer = document.getElementById("stContainer");
+    var securityLogo = document.getElementById("securityLogo");
+    var ssButtonSecurity = document.getElementById("ssButtonSecurity");
+    var ssFirstBtn = document.getElementById("ssFirstBtn");
+    var ssSecondBtn = document.getElementById("ssSecondBtn");
+    var ssThirdBtn = document.getElementById("ssThirdBtn");
+    var ssFourthBtn = document.getElementById("ssFourthBtn");
+    var ssTextNotifications = document.getElementById("ssTextNotifications");
+    var ssTextContrast = document.getElementById("ssTextContrast");
+    var ssTextContrastModal = document.getElementById("ssTextContrastModal");
+    var ssTextTheme = document.getElementById("ssTextTheme");
+    var ssThemeDark = document.getElementById("ssThemeDark");
+    var ssThemeLight = document.getElementById("ssThemeLight");
+    var ssTextLanguage = document.getElementById("ssTextLanguage");
+    var ssTextModalNotifications = document.getElementById("ssTextModalNotifications");
 
     //TODO CHange
     if (text == "on" && theme == "dark") {
@@ -1239,6 +1255,26 @@ function highContrast() {
             gcTextPinCheck.style.color = "yellow";
             gcSubmitPin.style.color = "yellow";
         }catch (e) {}
+
+        //settings
+        try {
+            ssTextSecurity.style.color = "yellow";
+            ssTextNotifications.style.color = "yellow";
+            ssTextLanguage.style.color = "yellow";
+            ssTextContrast.style.color = "yellow";
+            stContainer.style.color = "yellow";
+            securityLogo.style.color = "yellow";
+            ssButtonSecurity.style.color = "yellow";
+            ssTextTheme.style.color = "yellow";
+            ssFirstBtn.style.color = "yellow";
+            ssSecondBtn.style.color = "yellow";
+            ssThirdBtn.style.color = "yellow";
+            ssFourthBtn.style.color = "yellow";
+            ssTextContrastModal.style.color = "yellow";
+            ssThemeDark.style.color = "yellow";
+            ssThemeLight.style.color = "yellow";
+            ssTextModalNotifications.style.color = "yellow";
+        } catch (e) {}
 
         // map
         try {

@@ -4,6 +4,10 @@ require_once("functions.php");
 $db = getConnection();//returns the connection for the database.
 
 session_start();
+$view = false;
+$editID = "";
+echo '.<Script> localStorage.setItem("viewCheck", "false"); //used to load the page</Script>.';
+echo '.<Script> localStorage.setItem("viewEdit", "false"); //used to load the page</Script>.';
 
 function convertModuleID($ID){ //this converts the module ID into a name
     $db = getConnection();
@@ -16,17 +20,31 @@ function convertModuleID($ID){ //this converts the module ID into a name
 
 if (checkAccessType() != "Lecturer") {
     header('Location:announcmentsStudent.php');
+} else {
+    $studentInfo = getStudentDetails(); //gets all student details
+    $lecturerID = $studentInfo['studentID'];//student ID
 }
 if(isset($_POST['submit'])) {
     $moduleID = $_POST['selectModule'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $query = "INSERT INTO tbl_announcement (moduleID, announcementMessage, announcementSubject) VALUES (:selectModule, :announcementMessage, :announcementSubject)";
+    $query = "INSERT INTO tbl_announcement (moduleID, lecturerID, announcementMessage, announcementSubject) VALUES (:selectModule, :lecturerID, :announcementMessage, :announcementSubject)";
     $queryInsert = $db->prepare($query);
     $queryInsert->bindParam('selectModule', $moduleID, PDO::PARAM_STR);
+    $queryInsert->bindParam('lecturerID', $lecturerID, PDO::PARAM_STR);
     $queryInsert->bindParam('announcementMessage', $message, PDO::PARAM_STR);
     $queryInsert->bindParam('announcementSubject', $subject, PDO::PARAM_STR);
-    $queryInsert->execute(array(":selectModule" => $moduleID, ":announcementMessage" =>$message, ":announcementSubject" =>$subject));
+    $queryInsert->execute(array(":selectModule" => $moduleID, ":lecturerID" => $lecturerID, ":announcementMessage" =>$message, ":announcementSubject" =>$subject));
+}
+
+if(isset($_POST['aaEditAnnoucements'])) {
+    $view = true;
+    echo '.<Script> localStorage.setItem("viewCheck", "true"); //used to load the page</Script>.';
+}
+
+if(isset($_POST['aaEdit'])) {
+    $editID = $_POST['aaEdit'];
+    echo '.<Script> localStorage.setItem("viewEdit", "true"); //used to load the page</Script>.';
 }
 ?>
 
@@ -158,7 +176,6 @@ if(isset($_POST['submit'])) {
             }
             ?>
         </select>
-
         <label for="subject"> Subject </label>
         <input type="text" id="subject" name="subject" placeholder="Type a subject..">
 
@@ -166,8 +183,151 @@ if(isset($_POST['submit'])) {
         <textarea id="message" name="message" placeholder="Type your message.." style="height:200px"></textarea>
 
         <input type="submit" value="Submit" name="submit">
-
+        <input type="submit" value="Edit Annoucements" name="aaEditAnnoucements">
     </form>
+
+    <!--List of edits-->
+    <div id="firstModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close firstClose" id="">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <h4 class="formHeading" id="ssTextModalNotifications">Select announcement to change.</h4>
+                <form action="announcementsLecturer.php" method="POST">
+                <div class="formPassWrapper">
+                    <?php
+                    if ($view == true){
+                        $lecturerID = $studentInfo['studentID'];//student ID
+                        $query = "SELECT * FROM tbl_announcement WHERE 	lecturerID=:lecturerID";
+                        $annoucementGet = $db->prepare($query);
+                        $annoucementGet->bindParam('lecturerID', $lecturerID, PDO::PARAM_STR);
+                        $annoucementGet->execute(array(":lecturerID" => $lecturerID));
+                        $count = count($annoucementGet->fetchAll());
+
+                        if ($count > 0) {
+                            $annoucementGet->execute(array(":lecturerID" => $lecturerID));
+                            while ($row = $annoucementGet->fetchObject()) {
+                                    $id = $row->announcementID;
+                                    $module = $row->moduleID;
+                                    $subject = $row->announcementSubject;
+                                    $time = $row->announcementDateTime;
+
+                                    echo '<div id=announcementEdit>';
+                                    echo $module." - ".$subject. "\n";
+                                    echo "Sent at: (".$time. " ) \n";
+                                    echo "\n";
+                                echo '<button class="adminButtons" type="submit" name="aaEdit" id="aaEdit" value="'.$id.'"> Edit </button>';
+                                    echo '</div>';
+                            }
+
+                        }else {
+                            echo "You have made no announcements";
+                        }
+                    }
+                    ?>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--List of edits-->
+    <div id="secondModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close secondClose" id="">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <h4 class="formHeading" id="ssTextModalNotifications">Edit announcement.</h4>
+                <div class="formPassWrapper">
+                    <?php
+                    if ($editID != ""){
+                        $query = "SELECT * FROM tbl_announcement WHERE 	announcementID=:announcementID";
+                        $annoucementIDGet = $db->prepare($query);
+                        $annoucementIDGet->bindParam('announcementID', $editID, PDO::PARAM_STR);
+                        $annoucementIDGet->execute(array(":announcementID" => $editID));
+                        $count = count($annoucementIDGet->fetchAll());
+
+                        if ($count > 0) {
+                            $annoucementGet->execute(array(":announcementID" => $editID));
+                            while ($row = $annoucementGet->fetchObject()) {
+                                $module = $row->moduleID;
+                                $subject = $row->announcementSubject;
+                                $message = $row->announcementMessage;
+                            }
+
+                        }else {
+                            echo "Please try again later.";
+                            $module = "";
+                            $subject = "";
+                            $message  = "";
+                        }
+                    }
+                    ?>
+
+                    <label for="Module"> Module </label>
+                    <input type="text" id="Module" name="ModuleEdit" value="<?php echo $module; ?> "readonly">
+
+                    <label for="subject"> Subject </label>
+                    <input type="text" id="subject" name="subjectEdit" value="<?php echo $subject; ?>" placeholder="Type a subject..">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="messageEdit" placeholder="Type your message.." value="<?php echo $message; ?>"  style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit" name="submitEdit">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
+<script>
+    var modal1 = document.getElementById("firstModal");
+    var span1 = document.getElementsByClassName("close firstClose")[0];
+    function loadPage() {
+        modal1.style.display = "block";
+    }
+    span1.onclick = function () {
+        modal1.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    var modal2 = document.getElementById("secondModal");
+    var span2 = document.getElementsByClassName("close secondClose")[0];
+    function loadPageEdit() {
+        modal2.style.display = "block";
+    }
+    span2.onclick = function () {
+        modal2.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal1) {
+            modal2.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    var check = localStorage.getItem("viewCheck"); //new message count;
+    if(check == "true"){
+        loadPage();
+    }
+
+    var checkEdit = localStorage.getItem("viewEdit"); //new message count;
+    if(checkEdit == "true"){
+        loadPageEdit();
+    }
+</script>
+
 </body>
 </html>

@@ -9,7 +9,7 @@
     $FileErr = '';
 
 if(isset($_POST['submit'])){
-    if($_FILES["myfile"]["size"] < 1000000) { //checks size
+    if($_FILES["myfile"]["size"] < 10000000000) { //checks size
         $filename = addslashes($_FILES["myfile"]["name"]); //get the name of the file
         $data = addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
         $imgtype = addslashes($_FILES["myfile"]["type"]); //gets the type of the file

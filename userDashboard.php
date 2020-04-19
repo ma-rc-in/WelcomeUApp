@@ -160,7 +160,7 @@ $(document).ready(function() {
       top: 20px;
       right: 30px;
       transition: all 200ms;
-      font-size: 38px;
+      font-size: 30px;
       font-weight: bold;
       text-decoration: none;
       -webkit-text-stroke-width: 0.3px;

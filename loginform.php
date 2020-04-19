@@ -98,6 +98,249 @@ if (isset($_POST['submit'])) {
   margin-bottom: 5px;
   display: none;
 }
+
+.cookiesDiv {
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 35px;
+  line-height: 35px;
+  background: #5c5c5c;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+  font-weight: 100;
+  -webkit-transition: .8s;
+  transition: .8s;
+  -webkit-animation: slideIn .8s;
+          animation: slideIn .8s;
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+  z-index: 10;
+
+}
+.messageCookiesDiv {
+  display: inline-block;
+  color: white;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  float; left;
+  width: 95%;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.closeCookiesDiv {
+  border: none;
+  color: white;
+  position: absolute;
+  display: inline-block;
+  right: 8px;
+  top: 2;
+  cursor: pointer;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  font-size: 32px;
+  font-weight: bold;
+}
+.closeCookiesDiv:hover {
+  color: #c4c4c4;
+}
+
+.checkBoxCookiesDiv {
+  display: none;
+}
+.checkBoxCookiesDiv:checked + .cookiesDiv {
+  display: none;
+  -webkit-transition: .8s;
+  transition: .8s;
+  -webkit-animation: slideIn .8s;
+          animation: slideIn .8s;
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+
+}
+
+@media screen and (max-width: 920px){
+    .cookiesDiv {
+    height: 70px;
+  }
+  .messageCookiesDiv {
+    float; left;
+    width: 91%;
+    margin-left: 20px;
+  }
+  .closeCookiesDiv {
+    right: 3px;
+    top: 7px;
+  }
+}
+
+@media screen and (max-width: 590px){
+    .cookiesDiv {
+    height: 105px;
+  }
+  .messageCookiesDiv {
+    font-size: 15.5px;
+    color: white;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    float; left;
+    width: 88%;
+    margin-left: 20px;
+  }
+  .closeCookiesDiv {
+    right: 3px;
+    top: 7px;
+    font-size: 30px;
+  }
+}
+
+.cookiesMoreInfoLink {
+text-decoration: underline;
+margin-left: 2px;
+cursor: pointer;
+display: inline-block;
+
+}
+
+#cookiesMoreInfoLink:hover {
+color: #b5b5b5;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 50px auto;
+  padding: 10px 20px 20px 20px;
+  background: rgba(87, 87, 87, 1);
+  color: white;
+  border-radius: 5px;
+  width: 60%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4;
+}
+
+.popup .close {
+  position: absolute;
+  top: 8px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 38px;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: white;
+  color: white;
+}
+.popup .close:hover {
+  color: #b8b8b8;
+}
+.popup .content {
+  max-height: 50%;
+  overflow: auto;
+}
+
+
+.cookiesMoreInfoContentText, .LinkCookiesContentText {
+  color: white;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.localStorageLinkCookiesContentText {
+  text-decoration: underline;
+}
+
+.leftSpaceContentText {
+  margin-left: 25px;
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.logoMain {
+  width: 350px;
+  height: 110px;
+}
+
+.logoDiv {
+  width: 100%;
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 5%;
+}
+
+
+
+@media screen and (max-width: 500px){
+
+  .cookiesMoreInfoContentText, .LinkCookiesContentText {
+    font-size: 15px;
+  }
+
+  .close {
+    top: 1px;
+  }
+
+  .logoMain {
+    width: 310px;
+    height: 100;
+  }
+
+  .logoDiv {
+    width: 100%;
+    margin-top: 20px;
+    display: inline-block;
+    margin-left: 0%;
+  }
+
+  .rememberUser, #llcookieset {
+    display: inline-block;
+    float: left;
+    margin-top: 10px;
+  }
+
+  .forgotPassLabel {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 400px){
+
+  .logoMain {
+    width:  240px;
+    height: 80px;
+  }
+}
+
 </style>
 <body>
 
@@ -111,12 +354,27 @@ if (isset($_POST['submit'])) {
     });
 </script>
 
+
 <div class="limiter">
-    <div class="container-login100" id="llContainerLogin">
+
+  <input class="checkBoxCookiesDiv" id="checkBoxCookiesDiv" type="checkbox" />
+  <div class="cookiesDiv">
+    <div class="messageCookiesDiv">
+      This website is using cookies and javascript local storage to improve your experience. More information
+      <div id="" class="cookiesMoreInfoLink" onclick="window.location.href='#cookiesClickMoreInfoDiv'">here</div>
+    </div>
+    <label for="checkBoxCookiesDiv" class="closeCookiesDiv">&times;</label>
+  </div>
+
+    <div class="container-login100" id="llContainerLogin" style="margin-top: 100px;">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50" id="llWrapLogin">
-            <div class="imgWrapper">
-                <img class="imglogo" id="llLogo" src="images/uni_logo.png" alt="logo" width="250px" height="75px"/>
+
+          <div class="logoDiv">
+            <div class="logoChatWrapper">
+              <img class="logoMain" id="gcLogo" src="images/logoBlack.png" alt="Logo" />
             </div>
+          </div>
+
             <form action="loginform.php" method="POST" class="login100-form validate-form">
           <span class="login100-form-title p-b-33" id="llWelcomeU">
             WelcomeU
@@ -151,32 +409,34 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 
-    <!--Cookies Changes-->
+    <!--Cookies Changes
     <div id="cookiesWarning">
-        <div id="closecookiesWarning">x</div>
+        <div id="closecookiesWarning">&times;</div>
         <p id="cookiewarning">This website is using cookies and javascript local storage to improve your experience.</p>
-        <button type="button" id="mmCookieMoreInfo" style="margin-top: 10px; float: left" ;>More Information</button>
+        <button type="button" id="mmCookieMoreInfo" style="margin-top: 10px; float: left" ;>More </button>
         <button type="button" id="mmCookieAccept" style="margin-top: 10px; float: left" ;>Accept</button>
-    </div>
+    </div>-->
 
-    <!--More Info Modal-->
-    <div id="CookieInfoPage" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" id="" style="padding-bottom: 10px;">&times;</span>
-                <h4 id="mmCookieInformationHeader">Cookie Information</h4>
-            </div>
-            <div class="modal-body" style="margin-bottom: 0px;">
-                <p id="mminfo">This website uses cookies and javascript local storage to enhance your experience while using this website.<p>
-                <p id="mminfo2">We do this by using cookies to:</p>
-                <p id="mminfo3">Store your username to make it easier for you to login.</br></p>
-                <p id="mminfo4">We also use javascript local storage to:</p>
-                <p id="mminfo5">Save various settings you may use in our website, such as the theme, language or contrast settings.</br></p>
-                <button type="button" id="mmCookieButtonClose" style="margin-top: 10px; float: left" ;>Close</button>
-            </div>
-        </div>
+
+    <div id="cookiesClickMoreInfoDiv" class="overlay">
+     <div class="popup">
+       <a class="close" href="#" style=" ">&times;</a>
+       <div class="content" style="margin-top: 20px;">
+         <p id="mmCookieInformationHeader" class="cookiesMoreInfoContentText">Cookies Information</p>
+         <hr>
+         <br>
+         <p id="mminfo" class="cookiesMoreInfoContentText">This website uses <a class="LinkCookiesContentText" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" >cookies </a> and <a class="LinkCookiesContentText" href="https://developer.mozilla.org/pl/docs/Web/API/Window/localStorage" >JavaScript local storage</a>  to enhance your experience while using this website.<p>
+           <br>
+         <p id="mminfo2" class="cookiesMoreInfoContentText">We do this by using cookies to:</p>
+         <br>
+         <p id="mminfo3" class="cookiesMoreInfoContentText leftSpaceContentText">Store your username to make it easier for you to login.</br></p>
+         <br>
+         <hr>
+         <br>
+         <p id="mminfo4" class="cookiesMoreInfoContentText">We also use JavaScript local storage to:</p>
+         <p id="mminfo5" class="cookiesMoreInfoContentText leftSpaceContentText">Save various settings you may use in our website, such as the theme, language or contrast settings.</br></p>       </div>
+     </div>
     </div>
-    <!--End More Info Modal-->
 </div>
 
 </body>

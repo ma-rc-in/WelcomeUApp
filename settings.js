@@ -59,7 +59,6 @@ function languageChange() {
     if (language == null) {//checks to see if the user has a preference set, if not
         var defaultLanguage = "English";
         localStorage.setItem("language", defaultLanguage); //sets the default language to English (for first time users)
-
     }
 
     //gets the IDs of all menu areas
@@ -83,9 +82,21 @@ function languageChange() {
     //login
     var llWelcomeU = document.getElementById("llWelcomeU");
     var llLoginMessage = document.getElementById("llLoginMessage");
-    var llStudentID = document.getElementById("llStudentID");
-    var llPassword = document.getElementById("llPassword");
+    var llStudentID = document.getElementById("inputTextCapsLockLogin");
+    var llPassword = document.getElementById("inputTextCapsLockPass");
     var llsubmit = document.getElementById("llSubmit");
+    var llcookieset = document.getElementById("llcookieset");
+    var capsLockInfo = document.getElementById("capsLockInfo");
+    var cookiewarning = document.getElementById("cookiewarning");
+    var mmCookieMoreInfo = document.getElementById("mmCookieMoreInfo");
+    var mmCookieAccept = document.getElementById("mmCookieAccept");
+    var mmCookieInformationHeader = document.getElementById("mmCookieInformationHeader");
+    var mminfo = document.getElementById("mminfo");
+    var mminfo2 = document.getElementById("mminfo2");
+    var mminfo3 = document.getElementById("mminfo3");
+    var mminfo4 = document.getElementById("mminfo4");
+    var mminfo5 = document.getElementById("mminfo5");
+    var mmCookieButtonClose = document.getElementById("mmCookieButtonClose");
 
     //groupChat
     var courseNameTitleGroupChat = document.getElementById("gcCourseNameTitle");
@@ -247,6 +258,19 @@ function languageChange() {
             llStudentID.placeholder = "StudentID";
             llPassword.placeholder = "Password";
             llsubmit.value = "submit";
+            llcookieset.innerHTML = "Remember Username?";
+            capsLockInfo.innerHTML = "*Be careful with your login and password, Caps Lock is ON*";
+            cookiewarning.innerHTML = "This website is using cookies and javascript local storage to improve your experience.";
+            mmCookieMoreInfo.innerHTML = "More Information";
+            mmCookieAccept.innerHTML = "Accept";
+            mmCookieInformationHeader.innerHTML = "Cookie Information";
+            mminfo.innerHTML = "This website uses cookies and javascript local storage to enhance your experience while using this website.";
+            mminfo2.innerHTML = "We do this by using cookies to:";
+            mminfo3.innerHTML = "Store your username to make it easier for you to login.";
+            mminfo4.innerHTML = "We also use javascript local storage to:";
+            mminfo5.innerHTML = "Save various settings you may use in our website, such as the theme, language or contrast settings.";
+            mmCookieButtonClose.innerHTML = "Close";
+
         } catch (e) {
         }
 
@@ -390,6 +414,29 @@ function languageChange() {
             gcTextPinCheck.innerHTML = "Please verify your PIN to continue:";
             gcPinInput.placeholder = "Enter your PIN";
             gcSubmitPin.value = "Submit";
+        } catch (e) {
+        }
+
+        //login
+        try {
+            llWelcomeU.innerHTML = "WelcomeU";
+            llLoginMessage.innerHTML = "Please login with your university login";
+            llStudentID.placeholder = "StudentID";
+            llPassword.placeholder = "Password";
+            llsubmit.value = "submit";
+            llcookieset.innerHTML = "Remember Username?";
+            capsLockInfo.innerHTML = "*Be careful with your login and password, Caps Lock is ON*";
+            cookiewarning.innerHTML = "This website is using cookies and javascript local storage to improve your experience.";
+            mmCookieMoreInfo.innerHTML = "More Information";
+            mmCookieAccept.innerHTML = "Accept";
+            mmCookieInformationHeader.innerHTML = "Cookie Information";
+            mminfo.innerHTML = "This website uses cookies and javascript local storage to enhance your experience while using this website.";
+            mminfo2.innerHTML = "We do this by using cookies to:";
+            mminfo3.innerHTML = "Store your username to make it easier for you to login.";
+            mminfo4.innerHTML = "We also use javascript local storage to:";
+            mminfo5.innerHTML = "Save various settings you may use in our website, such as the theme, language or contrast settings.";
+            mmCookieButtonClose.innerHTML = "Close";
+
         } catch (e) {
         }
 
@@ -547,19 +594,33 @@ function languageChange() {
                 reportSubmitGroupChat.value = "发送";
 
                 //TODO
-                gcPinText.innerHTML = "Pin Verification";
-                gcTextPinCheck.innerHTML = "Please verify your PIN to continue:";
-                gcPinInput.placeholder = "Enter your PIN";
-                gcSubmitPin.value = "Submit";
+                gcPinText.innerHTML = "PIN码确认";
+                gcTextPinCheck.innerHTML = "请确认PIN码以继续:";
+                gcPinInput.placeholder = "输入你的PIN码";
+                gcSubmitPin.value = "提交";
             } catch (e) {
             }
             //login
             try {
                 llWelcomeU.innerHTML = "欢迎你";
-                llLoginMessage.innerHTML = "请登陆您的学校账号";
+                llLoginMessage.innerHTML = "请登陆你的学校账号";
                 llStudentID.placeholder = "学生ID";
                 llPassword.placeholder = "密码";
                 llsubmit.value = "提交";
+
+                //TODO - Sorry about the endless text
+                llcookieset.innerHTML = "是否记住用户名？";
+                capsLockInfo.innerHTML = "*注意你的登录名和密码，大写锁定开启*";
+                cookiewarning.innerHTML = "本网站使用cookie和javascript本地存储来改善你的体验。";
+                mmCookieMoreInfo.innerHTML = "更多信息";
+                mmCookieAccept.innerHTML = "接受";
+                mmCookieInformationHeader.innerHTML = "Cookie信息";
+                mminfo.innerHTML = "本网站使用cookie和javascript本地存储来提高您使用本网站的体验。";
+                mminfo2.innerHTML = "我们通过使用cookie来做到这一点:";
+                mminfo3.innerHTML = "储存你的用户名，方便用户登入。";
+                mminfo4.innerHTML = "我们也通过javascript本地存储来做到这一点:";
+                mminfo5.innerHTML = "保存你可能在我们网站上使用的各种设置，如主题、语言或对比度设置。";
+                mmCookieButtonClose.innerHTML = "关闭";
             } catch (e) {
             }
             //settings

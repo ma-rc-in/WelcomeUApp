@@ -403,10 +403,10 @@ function languageChange() {
             hhQueryInput.placeholder = "Please write your query here...";
             hsButtonText.innerHTML = "See FAQ";
             hsModalLabelText.innerHTML = "FAQ";
-            hhFAQ1.innerHTML = "Question 1: How do I change my password?";
+            hhFAQ1.innerHTML = "Question 1: How do I reset my password?";
             hhFAQ2.innerHTML = "Question 2: Where can I change the websites settings?";
             hhFAQ3.innerHTML = "Question 3: I have further questions, where can I find support?";
-            hhFAQans1.innerHTML = "You can change your password by submitting a query to the admin team requesting a password change.";
+            hhFAQans1.innerHTML = "You can reset your password by submitting a query to the admin team requesting a password change.";
             hhFAQans2.innerHTML = "You can change the various aspects of the website such as the theme and language in the settings menu.";
             hhFAQans3.innerHTML = "You could find find further frequently asked questions by searching here: https://libraryanswers.northumbria.ac.uk/search/";
             submit.value = "Submit";

@@ -242,9 +242,9 @@ if(isset($_POST['submit'])) { //change
         		<section class="accordion">
         			<div class="insideAccordion">
         				<input type="checkbox" id="check-1" />
-        				<label for="check-1" id="hhFAQ1">Question 1: How do I change my password?</label>
+        				<label for="check-1" id="hhFAQ1">Question 1: How do I reset my password?</label>
         				<article>
-        					<p id="hhFAQans1">You can change your password by submitting a query to the admin team requesting a password change.</p>
+        					<p id="hhFAQans1">You can reset your password by submitting a query to the admin team requesting a password change.</p>
         				</article>
         			</div>
               <div class="insideAccordion">

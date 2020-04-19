@@ -1255,27 +1255,44 @@ function highContrast() {
     var ssTextLanguage = document.getElementById("ssTextLanguage");
     var ssTextModalNotifications = document.getElementById("ssTextModalNotifications");
 
+    //userdashboard
+    var udLogo = document.getElementById("udLogo");
+    var udimagepass = document.getElementById("udimagepass");
+    var udTextHeaderPass = document.getElementById("udTextHeaderPass");
+    var udimageremove = document.getElementById("udimageremove");
+    var udTextHeaderAccount = document.getElementById("udTextHeaderAccount");
+    var udimagelock = document.getElementById("udimagelock");
+    var udTextHeaderPin = document.getElementById("udTextHeaderPin");
+    var udContainer = document.getElementById("udContainer");
+    var udPatchButton = document.getElementById("udPatchButton");
+    var udPatch2 = document.getElementById("udPatch2");
+    var udPatch3 = document.getElementById("udPatch3");
+    var udButtonTextFirstBtn = document.getElementById("udButtonTextFirstBtn");
+    var udButtonTextSecondBtn = document.getElementById("udButtonTextSecondBtn");
+    var udButtonTextThirdBtn = document.getElementById("udButtonTextThirdBtn");
+    var disabledText = document.getElementById("disabledText");
+
     //TODO CHange
     if (text == "on" && theme == "dark") {
         //mainMenu
         try {
             try {
-                mmSmartCardBalance.style.color = "yellow";
-                mmBalance.style.color = "yellow";
+                mmSmartCardBalance.style.color = "orange";
+                mmBalance.style.color = "orange";
             }catch (e) {}
-            mapMenuText.style.color = "yellow";
-            groupChatMenuText.style.color = "yellow";
-            helpMenuText.style.color = "yellow";
-            annoucementsMenuText.style.color = "yellow";
-            enrolmentMenuText.style.color = "yellow";
-            settingsMenuText.style.color = "yellow";
-            mmTextHeadermainMenuModal.style.color = "yellow";
-            mmHelpMap.style.color = "yellow";
-            mmHelpGroupChat.style.color = "yellow";
-            mmHelpHelp.style.color = "yellow";
-            mmHelpAnnouncements.style.color = "yellow";
-            mmHelpEnrolment.style.color = "yellow";
-            mmHelpSettings.style.color = "yellow";
+            mapMenuText.style.color = "orange";
+            groupChatMenuText.style.color = "orange";
+            helpMenuText.style.color = "orange";
+            annoucementsMenuText.style.color = "orange";
+            enrolmentMenuText.style.color = "orange";
+            settingsMenuText.style.color = "orange";
+            mmTextHeadermainMenuModal.style.color = "orange";
+            mmHelpMap.style.color = "orange";
+            mmHelpGroupChat.style.color = "orange";
+            mmHelpHelp.style.color = "orange";
+            mmHelpAnnouncements.style.color = "orange";
+            mmHelpEnrolment.style.color = "orange";
+            mmHelpSettings.style.color = "orange";
 
         }catch (e) {}
 
@@ -1283,82 +1300,102 @@ function highContrast() {
         try {
             llWelcomeU.style.color = "black";
             llLoginMessage.style.color = "black";
-            llsubmit.style.color = "yellow";
+            llsubmit.style.color = "orange";
         }catch (e) {}
 
         //groupChat
         try {
             gcCourseNameEcho.style.color = "black";
             courseNameTitleGroupChat.style.color = "black";
-            yourMessageGroupChat.style.color = "yellow";
+            yourMessageGroupChat.style.color = "orange";
             MessageContentBoxGroupChat.style.color = "black";
-            reportButtonGroupChat.style.color = "yellow";
-            sendButtonGroupChat.style.color = "yellow";
-            reportUserGroupChat.style.color = "yellow";
-            userIDGroupChat.style.color = "yellow";
-            reasonLabelGroupChat.style.color = "yellow";
-            reasonGroupChat.style.color = "yellow";
-            reportSubmitGroupChat.style.color = "yellow";
-            gcPinText.style.color = "yellow";
-            gcTextPinCheck.style.color = "yellow";
-            gcSubmitPin.style.color = "yellow";
+            reportButtonGroupChat.style.color = "orange";
+            sendButtonGroupChat.style.color = "orange";
+            reportUserGroupChat.style.color = "orange";
+            userIDGroupChat.style.color = "orange";
+            reasonLabelGroupChat.style.color = "orange";
+            reasonGroupChat.style.color = "orange";
+            reportSubmitGroupChat.style.color = "orange";
+            gcPinText.style.color = "orange";
+            gcTextPinCheck.style.color = "orange";
+            gcSubmitPin.style.color = "orange";
         }catch (e) {}
 
         //settings
         try {
-            ssTextSecurity.style.color = "yellow";
-            ssTextNotifications.style.color = "yellow";
-            ssTextLanguage.style.color = "yellow";
-            ssTextContrast.style.color = "yellow";
-            stContainer.style.color = "yellow";
-            securityLogo.style.color = "yellow";
-            ssButtonSecurity.style.color = "yellow";
-            ssTextTheme.style.color = "yellow";
-            ssFirstBtn.style.color = "yellow";
-            ssSecondBtn.style.color = "yellow";
-            ssThirdBtn.style.color = "yellow";
-            ssFourthBtn.style.color = "yellow";
-            ssTextContrastModal.style.color = "yellow";
-            ssThemeDark.style.color = "yellow";
-            ssThemeLight.style.color = "yellow";
-            ssTextModalNotifications.style.color = "yellow";
+            ssTextSecurity.style.color = "orange";
+            ssTextNotifications.style.color = "orange";
+            ssTextLanguage.style.color = "orange";
+            ssTextContrast.style.color = "orange";
+            stContainer.style.color = "orange";
+            securityLogo.style.color = "orange";
+            ssButtonSecurity.style.color = "orange";
+            ssTextTheme.style.color = "orange";
+            ssFirstBtn.style.color = "orange";
+            ssSecondBtn.style.color = "orange";
+            ssThirdBtn.style.color = "orange";
+            ssFourthBtn.style.color = "orange";
+            ssTextContrastModal.style.color = "orange";
+            ssThemeDark.style.color = "orange";
+            ssThemeLight.style.color = "orange";
+            ssTextModalNotifications.style.color = "orange";
         } catch (e) {}
 
         // map
         try {
-            mpSearch.placeholder.style.color = "yellow";
+            mpSearch.placeholder.style.color = "orange";
         }catch (e) {}
 
         //self enrollment
         try {
-            eeTitleOne.style.color = "yellow";
-            eeStepOne.style.color = "yellow";
-            eesubmit.style.color = "yellow";
+            eeTitleOne.style.color = "orange";
+            eeStepOne.style.color = "orange";
+            eesubmit.style.color = "orange";
         }catch (e) {}
 
         //self enrollment - upload photo
         try {
-            eeTitleTwo.style.color = "yellow";
-            eeStepTwo.style.color = "yellow";
-            eesubmitTwo.style.color = "yellow";
+            eeTitleTwo.style.color = "orange";
+            eeStepTwo.style.color = "orange";
+            eesubmitTwo.style.color = "orange";
         } catch (e) {}
 
         //self enrollment form complete
         try {
-            eeSuccess.style.color = "yellow";
-            eeComplete.style.color = "yellow";
-            eeLink.style.color = "yellow";
+            eeSuccess.style.color = "orange";
+            eeComplete.style.color = "orange";
+            eeLink.style.color = "orange";
         } catch (e) {}
 
         //help services
         try {
-            hhErrorTitle.style.color = "yellow";
-            hhEmail.style.color = "yellow";
-            hhQuery.style.color = "yellow";
-            hsButtonText.style.color = "yellow";
-            hsModalLabelText.style.color = "yellow";
-            submit.style.color = "yellow";
-            hhContactBtn.style.color = "yellow";
+            hhErrorTitle.style.color = "orange";
+            hhEmail.style.color = "orange";
+            hhQuery.style.color = "orange";
+            hsButtonText.style.color = "orange";
+            hsModalLabelText.style.color = "orange";
+            submit.style.color = "orange";
+            hhContactBtn.style.color = "orange";
+        } catch (e) {
+        }
+
+        //userdashboard
+        try {
+        udLogo.style.color = "orange";
+        udimagepass.style.color = "orange";
+        udTextHeaderPass.style.color = "orange";
+        udimageremove.style.color = "orange";
+        udTextHeaderAccount.style.color = "orange";
+        udimagelock.style.color = "orange";
+        udTextHeaderPin.style.color = "orange";
+        udContainer.style.color = "orange";
+        udPatchButton.style.color = "orange";
+        udPatch2.style.color = "orange";
+        udPatch3.style.color = "orange";
+        udButtonTextFirstBtn.style.color = "orange";
+        udButtonTextSecondBtn.style.color = "orange";
+        udButtonTextThirdBtn.style.color = "orange";
+        disabledText.style.color = "orange";
         } catch (e) {
         }
     }

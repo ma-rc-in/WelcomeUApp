@@ -261,7 +261,7 @@ Media Queries
     </div>
 
     <div class="guideButton" id="userGuideButton"><img src="images/guide.png" id="mmHelpGuide" class="guideIcon"></div>
-    </div>
+    
 
     <div style="width: 100%; color: white">
     <h5 id="mmSmartCardBalance" style="display: inline-block;">Smart Card Balance:</h5>
@@ -316,8 +316,8 @@ Media Queries
         <a href="logout.php">
             <img class="test" id="mmLogoutLogo" src="images/logout.png" alt="Logout" width= "44px" height= "44px" />
         </a>
-    </div>
-    </div>
+        </div>
+        </div>
 </body>
 </html>
 
@@ -469,6 +469,3 @@ Media Queries
         }
     });
 </script>
-
-
-

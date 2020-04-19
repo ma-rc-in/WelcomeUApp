@@ -797,7 +797,7 @@ function themeChange() {
     var annoucementsMenu= document.getElementById("mmAnnoucementsBackground");
     var enrolmentMenu = document.getElementById("mmEnrolmentBackground");
     var settingsMenu= document.getElementById("mmSettingsBackground");
-
+    var mmHelpGuide= document.getElementById("mmHelpGuide");
     //Text
     var mapMenuText= document.getElementById("mapMenu");
     var groupChatMenuText = document.getElementById("groupChatMenu");
@@ -834,26 +834,23 @@ function themeChange() {
     var gcLimiter = document.getElementById("limiter");
     var gcChatContainer = document.getElementById("gcChatContainer");
     var gcCourseNameEcho = document.getElementById("gcCourseNameEcho");
+
     //map
     var mapLogo = document.getElementById("mapLogo");
     var mapContainer = document.getElementById("mapContainer");
     var mpSearch = document.getElementById("pac-input");
+
     //enrolment
     var eeLogo = document.getElementById("eeLogo");
     var enrolmentContainer = document.getElementById("eeContainer");
     var eeTitleOne = document.getElementById("eeTitleOne");
     var eeStepOne = document.getElementById("eeStepOne");
-
-
-
-
     //Light Theme
     if (theme == "light"){
         //Main Menu
         try {
             document.body.style.backgroundColor = "white";
             backgroundMenu.style.backgroundColor = "white";
-
             mapMenu.style.backgroundColor = "white";
             groupChatMenu.style.backgroundColor = "white";
             helpMenu.style.backgroundColor = "white";
@@ -876,6 +873,7 @@ function themeChange() {
             try {
                 mmSmartCardBalance.style.color = "black";
                 mmBalance.style.color = "black";
+                mmHelpGuide.src="images/guideBlack.png";
                 groupChatLogo.src="images/chatBlack.png";
                 enrolmentLogo.src="images/checklistBlack.png";
             } catch (e) {}
@@ -1037,8 +1035,10 @@ function highContrast() {
     if (text == "on") {
         //mainMenu
         try {
-            mmSmartCardBalance.style.color = "yellow";
-            mmBalance.style.color = "yellow";
+            try {
+                mmSmartCardBalance.style.color = "yellow";
+                mmBalance.style.color = "yellow";
+            }catch (e) {}
             mapMenuText.style.color = "yellow";
             groupChatMenuText.style.color = "yellow";
             helpMenuText.style.color = "yellow";
@@ -1052,6 +1052,7 @@ function highContrast() {
             mmHelpAnnouncements.style.color = "yellow";
             mmHelpEnrolment.style.color = "yellow";
             mmHelpSettings.style.color = "yellow";
+
         }catch (e) {}
 
         //login

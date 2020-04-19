@@ -9,7 +9,7 @@ function chat() {
         chatOutput.value = "You can change your password by contacting....";
     }
     // view introduction week timetable
-    else if (chat.indexOf('view') != -1 || chat.indexOf('introduction') != -1 || chat.indexOf('orientation') != -1
+    if (chat.indexOf('view') != -1 || chat.indexOf('introduction') != -1 || chat.indexOf('orientation') != -1
         || chat.indexOf('week') != -1 && chat.indexOf('timetable') != -1) {
         chatOutput.value = "To view the introduction week timetable, you can visit this link https://www.northumbria.ac.uk/study-at-northumbria/new-students/";
     }

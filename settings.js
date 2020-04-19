@@ -184,6 +184,14 @@ function languageChange() {
     var udTextModalNewPinPlaceholder = document.getElementById("udTextModalNewPinPlaceholder");
     var udTextModalRepeatPinPlaceholder = document.getElementById("udTextModalRepeatPinPlaceholder");
     var udButtonTextSubmitButtonForChangePin = document.getElementById("udButtonTextSubmitButtonForChangePin");
+    var udLogo = document.getElementById("udLogo");
+    var udimagepass = document.getElementById("udimageremove");
+    var udTextHeaderPass = document.getElementById("udTextHeaderPass");
+    var udimageremove = document.getElementById("udimageremove");
+    var udTextHeaderAccount = document.getElementById("udTextHeaderAccount");
+    var udimagelock = document.getElementById("udimagelock");
+    var udTextHeaderPin = document.getElementById("udTextHeaderPin");
+
     //userDashboardAdmin
     var udTextHeaderPass = document.getElementById("udTextHeaderPass");
     var udButtonTextFirstBtn = document.getElementById("udButtonTextFirstBtn");
@@ -860,6 +868,21 @@ function themeChange() {
     var contrastLogo = document.getElementById("contrastLogo");
     var ssFourthBtn = document.getElementById("ssFourthBtn");
 
+    //userdashboard
+    var udLogo = document.getElementById("udLogo");
+    var udimagepass = document.getElementById("udimagepass");
+    var udTextHeaderPass = document.getElementById("udTextHeaderPass");
+    var udimageremove = document.getElementById("udimageremove");
+    var udTextHeaderAccount = document.getElementById("udTextHeaderAccount");
+    var udimagelock = document.getElementById("udimagelock");
+    var udTextHeaderPin = document.getElementById("udTextHeaderPin");
+    var udContainer = document.getElementById("udContainer");
+    var udPatchButton = document.getElementById("udPatchButton");
+    var udPatch1 = document.getElementById("udPatch1");
+    var udPatch2 = document.getElementById("udPatch2");
+    var udPatch3 = document.getElementById("udPatch3");
+    var udPatch4 = document.getElementById("udPatch4");
+
     //Login
     var llLogo = document.getElementById("llLogo");
     var llWrapLogin  = document.getElementById("llWrapLogin");
@@ -968,6 +991,30 @@ function themeChange() {
             themeLogo.src="images/themeBlack.png";
             contrastLogo.src="images/contrastBlack.png";
         } catch (e) {}
+
+        //userdashboard
+        try{
+            document.body.style.backgroundColor = "white";
+            udContainer.style.backgroundColor = "white";
+            udLogo.src="images/logoBlack.png";
+            udimagepass.src="images/passBlack.png";
+            udimagepass.style.backgroundColor = "white";
+            udTextHeaderPass.style.backgroundColor = "white";
+            udTextHeaderPass.style.color = "black";
+            udimageremove.src="images/removeBlack.png";
+            udimageremove.style.backgroundColor = "white";
+            udTextHeaderAccount.style.backgroundColor = "white";
+            udTextHeaderAccount.style.color = "black";
+            udimagelock.src="images/lockBlack.png";
+            udimagelock.style.backgroundColor = "white";
+            udTextHeaderPin.style.backgroundColor = "white";
+            udTextHeaderPin.style.color = "black";
+            udPatchButton.style.backgroundColor = "white";
+            udPatch1.style.backgroundColor = "white";
+            udPatch2.style.backgroundColor = "white";
+            udPatch3.style.backgroundColor = "white";
+            udPatch4.style.backgroundColor = "white";
+        }catch (e) {}
 
         //login
         try {

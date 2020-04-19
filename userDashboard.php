@@ -88,6 +88,7 @@ $CheckPassword = $_POST['CheckPass'];
     <script src="jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="settings.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 <script src="settings.js"></script>
@@ -193,36 +194,36 @@ $(document).ready(function() {
 </style>
       </head>
       <body>
-       <div class="patch-container">
+       <div class="patch-container" id="udContainer">
        <div class="logoMain">
        <a href="mainmenu.php">
        <div class="logoIcon">
-         <img class="imgLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+         <img class="imgLogo" id="udLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
        </div>
        </a>
        </div>
 
-       <div class="patch-item patch-button" style="width: 100%; float: left;">
+       <div class="patch-item patch-button" id="udPatchButton" style="width: 100%; float: left;">
        <div class="iconPass">
-         <img class="imgPass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
+         <img class="imgPass" id="udimagepass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons" id="udTextHeaderPass">Change password</h3>
+       <h3 class="textIcons" id="udTextHeaderPass" id="udPatch1">Change password</h3>
        <a href="#" id="udButtonTextFirstBtn" class="button">Change</a>
        </div>
 
-       <div class="patch-item patch-button" style="width: 100%; float: left;">
+       <div class="patch-item patch-button" id="udPatch2" style="width: 100%; float: left;">
        <div class="iconPass">
-         <img class="imgPass" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
+         <img class="imgPass" id="udimageremove" src="images/remove.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udTextHeaderAccount">Delete account</h3>
        <a href="#" id="udButtonTextSecondBtn" class="button" >Delete</a>
        </div>
 
-       <div class="patch-item patch-button" style="width: 100%; float: left;">
+       <div class="patch-item patch-button" id="udPatch3" style="width: 100%; float: left;">
        <div class="iconPass">
-         <img class="imgPass" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
+         <img class="imgPass" id="udimagelock" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons" id="udTextHeaderPin">Set PIN</h3>
+       <h3 class="textIcons" id="udTextHeaderPin" id="udPatch4" >Set PIN</h3>
        <a href="#" id="udButtonTextThirdBtn" class="button" data-abbr="">Set</a>
        </div>
 

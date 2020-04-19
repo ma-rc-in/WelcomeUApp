@@ -2,8 +2,8 @@ function mainmenuAlert() { //currentInt, currentString
 
     //variables
     //gets the variable
-    var amount = localStorage.getItem("mainMenuMessageNew"); //old message amount
-    var current = localStorage.getItem("mainMenuMessageOld"); //new message count;
+    var amount = localStorage.getItem("announcmentNew"); //old message amount
+    var current = localStorage.getItem("announcementOld"); //new message count;
 
     //used to determine who sent the message (and whether they should be notified) - in case the user has two tabs open
     var currentStudent = localStorage.getItem("mainMenuCurrentStudent"); //current student signed In

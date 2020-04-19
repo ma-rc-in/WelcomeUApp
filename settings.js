@@ -409,7 +409,6 @@ function languageChange() {
     if (language == "Polish") {
         //Main Menu
         try {
-            mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
             mapMenu.innerHTML = "Mapa";
             groupChatMenu.innerHTML = "Czat grupowy";
             helpMenu.innerHTML = "Wsparcie";
@@ -424,6 +423,9 @@ function languageChange() {
             mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
             mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
             mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
+            try {
+                mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
+            } catch (e) {}
         } catch (e) {
         }
 
@@ -594,7 +596,7 @@ function languageChange() {
         if (language == "Chinese") {
             //Main Menu
             try {
-                mmSmartCardBalance.innerHTML = "学生卡余额";
+
                 mapMenu.innerHTML = "地图";
                 groupChatMenu.innerHTML = "群聊";
                 helpMenu.innerHTML = "帮助";
@@ -609,6 +611,9 @@ function languageChange() {
                 mmHelpAnnouncements.innerHTML = "通知 - 学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。";
                 mmHelpEnrolment.innerHTML = "自助注册 - 学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。";
                 mmHelpSettings.innerHTML = "设置 - 用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。";
+                try {
+                mmSmartCardBalance.innerHTML = "学生卡余额";
+                } catch (e) {}
             } catch (e) {
             }
             //groupchat
@@ -792,6 +797,7 @@ function themeChange() {
     var annoucementsMenu= document.getElementById("mmAnnoucementsBackground");
     var enrolmentMenu = document.getElementById("mmEnrolmentBackground");
     var settingsMenu= document.getElementById("mmSettingsBackground");
+
     //Text
     var mapMenuText= document.getElementById("mapMenu");
     var groupChatMenuText = document.getElementById("groupChatMenu");
@@ -847,8 +853,7 @@ function themeChange() {
         try {
             document.body.style.backgroundColor = "white";
             backgroundMenu.style.backgroundColor = "white";
-            mmSmartCardBalance.style.color = "black";
-            mmBalance.style.color = "black";
+
             mapMenu.style.backgroundColor = "white";
             groupChatMenu.style.backgroundColor = "white";
             helpMenu.style.backgroundColor = "white";
@@ -867,7 +872,10 @@ function themeChange() {
             annoucementsLogo.src="images/speakerBlack.png";
             settingsLogo.src="images/settingsBlack.png";
             logoutLogo.src="images/lockBlack.png";
+
             try {
+                mmSmartCardBalance.style.color = "black";
+                mmBalance.style.color = "black";
                 groupChatLogo.src="images/chatBlack.png";
                 enrolmentLogo.src="images/checklistBlack.png";
             } catch (e) {}
@@ -940,7 +948,7 @@ function themeChange() {
             enrolmentMenuText.style.color = "white";
             settingsMenuText.style.color = "white";
             menuLogo.src="images/logo_white.png";
-            mmmapLogo.src="images/maps-and-flags.png";
+            mmMapLogo.src="images/maps-and-flags.png";
             groupChatLogo.src="images/chat.png";
             helpLogo.src="images/question.png";
             annoucementsLogo.src="images/speaker.png";

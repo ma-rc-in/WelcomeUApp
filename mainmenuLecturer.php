@@ -228,9 +228,9 @@ Media Queries
 <body>
 <div class="patch-container" id="mmbackground">
 
-    <div class="logoMain">
-        <a href="mainmenu.php">
-            <img class="test" id="mmNULogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+    <div class="logoDiv">
+        <a href="mainmenuLecturer.php">
+            <img class="logoMain" id="mmNULogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
 

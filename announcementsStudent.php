@@ -70,10 +70,6 @@ if (isset($_POST['viewModule'])) {
             }
         }
 
-
-    </style>
-
-    <style>
         .aaViewButton {
             border: 2px solid #dedede;
             background-color: #f1f1f1;

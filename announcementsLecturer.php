@@ -151,7 +151,7 @@ if(isset($_POST['aaEdit'])) {
             $studentidquery = "select courseID from tbl_student where studentID='$ID'";
             $student = $db->query($studentidquery);
             $row = $student->fetch(PDO::FETCH_ASSOC);
-            $CourseID = $row['courseID'];
+            $courseID = $row['courseID'];
 
             $coursequery = "select * from tbl_course where courseID='$CourseID'";
             $course = $db->query($coursequery);

@@ -158,34 +158,34 @@ if(isset($_POST['submitAccessChange'])){
       </style>
       </head>
       <body>
-       <div class="patch-container">
+       <div class="patch-container" id="udaContainer">
        <div class="logoMain">
        <a href="mainmenu.php">
        <div class="logoIcon">
-         <img class="imgLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+         <img class="imgLogo" id="udaLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
        </div>
        </a>
        </div>
 
-       <div class="patch-item patch-button" style="width: 100%; float: left;">
+       <div class="patch-item patch-button" id="rlPatchButton" style="width: 100%; float: left;">
        <div class="iconPass">
-         <img class="imgPass" src="images/reportsList.png" alt="reportsList" width= "90px" height= "90px"/>
+         <img class="imgPass" id="rlImage" src="images/reportsList.png" alt="reportsList" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udaTextHeaderReports">View reports</h3>
        <a href="#" id="udaButtonTextFirstBtn" class="button">View</a>
        </div>
 
-       <div class="patch-item patch-button" style="width: 100%; float: left;">
+       <div class="patch-item patch-button" id="atPatchButton" style="width: 100%; float: left;">
        <div class="iconPass">
-         <img class="imgPass" src="images/accessType.png" alt="accessType" width= "90px" height= "90px"/>
+         <img class="imgPass" id="atImage" src="images/accessType.png" alt="accessType" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udaTextHeaderAccessType">Assign access type</h3>
        <a href="#" id="udaButtonTextSecondBtn" class="button">Assign type</a>
        </div>
 
-       <div class="patch-item patch-button" style="width: 100%; float: left;">
+       <div class="patch-item patch-button" id="pkPatchButton" style="width: 100%; float: left;">
        <div class="iconPass">
-         <img class="imgPass" src="images/ban.png" alt="PasswordKey" width= "90px" height= "90px"/>
+         <img class="imgPass" id="pkImage" src="images/ban.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons"  id="udaTextHeaderBan">Ban user accounts</h3>
        <a href="#" id="udaButtonTextThirdBtn" class="button">Ban</a>

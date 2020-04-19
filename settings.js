@@ -884,6 +884,21 @@ function themeChange() {
     var udButtonTextSecondBtn = document.getElementById("udButtonTextSecondBtn");
     var udButtonTextThirdBtn = document.getElementById("udButtonTextThirdBtn");
 
+    //userdashboardadmin
+    var udaContainer = document.getElementById("udaContainer");
+    var udaLogo = document.getElementById("udaLogo");
+    var rlPatchButton = document.getElementById("rlPatchButton");
+    var rlImage = document.getElementById("rlImage");
+    var udaTextHeaderReports = document.getElementById("udaTextHeaderReports");
+    var udaButtonTextFirstBtn = document.getElementById("udaButtonTextFirstBtn");
+    var atPatchButton = document.getElementById("atPatchButton");
+    var atImage = document.getElementById("atImage");
+    var udaTextHeaderAccessType = document.getElementById("udaTextHeaderAccessType");
+    var udaButtonTextSecondBtn = document.getElementById("udaButtonTextSecondBtn");
+    var pkPatchButton = document.getElementById("pkPatchButton");
+    var pkImage = document.getElementById("pkImage");
+    var udaTextHeaderBan = document.getElementById("udaTextHeaderBan");
+    var udaButtonTextThirdBtn = document.getElementById("udaButtonTextThirdBtn");
 
     //Login
     var llLogo = document.getElementById("llLogo");
@@ -1002,7 +1017,6 @@ function themeChange() {
             udLogo.src="images/logoBlack.png";
             udPatch2.style.backgroundColor = "white";
             udPatch3.style.backgroundColor = "white";
-
             udimagepass.src="images/passBlack.png";
             udimagepass.style.backgroundColor = "white";
             udTextHeaderPass.style.backgroundColor = "white";
@@ -1018,13 +1032,34 @@ function themeChange() {
             udButtonTextFirstBtn.style.borderColor = "black";
             udButtonTextSecondBtn.style.borderColor = "black";
             udButtonTextThirdBtn.style.borderColor = "black";
-
-
             udimagelock.style.backgroundColor = "white";
             udTextHeaderPin.style.backgroundColor = "white";
             udTextHeaderPin.style.color = "black";
             udPatchButton.style.backgroundColor = "white";
-
+        }catch (e) {}
+        //userdashboardadmin
+        try{
+            document.body.style.backgroundColor = "white";
+            udaContainer.style.backgroundColor = "white";
+            rlPatchButton.style.backgroundColor = "white";
+            atPatchButton.style.backgroundColor = "white";
+            pkPatchButton.style.backgroundColor = "white";
+            udaLogo.src="images/logoBlack.png";
+            rlImage.src="images/reportsListBlack.png";
+            atImage.src="images/accessTypeBlack.png";
+            pkImage.src="images/passBlack.png";
+            udaButtonTextFirstBtn.style.color = "black";
+            udaButtonTextSecondBtn.style.color = "black";
+            udaButtonTextThirdBtn.style.color = "black";
+            udaButtonTextFirstBtn.style.borderColor = "black";
+            udaButtonTextSecondBtn.style.borderColor = "black";
+            udaButtonTextThirdBtn.style.borderColor = "black";
+            udaTextHeaderReports.style.backgroundColor = "white";
+            udaTextHeaderReports.style.color = "black";
+            udaTextHeaderAccessType.style.backgroundColor = "white";
+            udaTextHeaderAccessType.style.color = "black";
+            udaTextHeaderBan.style.backgroundColor = "white";
+            udaTextHeaderBan.style.color = "black";
         }catch (e) {}
 
         //login

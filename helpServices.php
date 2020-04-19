@@ -111,7 +111,7 @@ if(isset($_POST['submit'])) { //change
       background: rgba(87, 87, 87, 1);
       color: white;
       border-radius: 5px;
-      width: 30%;
+      width: 50%;
       position: relative;
       transition: all 5s ease-in-out;
       color: white;
@@ -177,11 +177,12 @@ if(isset($_POST['submit'])) { //change
       </a>
     </div>
 
-    <div  class="overlay">
+    <div id="errorMessage"class="overlay">
      <div class="popup">
        <a class="close" href="#" style=" ">&times;</a>
        <div class="content" style="margin-top: 20px;">
          <div id="hhErrorTitle">Error</div>
+         <hr>
          <div id="hhErrorMsg">
          <hr>
          Due to technical limitations, password can be only reset by our admin. <br>Please use the form to contact the admin in order to reset your password.

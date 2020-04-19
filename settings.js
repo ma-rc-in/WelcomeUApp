@@ -844,6 +844,7 @@ function themeChange() {
     var ssButtonSecurity = document.getElementById("ssButtonSecurity");
     var notificationBackground = document.getElementById("notificationBackground");
     var notificationLogo = document.getElementById("notificationLogo");
+    var ssTextTheme = document.getElementById("ssTextTheme");
     var ssFirstBtn = document.getElementById("ssFirstBtn");
     var languageBackground = document.getElementById("languageBackground");
     var languageLogo = document.getElementById("languageLogo");
@@ -923,6 +924,9 @@ function themeChange() {
 
         //settings
         try {
+            ssTextTheme.style.backgroundColor = "white";
+            ssTextTheme.style.color = "black";
+
             stContainer.style.backgroundColor = "white";
             securityBackground.style.backgroundColor = "white";
             notificationBackground.style.backgroundColor = "white";

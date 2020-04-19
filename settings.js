@@ -1047,7 +1047,7 @@ function themeChange() {
             udaLogo.src="images/logoBlack.png";
             rlImage.src="images/reportsListBlack.png";
             atImage.src="images/accessTypeBlack.png";
-            pkImage.src="images/passBlack.png";
+            pkImage.src="images/banBlack.png";
             udaButtonTextFirstBtn.style.color = "black";
             udaButtonTextSecondBtn.style.color = "black";
             udaButtonTextThirdBtn.style.color = "black";

@@ -225,7 +225,7 @@ $(document).ready(function() {
           <div class="content" style="margin-top: 20px;">
             Message
             <hr>
-            <?php echo $message;?>ddd
+            <?php echo $message;?>
           </div>
         </div>
        </div>

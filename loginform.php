@@ -269,13 +269,13 @@ color: #b5b5b5;
 }
 
 
-.cookiesMoreInfoContentText, .LinkCookiesContentText {
+.cookiesMoreInfoContentText, .linkCookiesContentText {
   color: white;
   font-size: 18px;
   font-family: Arial, sans-serif;
 }
 
-.localStorageLinkCookiesContentText {
+.linkCookiesContentText {
   text-decoration: underline;
 }
 
@@ -302,7 +302,7 @@ color: #b5b5b5;
 
 @media screen and (max-width: 500px){
 
-  .cookiesMoreInfoContentText, .LinkCookiesContentText {
+  .cookiesMoreInfoContentText, .linkCookiesContentText {
     font-size: 15px;
   }
 
@@ -360,8 +360,8 @@ color: #b5b5b5;
   <input class="checkBoxCookiesDiv" id="checkBoxCookiesDiv" type="checkbox" />
   <div class="cookiesDiv">
     <div class="messageCookiesDiv">
-      This website is using cookies and javascript local storage to improve your experience. More information
-      <div id="" class="cookiesMoreInfoLink" onclick="window.location.href='#cookiesClickMoreInfoDiv'">here</div>
+      This website is using Cookies and JavaScript local storage to improve your experience. More information
+      <div id="linkToCookiesMoreInfoClickText" class="cookiesMoreInfoLink" onclick="window.location.href='#cookiesClickMoreInfoDiv'">here</div>
     </div>
     <label for="checkBoxCookiesDiv" class="closeCookiesDiv">&times;</label>
   </div>
@@ -425,7 +425,7 @@ color: #b5b5b5;
          <p id="mmCookieInformationHeader" class="cookiesMoreInfoContentText">Cookies Information</p>
          <hr>
          <br>
-         <p id="mminfo" class="cookiesMoreInfoContentText">This website uses <a class="LinkCookiesContentText" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" >cookies </a> and <a class="LinkCookiesContentText" href="https://developer.mozilla.org/pl/docs/Web/API/Window/localStorage" >JavaScript local storage</a>  to enhance your experience while using this website.<p>
+         <p id="mminfo" class="cookiesMoreInfoContentText">This website uses <a class="linkCookiesContentText" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank">cookies </a> and <a class="linkCookiesContentText" href="https://developer.mozilla.org/pl/docs/Web/API/Window/localStorage" target="_blank">JavaScript local storage</a>  to enhance your experience while using this website.<p>
            <br>
          <p id="mminfo2" class="cookiesMoreInfoContentText">We do this by using cookies to:</p>
          <br>

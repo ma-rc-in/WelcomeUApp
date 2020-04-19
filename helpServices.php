@@ -89,7 +89,64 @@ if(isset($_POST['submit'])) { //change
     	border: 1px solid #474747;
     }
 
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
 
+    .popup {
+      margin: 200px auto;
+      padding: 10px 20px 20px 20px;
+      background: rgba(87, 87, 87, 1);
+      color: white;
+      border-radius: 5px;
+      width: 30%;
+      position: relative;
+      transition: all 5s ease-in-out;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+    }
+
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 38px;
+      font-weight: bold;
+      text-decoration: none;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: white;
+      color: white;
+    }
+    .popup .close:hover {
+      color: #b8b8b8;
+    }
+    .popup .content {
+      max-height: 30%;
+      overflow: auto;
+    }
+
+    @media screen and (max-width: 700px){
+      .box{
+        width: 70%;
+      }
+      .popup{
+        width: 70%;
+      }
+    }
 
       </style>
 
@@ -114,6 +171,17 @@ if(isset($_POST['submit'])) { //change
           style="margin-top: 25px;"/>
         </div>
       </a>
+    </div>
+
+    <div id="errorMessage" class="overlay">
+     <div class="popup">
+       <a class="close" href="#" style=" ">&times;</a>
+       <div class="content" style="margin-top: 20px;">
+         Error
+         <hr>
+         Due to technical limitations, password can be only reset by our admin. <br>Please use the form to contact the admin in order to reset your password.
+       </div>
+     </div>
     </div>
 
   <div class="contactFormContainer">

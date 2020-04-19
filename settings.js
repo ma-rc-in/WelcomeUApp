@@ -1272,7 +1272,17 @@ function highContrast() {
     var udButtonTextThirdBtn = document.getElementById("udButtonTextThirdBtn");
     var disabledText = document.getElementById("disabledText");
 
-    //TODO CHange
+    //userdashboardadmin
+    var udaTextHeaderReports = document.getElementById("udaTextHeaderReports");
+    var udaButtonTextFirstBtn = document.getElementById("udaButtonTextFirstBtn");
+    var udaTextHeaderAccessType = document.getElementById("udaTextHeaderAccessType");
+    var udaButtonTextSecondBtn = document.getElementById("udaButtonTextSecondBtn");
+    var udaTextHeaderBan = document.getElementById("udaTextHeaderBan");
+    var udaButtonTextThirdBtn = document.getElementById("udaButtonTextThirdBtn");
+    var udaTextHeaderBanModal = document.getElementById("udaTextHeaderBanUserModal");
+    var udaTextHeaderAccessTypeModal = document.getElementById("udaTextHeaderAccessTypeModal");
+    var udaTextHeaderBanUserModal = document.getElementById("udaTextHeaderBanUserModal");
+
     if (text == "on" && theme == "dark") {
         //mainMenu
         try {
@@ -1376,8 +1386,7 @@ function highContrast() {
             hsModalLabelText.style.color = "orange";
             submit.style.color = "orange";
             hhContactBtn.style.color = "orange";
-        } catch (e) {
-        }
+        } catch (e) {}
 
         //userdashboard
         try {
@@ -1396,7 +1405,19 @@ function highContrast() {
         udButtonTextSecondBtn.style.color = "orange";
         udButtonTextThirdBtn.style.color = "orange";
         disabledText.style.color = "orange";
-        } catch (e) {
-        }
+        } catch (e) {}
+
+        //userdashboardadmin
+        try {
+        udaTextHeaderReports.style.color = "orange";
+        udaButtonTextFirstBtn.style.color = "orange";
+        udaTextHeaderBanModal.style.color = "orange";
+        udaTextHeaderAccessType.style.color = "orange";
+        udaButtonTextSecondBtn.style.color = "orange";
+        udaTextHeaderBan.style.color = "orange";
+        udaButtonTextThirdBtn.style.color = "orange";
+        udaTextHeaderBanUserModal.style.color = "orange";
+        udaTextHeaderAccessTypeModal.style.color = "orange";
+        }catch (e) {}
     }
 }

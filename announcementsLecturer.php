@@ -528,7 +528,7 @@ if(isset($_POST['aaUpdate'])) {
             }
         ]);
     }
-
+// user guide
     $("#userGuideButton").click(function(){
         // Start the tour
         if(!tour.start()){

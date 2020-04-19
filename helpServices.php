@@ -231,23 +231,23 @@ if(isset($_POST['submit'])) { //change
         		<section class="accordion">
         			<div class="insideAccordion">
         				<input type="checkbox" id="check-1" />
-        				<label for="check-1">Question 1</label>
+        				<label for="check-1">Question 1: How do I change my password?</label>
         				<article>
-        					<p>Lorem ipsum </p>
+        					<p>You can change your password by submitting a query to the admin team requesting a password change.</p>
         				</article>
         			</div>
               <div class="insideAccordion">
         				<input type="checkbox" id="check-2" />
-        				<label for="check-2">Question 2</label>
+        				<label for="check-2">Question 2: Where can I change the websites settings?</label>
         				<article>
-        					<p>Lorem ipsum </p>
+        					<p>You can change the various aspects of the website such as the theme and language in the settings menu.</p>
         				</article>
         			</div>
               <div class="insideAccordion">
         				<input type="checkbox" id="check-3" />
-        				<label for="check-3">Question 3</label>
+        				<label for="check-3">Question 3: I have further questions, where can I find support?</label>
         				<article>
-        					<p>Lorem ipsum </p>
+        					<p> You could find find further frequently asked questions by searching here: https://libraryanswers.northumbria.ac.uk/search/</p>
         				</article>
         			</div>
         		</section>

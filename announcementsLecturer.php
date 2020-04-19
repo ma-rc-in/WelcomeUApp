@@ -137,6 +137,48 @@ if(isset($_POST['aaUpdate'])) {
             background-color: #8d8d8d;;
         }
 
+        .guideButton {
+            opacity: .7;
+            -webkit-transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            transition: all 0.8s;
+            margin-top: -76px;
+            float: right;
+            margin-right: auto;
+        }
+
+        .guideButton:hover {
+            opacity: 1;
+            -webkit-transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            transition: all 0.8s;
+        }
+
+        .guideIcon {
+            height: 48px;
+            width: 48px;
+            margin-bottom: 40px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .guideButton {
+                width: 100%;
+                display: block;
+                margin-top: 40px;
+            }
+
+            .guideIcon {
+                height: 58px;
+                width: 58px;
+                margin-bottom: 40px;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+        }
+
     </style>
 
 </head>
@@ -154,6 +196,15 @@ if(isset($_POST['aaUpdate'])) {
         </a>
     </div>
 </div>
+
+<div class="guideButton" id="userGuideButton"><img src="images/guide.png" id="mmHelpGuide" class="guideIcon"></div>
+</div>
+
+<div style="width: 100%; color: white">
+    <h5 id="mmSmartCardBalance" style="display: inline-block;">Smart Card Balance:</h5>
+    <h5 id="mmBalance" style="display: inline-block;">£<?php echo $StudentInfo['smartCardBalance'];?></h5>
+</div>
+
 
 <div class="container">
     <form action="announcementsLecturer.php" method="POST">

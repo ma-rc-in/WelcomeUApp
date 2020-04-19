@@ -817,6 +817,25 @@ function themeChange() {
     var mmlgroupChat = document.getElementById("mmlgroupChat");
     var mmEnrolmentLogoBlocked = document.getElementById("mmEnrolmentLogoBlocked");
 
+    //settings
+    var stLogo = document.getElementById("stLogo");
+    var stContainer = document.getElementById("stContainer");
+    var securityBackground = document.getElementById("securityBackground");
+    var securityLogo = document.getElementById("securityLogo");
+    var ssButtonSecurity = document.getElementById("ssButtonSecurity");
+    var notificationBackground = document.getElementById("notificationBackground");
+    var notificationLogo = document.getElementById("notificationLogo");
+    var ssFirstBtn = document.getElementById("ssFirstBtn");
+    var languageBackground = document.getElementById("languageBackground");
+    var languageLogo = document.getElementById("languageLogo");
+    var ssSecondBtn = document.getElementById("ssSecondBtn");
+    var themeBackground = document.getElementById("themeBackground");
+    var themeLogo = document.getElementById("themeLogo");
+    var ssThirdBtn = document.getElementById("ssThirdBtn");
+    var contrastBackground = document.getElementById("contrastBackground");
+    var contrastLogo = document.getElementById("contrastLogo");
+    var ssFourthBtn = document.getElementById("ssFourthBtn");
+
     //Login
     var llLogo = document.getElementById("llLogo");
     var llWrapLogin  = document.getElementById("llWrapLogin");
@@ -881,6 +900,32 @@ function themeChange() {
                 mmEnrolmentLogoBlocked.src="images/checklistBlockBlack.png";
                 mmlgroupChat.src="images/chatBlockBlack.png";
             } catch (e) {}
+        } catch (e) {}
+
+        //settings
+        try {
+            stContainer.style.backgroundColor = "white";
+            securityBackground.style.backgroundColor = "white";
+            notificationBackground.style.backgroundColor = "white";
+            languageBackground.style.backgroundColor = "white";
+            themeBackground.style.backgroundColor = "white";
+            contrastBackground.style.backgroundColor = "white";
+            ssButtonSecurity.style.color = "black";
+            ssButtonSecurity.style.borderColor = "black";
+            ssFirstBtn.style.color = "black";
+            ssFirstBtn.style.borderColor = "black";
+            ssSecondBtn.style.color = "black";
+            ssSecondBtn.style.borderColor = "black";
+            ssThirdBtn.style.color = "black";
+            ssThirdBtn.style.borderColor = "black";
+            ssFourthBtn.style.color = "black";
+            ssFourthBtn.style.borderColor = "black";
+            stLogo.src="images/logoBlack.png";
+            securityLogo.src="images/securityBlack.png";
+            notificationLogo.src="images/notificationSettingsBlack.png";
+            languageLogo.src="images/languageBlack.png";
+            themeLogo.src="images/themeBlack.png";
+            contrastLogo.src="images/contrastBlack.png";
         } catch (e) {}
 
         //login

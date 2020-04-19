@@ -868,7 +868,7 @@ function themeChange() {
             helpLogo.src="images/questionBlack.png";
             annoucementsLogo.src="images/speakerBlack.png";
             settingsLogo.src="images/settingsBlack.png";
-            logoutLogo.src="images/lockBlack.png";
+            logoutLogo.src="images/logoutBlack.png";
 
             try {
                 mmSmartCardBalance.style.color = "black";
@@ -952,7 +952,7 @@ function themeChange() {
             annoucementsLogo.src="images/speaker.png";
             enrolmentLogo.src="images/checklist.png";
             settingsLogo.src="images/settings.png";
-            logoutLogo.src="images/lock.png";
+            logoutLogo.src="images/logout.png";
         } catch (e) {}
 
         //login

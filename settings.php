@@ -149,51 +149,51 @@ if (isset($_SESSION['sessionStudentID'])) {
     </style>
 </head>
 <body>
-<div class="patch-container">
+<div class="patch-container" id="stContainer">
     <div class="logoMain">
         <a href="mainmenu.php">
-            <div class="logoIcon">
-                <img class="imgLogo" src="images/logo_white.png" alt="Logo" width="350px" height="100px"
+
+                <img class="imgLogo" id="stLogo" src="images/logo_white.png" alt="Logo" width="350px" height="100px"
                      style="margin-top: 25px;"/>
-            </div>
+
         </a>
     </div>
 
-    <div class="patch-item patch-button" style="width: 100%; float: left;">
+    <div class="patch-item patch-button" id="securityBackground" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/security.png" alt="profileUser" width="90px" height="90px"/>
+            <img class="imgPass" id="securityLogo" src="images/security.png" alt="profileUser" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextSecurity">Security settings</h3>
         <a href="userDashboard.php" id="ssButtonSecurity" class="button" >Change</a>
     </div>
 
-    <div class="patch-item patch-button" style="width: 100%; float: left;">
+    <div class="patch-item patch-button" id="notificationBackground" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/notificationSettings.png" alt="notificationSettings" width="90px" height="90px"/>
+            <img class="imgPass" id="notificationLogo" src="images/notificationSettings.png" alt="notificationSettings" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextNotifications">Notifications settings</h3>
         <a href="#" id="ssFirstBtn" class="button">Change</a>
     </div>
 
-    <div class="patch-item patch-button" style="width: 100%; float: left;">
+    <div class="patch-item patch-button" id="languageBackground" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/language.png" alt="languageSetting" width="90px" height="90px"/>
+            <img class="imgPass" id="languageLogo" src="images/language.png" alt="languageSetting" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextLanguage">Change language</h3>
         <a href="#" id="ssSecondBtn" class="button" >Change</a>
     </div>
 
-    <div class="patch-item patch-button" style="width: 100%; float: left;">
+    <div class="patch-item patch-button" id="themeBackground" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/theme.png" alt="changeTheme" width="90px" height="90px"/>
+            <img class="imgPass" id="themeLogo" src="images/theme.png" alt="changeTheme" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextTheme">Change theme</h3>
         <a href="#" id="ssThirdBtn" class="button" data-abbr=" theme">Change</a>
     </div>
 
-    <div class="patch-item patch-button" style="width: 100%; float: left;">
+    <div class="patch-item patch-button" id="contrastBackground" style="width: 100%; float: left;">
         <div class="iconPass">
-            <img class="imgPass" src="images/contrast.png" alt="changeContrast" width="90px" height="90px"/>
+            <img class="imgPass" id="contrastLogo" src="images/contrast.png" alt="changeContrast" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextContrast">Change contrast</h3>
         <a href="#" id="ssFourthBtn" class="button" data-abbr=" contrast">Change</a>

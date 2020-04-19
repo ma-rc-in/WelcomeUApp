@@ -204,8 +204,12 @@ if(isset($_POST['submit'])) { //change
   </div>
 
 
-    <div class="patch-item patch-button" style="width: 100%; max-height: 100px;">
+    <div class="patch-item patch-button" style="width: 100%; max-height: 100px; padding-bottom: 0px">
       <a href="#" id="hsButtonText" class="button" data-abbr="" style="width: 63%">See FAQ</a>
+    </div>
+
+    <div class="patch-item patch-button" style="width: 100%; max-height: 100px; padding-top: 0px">
+      <a href="#" id="hhContactBtn" class="button" data-abbr="" style="width: 63%">Contact Us</a>
     </div>
 
       <button class="openChatbotBox" id="openChat" type="button">Chatbot</button>
@@ -263,6 +267,46 @@ if(isset($_POST['submit'])) { //change
         </div>
       </div>
     </div>
+
+      <div id="secondModal" class="modal">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <span class="close secondClose" id="">&times;</span>
+                  <h4 id="hsModalLabelText2">Help Services Contact</h4>
+              </div>
+              <div class="modal-body">
+
+                  <div class="faqContainer">
+                      <section class="accordion">
+                          <div class="insideAccordion">
+                              <input type="checkbox" id="contact-1" />
+                              <label for="contact-1" id="hhContact1">Student Central</label>
+                              <article>
+                                  <p id="hhContact1c">0191 227 4646 | ask4help@northumbria.ac.uk</p>
+                              </article>
+                          </div>
+                          <div class="insideAccordion">
+                              <input type="checkbox" id="contact-2" />
+                              <label for="contact-2" id="hhContact1">Finance Enquiries</label>
+                              <article>
+                                  <p id="hhContact2c">0191 227 4050 | ask4help@northumbria.ac.uk</p>
+                              </article>
+                          </div>
+                          <div class="insideAccordion">
+                              <input type="checkbox" id="contact-3" />
+                              <label for="contact-3" id="hhContact1">Applicant Services</label>
+                              <article>
+                                  <p id="hhContact3c">0191 4060901 | bc.applicantservices@northumbria.ac.uk</p>
+                              </article>
+                          </div>
+                      </section>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+
   </div>
 
   <script>
@@ -272,17 +316,29 @@ if(isset($_POST['submit'])) { //change
   </script>
   <script>
   var modal1 = document.getElementById("firstModal");
+  var modal2 = document.getElementById("secondModal");
   var btn1 = document.getElementById("hsButtonText");
+  var btn2 = document.getElementById("hhContactBtn");
+
   var span1 = document.getElementsByClassName("close firstClose")[0];
+  var span2 = document.getElementsByClassName("close secondClose")[0];
   btn1.onclick = function () {
     modal1.style.display = "block";
+  }
+  btn2.onclick = function () {
+      modal2.style.display = "block";
   }
   span1.onclick = function () {
     modal1.style.display = "none";
   }
+  span2.onclick = function () {
+      modal2.style.display = "none";
+  }
   window.onclick = function (event) {
     if (event.target == modal1) {
       modal1.style.display = "none";
+    } else if (event.target == modal2){
+        modal1.style.display = "none";
     }
   }
 </script>

@@ -4,16 +4,16 @@ require_once("functions.php");
 $db = getConnection();//returns the connection for the database.
 
 session_start();
-<?php
   if(isset($_POST["submit"])){
     // Checking For Blank Fields..
-    if($_POST["moduleID"]==""|){
+    if($_POST["moduleID"]==""){
 
     } else {
           echo "No new anouncements at the moment";
     };
 
 }
+
 ?>
 
 <!DOCTYPE html>

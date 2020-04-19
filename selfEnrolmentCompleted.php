@@ -21,7 +21,7 @@
         <center>
             <img src="Images/successful.png" alt="Logo"  width= "312px" height= "312px" style="margin-top: 25px; align-items: center" />
         <br/><br/><br/>
-            <input type="submit" onclick="window.location.href = 'mainmenu.php'" value="Return to Main Page"/>
+            <input type="submit" id="eeReturnBtn" onclick="window.location.href = 'mainmenu.php'" value="Return to Main Page"/>
         </center>
     </body>
 </html>

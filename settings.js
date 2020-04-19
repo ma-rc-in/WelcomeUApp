@@ -204,6 +204,23 @@ function languageChange() {
 
     //Map
     var mpSearch = document.getElementById("pac-input");
+
+    //Help Services
+    var hhErrorTitle  = document.getElementById("hhErrorTitle");
+    var hhErrorMsg = document.getElementById("hhErrorMsg")
+    var hhEmail = document.getElementById("hhEmail");
+    var hhQuery = document.getElementById("hhQuery");
+    var hhQueryInput = document.getElementById("hhQueryInput");
+    var hsButtonText = document.getElementById("hsButtonText");
+    var hsModalLabelText = document.getElementById("hsModalLabelText");
+    var hhFAQ1 = document.getElementById("hhFAQ1");
+    var hhFAQ2 = document.getElementById("hhFAQ2");
+    var hhFAQ3 = document.getElementById("hhFAQ3");
+    var hhFAQans1 = document.getElementById("hhFAQans1");
+    var hhFAQans2 = document.getElementById("hhFAQans2");
+    var hhFAQans3 = document.getElementById("hhFAQans3");
+    var submit = document.getElementById("submit");
+
     //English
     if (language == "English") { //each page needs a try catch so that it can load without the other pages elements
         //Main Menu
@@ -364,6 +381,25 @@ function languageChange() {
         //map
         try {
             mpSearch.placeholder = "Type Northumbria...";
+        } catch (e) {
+        }
+
+        //help services
+        try {
+            hhErrorTitle.innerHTML = "Error";
+            hhErrorMsg.innerHTML = "Due to technical limitations, password can be only reset by our admin. <br>Please use the form to contact the admin in order to reset your password.";
+            hhEmail.innerHTML = "Student Email Address:";
+            hhQuery.innerHTML = "Your query:";
+            hhQueryInput.placeholder = "Please write your query here...";
+            hsButtonText.innerHTML = "See FAQ";
+            hsModalLabelText.innerHTML = "FAQ";
+            hhFAQ1.innerHTML = "Question 1: How do I change my password?";
+            hhFAQ2.innerHTML = "Question 2: Where can I change the websites settings?";
+            hhFAQ3.innerHTML = "Question 3: I have further questions, where can I find support?";
+            hhFAQans1.innerHTML = "You can change your password by submitting a query to the admin team requesting a password change.";
+            hhFAQans2.innerHTML = "You can change the various aspects of the website such as the theme and language in the settings menu.";
+            hhFAQans3.innerHTML = "You could find find further frequently asked questions by searching here: https://libraryanswers.northumbria.ac.uk/search/";
+            submit.value = "Submit";
         } catch (e) {
         }
 
@@ -713,6 +749,25 @@ function languageChange() {
             //map
             try {
                 mpSearch.placeholder = "输入 Northumbria...";
+            } catch (e) {
+            }
+
+            //help services
+            try {
+                hhErrorTitle.innerHTML = "误";
+                hhErrorMsg.innerHTML = "由于技术限制，只能由我们的管理员重置密码。 <br>请使用表格联系管理员，以重置密码。";
+                hhEmail.innerHTML = "学生电子邮件地址：";
+                hhQuery.innerHTML = "您的提问：";
+                hhQueryInput.placeholder = "在这请写下你的提问...";
+                hsButtonText.innerHTML = "查看常见问题";
+                hsModalLabelText.innerHTML = "常见问题";
+                hhFAQ1.innerHTML = "问题1：如何更改密码？";
+                hhFAQ2.innerHTML = "问题2：在哪里可以更改网站设置？";
+                hhFAQ3.innerHTML = "问题3：我还有其他问题，在哪里可以找到支持？";
+                hhFAQans1.innerHTML = "您可以通过向管理团队提交查询以请求更改密码来更改密码。";
+                hhFAQans2.innerHTML = "您可以在设置菜单中更改网站的各个方面，例如主题和语言。";
+                hhFAQans3.innerHTML = "您可以在这里搜索找到更多的常见问题: https://libraryanswers.northumbria.ac.uk/search/";
+                submit.value = "提交";
             } catch (e) {
             }
 

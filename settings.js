@@ -1148,6 +1148,8 @@ function highContrast() {
         localStorage.setItem("textContrast", defaultText); //sets the default to off (needs to be enabled by the user)
     }
 
+    var theme = localStorage.getItem("theme");
+
     //main menu
     var mmSmartCardBalance = document.getElementById("mmSmartCardBalance");
     var mmBalance = document.getElementById("mmBalance");
@@ -1190,7 +1192,7 @@ function highContrast() {
 
 
     //TODO CHange
-    if (text == "on") {
+    if (text == "on" && theme == "dark") {
         //mainMenu
         try {
             try {
@@ -1215,17 +1217,17 @@ function highContrast() {
 
         //login
         try {
-            llWelcomeU.style.color = "orange";
-            llLoginMessage.style.color = "orange";
-            llsubmit.style.color = "orange";
+            llWelcomeU.style.color = "black";
+            llLoginMessage.style.color = "black";
+            llsubmit.style.color = "yellow";
         }catch (e) {}
 
         //groupChat
         try {
-            gcCourseNameEcho.style.color = "yellow";
+            gcCourseNameEcho.style.color = "black";
             courseNameTitleGroupChat.style.color = "black";
             yourMessageGroupChat.style.color = "yellow";
-            MessageContentBoxGroupChat.style.color = "yellow";
+            MessageContentBoxGroupChat.style.color = "black";
             reportButtonGroupChat.style.color = "yellow";
             sendButtonGroupChat.style.color = "yellow";
             reportUserGroupChat.style.color = "yellow";

@@ -729,7 +729,7 @@ function themeChange() {
     //main menu
     //Background
     var mmSmartCardBalance = document.getElementById("mmSmartCardBalance");
-    var mmBalance = document = document.getElementById("mmBalance");
+    var mmBalance = document.getElementById("mmBalance");
     var backgroundMenu = document.getElementById("mmbackground");
     var mapMenu= document.getElementById("mmMapBackground");
     var groupChatMenu = document.getElementById("mmGroupChatBackground");
@@ -746,7 +746,7 @@ function themeChange() {
     var settingsMenuText= document.getElementById("settingsMenu");
     //ICONS
     var menuLogo = document.getElementById("mmNULogo");
-    var mmmapLogo = document.getElementById("mmMapLogo");
+    var mmMapLogo = document.getElementById("mmMapLogo");
     var groupChatLogo = document.getElementById("groupChat");
     var helpLogo = document.getElementById("mmHelpLogo");
     var annoucementsLogo = document.getElementById("mmAnnoucementsLogo");
@@ -777,6 +777,12 @@ function themeChange() {
     var mapLogo = document.getElementById("mapLogo");
     var mapContainer = document.getElementById("mapContainer");
     var mpSearch = document.getElementById("pac-input");
+    //enrolment
+    var eeLogo = document.getElementById("eeLogo");
+    var enrolmentContainer = document.getElementById("eeContainer");
+    var eeTitleOne = document.getElementById("eeTitleOne");
+    var eeStepOne = document.getElementById("eeStepOne");
+
 
 
 
@@ -801,20 +807,19 @@ function themeChange() {
             enrolmentMenuText.style.color = "black";
             settingsMenuText.style.color = "black";
             menuLogo.src="images/logoBlack.png";
-            mmmapLogo.src="images/maps-and-flagsBlack.png";
+            mmMapLogo.src="images/maps-and-flagsBlack.png";
             helpLogo.src="images/questionBlack.png";
             annoucementsLogo.src="images/speakerBlack.png";
             settingsLogo.src="images/settingsBlack.png";
             logoutLogo.src="images/lockBlack.png";
-            try{
+            try {
                 groupChatLogo.src="images/chatBlack.png";
                 enrolmentLogo.src="images/checklistBlack.png";
-            }catch (e) {}
-            try{
+            } catch (e) {}
+            try {
                 mmEnrolmentLogoBlocked.src="images/checklistBlockBlack.png";
                 mmlgroupChat.src="images/chatBlockBlack.png";
-            }catch (e) {}
-
+            } catch (e) {}
         } catch (e) {}
 
         //login
@@ -848,6 +853,13 @@ function themeChange() {
             mapLogo.src="images/logoBlack.png";
             mapContainer.style.backgroundColor = "white";
             mpSearch.style.backgroundColor = "grey";
+        } catch (e) {}
+        //enrolment
+        try {
+            eeLogo.src="images/logoBlack.png";
+            enrolmentContainer.style.backgroundColor = "white";
+            eeTitleOne.style.color = "black";
+            eeStepOne.style.color = "black";
         } catch (e) {}
 
     }

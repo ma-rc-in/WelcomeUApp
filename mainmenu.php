@@ -322,7 +322,7 @@ else
         <div class="logoDiv">
         <div class="logoChatWrapper">
         <a href="mainmenu.php">
-        <img class="logoMain" id="gcLogo" src="images/logo_white.png" alt="Logo"/>
+        <img class="logoMain" id="mmNULogo" src="images/logo_white.png" alt="Logo"/>
         </a>
         </div>
         <div class="guideButton" id="userGuideButton"><img src="images/guide.png" id="mmHelpGuide" class="guideIcon"></div>

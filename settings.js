@@ -145,6 +145,7 @@ function languageChange() {
     var eeSuccess = document.getElementById("eeSuccess");
     var eeComplete = document.getElementById("eeComplete");
     var eeLink = document.getElementById("eeLink");
+    var eeReturnBtn = document.getElementById("eeReturnBtn");
 
     //settings
     var ssTextSecurity = document.getElementById("ssTextSecurity");
@@ -212,13 +213,21 @@ function languageChange() {
     var hhQuery = document.getElementById("hhQuery");
     var hhQueryInput = document.getElementById("hhQueryInput");
     var hsButtonText = document.getElementById("hsButtonText");
+    var hhContactBtn = document.getElementById("hhContactBtn");
     var hsModalLabelText = document.getElementById("hsModalLabelText");
+    var hsModalLabelText2 = document.getElementById("hsModalLabelText2");
     var hhFAQ1 = document.getElementById("hhFAQ1");
     var hhFAQ2 = document.getElementById("hhFAQ2");
     var hhFAQ3 = document.getElementById("hhFAQ3");
+    var hhContact1 = document.getElementById("hhContact1");
+    var hhContact2 = document.getElementById("hhContact2");
+    var hhContact3 = document.getElementById("hhContact3");
     var hhFAQans1 = document.getElementById("hhFAQans1");
     var hhFAQans2 = document.getElementById("hhFAQans2");
     var hhFAQans3 = document.getElementById("hhFAQans3");
+    var hhContact1c = document.getElementById("hhContact1c");
+    var hhContact2c = document.getElementById("hhContact2c");
+    var hhContact3c = document.getElementById("hhContact3c");
     var submit = document.getElementById("submit");
 
     //English
@@ -328,6 +337,7 @@ function languageChange() {
             eeSuccess.innerHTML = "Congratulation!";
             eeComplete.innerHTML = "You have completed self-enrolment process.";
             eeLink.innerHTML = "Please click this <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">link</a> to view your programme induction timetable";
+            eeReturnBtn.innerHTML = "Return to Main Menu";
         } catch (e) {
         }
 
@@ -400,6 +410,14 @@ function languageChange() {
             hhFAQans2.innerHTML = "You can change the various aspects of the website such as the theme and language in the settings menu.";
             hhFAQans3.innerHTML = "You could find find further frequently asked questions by searching here: https://libraryanswers.northumbria.ac.uk/search/";
             submit.value = "Submit";
+            hhContactBtn.innerHTML = "Contact Us";
+            hsModalLabelText2.innerHTML = "Help Services Contact";
+            hhContact1.innerHTML = "Student Central";
+            hhContact2.innerHTML = "Finance Enquiries";
+            hhContact3.innerHTML = "Applicant Services";
+            hhContact1c.innerHTML = "0191 227 4646 | ask4help@northumbria.ac.uk";
+            hhContact2c.innerHTML = "0191 227 4050 | ask4help@northumbria.ac.uk";
+            hhContact3c.innerHTML = "0191 4060901 | bc.applicantservices@northumbria.ac.uk";
         } catch (e) {
         }
 
@@ -721,6 +739,7 @@ function languageChange() {
                 eeSuccess.innerHTML = "恭喜!";
                 eeComplete.innerHTML = "您已完成自我注册过程";
                 eeLink.innerHTML = "请点击这个 <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">链接</a> 查看您的新学期时间表";
+                eeReturnBtn.value = "返回首页";
             } catch (e) {
             }
 
@@ -887,7 +906,7 @@ function themeChange() {
             helpLogo.src="images/questionBlack.png";
             annoucementsLogo.src="images/speakerBlack.png";
             settingsLogo.src="images/settingsBlack.png";
-            logoutLogo.src="images/lockBlack.png";
+            logoutLogo.src="images/logoutBlack.png";
 
             try {
                 mmSmartCardBalance.style.color = "black";
@@ -997,7 +1016,7 @@ function themeChange() {
             annoucementsLogo.src="images/speaker.png";
             enrolmentLogo.src="images/checklist.png";
             settingsLogo.src="images/settings.png";
-            logoutLogo.src="images/lock.png";
+            logoutLogo.src="images/logout.png";
         } catch (e) {}
 
         //login

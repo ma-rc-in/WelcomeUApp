@@ -902,6 +902,7 @@ function themeChange() {
     var gcLimiter = document.getElementById("limiter");
     var gcChatContainer = document.getElementById("gcChatContainer");
     var gcCourseNameEcho = document.getElementById("gcCourseNameEcho");
+    var gcCourseNameTitle = document.getElementById("gcCourseNameTitle");
 
     //map
     var mapLogo = document.getElementById("mapLogo");
@@ -1050,6 +1051,7 @@ function themeChange() {
             gcYourMessage.style.color = "black";
             gcCourseNameEcho.style.color = "black";
             gcMessageContentBox.style.backgroundColor = "grey";
+            gcCourseNameTitle.style.color = "black";
         } catch (e) {}
 
         //map
@@ -1135,6 +1137,7 @@ function themeChange() {
             gcYourMessage.style.backgroundColor = "black";
             gcYourMessage.style.color = "white";
             gcMessageContentBox.style.backgroundColor = "white";
+            gcCourseNameTitle.style.color = "black";
         } catch (e) {}
 
         // help services

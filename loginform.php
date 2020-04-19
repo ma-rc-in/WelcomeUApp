@@ -361,7 +361,7 @@ color: #b5b5b5;
 
   <input class="checkBoxCookiesDiv" id="checkBoxCookiesDiv" type="checkbox" />
   <div class="cookiesDiv">
-    <div class="messageCookiesDiv">
+    <div class="messageCookiesDiv" id="messageCookiesDiv">
       This website is using Cookies and JavaScript local storage to improve your experience. More information
       <div id="linkToCookiesMoreInfoClickText" class="cookiesMoreInfoLink" onclick="window.location.href='#cookiesClickMoreInfoDiv'">here</div>
     </div>
@@ -398,7 +398,7 @@ color: #b5b5b5;
                 </div>
                 <input name="submit" class="login100-form-btn" id="llSubmit" type="submit" value="submit"/>
                 <div class="rememberBox">
-                  <a class="forgotPassLabel" style="color: #3498DB" href="helpServices.php#errorMessage" >Forgot Password?</a>
+                  <a class="forgotPassLabel"  id="llforgotPassLabel" style="color: #3498DB" href="helpServices.php#errorMessage" >Forgot Password?</a>
                 <div class="rememberUser">
                   <label>
                   <input type="checkbox" id="llcookiesetCheckBox" name="cookieset" value="set">

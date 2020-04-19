@@ -97,6 +97,8 @@ function languageChange() {
     var mminfo4 = document.getElementById("mminfo4");
     var mminfo5 = document.getElementById("mminfo5");
     var mmCookieButtonClose = document.getElementById("mmCookieButtonClose");
+    var llforgotPassLabel = document.getElementById("llforgotPassLabel");
+
 
     //groupChat
     var courseNameTitleGroupChat = document.getElementById("gcCourseNameTitle");
@@ -166,7 +168,6 @@ function languageChange() {
     var ssFourthBtn = document.getElementById("ssFourthBtn");
 
     //userDashboard
-    //userDashboard
     var udTextHeaderPass = document.getElementById("udTextHeaderPass");
     var udButtonTextFirstBtn = document.getElementById("udButtonTextFirstBtn");
     var udTextHeaderAccount = document.getElementById("udTextHeaderAccount");
@@ -210,6 +211,13 @@ function languageChange() {
     var udTextModalNewPinPlaceholder = document.getElementById("udTextModalNewPinPlaceholder");
     var udTextModalRepeatPinPlaceholder = document.getElementById("udTextModalRepeatPinPlaceholder");
     var udButtonTextSubmitButtonForChangePin = document.getElementById("udButtonTextSubmitButtonForChangePin");
+
+    var udaTextHeaderReports = document.getElementById("udaTextHeaderReports");
+    var udaTextHeaderAccessType = document.getElementById("udaTextHeaderAccessType");
+    var udaTextHeaderBan = document.getElementById("udaTextHeaderBan");
+    var udaTextHeaderAccessTypeModal = document.getElementById("udaTextHeaderAccessTypeModal");
+    var udaTextHeaderBanUserModal = document.getElementById("udaTextHeaderBanUserModal");
+    var udaTextHeaderBanUserModal1 = document.getElementById("udaTextHeaderBanUserModal1");
 
     //Map
     var mpSearch = document.getElementById("pac-input");
@@ -294,17 +302,7 @@ function languageChange() {
             llsubmit.value = "submit";
             llcookieset.innerHTML = "Remember Username?";
             capsLockInfo.innerHTML = "*Be careful with your login and password, Caps Lock is ON*";
-            cookiewarning.innerHTML = "This website is using cookies and javascript local storage to improve your experience.";
-            mmCookieMoreInfo.innerHTML = "More Information";
-            mmCookieAccept.innerHTML = "Accept";
-            mmCookieInformationHeader.innerHTML = "Cookie Information";
-            mminfo.innerHTML = "This website uses cookies and javascript local storage to enhance your experience while using this website.";
-            mminfo2.innerHTML = "We do this by using cookies to:";
-            mminfo3.innerHTML = "Store your username to make it easier for you to login.";
-            mminfo4.innerHTML = "We also use javascript local storage to:";
-            mminfo5.innerHTML = "Save various settings you may use in our website, such as the theme, language or contrast settings.";
-            mmCookieButtonClose.innerHTML = "Close";
-
+            llforgotPassLabel.innerHTML = "Forgot Password?";
         } catch (e) {
         }
 
@@ -428,6 +426,20 @@ function languageChange() {
             hhContact3c.innerHTML = "0191 4060901 | bc.applicantservices@northumbria.ac.uk";
         } catch (e) {
         }
+
+        //userDashboardAdmin
+        try {
+            udaTextHeaderReports.innerHTML = "View reports";
+            udaButtonTextFirstBtn.innerHTML  = "View";
+            udaTextHeaderAccessType.innerHTML = "Assign access type";
+            udaButtonTextSecondBtn.innerHTML = "Assign type";
+            udaTextHeaderBan.innerHTML = "Ban user accounts";
+            udaButtonTextThirdBtn.innerHTML = "Ban";
+            udaTextHeaderBanUserModal.innerHTML = "The 'Dismiss' button can be used to reject a report so that it will not be longer displayed. <br><br>The 'Suspend' button will block the reported ID user so that the user will no longer be able to log in.";
+            udaTextHeaderAccessTypeModal.innerHTML = "Access Type";
+            udaTextHeaderBanUserModal1.innerHTML = "Please select the users ID you wish to Ban:";
+
+        }catch (e) {}
 
     }
 
@@ -674,8 +686,8 @@ function languageChange() {
                 llStudentID.placeholder = "学生ID";
                 llPassword.placeholder = "密码";
                 llsubmit.value = "提交";
+                llforgotPassLabel.innerHTML = "Forgot Password?";
 
-                //TODO - Sorry about the endless text
                 llcookieset.innerHTML = "是否记住用户名？";
                 capsLockInfo.innerHTML = "*注意你的登录名和密码，大写锁定开启*";
                 cookiewarning.innerHTML = "本网站使用cookie和javascript本地存储来改善你的体验。";
@@ -706,7 +718,7 @@ function languageChange() {
                 ssTextContrast.innerHTML = "高对比度";
                 ssTextContrastModal.innerHTML = "允许高对比度设置？";
                 ssTextContrast.innerHTML = "更改对比度";
-                ssFourthBtn.value = "更改";
+                ssFourthBtn.innerHTML = "更改";
             } catch (e) {
             }
 
@@ -777,6 +789,19 @@ function languageChange() {
                 udButtonTextSubmitButtonForChangePin.innerHTML = "提交";
             } catch (e) {
             }
+
+            //userDashboardAdmin
+            try {
+                udaTextHeaderReports.innerHTML = "View reports";
+                udaButtonTextFirstBtn.innerHTML  = "View";
+                udaTextHeaderAccessType.innerHTML = "Assign access type";
+                udaButtonTextSecondBtn.innerHTML = "Assign type";
+                udaTextHeaderBan.innerHTML = "Ban user accounts";
+                udaButtonTextThirdBtn.innerHTML = "Ban";
+                udaTextHeaderBanUserModal.innerHTML = "The 'Dismiss' button can be used to reject a report so that it will not be longer displayed. <br><br>The 'Suspend' button will block the reported ID user so that the user will no longer be able to log in.";
+                udaTextHeaderAccessTypeModal.innerHTML = "Access Type";
+                udaTextHeaderBanUserModal1.innerHTML = "Please select the users ID you wish to Ban:";
+            }catch (e) {}
 
             //map
             try {
@@ -1282,6 +1307,7 @@ function highContrast() {
     var udaTextHeaderBanModal = document.getElementById("udaTextHeaderBanUserModal");
     var udaTextHeaderAccessTypeModal = document.getElementById("udaTextHeaderAccessTypeModal");
     var udaTextHeaderBanUserModal = document.getElementById("udaTextHeaderBanUserModal");
+    var udaTextHeaderBanUserModal1 = document.getElementById("udaTextHeaderBanUserModal1");
 
     if (text == "on" && theme == "dark") {
         //mainMenu
@@ -1418,6 +1444,7 @@ function highContrast() {
         udaButtonTextThirdBtn.style.color = "orange";
         udaTextHeaderBanUserModal.style.color = "orange";
         udaTextHeaderAccessTypeModal.style.color = "orange";
+        udaTextHeaderBanUserModal1.style.color = "orange";
         }catch (e) {}
     }
 }

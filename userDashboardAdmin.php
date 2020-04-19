@@ -288,7 +288,7 @@ if(isset($_POST['submitAccessChange'])){
 
          <form class="formPass" method="post">
            <div class="formPassWrapper">
-               <h4 class="formHeading" id="udaTextHeaderBanUserModal">Please select the users ID you wish to Ban:</h4>
+               <h4 class="formHeading" id="udaTextHeaderBanUserModal1">Please select the users ID you wish to Ban:</h4>
                <select class="formPassInput" name="banID">
                <option value="" hidden id="udaTextOptionBanUserChoose">Please select a user.</option>';
                <?php

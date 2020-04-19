@@ -548,3 +548,34 @@ select option {
     background-color: #595959;
 
 }
+
+.rememberBox {
+  display: inline;
+  color: black;
+  float: left;
+  width: 100%;
+}
+
+.forgotPassLabel {
+  float: left;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+  margin-top: 15px;
+}
+
+.rememberUser, #llcookieset {
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+}
+
+.rememberUser {
+  margin-top: 10px
+}
+
+#llcookiesetCheckBox {
+  margin-left: 5px;
+  display: inline-block;
+  float: right;
+  margin-top: 3px;
+}

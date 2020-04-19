@@ -137,9 +137,15 @@ if (isset($_POST['submit'])) {
                     <span class="focus-input100-2"></span>
                 </div>
                 <input name="submit" class="login100-form-btn" id="llSubmit" type="submit" value="submit"/>
-                <a style="color: #3498DB" href="helpServices.php">Forgot Password?</a>
-                <p id="llcookieset">Remember Username?</p>
-                <input type="checkbox" id="llcookieset" name="cookieset" value="set">
+                <div class="rememberBox">
+                  <a class="forgotPassLabel" style="color: #3498DB" href="helpServices.php">Forgot Password?</a>
+                <div class="rememberUser">
+                  <label id="llcookieset" style="user-select: none;">Remember Username?
+                    <input type="checkbox" id="llcookiesetCheckBox" name="cookieset" value="set">
+                  </label>
+                </input>
+                </div>
+              </div>
             </form>
         </div>
     </div>

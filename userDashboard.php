@@ -207,7 +207,7 @@ $(document).ready(function() {
        <div class="iconPass">
          <img class="imgPass" id="udimagepass" src="images/pass.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons" id="udTextHeaderPass" id="udPatch1">Change password</h3>
+       <h3 class="textIcons" id="udTextHeaderPass">Change password</h3>
        <a href="#" id="udButtonTextFirstBtn" class="button">Change</a>
        </div>
 
@@ -223,7 +223,7 @@ $(document).ready(function() {
        <div class="iconPass">
          <img class="imgPass" id="udimagelock" src="images/lock.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
-       <h3 class="textIcons" id="udTextHeaderPin" id="udPatch4" >Set PIN</h3>
+       <h3 class="textIcons" id="udTextHeaderPin">Set PIN</h3>
        <a href="#" id="udButtonTextThirdBtn" class="button" data-abbr="">Set</a>
        </div>
 

@@ -878,10 +878,12 @@ function themeChange() {
     var udTextHeaderPin = document.getElementById("udTextHeaderPin");
     var udContainer = document.getElementById("udContainer");
     var udPatchButton = document.getElementById("udPatchButton");
-    var udPatch1 = document.getElementById("udPatch1");
     var udPatch2 = document.getElementById("udPatch2");
     var udPatch3 = document.getElementById("udPatch3");
-    var udPatch4 = document.getElementById("udPatch4");
+    var udButtonTextFirstBtn = document.getElementById("udButtonTextFirstBtn");
+    var udButtonTextSecondBtn = document.getElementById("udButtonTextSecondBtn");
+    var udButtonTextThirdBtn = document.getElementById("udButtonTextThirdBtn");
+
 
     //Login
     var llLogo = document.getElementById("llLogo");
@@ -997,6 +999,9 @@ function themeChange() {
             document.body.style.backgroundColor = "white";
             udContainer.style.backgroundColor = "white";
             udLogo.src="images/logoBlack.png";
+            udPatch2.style.backgroundColor = "white";
+            udPatch3.style.backgroundColor = "white";
+
             udimagepass.src="images/passBlack.png";
             udimagepass.style.backgroundColor = "white";
             udTextHeaderPass.style.backgroundColor = "white";
@@ -1006,14 +1011,19 @@ function themeChange() {
             udTextHeaderAccount.style.backgroundColor = "white";
             udTextHeaderAccount.style.color = "black";
             udimagelock.src="images/lockBlack.png";
+            udButtonTextFirstBtn.style.color = "black";
+            udButtonTextSecondBtn.style.color = "black";
+            udButtonTextThirdBtn.style.color = "black";
+            udButtonTextFirstBtn.style.borderColor = "black";
+            udButtonTextSecondBtn.style.borderColor = "black";
+            udButtonTextThirdBtn.style.borderColor = "black";
+
+
             udimagelock.style.backgroundColor = "white";
             udTextHeaderPin.style.backgroundColor = "white";
             udTextHeaderPin.style.color = "black";
             udPatchButton.style.backgroundColor = "white";
-            udPatch1.style.backgroundColor = "white";
-            udPatch2.style.backgroundColor = "white";
-            udPatch3.style.backgroundColor = "white";
-            udPatch4.style.backgroundColor = "white";
+
         }catch (e) {}
 
         //login

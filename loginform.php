@@ -140,8 +140,9 @@ if (isset($_POST['submit'])) {
                 <div class="rememberBox">
                   <a class="forgotPassLabel" style="color: #3498DB" href="helpServices.php">Forgot Password?</a>
                 <div class="rememberUser">
-                  <label id="llcookieset" style="user-select: none;">Remember Username?
-                    <input type="checkbox" id="llcookiesetCheckBox" name="cookieset" value="set">
+                  <label>
+                  <input type="checkbox" id="llcookiesetCheckBox" name="cookieset" value="set">
+                  <span id="llcookieset" style="user-select: none;">Remember Username?
                   </label>
                 </input>
                 </div>

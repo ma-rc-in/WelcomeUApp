@@ -300,9 +300,8 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                             <br>
                             <h4 class="formHeading" id="gcReason">Please explain why you are making this report:</h4>
                             <br>
-                            <textarea id="reportComment" class="formReportInput" name="reportComment"
-                                      placeholder="Please comment here:" rows="10" cols="140" contentEditable=true data-text="Enter text here" maxlength="200">
-                            </textarea>
+                            <textarea id="reportComment" class="formReportInput" name="reportComment" placeholder="Please comment here:" rows="10" cols="140"
+                            contentEditable=true data-text="Enter text here" maxlength="200"></textarea>
                             <br>
                             <br>
                             <span id='charLeftReport' style="font-size: 17px; "></span>

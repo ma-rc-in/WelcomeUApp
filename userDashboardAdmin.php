@@ -141,6 +141,11 @@ if(isset($_POST['submitAccessChange'])){
   text-align: center;
 }
 
+.scrollModal {
+    height: 500px;
+    overflow-y: auto;
+}
+
 </style>
 
 
@@ -167,7 +172,7 @@ if(isset($_POST['submitAccessChange'])){
          <img class="imgPass" src="images/reportsList.png" alt="reportsList" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udaTextHeaderReports">View reports</h3>
-       <a href="#" id="udaButtonTextFirstBtn" class="button" data-abbr=" reports">View</a>
+       <a href="#" id="udaButtonTextFirstBtn" class="button">View</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
@@ -175,7 +180,7 @@ if(isset($_POST['submitAccessChange'])){
          <img class="imgPass" src="images/accessType.png" alt="accessType" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons" id="udaTextHeaderAccessType">Assign access type</h3>
-       <a href="#" id="udaButtonTextSecondBtn" class="button" data-abbr=" access type">Assign</a>
+       <a href="#" id="udaButtonTextSecondBtn" class="button">Assign type</a>
        </div>
 
        <div class="patch-item patch-button" style="width: 100%; float: left;">
@@ -183,16 +188,16 @@ if(isset($_POST['submitAccessChange'])){
          <img class="imgPass" src="images/ban.png" alt="PasswordKey" width= "90px" height= "90px"/>
        </div>
        <h3 class="textIcons"  id="udaTextHeaderBan">Ban user accounts</h3>
-       <a href="#" id="udaButtonTextThirdBtn" class="button" data-abbr=" accounts">Ban</a>
+       <a href="#" id="udaButtonTextThirdBtn" class="button">Ban</a>
        </div>
 
-       <div id="firstModal" class="modal">
-       <div class="modal-content" style="overflow-x: auto;">
+       <div id="firstModal" class="modal" >
+       <div class="modal-content">
        <div class="modal-header" style="min-width: 1000px;">
        <span class="close firstClose" id="">&times;</span>
        <h3 id="udaTextHeaderReports">View reports</h3>
        </div>
-       <div class="modal-body" style="min-width: 1000px; overflow: auto;">
+       <div class="modal-body scrollModal" style="min-width: 1000px;">
 
 
   <table class="reports">

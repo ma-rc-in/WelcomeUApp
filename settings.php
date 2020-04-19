@@ -164,7 +164,7 @@ if (isset($_SESSION['sessionStudentID'])) {
             <img class="imgPass" id="securityLogo" src="images/security.png" alt="profileUser" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextSecurity">Security settings</h3>
-        <a href="userDashboard.php" id="ssButtonSecurity" class="button" data-abbr=" security settings">Change</a>
+        <a href="userDashboard.php" id="ssButtonSecurity" class="button" >Change</a>
     </div>
 
     <div class="patch-item patch-button" id="notificationBackground" style="width: 100%; float: left;">
@@ -172,7 +172,7 @@ if (isset($_SESSION['sessionStudentID'])) {
             <img class="imgPass" id="notificationLogo" src="images/notificationSettings.png" alt="notificationSettings" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextNotifications">Notifications settings</h3>
-        <a href="#" id="ssFirstBtn" class="button" data-abbr=" notifications settings">Change</a>
+        <a href="#" id="ssFirstBtn" class="button">Change</a>
     </div>
 
     <div class="patch-item patch-button" id="languageBackground" style="width: 100%; float: left;">
@@ -180,7 +180,7 @@ if (isset($_SESSION['sessionStudentID'])) {
             <img class="imgPass" id="languageLogo" src="images/language.png" alt="languageSetting" width="90px" height="90px"/>
         </div>
         <h3 class="textIcons" id="ssTextLanguage">Change language</h3>
-        <a href="#" id="ssSecondBtn" class="button" data-abbr=" language">Change</a>
+        <a href="#" id="ssSecondBtn" class="button" >Change</a>
     </div>
 
     <div class="patch-item patch-button" id="themeBackground" style="width: 100%; float: left;">

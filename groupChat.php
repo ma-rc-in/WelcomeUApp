@@ -192,6 +192,26 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         });
     </script>
 
+    <script>
+          $(document).ready(function() {
+        var len = 0;
+        var maxchar = 200;
+
+        $('#reportComment').keyup(function(){
+          len = this.value.length
+          if(len > maxchar){
+              return false;
+          }
+          else if (len > 0) {
+              $( "#charLeftReport" ).html( "Remaining characters: " +( maxchar - len ) );
+          }
+          else {
+              $( "#charLeftReport" ).html( "Remaining characters: " +( maxchar ) );
+          }
+        })
+      });
+    </script>
+
 </head>
 <body>
 <div class="patch-container" id="gcContainer">
@@ -281,7 +301,12 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                             <h4 class="formHeading" id="gcReason">Please explain why you are making this report:</h4>
                             <br>
                             <textarea id="reportComment" class="formReportInput" name="reportComment"
-                                      placeholder="Please comment here:" rows="10" cols="140" contentEditable=true data-text="Enter text here"></textarea>
+                                      placeholder="Please comment here:" rows="10" cols="140" contentEditable=true data-text="Enter text here" maxlength="200">
+                            </textarea>
+                            <br>
+                            <br>
+                            <span id='charLeftReport' style="font-size: 17px; "></span>
+
                         </div>
                         <br>
                         <input class="adminButtons" name="submitReport" id="gcReportSubmit" type="submit" value="Submit"/>
@@ -289,6 +314,8 @@ if (isset($_POST['submitReport'])) //when the user submits their message
                 </div>
             </div>
         </div>
+
+
 
         <!--Pin Popup-->
         <div id="PinPopupBoxPage" class="modal">

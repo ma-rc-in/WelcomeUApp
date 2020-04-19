@@ -79,11 +79,6 @@ if(isset($_POST['aaUpdate'])) {
     <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet'
           type='text/css'>
-    <!--scripts for bootstrap user guide-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour-standalone.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour-standalone.min.css" rel="stylesheet"/>
-
     <style>
         @media only screen and (max-width: 600px) {
             .messageBox {
@@ -118,7 +113,7 @@ if(isset($_POST['aaUpdate'])) {
             border-radius: 4px; /* Rounded borders */
             box-sizing: border-box; /* Make sure that padding and width stays in place */
             margin-top: 6px; /* Add a top margin */
-            margin-bottom: 16px;
+            margin-bottom: 16px; /* Bottom margin */
             resize: vertical
         }
 
@@ -142,49 +137,8 @@ if(isset($_POST['aaUpdate'])) {
             background-color: #8d8d8d;;
         }
 
-        .guideButton {
-            opacity: .7;
-            -webkit-transition: all 0.8s;
-            -moz-transition: all 0.8s;
-            transition: all 0.8s;
-            margin-top: -76px;
-            float: right;
-            margin-right: auto;
-        }
-
-        .guideButton:hover {
-            opacity: 1;
-            -webkit-transition: all 0.8s;
-            -moz-transition: all 0.8s;
-            transition: all 0.8s;
-        }
-
-        .guideIcon {
-            height: 48px;
-            width: 48px;
-            margin-bottom: 40px;
-            margin-right: 20px;
-            cursor: pointer;
-        }
-
-        @media only screen and (max-width: 600px) {
-
-            .guideButton {
-                width: 100%;
-                display: block;
-                margin-top: 40px;
-            }
-
-            .guideIcon {
-                height: 58px;
-                width: 58px;
-                margin-bottom: 40px;
-                margin-right: 20px;
-                cursor: pointer;
-            }
-        }
-
     </style>
+
 </head>
 <body>
 
@@ -200,15 +154,6 @@ if(isset($_POST['aaUpdate'])) {
         </a>
     </div>
 </div>
-
-<div class="guideButton" id="userGuideButton"><img src="images/guide.png" id="mmHelpGuide" class="guideIcon"></div>
-</div>
-
-<div style="width: 100%; color: white">
-    <h5 id="mmSmartCardBalance" style="display: inline-block;">Smart Card Balance:</h5>
-    <h5 id="mmBalance" style="display: inline-block;">£<?php echo $StudentInfo['smartCardBalance'];?></h5>
-</div>
-
 
 <div class="container">
     <form action="announcementsLecturer.php" method="POST">
@@ -392,149 +337,6 @@ if(isset($_POST['aaUpdate'])) {
     if(checkEdit == "true"){
         loadPageEdit();
     }
-</script>
-
-<script>
-    var tour = new Tour({
-        backdrop: false,
-        storage: false,
-        template: "<div class='popover tour'><div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><nav class='popover-navigation'><div class='btn-group'><button class='btn btn-default' data-role='prev'>« Prev</button><button class='btn btn-default' data-role='next'>Next »</button></div><button class='btn btn-default btn-end' data-role='end'>Skip guide</button></nav></div>"
-    });
-
-    var language = localStorage.getItem("language");
-    if (language == null) {//checks to see if the user has a preference set, if not
-        var defaultLanguage = "English";
-        localStorage.setItem("language", defaultLanguage); //sets the default language to English (for first time users)
-    }
-
-    if (language == "English") {
-        tour.addSteps([
-            {
-                element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
-                title: "SmartCard Balance", // string - title of the popover
-                placement: "bottom",
-                backdrop: true,
-                content: "Users can view their smart card balance here." // string - content of the popover
-            },
-            {
-                element: "#mmMapLogo",
-                title: "Map",
-                placement: "top",
-                backdrop: true,
-                content: "Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination."
-            },
-            {
-                element: "#groupChat",
-                title: "Group Chat",
-                placement: "top",
-                backdrop: true,
-                content: "Students can use the group chat service to connect with other students on their course, where they are able to message each other."
-            },
-            {
-                element: "#mmHelpLogo",
-                title: "Help Services",
-                placement: "top",
-                backdrop: true,
-                content: "Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help."
-            },
-            {
-                element: "#mmAnnoucementsLogo",
-                title: "Annoucements",
-                placement: "top",
-                backdrop: true,
-                content: "Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed."
-            },
-            {
-                element: "#mmEnrolmentLogo",
-                title: "Self-Enrolment",
-                placement: "top",
-                backdrop: true,
-                content: "Users can enrol for their course by completing a quick form on the self enrolment system. Changes to student details can also be updated on this form."
-            },
-            {
-                element: "#mmSettingsLogo",
-                title: "Settings",
-                placement: "top",
-                backdrop: true,
-                content: "Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data."
-            },
-            {
-                element: "#mmLogoutLogo",
-                title: "Logout",
-                placement: "top",
-                backdrop: true,
-                content: "Users can click here to logout."
-            }
-        ]);
-    }
-
-    if (language == "Chinese") {
-        tour.addSteps([
-            {
-                element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
-                title: "学生卡余额", // string - title of the popover
-                placement: "bottom",
-                backdrop: true,
-                content: "用户可以在此查询学生卡余额。" // string - content of the popover
-            },
-            {
-                element: "#mmMapLogo",
-                title: "地图",
-                placement: "top",
-                backdrop: true,
-                content: "用户可以搜索诺森比亚大学纽卡斯尔校区以获得到他们的目的地的指南和方向。"
-            },
-            {
-                element: "#groupChat",
-                title: "群聊",
-                placement: "top",
-                backdrop: true,
-                content: "学生可以使用群组聊天功能与课程上的其他学生联系，在群聊界面里学生可以互相发送信息。"
-            },
-            {
-                element: "#mmHelpLogo",
-                title: "帮助",
-                placement: "top",
-                backdrop: true,
-                content: "用户可以通过提交查询、查看最常见的问题和与我们的聊天机器人请求帮助来获得解决办法。"
-            },
-            {
-                element: "#mmAnnoucementsLogo",
-                title: "通知",
-                placement: "top",
-                backdrop: true,
-                content: "学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。"
-            },
-            {
-                element: "#mmEnrolmentLogo",
-                title: "自助注册",
-                placement: "top",
-                backdrop: true,
-                content: "学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。"
-            },
-            {
-                element: "#mmSettingsLogo",
-                title: "设置",
-                placement: "top",
-                backdrop: true,
-                content: "用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。"
-            },
-            {
-                element: "#mmLogoutLogo",
-                title: "登出",
-                placement: "top",
-                backdrop: true,
-                content: "用户点击此处以登出。"
-            }
-        ]);
-    }
-// user guide
-    $("#userGuideButton").click(function(){
-        // Start the tour
-        if(!tour.start()){
-            tour.restart();
-        }
-    });
 </script>
 
 </body>

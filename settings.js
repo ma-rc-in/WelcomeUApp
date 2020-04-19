@@ -204,6 +204,23 @@ function languageChange() {
 
     //Map
     var mpSearch = document.getElementById("pac-input");
+
+    //Help Services
+    var hhErrorTitle  = document.getElementById("hhErrorTitle");
+    var hhErrorMsg = document.getElementById("hhErrorMsg")
+    var hhEmail = document.getElementById("hhEmail");
+    var hhQuery = document.getElementById("hhQuery");
+    var hhQueryInput = document.getElementById("hhQueryInput");
+    var hsButtonText = document.getElementById("hsButtonText");
+    var hsModalLabelText = document.getElementById("hsModalLabelText");
+    var hhFAQ1 = document.getElementById("hhFAQ1");
+    var hhFAQ2 = document.getElementById("hhFAQ2");
+    var hhFAQ3 = document.getElementById("hhFAQ3");
+    var hhFAQans1 = document.getElementById("hhFAQans1");
+    var hhFAQans2 = document.getElementById("hhFAQans2");
+    var hhFAQans3 = document.getElementById("hhFAQans3");
+    var submit = document.getElementById("submit");
+
     //English
     if (language == "English") { //each page needs a try catch so that it can load without the other pages elements
         //Main Menu
@@ -367,13 +384,31 @@ function languageChange() {
         } catch (e) {
         }
 
+        //help services
+        try {
+            hhErrorTitle.innerHTML = "Error";
+            hhErrorMsg.innerHTML = "Due to technical limitations, password can be only reset by our admin. <br>Please use the form to contact the admin in order to reset your password.";
+            hhEmail.innerHTML = "Student Email Address:";
+            hhQuery.innerHTML = "Your query:";
+            hhQueryInput.placeholder = "Please write your query here...";
+            hsButtonText.innerHTML = "See FAQ";
+            hsModalLabelText.innerHTML = "FAQ";
+            hhFAQ1.innerHTML = "Question 1: How do I change my password?";
+            hhFAQ2.innerHTML = "Question 2: Where can I change the websites settings?";
+            hhFAQ3.innerHTML = "Question 3: I have further questions, where can I find support?";
+            hhFAQans1.innerHTML = "You can change your password by submitting a query to the admin team requesting a password change.";
+            hhFAQans2.innerHTML = "You can change the various aspects of the website such as the theme and language in the settings menu.";
+            hhFAQans3.innerHTML = "You could find find further frequently asked questions by searching here: https://libraryanswers.northumbria.ac.uk/search/";
+            submit.value = "Submit";
+        } catch (e) {
+        }
+
     }
 
     //Polish
     if (language == "Polish") {
         //Main Menu
         try {
-            mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
             mapMenu.innerHTML = "Mapa";
             groupChatMenu.innerHTML = "Czat grupowy";
             helpMenu.innerHTML = "Wsparcie";
@@ -388,6 +423,9 @@ function languageChange() {
             mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
             mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
             mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
+            try {
+                mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
+            } catch (e) {}
         } catch (e) {
         }
 
@@ -558,7 +596,7 @@ function languageChange() {
         if (language == "Chinese") {
             //Main Menu
             try {
-                mmSmartCardBalance.innerHTML = "学生卡余额";
+
                 mapMenu.innerHTML = "地图";
                 groupChatMenu.innerHTML = "群聊";
                 helpMenu.innerHTML = "帮助";
@@ -573,6 +611,9 @@ function languageChange() {
                 mmHelpAnnouncements.innerHTML = "通知 - 学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。";
                 mmHelpEnrolment.innerHTML = "自助注册 - 学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。";
                 mmHelpSettings.innerHTML = "设置 - 用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。";
+                try {
+                mmSmartCardBalance.innerHTML = "学生卡余额";
+                } catch (e) {}
             } catch (e) {
             }
             //groupchat
@@ -716,6 +757,25 @@ function languageChange() {
             } catch (e) {
             }
 
+            //help services
+            try {
+                hhErrorTitle.innerHTML = "误";
+                hhErrorMsg.innerHTML = "由于技术限制，只能由我们的管理员重置密码。 <br>请使用表格联系管理员，以重置密码。";
+                hhEmail.innerHTML = "学生电子邮件地址：";
+                hhQuery.innerHTML = "您的提问：";
+                hhQueryInput.placeholder = "在这请写下你的提问...";
+                hsButtonText.innerHTML = "查看常见问题";
+                hsModalLabelText.innerHTML = "常见问题";
+                hhFAQ1.innerHTML = "问题1：如何更改密码？";
+                hhFAQ2.innerHTML = "问题2：在哪里可以更改网站设置？";
+                hhFAQ3.innerHTML = "问题3：我还有其他问题，在哪里可以找到支持？";
+                hhFAQans1.innerHTML = "您可以通过向管理团队提交查询以请求更改密码来更改密码。";
+                hhFAQans2.innerHTML = "您可以在设置菜单中更改网站的各个方面，例如主题和语言。";
+                hhFAQans3.innerHTML = "您可以在这里搜索找到更多的常见问题: https://libraryanswers.northumbria.ac.uk/search/";
+                submit.value = "提交";
+            } catch (e) {
+            }
+
         }
 }
 
@@ -729,7 +789,7 @@ function themeChange() {
     //main menu
     //Background
     var mmSmartCardBalance = document.getElementById("mmSmartCardBalance");
-    var mmBalance = document = document.getElementById("mmBalance");
+    var mmBalance = document.getElementById("mmBalance");
     var backgroundMenu = document.getElementById("mmbackground");
     var mapMenu= document.getElementById("mmMapBackground");
     var groupChatMenu = document.getElementById("mmGroupChatBackground");
@@ -737,6 +797,7 @@ function themeChange() {
     var annoucementsMenu= document.getElementById("mmAnnoucementsBackground");
     var enrolmentMenu = document.getElementById("mmEnrolmentBackground");
     var settingsMenu= document.getElementById("mmSettingsBackground");
+
     //Text
     var mapMenuText= document.getElementById("mapMenu");
     var groupChatMenuText = document.getElementById("groupChatMenu");
@@ -746,7 +807,7 @@ function themeChange() {
     var settingsMenuText= document.getElementById("settingsMenu");
     //ICONS
     var menuLogo = document.getElementById("mmNULogo");
-    var mmmapLogo = document.getElementById("mmMapLogo");
+    var mmMapLogo = document.getElementById("mmMapLogo");
     var groupChatLogo = document.getElementById("groupChat");
     var helpLogo = document.getElementById("mmHelpLogo");
     var annoucementsLogo = document.getElementById("mmAnnoucementsLogo");
@@ -777,6 +838,12 @@ function themeChange() {
     var mapLogo = document.getElementById("mapLogo");
     var mapContainer = document.getElementById("mapContainer");
     var mpSearch = document.getElementById("pac-input");
+    //enrolment
+    var eeLogo = document.getElementById("eeLogo");
+    var enrolmentContainer = document.getElementById("eeContainer");
+    var eeTitleOne = document.getElementById("eeTitleOne");
+    var eeStepOne = document.getElementById("eeStepOne");
+
 
 
 
@@ -786,8 +853,7 @@ function themeChange() {
         try {
             document.body.style.backgroundColor = "white";
             backgroundMenu.style.backgroundColor = "white";
-            mmSmartCardBalance.style.color = "black";
-            mmBalance.style.color = "black";
+
             mapMenu.style.backgroundColor = "white";
             groupChatMenu.style.backgroundColor = "white";
             helpMenu.style.backgroundColor = "white";
@@ -801,20 +867,22 @@ function themeChange() {
             enrolmentMenuText.style.color = "black";
             settingsMenuText.style.color = "black";
             menuLogo.src="images/logoBlack.png";
-            mmmapLogo.src="images/maps-and-flagsBlack.png";
+            mmMapLogo.src="images/maps-and-flagsBlack.png";
             helpLogo.src="images/questionBlack.png";
             annoucementsLogo.src="images/speakerBlack.png";
             settingsLogo.src="images/settingsBlack.png";
             logoutLogo.src="images/lockBlack.png";
-            try{
+
+            try {
+                mmSmartCardBalance.style.color = "black";
+                mmBalance.style.color = "black";
                 groupChatLogo.src="images/chatBlack.png";
                 enrolmentLogo.src="images/checklistBlack.png";
-            }catch (e) {}
-            try{
+            } catch (e) {}
+            try {
                 mmEnrolmentLogoBlocked.src="images/checklistBlockBlack.png";
                 mmlgroupChat.src="images/chatBlockBlack.png";
-            }catch (e) {}
-
+            } catch (e) {}
         } catch (e) {}
 
         //login
@@ -849,6 +917,13 @@ function themeChange() {
             mapContainer.style.backgroundColor = "white";
             mpSearch.style.backgroundColor = "grey";
         } catch (e) {}
+        //enrolment
+        try {
+            eeLogo.src="images/logoBlack.png";
+            enrolmentContainer.style.backgroundColor = "white";
+            eeTitleOne.style.color = "black";
+            eeStepOne.style.color = "black";
+        } catch (e) {}
 
     }
 
@@ -873,7 +948,7 @@ function themeChange() {
             enrolmentMenuText.style.color = "white";
             settingsMenuText.style.color = "white";
             menuLogo.src="images/logo_white.png";
-            mmmapLogo.src="images/maps-and-flags.png";
+            mmMapLogo.src="images/maps-and-flags.png";
             groupChatLogo.src="images/chat.png";
             helpLogo.src="images/question.png";
             annoucementsLogo.src="images/speaker.png";
@@ -1003,5 +1078,42 @@ function highContrast() {
             gcTextPinCheck.style.color = "yellow";
             gcSubmitPin.style.color = "yellow";
         }catch (e) {}
+
+        // map
+        try {
+            mpSearch.placeholder.style.color = "yellow";
+        }catch (e) {}
+
+        //self enrollment
+        try {
+            eeTitleOne.style.color = "yellow";
+            eeStepOne.style.color = "yellow";
+            eesubmit.style.color = "yellow";
+        }catch (e) {}
+
+        //self enrollment - upload photo
+        try {
+            eeTitleTwo.style.color = "yellow";
+            eeStepTwo.style.color = "yellow";
+            eesubmitTwo.style.color = "yellow";
+        } catch (e) {}
+
+        //self enrollment form complete
+        try {
+            eeSuccess.style.color = "yellow";
+            eeComplete.style.color = "yellow";
+            eeLink.style.color = "yellow";
+        } catch (e) {}
+
+        //help services
+        try {
+            hhErrorTitle.style.color = "yellow";
+            hhEmail.style.color = "yellow";
+            hhQuery.style.color = "yellow";
+            hsButtonText.style.color = "yellow";
+            hsModalLabelText.style.color = "yellow";
+            submit.style.color = "yellow";
+        } catch (e) {
+        }
     }
 }

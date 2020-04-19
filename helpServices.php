@@ -164,7 +164,7 @@ if(isset($_POST['submit'])) { //change
             });
         });
     </script>
-
+    <script src="settings.js"></script>
 </head>
 <body>
   <div class="patch-container">
@@ -177,13 +177,15 @@ if(isset($_POST['submit'])) { //change
       </a>
     </div>
 
-    <div id="errorMessage" class="overlay">
+    <div  class="overlay">
      <div class="popup">
        <a class="close" href="#" style=" ">&times;</a>
        <div class="content" style="margin-top: 20px;">
-         Error
+         <div id="hhErrorTitle">Error</div>
+         <div id="hhErrorMsg">
          <hr>
          Due to technical limitations, password can be only reset by our admin. <br>Please use the form to contact the admin in order to reset your password.
+         </div>
        </div>
      </div>
     </div>
@@ -235,23 +237,23 @@ if(isset($_POST['submit'])) { //change
         		<section class="accordion">
         			<div class="insideAccordion">
         				<input type="checkbox" id="check-1" />
-        				<label for="check-1">Question 1</label>
+        				<label for="check-1" id="hhFAQ1">Question 1: How do I change my password?</label>
         				<article>
-        					<p>Lorem ipsum </p>
+        					<p id="hhFAQans1">You can change your password by submitting a query to the admin team requesting a password change.</p>
         				</article>
         			</div>
               <div class="insideAccordion">
         				<input type="checkbox" id="check-2" />
-        				<label for="check-2">Question 2</label>
+        				<label for="check-2" id="hhFAQ2">Question 2: Where can I change the websites settings?</label>
         				<article>
-        					<p>Lorem ipsum </p>
+        					<p id="hhFAQans2">You can change the various aspects of the website such as the theme and language in the settings menu.</p>
         				</article>
         			</div>
               <div class="insideAccordion">
         				<input type="checkbox" id="check-3" />
-        				<label for="check-3">Question 3</label>
+        				<label for="check-3" id="hhFAQ3">Question 3: I have further questions, where can I find support?</label>
         				<article>
-        					<p>Lorem ipsum </p>
+        					<p id="hhFAQans3"> You could find find further frequently asked questions by searching here: https://libraryanswers.northumbria.ac.uk/search/</p>
         				</article>
         			</div>
         		</section>
@@ -262,7 +264,11 @@ if(isset($_POST['submit'])) { //change
     </div>
   </div>
 
-
+  <script>
+      languageChange(); //changes the lanugage (default is english)
+      themeChange();
+      highContrast();
+  </script>
   <script>
   var modal1 = document.getElementById("firstModal");
   var btn1 = document.getElementById("hsButtonText");

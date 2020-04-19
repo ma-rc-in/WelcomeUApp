@@ -8,11 +8,11 @@ session_start();
   if(isset($_POST["submit"])){
     // Checking For Blank Fields..
     if($_POST["moduleID"]==""|){
-  
+
     } else {
           echo "No new anouncements at the moment";
     };
- 
+
 }
 ?>
 
@@ -25,9 +25,10 @@ session_start();
 
 </head>
 <body>
-    
+
 $module = $_POST['aaView']
-    
+
      </body>
 </html>
+
 

@@ -837,6 +837,10 @@ function themeChange() {
     var mmEnrolmentLogoBlocked = document.getElementById("mmEnrolmentLogoBlocked");
 
     //settings
+    var ssTextSecurity = document.getElementById("ssTextSecurity");
+    var ssTextNotifications = document.getElementById("ssTextNotifications");
+    var ssTextLanguage = document.getElementById("ssTextLanguage");
+    var ssTextContrast = document.getElementById("ssTextContrast");
     var stLogo = document.getElementById("stLogo");
     var stContainer = document.getElementById("stContainer");
     var securityBackground = document.getElementById("securityBackground");
@@ -926,6 +930,14 @@ function themeChange() {
         try {
             ssTextTheme.style.backgroundColor = "white";
             ssTextTheme.style.color = "black";
+            ssTextSecurity.style.backgroundColor = "white";
+            ssTextNotifications.style.backgroundColor = "white";
+            ssTextLanguage.style.backgroundColor = "white";
+            ssTextContrast.style.backgroundColor = "white";
+            ssTextSecurity.style.color = "black";
+            ssTextNotifications.style.color = "black";
+            ssTextLanguage.style.color = "black";
+            ssTextContrast.style.color = "black";
 
             stContainer.style.backgroundColor = "white";
             securityBackground.style.backgroundColor = "white";

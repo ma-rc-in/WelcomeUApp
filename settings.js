@@ -1070,5 +1070,42 @@ function highContrast() {
             gcTextPinCheck.style.color = "yellow";
             gcSubmitPin.style.color = "yellow";
         }catch (e) {}
+
+        // map
+        try {
+            mpSearch.placeholder.style.color = "yellow";
+        }catch (e) {}
+
+        //self enrollment
+        try {
+            eeTitleOne.style.color = "yellow";
+            eeStepOne.style.color = "yellow";
+            eesubmit.style.color = "yellow";
+        }catch (e) {}
+
+        //self enrollment - upload photo
+        try {
+            eeTitleTwo.style.color = "yellow";
+            eeStepTwo.style.color = "yellow";
+            eesubmitTwo.style.color = "yellow";
+        } catch (e) {}
+
+        //self enrollment form complete
+        try {
+            eeSuccess.style.color = "yellow";
+            eeComplete.style.color = "yellow";
+            eeLink.style.color = "yellow";
+        } catch (e) {}
+
+        //help services
+        try {
+            hhErrorTitle.style.color = "yellow";
+            hhEmail.style.color = "yellow";
+            hhQuery.style.color = "yellow";
+            hsButtonText.style.color = "yellow";
+            hsModalLabelText.style.color = "yellow";
+            submit.style.color = "yellow";
+        } catch (e) {
+        }
     }
 }

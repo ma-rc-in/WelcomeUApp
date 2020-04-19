@@ -67,6 +67,8 @@ if (isset($_POST['submit'])) {
                 //displays an error.
             }
         } else {
+            $ErrorMessage = "Incorrect Student ID or Password.";
+            $pwobject = "null";
             session_start();
             $_SESSION["LogInFail"] = "Yes";
         }

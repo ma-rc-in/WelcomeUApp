@@ -1345,6 +1345,7 @@ function highContrast() {
         }
 
         //userdashboard
+        try {
         udLogo.style.color = "orange";
         udimagepass.style.color = "orange";
         udTextHeaderPass.style.color = "orange";
@@ -1360,5 +1361,7 @@ function highContrast() {
         udButtonTextSecondBtn.style.color = "orange";
         udButtonTextThirdBtn.style.color = "orange";
         disabledText.style.color = "orange";
+        } catch (e) {
+        }
     }
 }

@@ -22,7 +22,7 @@ if (isset($_SESSION['sessionStudentID'])) { //requires functions
     $studentCourseID = $studentInfo['courseID'];//courseID
     $courseName = courseNameConversion($studentCourseID); //conversion for course ID
 
-    echo '.<Script> localStorage.setItem("pinCheck", "false"); //updates the pin check</Script>.';
+    echo '<Script> localStorage.setItem("pinCheck", "false"); //updates the pin check</Script>';
 
 } else { //return user to login
     header('Location:mainmenu.php');
@@ -32,7 +32,7 @@ if(isset($_POST['gcSubmitPin'])){
     $studentPin = $studentInfo['PIN'];//courseID
     $checkPin = $_POST['gcPinInput'];
     if (password_verify($checkPin, $studentPin)) {
-        echo '.<Script> localStorage.setItem("pinCheck", "true"); //updates the pin check</Script>.';
+        echo '<Script> localStorage.setItem("pinCheck", "true"); //updates the pin check</Script>';
     }
 }
 

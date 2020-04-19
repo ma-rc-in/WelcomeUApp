@@ -469,10 +469,10 @@ else
               tour.addSteps([
                   {
                       element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
-                      title: "SmartCard Balance", // string - title of the popover
+                      title: "学生卡余额", // string - title of the popover
                       placement: "bottom",
                       backdrop: true,
-                      content: "Users can view their smart card balance here." // string - content of the popover
+                      content: "用户可以在此查询学生卡余额。" // string - content of the popover
                   },
                   {
                       element: "#mmMapLogo",
@@ -518,10 +518,10 @@ else
                   },
                   {
                       element: "#mmLogoutLogo",
-                      title: "Logout",
+                      title: "登出",
                       placement: "top",
                       backdrop: true,
-                      content: "Users can click here to logout."
+                      content: "用户点击此处以登出。"
                   }
               ]);
           }

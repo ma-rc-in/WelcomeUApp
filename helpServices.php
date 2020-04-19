@@ -117,6 +117,10 @@ if(isset($_POST['submit'])) { //change
       color: white;
       font-family: Arial, sans-serif;
       font-size: 20px;
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
     }
 
     .popup .close {

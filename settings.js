@@ -1158,6 +1158,8 @@ function highContrast() {
         localStorage.setItem("textContrast", defaultText); //sets the default to off (needs to be enabled by the user)
     }
 
+    var theme = localStorage.getItem("theme");
+
     //main menu
     var mmSmartCardBalance = document.getElementById("mmSmartCardBalance");
     var mmBalance = document.getElementById("mmBalance");
@@ -1197,10 +1199,26 @@ function highContrast() {
     var gcTextPinCheck = document.getElementById("gcTextPinCheck");
     var gcSubmitPin = document.getElementById("gcSubmitPin");
 
-
+    //settings
+    var ssTextSecurity = document.getElementById("ssTextSecurity");
+    var stContainer = document.getElementById("stContainer");
+    var securityLogo = document.getElementById("securityLogo");
+    var ssButtonSecurity = document.getElementById("ssButtonSecurity");
+    var ssFirstBtn = document.getElementById("ssFirstBtn");
+    var ssSecondBtn = document.getElementById("ssSecondBtn");
+    var ssThirdBtn = document.getElementById("ssThirdBtn");
+    var ssFourthBtn = document.getElementById("ssFourthBtn");
+    var ssTextNotifications = document.getElementById("ssTextNotifications");
+    var ssTextContrast = document.getElementById("ssTextContrast");
+    var ssTextContrastModal = document.getElementById("ssTextContrastModal");
+    var ssTextTheme = document.getElementById("ssTextTheme");
+    var ssThemeDark = document.getElementById("ssThemeDark");
+    var ssThemeLight = document.getElementById("ssThemeLight");
+    var ssTextLanguage = document.getElementById("ssTextLanguage");
+    var ssTextModalNotifications = document.getElementById("ssTextModalNotifications");
 
     //TODO CHange
-    if (text == "on") {
+    if (text == "on" && theme == "dark") {
         //mainMenu
         try {
             try {
@@ -1225,17 +1243,17 @@ function highContrast() {
 
         //login
         try {
-            llWelcomeU.style.color = "orange";
-            llLoginMessage.style.color = "orange";
-            llsubmit.style.color = "orange";
+            llWelcomeU.style.color = "black";
+            llLoginMessage.style.color = "black";
+            llsubmit.style.color = "yellow";
         }catch (e) {}
 
         //groupChat
         try {
-            gcCourseNameEcho.style.color = "yellow";
+            gcCourseNameEcho.style.color = "black";
             courseNameTitleGroupChat.style.color = "black";
             yourMessageGroupChat.style.color = "yellow";
-            MessageContentBoxGroupChat.style.color = "yellow";
+            MessageContentBoxGroupChat.style.color = "black";
             reportButtonGroupChat.style.color = "yellow";
             sendButtonGroupChat.style.color = "yellow";
             reportUserGroupChat.style.color = "yellow";
@@ -1247,6 +1265,26 @@ function highContrast() {
             gcTextPinCheck.style.color = "yellow";
             gcSubmitPin.style.color = "yellow";
         }catch (e) {}
+
+        //settings
+        try {
+            ssTextSecurity.style.color = "yellow";
+            ssTextNotifications.style.color = "yellow";
+            ssTextLanguage.style.color = "yellow";
+            ssTextContrast.style.color = "yellow";
+            stContainer.style.color = "yellow";
+            securityLogo.style.color = "yellow";
+            ssButtonSecurity.style.color = "yellow";
+            ssTextTheme.style.color = "yellow";
+            ssFirstBtn.style.color = "yellow";
+            ssSecondBtn.style.color = "yellow";
+            ssThirdBtn.style.color = "yellow";
+            ssFourthBtn.style.color = "yellow";
+            ssTextContrastModal.style.color = "yellow";
+            ssThemeDark.style.color = "yellow";
+            ssThemeLight.style.color = "yellow";
+            ssTextModalNotifications.style.color = "yellow";
+        } catch (e) {}
 
         // map
         try {

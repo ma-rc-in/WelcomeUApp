@@ -46,6 +46,24 @@ if(isset($_POST['aaEdit'])) {
     $editID = $_POST['aaEdit'];
     echo '.<Script> localStorage.setItem("viewEdit", "true"); //used to load the page</Script>.';
 }
+
+if(isset($_POST['aaUpdate'])) {
+    $ID = $_POST['aaUpdate'];
+    $subject = $_POST['subjectEdit'];
+    $message = $_POST['messageEdit'];
+
+    $update = "UPDATE tbl_announcement SET announcementMessage=:message, announcementSubject=:subject WHERE announcementID=:ID";
+    $queryUpdate = $db->prepare($update);
+    $queryUpdate->bindParam('ID', $ID, PDO::PARAM_STR);
+    $queryUpdate->bindParam('subject', $subject, PDO::PARAM_STR);
+    $queryUpdate->bindParam('message', $message, PDO::PARAM_STR);
+    $queryUpdate->execute(array(":ID" => $ID, ":subject" => $subject, ":message" =>$message));
+
+    $view = true;
+    echo '.<Script> localStorage.setItem("viewCheck", "true"); //used to load the page</Script>.';
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -151,7 +169,7 @@ if(isset($_POST['aaEdit'])) {
             $studentidquery = "select courseID from tbl_student where studentID='$ID'";
             $student = $db->query($studentidquery);
             $row = $student->fetch(PDO::FETCH_ASSOC);
-            $courseID = $row['courseID'];
+            $CourseID = $row['courseID'];
 
             $coursequery = "select * from tbl_course where courseID='$CourseID'";
             $course = $db->query($coursequery);
@@ -242,6 +260,7 @@ if(isset($_POST['aaEdit'])) {
 
             <div class="modal-body">
                 <h4 class="formHeading" id="ssTextModalNotifications">Edit announcement.</h4>
+                <form action="announcementsLecturer.php" method="POST">
                 <div class="formPassWrapper">
                     <?php
                     if ($editID != ""){
@@ -249,36 +268,27 @@ if(isset($_POST['aaEdit'])) {
                         $annoucementIDGet = $db->prepare($query);
                         $annoucementIDGet->bindParam('announcementID', $editID, PDO::PARAM_STR);
                         $annoucementIDGet->execute(array(":announcementID" => $editID));
-                        $count = count($annoucementIDGet->fetchAll());
 
-                        if ($count > 0) {
-                            $annoucementGet->execute(array(":announcementID" => $editID));
-                            while ($row = $annoucementGet->fetchObject()) {
-                                $module = $row->moduleID;
-                                $subject = $row->announcementSubject;
-                                $message = $row->announcementMessage;
-                            }
-
-                        }else {
-                            echo "Please try again later.";
-                            $module = "";
-                            $subject = "";
-                            $message  = "";
-                        }
+                        $row = $annoucementIDGet->fetch(PDO::FETCH_ASSOC);
+                        $module = $row['moduleID'];
+                        $subject = $row['announcementSubject'];
+                        $message = $row['announcementMessage'];
                     }
                     ?>
 
                     <label for="Module"> Module </label>
-                    <input type="text" id="Module" name="ModuleEdit" value="<?php echo $module; ?> "readonly">
+                    <input type="text" id="Module" name="ModuleEdit" value="<?php echo $module; ?> " readonly>
 
                     <label for="subject"> Subject </label>
                     <input type="text" id="subject" name="subjectEdit" value="<?php echo $subject; ?>" placeholder="Type a subject..">
 
                     <label for="message">Message</label>
-                    <textarea id="message" name="messageEdit" placeholder="Type your message.." value="<?php echo $message; ?>"  style="height:200px"></textarea>
+                    <textarea id="message" name="messageEdit" placeholder="Type your message.." style="height:200px"><?php echo $message; ?></textarea>
 
-                    <input type="submit" value="Submit" name="submitEdit">
+
+                    <button class="adminButtons" type="submit" name="aaUpdate" id="aaUpdate" value="<?php echo $editID ?>"> Update </button>
                 </div>
+                </form>
             </div>
         </div>
     </div>

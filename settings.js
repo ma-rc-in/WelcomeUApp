@@ -958,6 +958,15 @@ function themeChange() {
     var aaStudentHeading = document.getElementById("aaStudentHeading");
     var limiter = document.getElementById("limiter");
 
+    //announcementsLecturer
+    var udLogo = document.getElementById("udLogo");
+    var gcBack  = document.getElementById("gcBack");
+    var alContainer = document.getElementById("alContainer");
+    var alTextFillForm = document.getElementById("alTextFillForm");
+    var alTextModule = document.getElementById("alTextModule");
+    var alTextSubject = document.getElementById("alTextSubject");
+    var alTextMessage  = document.getElementById("alTextMessage");
+
     //groupChat
     var gcBack= document.getElementById("gcBack");
     var gcLogo = document.getElementById("gcLogo");
@@ -1132,6 +1141,18 @@ function themeChange() {
             asContainer.style.backgroundColor = "white";
             asBack.src="images/backBlack.png";
 
+        } catch (e) {}
+
+        //announcementsLecturer
+        try {
+            udLogo.src="images/logoBlack.png";
+            gcBack.src="images/backBlack.png";
+            alContainer.style.backgroundColor = "grey";
+
+            alTextFillForm.style.color = "white";
+            alTextModule.style.color = "white";
+            alTextSubject.style.color = "white";
+            alTextMessage.style.color = "white";
         } catch (e) {}
 
         //GroupChat

@@ -667,7 +667,7 @@ function languageChange() {
 
         //announcement student
         try {
-            aaStudentHeading.innerHTML = "Please select the module";
+            aaStudentHeading.innerHTML = "Wybierz przedmiot";
         }catch (e) {}
 
         //TODO

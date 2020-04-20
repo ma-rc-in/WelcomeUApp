@@ -126,7 +126,7 @@ if (isset($_POST['viewModule'])) {
     </head>
     <body>
     <div class="patch-container" id="asContainer">
-    <div class="limiter" id="limiter">  <!--TODO CHANGE-->
+    <div class="limiter" id="limiter">
     <div class="logoDiv">
     <div class="goBackButton"><a href="mainmenu.php"><img id="asBack" src="images/back.png" class="goBackIcon"></a></div>
     <div class="logoChatWrapper">

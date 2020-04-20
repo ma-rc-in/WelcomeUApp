@@ -43,7 +43,6 @@ if (isset($_POST['submit'])) //when the user submits their message
     $Message = $_POST['formMessage'];//message is assigned to what the user writes
     if (strlen($Message) >= 500) { //if more than 255 characters
         // user has too many characters
-        //TODO ERROR MESSAGE
     } else {
         $senderStudentID = $studentID;
         $query = "INSERT INTO tbl_groupChat(chatRoomName, chatMessage, senderStudentID) VALUES (:chatName, :chatMessage, :senderStudentID)";
@@ -66,7 +65,6 @@ if (isset($_POST['submitReport'])) //when the user submits their message
 
     if (strlen($reportComment) >= 500) { //if more than 255 charaters
         // user has too many characters
-        //TODO ERROR MESSAGE
     } else {
         $query = "INSERT INTO tbl_report (reportType, reportedStudentID, reportComment, reporterStudentID)
         VALUES (:reportType, :reportedStudentID, :reportComment, :reporterStudentID)";
@@ -78,7 +76,6 @@ if (isset($_POST['submitReport'])) //when the user submits their message
         $groupChatInsert->execute(array(":reportType" => $reportType, ":reportedStudentID" =>$reportedStudentID, ":reportComment" => $reportComment, ":reporterStudentID" => $reporterStudentID));
         echo '.<Script> localStorage.setItem("pinCheck", "true"); //updates the pin check</Script>.';
 
-        //TODO SUCCESS MESSAGE
         echo '.<Script> alert("Your report has been submitted."); </Script>.';
     }
 }

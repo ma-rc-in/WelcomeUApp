@@ -520,7 +520,6 @@ function languageChange() {
             commentGroupChat.placeholder = "Podaj więcej szczegółów dotyczących zgłoszenia:";
             reportSubmitGroupChat.value = "Wyślij";
 
-            //TODO
             gcPinText.innerHTML = "Weryfikacja PINu";
             gcTextPinCheck.innerHTML = "Zweryfikuj swój PIN, aby kontynuować:";
             gcPinInput.placeholder = "Wprowadź swój PIN";
@@ -714,7 +713,6 @@ function languageChange() {
             aaStudentHeading.innerHTML = "Wybierz przedmiot";
         }catch (e) {}
 
-        //TODO
         //announcement lecturer
         try {
             alTextFillForm.innerHTML = "Wypełnij poniższy formularz";
@@ -773,7 +771,6 @@ function languageChange() {
                 commentGroupChat.placeholder = "请在这里评论:";
                 reportSubmitGroupChat.value = "发送";
 
-                //TODO
                 gcPinText.innerHTML = "PIN码确认";
                 gcTextPinCheck.innerHTML = "请确认PIN码以继续:";
                 gcPinInput.placeholder = "输入你的PIN码";
@@ -931,7 +928,6 @@ function languageChange() {
             } catch (e) {
             }
 
-            //TODO sorry
             //announcement student
             try {
                 aaStudentHeading.innerHTML = "请选择模块";

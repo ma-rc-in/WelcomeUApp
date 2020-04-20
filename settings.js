@@ -535,7 +535,8 @@ function languageChange() {
             llStudentID.placeholder = "ID studenta";
             llPassword.placeholder = "Hasło";
             llsubmit.value = "Wyślij";
-            llcookieset.innerHTML = "Zapamiętać nazwę użytkownika?";
+            llcookieset.innerHTML = "Zapamiętać nazwę?";
+            llforgotPassLabel.innerHTML = "Zresetuj hasło";
             capsLockInfo.innerHTML = "*Caps Lock jest włączony*";
             cookiewarning.innerHTML = "Ta strona używa Ciasteczek oraz Javascript local storage w celu polepszenia odbioru funkcjonalności strony.";
             mmCookieMoreInfo.innerHTML = "Więcej informacji";
@@ -548,6 +549,33 @@ function languageChange() {
             mminfo5.innerHTML = "Zapisania niektórych ustawień i personalizacji, np. motywów czy wyświetlanego języka.";
             mmCookieButtonClose.innerHTML = "Zamknij";
 
+        } catch (e) {
+        }
+
+        //help services
+        try {
+            hhErrorTitle.innerHTML = "Błąd";
+            hhErrorMsg.innerHTML = "W związku z ograniczeniami technicznymi, hasło może być jedynie zresetowane przez administratora strony.<br>Użyj formularza kontaktowego, aby skontaktować się z administracją i zresetować swoje hasło.";
+            hhEmail.innerHTML = "Adres Email studenta:";
+            hhQuery.innerHTML = "Twoja wiadomość:";
+            hhQueryInput.placeholder = "Treść twojej wiadomość...";
+            hsButtonText.innerHTML = "Zobacz FAQ";
+            hsModalLabelText.innerHTML = "FAQ";
+            hhFAQ1.innerHTML = "Pytanie 1: Jak zresetować hasło?";
+            hhFAQ2.innerHTML = "Pytanie 2: Gdzie mogę zmienić ustawienia??";
+            hhFAQ3.innerHTML = "Pytanie 3: W przypadku pytań, gdzie mogę uzyskać informacje?";
+            hhFAQans1.innerHTML = "Możesz zresetować swojege hasło za pomocą formularza kontaktowego w zakładce Wsparcie.";
+            hhFAQans2.innerHTML = "Możesz zmienić różnorakie ustawienia w zakładce Ustawienia";
+            hhFAQans3.innerHTML = "Możesz znaleźć więcej informacji pod tym adresem: https://libraryanswers.northumbria.ac.uk/search/";
+            submit.value = "Wyślij";
+            hhContactBtn.innerHTML = "Skontaktuj się";
+            hsModalLabelText2.innerHTML = "Kontakt ze wsparciem";
+            hhContact1.innerHTML = "Wsparcie generalne";
+            hhContact2.innerHTML = "Wsparcie finansowe";
+            hhContact3.innerHTML = "Wsparcie prawnicze";
+            hhContact1c.innerHTML = "0191 227 4646 | ask4help@northumbria.ac.uk";
+            hhContact2c.innerHTML = "0191 227 4050 | ask4help@northumbria.ac.uk";
+            hhContact3c.innerHTML = "0191 4060901 | bc.applicantservices@northumbria.ac.uk";
         } catch (e) {
         }
 

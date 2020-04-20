@@ -249,7 +249,7 @@ function languageChange() {
     //announcements student
     var aaStudentHeading = document.getElementById("aaStudentHeading");
 
-    //announcements student
+    //announcements lecturer
     var alTextFillForm = document.getElementById("alTextFillForm");
     var alTextModule  = document.getElementById("alTextModule");
     var alTextSubject  = document.getElementById("alTextSubject");
@@ -275,14 +275,6 @@ function languageChange() {
             annoucementsMenu.innerHTML = "Annoucements";
             enrolmentMenu.innerHTML = "Self Enrolment";
             settingsMenu.innerHTML = "Settings";
-
-            mmTextHeadermainMenuModal.innerHTML = "User Guide";
-            mmHelpMap.innerHTML = "Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.";
-            mmHelpGroupChat.innerHTML = "Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.";
-            mmHelpHelp.innerHTML = "Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.";
-            mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
-            mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
-            mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
         } catch (e) {
         }
 
@@ -496,14 +488,6 @@ function languageChange() {
             annoucementsMenu.innerHTML = "Ogłoszenia";
             enrolmentMenu.innerHTML = "Rejestracja";
             settingsMenu.innerHTML = "Ustawienia";
-
-            mmTextHeadermainMenuModal.innerHTML = "User Guide";
-            mmHelpMap.innerHTML = "Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.";
-            mmHelpGroupChat.innerHTML = "Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.";
-            mmHelpHelp.innerHTML = "Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.";
-            mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
-            mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
-            mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
             try {
                 mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
             } catch (e) {}
@@ -712,15 +696,8 @@ function languageChange() {
                 annoucementsMenu.innerHTML = "通知";
                 enrolmentMenu.innerHTML = "自助注册";
                 settingsMenu.innerHTML = "设置";
-
-                mmTextHeadermainMenuModal.innerHTML = "用户导航";
-                mmHelpMap.innerHTML = "地图 - 用户可以搜索诺森比亚大学纽卡斯尔校区以获得到他们的目的地的指南和方向。";
-                mmHelpGroupChat.innerHTML = "群聊 - 学生可以使用群组聊天功能与课程上的其他学生联系，在群聊界面里学生可以互相发送信息。";
-                mmHelpHelp.innerHTML = "帮助 - 用户可以通过提交查询、查看最常见的问题和与我们的聊天机器人请求帮助来获得解决办法。";
-                mmHelpAnnouncements.innerHTML = "通知 - 学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。";
-                mmHelpEnrolment.innerHTML = "自助注册 - 学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。";
-                mmHelpSettings.innerHTML = "设置 - 用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。";
                 try {
+
                     mmSmartCardBalance.innerHTML = "学生卡余额";
                 } catch (e) {
                 }
@@ -1049,6 +1026,9 @@ function themeChange() {
     var alTextModule  = document.getElementById("alTextModule");
     var alTextSubject  = document.getElementById("alTextSubject");
     var alTextMessage  = document.getElementById("alTextMessage");
+    var alsubmit = document.getElementById("alsubmit");
+    var aleditSubmit = document.getElementById("aleditSubmit");
+
 
     //groupChat
     var gcBack= document.getElementById("gcBack");
@@ -1238,6 +1218,8 @@ function themeChange() {
             alTextModule.style.color = "white";
             alTextSubject.style.color = "white";
             alTextMessage.style.color = "white";
+            alsubmit.style.backgroundColor = "darkgrey";
+            aleditSubmit.style.backgroundColor = rgba(20, 20, 20, 0.6);
         } catch (e) {}
 
         //GroupChat
@@ -1466,6 +1448,21 @@ function highContrast() {
     var aaStudentHeading = document.getElementById("aaStudentHeading");
     var adminButtons = document.getElementsByClassName('adminButtons');
 
+    //announcements lecturer
+    var alTextFillForm = document.getElementById("alTextFillForm");
+    var alTextModule  = document.getElementById("alTextModule");
+    var alTextSubject  = document.getElementById("alTextSubject");
+    var alTextMessage = document.getElementById("alTextMessage");
+    var alsubmit = document.getElementById("alsubmit");
+    var aleditSubmit = document.getElementById("aleditSubmit");
+    var adminButtons = document.getElementsByClassName("adminButtons");
+    var editModule = document.getElementById("editModule");
+    var editSubject = document.getElementById("editSubject");
+    var editMessage = document.getElementById("editMessage");
+    var aaUpdate = document.getElementById("aaUpdate");
+    var ssTextModalNotifications = document.getElementById("ssTextModalNotifications");
+    var ssTextModalNotificationsEdit = document.getElementById("ssTextModalNotificationsEdit");
+
     if (text == "on" && theme == "dark") {
         //mainMenu
         try {
@@ -1615,6 +1612,27 @@ function highContrast() {
             adminButtons[6].style.color = "orange";
             adminButtons[7].style.color = "orange";
             ssTextModalNotifications.style.color = "orange";
+        } catch (e) {}
+
+        //annoucement lecturer
+        try {
+            alTextFillForm.style.color = "orange";
+            alTextModule.style.color = "orange";
+            alTextSubject.style.color = "orange";
+            alTextMessage.style.color = "orange";
+            alsubmit.style.color = "grey";
+            aleditSubmit.style.color = "grey";
+            var x, i;
+            x = document.querySelectorAll(".adminButtons");
+            for (i = 0; i < x.length; i++) {
+                adminButtons[i].style.color = "orange";
+            }
+            editModule.style.color = "orange";
+            editSubject.style.color = "orange";
+            editMessage.style.color = "orange";
+            aaUpdate.style.color = "orange";
+            ssTextModalNotifications.style.color = "orange";
+            ssTextModalNotificationsEdit.style.color = "orange";
         } catch (e) {}
     }
 }

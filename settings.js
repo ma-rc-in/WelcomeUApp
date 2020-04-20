@@ -686,7 +686,7 @@ function languageChange() {
                 llStudentID.placeholder = "学生ID";
                 llPassword.placeholder = "密码";
                 llsubmit.value = "提交";
-                llforgotPassLabel.innerHTML = "Forgot Password?";
+                llforgotPassLabel.innerHTML = "忘记密码?";
 
                 llcookieset.innerHTML = "是否记住用户名？";
                 capsLockInfo.innerHTML = "*注意你的登录名和密码，大写锁定开启*";

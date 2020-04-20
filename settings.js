@@ -362,9 +362,9 @@ function languageChange() {
             ssTextSecurity.innerHTML = "Security settings";
             ssButtonSecurity.innerHTML = "Change";
             ssTextNotifications.innerHTML = "Notifications settings";
-            ssFirstBtn.innerHTML = "notifications settings";
+            ssFirstBtn.innerHTML = "Notifications settings";
             ssTextLanguage.innerHTML = "Change language";
-            ssSecondBtn.innerHTML = "language";
+            ssSecondBtn.innerHTML = "Language";
             ssTextModalNotifications.innerHTML = "Enable notification alert sound?";
             ssTextTheme.innerHTML = "Change theme";
             ssThirdBtn.innerHTML = "Change theme";
@@ -655,7 +655,7 @@ function languageChange() {
             udaButtonTextSecondBtn.innerHTML = "Typ dostępu";
             udaTextHeaderBan.innerHTML = "Zablokuj konto użytkownika";
             udaButtonTextThirdBtn.innerHTML = "Zablokuj";
-            udaTextHeaderBanUserModal.innerHTML = "Przycisk 'Oddal' może być użyty do oddalenia zgłoszenia <br><br> PRzycisk 'Zawieś' może być użyty do zablokowania konto zgłoszonego użytkownika";
+            udaTextHeaderBanUserModal.innerHTML = "Przycisk 'Dismiss' może być użyty do oddalenia zgłoszenia <br><br> Przycisk 'Suspend' może być użyty do zablokowania konto zgłoszonego użytkownika";
             udaTextHeaderAccessTypeModal.innerHTML = "Typ dostępu";
             udaTextHeaderBanUserModal1.innerHTML = "Wybierz ID użytkownika, którego chcesz zablokować";
 

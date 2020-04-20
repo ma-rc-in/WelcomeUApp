@@ -958,6 +958,11 @@ function themeChange() {
     var aaStudentHeading = document.getElementById("aaStudentHeading");
     var limiter = document.getElementById("limiter");
 
+    //announcementsStudent
+    var anlContainer = document.getElementById("anlContainer");
+    var alImage  = document.getElementById("alImage");
+    var alBack  = document.getElementById("alBack");
+
     //groupChat
     var gcBack= document.getElementById("gcBack");
     var gcLogo = document.getElementById("gcLogo");
@@ -1131,6 +1136,15 @@ function themeChange() {
             asImage.src="images/logoBlack.png";
             asContainer.style.backgroundColor = "white";
             asBack.src="images/backBlack.png";
+
+        } catch (e) {}
+
+        //announcementsLecturer
+        try {
+
+            alImage.src="images/logoBlack.png";
+            anlContainer.style.backgroundColor = "white";
+            alBack.src="images/backBlack.png";
 
         } catch (e) {}
 

@@ -249,7 +249,7 @@ function languageChange() {
     //announcements student
     var aaStudentHeading = document.getElementById("aaStudentHeading");
 
-    //announcements student
+    //announcements lecturer
     var alTextFillForm = document.getElementById("alTextFillForm");
     var alTextModule  = document.getElementById("alTextModule");
     var alTextSubject  = document.getElementById("alTextSubject");
@@ -275,14 +275,6 @@ function languageChange() {
             annoucementsMenu.innerHTML = "Annoucements";
             enrolmentMenu.innerHTML = "Self Enrolment";
             settingsMenu.innerHTML = "Settings";
-
-            mmTextHeadermainMenuModal.innerHTML = "User Guide";
-            mmHelpMap.innerHTML = "Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.";
-            mmHelpGroupChat.innerHTML = "Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.";
-            mmHelpHelp.innerHTML = "Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.";
-            mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
-            mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
-            mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
         } catch (e) {
         }
 
@@ -678,6 +670,7 @@ function languageChange() {
             aaStudentHeading.innerHTML = "Please select the module";
         }catch (e) {}
 
+        //TODO
         //announcement lecturer
         try {
             alTextFillForm.innerHTML = "Wypełnij poniższy formularz";
@@ -699,6 +692,7 @@ function languageChange() {
             aaUpdate.innerHTML = "Zaktualizuj";
         } catch (e) {}
     }
+
         //Chinese
         if (language == "Chinese") {
             //Main Menu
@@ -710,17 +704,11 @@ function languageChange() {
                 annoucementsMenu.innerHTML = "通知";
                 enrolmentMenu.innerHTML = "自助注册";
                 settingsMenu.innerHTML = "设置";
-
-                mmTextHeadermainMenuModal.innerHTML = "用户导航";
-                mmHelpMap.innerHTML = "地图 - 用户可以搜索诺森比亚大学纽卡斯尔校区以获得到他们的目的地的指南和方向。";
-                mmHelpGroupChat.innerHTML = "群聊 - 学生可以使用群组聊天功能与课程上的其他学生联系，在群聊界面里学生可以互相发送信息。";
-                mmHelpHelp.innerHTML = "帮助 - 用户可以通过提交查询、查看最常见的问题和与我们的聊天机器人请求帮助来获得解决办法。";
-                mmHelpAnnouncements.innerHTML = "通知 - 学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。";
-                mmHelpEnrolment.innerHTML = "自助注册 - 学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。";
-                mmHelpSettings.innerHTML = "设置 - 用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。";
                 try {
-                mmSmartCardBalance.innerHTML = "学生卡余额";
-                } catch (e) {}
+
+                    mmSmartCardBalance.innerHTML = "学生卡余额";
+                } catch (e) {
+                }
             } catch (e) {
             }
             //groupchat
@@ -862,7 +850,7 @@ function languageChange() {
             //userDashboardAdmin
             try {
                 udaTextHeaderReports.innerHTML = "查看报告";
-                udaButtonTextFirstBtn.innerHTML  = "查看";
+                udaButtonTextFirstBtn.innerHTML = "查看";
                 udaTextHeaderAccessType.innerHTML = "分配访问类型";
                 udaButtonTextSecondBtn.innerHTML = "分配类型";
                 udaTextHeaderBan.innerHTML = "禁止用户帐户";
@@ -870,12 +858,14 @@ function languageChange() {
                 udaTextHeaderBanUserModal.innerHTML = "'Dismiss'按钮可以用来拒绝一个报告，这样它就不会显示得更久。 <br><br>'Suspend'按钮将阻止报告的ID用户，这样用户将不再能够登录。";
                 udaTextHeaderAccessTypeModal.innerHTML = "访问类型";
                 udaTextHeaderBanUserModal1.innerHTML = "请选择您希望禁止的用户ID:";
-            }catch (e) {}
+            } catch (e) {
+            }
 
             //map
             try {
                 mpSearch.placeholder = "输入 Northumbria...";
-            } catch (e) {}
+            } catch (e) {
+            }
 
             //help services
             try {
@@ -883,6 +873,7 @@ function languageChange() {
                 hhErrorMsg.innerHTML = "由于技术限制，只能由我们的管理员重置密码。 <br>请使用表格联系管理员，以重置密码。";
                 hhEmail.innerHTML = "学生电子邮件地址：";
                 hhQuery.innerHTML = "您的提问：";
+                hhContactBtn.innerHTML = "联系我们";
                 hhQueryInput.placeholder = "在这请写下你的提问...";
                 hsButtonText.innerHTML = "查看常见问题";
                 hsModalLabelText.innerHTML = "常见问题";
@@ -893,35 +884,37 @@ function languageChange() {
                 hhFAQans2.innerHTML = "您可以在设置菜单中更改网站的各个方面，例如主题和语言。";
                 hhFAQans3.innerHTML = "您可以在这里搜索找到更多的常见问题: https://libraryanswers.northumbria.ac.uk/search/";
                 submit.value = "提交";
-            } catch (e) {}
+            } catch (e) {
+            }
 
             //TODO sorry
             //announcement student
             try {
-                aaStudentHeading.innerHTML = "Please select the module";
-            }catch (e) {}
+                aaStudentHeading.innerHTML = "请选择模块";
+            } catch (e) {
+            }
 
             //announcement lecturer
             try {
-                alTextFillForm.innerHTML = "Please fill in the form below:";
-                alTextModule.innerHTML = "Module Code";
-                alTextSubject.innerHTML = "Subject";
-                alTextMessage.innerHTML = "Message";
-                alsubmit.value = "Submit";
-                aleditSubmit.value = "Edit Announcements";
-                ssTextModalNotifications.innerHTML = "Select announcement to change.";
+                alTextFillForm.innerHTML = "请填写以下表格:";
+                alTextModule.innerHTML = "模块代码";
+                alTextSubject.innerHTML = "科目";
+                alTextMessage.innerHTML = "消息";
+                alsubmit.value = "提交";
+                aleditSubmit.value = "编辑通知";
+                ssTextModalNotifications.innerHTML = "选择通知以编辑。";
                 var x, i;
                 x = document.querySelectorAll(".adminButtons");
                 for (i = 0; i < x.length; i++) {
-                    adminButtons[i].innerHTML = "Edit";
+                    adminButtons[i].innerHTML = "编辑";
                 }
-                ssTextModalNotificationsEdit.innerHTML = "Edit announcement.";
-                editModule.innerHTML = "Module";
-                editSubject.innerHTML = "Subject";
-                editMessage.innerHTML = "Message";
-                aaUpdate.innerHTML = "Update";
-            } catch (e) {}
-
+                ssTextModalNotificationsEdit.innerHTML = "编辑通知";
+                editModule.innerHTML = "模块";
+                editSubject.innerHTML = "科目";
+                editMessage.innerHTML = "消息";
+                aaUpdate.innerHTML = "更新";
+            } catch (e) {
+            }
         }
 }
 
@@ -1042,6 +1035,9 @@ function themeChange() {
     var alTextModule  = document.getElementById("alTextModule");
     var alTextSubject  = document.getElementById("alTextSubject");
     var alTextMessage  = document.getElementById("alTextMessage");
+    var alsubmit = document.getElementById("alsubmit");
+    var aleditSubmit = document.getElementById("aleditSubmit");
+
 
     //groupChat
     var gcBack= document.getElementById("gcBack");
@@ -1231,6 +1227,8 @@ function themeChange() {
             alTextModule.style.color = "white";
             alTextSubject.style.color = "white";
             alTextMessage.style.color = "white";
+            alsubmit.style.backgroundColor = "darkgrey";
+            aleditSubmit.style.backgroundColor = rgba(20, 20, 20, 0.6);
         } catch (e) {}
 
         //GroupChat
@@ -1459,6 +1457,21 @@ function highContrast() {
     var aaStudentHeading = document.getElementById("aaStudentHeading");
     var adminButtons = document.getElementsByClassName('adminButtons');
 
+    //announcements lecturer
+    var alTextFillForm = document.getElementById("alTextFillForm");
+    var alTextModule  = document.getElementById("alTextModule");
+    var alTextSubject  = document.getElementById("alTextSubject");
+    var alTextMessage = document.getElementById("alTextMessage");
+    var alsubmit = document.getElementById("alsubmit");
+    var aleditSubmit = document.getElementById("aleditSubmit");
+    var adminButtons = document.getElementsByClassName("adminButtons");
+    var editModule = document.getElementById("editModule");
+    var editSubject = document.getElementById("editSubject");
+    var editMessage = document.getElementById("editMessage");
+    var aaUpdate = document.getElementById("aaUpdate");
+    var ssTextModalNotifications = document.getElementById("ssTextModalNotifications");
+    var ssTextModalNotificationsEdit = document.getElementById("ssTextModalNotificationsEdit");
+
     if (text == "on" && theme == "dark") {
         //mainMenu
         try {
@@ -1608,6 +1621,27 @@ function highContrast() {
             adminButtons[6].style.color = "orange";
             adminButtons[7].style.color = "orange";
             ssTextModalNotifications.style.color = "orange";
+        } catch (e) {}
+
+        //annoucement lecturer
+        try {
+            alTextFillForm.style.color = "orange";
+            alTextModule.style.color = "orange";
+            alTextSubject.style.color = "orange";
+            alTextMessage.style.color = "orange";
+            alsubmit.style.color = "grey";
+            aleditSubmit.style.color = "grey";
+            var x, i;
+            x = document.querySelectorAll(".adminButtons");
+            for (i = 0; i < x.length; i++) {
+                adminButtons[i].style.color = "orange";
+            }
+            editModule.style.color = "orange";
+            editSubject.style.color = "orange";
+            editMessage.style.color = "orange";
+            aaUpdate.style.color = "orange";
+            ssTextModalNotifications.style.color = "orange";
+            ssTextModalNotificationsEdit.style.color = "orange";
         } catch (e) {}
     }
 }

@@ -792,15 +792,15 @@ function languageChange() {
 
             //userDashboardAdmin
             try {
-                udaTextHeaderReports.innerHTML = "View reports";
-                udaButtonTextFirstBtn.innerHTML  = "View";
-                udaTextHeaderAccessType.innerHTML = "Assign access type";
-                udaButtonTextSecondBtn.innerHTML = "Assign type";
-                udaTextHeaderBan.innerHTML = "Ban user accounts";
-                udaButtonTextThirdBtn.innerHTML = "Ban";
-                udaTextHeaderBanUserModal.innerHTML = "The 'Dismiss' button can be used to reject a report so that it will not be longer displayed. <br><br>The 'Suspend' button will block the reported ID user so that the user will no longer be able to log in.";
-                udaTextHeaderAccessTypeModal.innerHTML = "Access Type";
-                udaTextHeaderBanUserModal1.innerHTML = "Please select the users ID you wish to Ban:";
+                udaTextHeaderReports.innerHTML = "查看报告";
+                udaButtonTextFirstBtn.innerHTML  = "查看";
+                udaTextHeaderAccessType.innerHTML = "分配访问类型";
+                udaButtonTextSecondBtn.innerHTML = "分配类型";
+                udaTextHeaderBan.innerHTML = "禁止用户帐户";
+                udaButtonTextThirdBtn.innerHTML = "禁止";
+                udaTextHeaderBanUserModal.innerHTML = "'Dismiss'按钮可以用来拒绝一个报告，这样它就不会显示得更久。 <br><br>'Suspend'按钮将阻止报告的ID用户，这样用户将不再能够登录。";
+                udaTextHeaderAccessTypeModal.innerHTML = "访问类型";
+                udaTextHeaderBanUserModal1.innerHTML = "请选择您希望禁止的用户ID:";
             }catch (e) {}
 
             //map

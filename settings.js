@@ -700,7 +700,7 @@ function languageChange() {
             aaUpdate.innerHTML = "Update";
         } catch (e) {}
     }
-    }
+
         //Chinese
         if (language == "Chinese") {
             //Main Menu
@@ -721,8 +721,9 @@ function languageChange() {
                 mmHelpEnrolment.innerHTML = "自助注册 - 学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。";
                 mmHelpSettings.innerHTML = "设置 - 用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。";
                 try {
-                mmSmartCardBalance.innerHTML = "学生卡余额";
-                } catch (e) {}
+                    mmSmartCardBalance.innerHTML = "学生卡余额";
+                } catch (e) {
+                }
             } catch (e) {
             }
             //groupchat
@@ -864,7 +865,7 @@ function languageChange() {
             //userDashboardAdmin
             try {
                 udaTextHeaderReports.innerHTML = "查看报告";
-                udaButtonTextFirstBtn.innerHTML  = "查看";
+                udaButtonTextFirstBtn.innerHTML = "查看";
                 udaTextHeaderAccessType.innerHTML = "分配访问类型";
                 udaButtonTextSecondBtn.innerHTML = "分配类型";
                 udaTextHeaderBan.innerHTML = "禁止用户帐户";
@@ -872,7 +873,8 @@ function languageChange() {
                 udaTextHeaderBanUserModal.innerHTML = "'Dismiss'按钮可以用来拒绝一个报告，这样它就不会显示得更久。 <br><br>'Suspend'按钮将阻止报告的ID用户，这样用户将不再能够登录。";
                 udaTextHeaderAccessTypeModal.innerHTML = "访问类型";
                 udaTextHeaderBanUserModal1.innerHTML = "请选择您希望禁止的用户ID:";
-            }catch (e) {}
+            } catch (e) {
+            }
 
             //map
             try {
@@ -902,31 +904,31 @@ function languageChange() {
             //TODO sorry
             //announcement student
             try {
-                aaStudentHeading.innerHTML = "Please select the module";
-            }catch (e) {}
+                aaStudentHeading.innerHTML = "请选择模块";
+            } catch (e) {
+            }
 
             //announcement lecturer
             try {
-                alTextFillForm.innerHTML = "Please fill in the form below:";
-                alTextModule.innerHTML = "Module Code";
-                alTextSubject.innerHTML = "Subject";
-                alTextMessage.innerHTML = "Message";
-                alsubmit.value = "Submit";
-                aleditSubmit.value = "Edit Announcements";
-                ssTextModalNotifications.innerHTML = "Select announcement to change.";
+                alTextFillForm.innerHTML = "请填写以下表格:";
+                alTextModule.innerHTML = "模块代码";
+                alTextSubject.innerHTML = "科目";
+                alTextMessage.innerHTML = "消息";
+                alsubmit.value = "提交";
+                aleditSubmit.value = "编辑通知";
+                ssTextModalNotifications.innerHTML = "选择通知以编辑。";
                 var x, i;
                 x = document.querySelectorAll(".adminButtons");
                 for (i = 0; i < x.length; i++) {
-                    adminButtons[i].innerHTML = "Edit";
+                    adminButtons[i].innerHTML = "编辑";
                 }
-                ssTextModalNotificationsEdit.innerHTML = "Edit announcement.";
-                editModule.innerHTML = "Module";
-                editSubject.innerHTML = "Subject";
-                editMessage.innerHTML = "Message";
-                aaUpdate.innerHTML = "Update";
-            } catch (e) {}
-        }
-
+                ssTextModalNotificationsEdit.innerHTML = "编辑通知";
+                editModule.innerHTML = "模块";
+                editSubject.innerHTML = "科目";
+                editMessage.innerHTML = "消息";
+                aaUpdate.innerHTML = "更新";
+            } catch (e) {
+            }
         }
 }
 

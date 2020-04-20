@@ -1125,9 +1125,7 @@ function themeChange() {
         } catch (e) {}
 
         //announcementsStudent
-        alert("here");
         try {
-
             aaStudentHeading.style.color = "black";
             limiter.style.backgroundColor = "white";
             asImage.src="images/logoBlack.png";

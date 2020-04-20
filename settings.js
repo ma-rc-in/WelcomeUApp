@@ -951,6 +951,13 @@ function themeChange() {
     var llWelcomeU = document.getElementById("llWelcomeU");
     var llLoginMessage  = document.getElementById("llLoginMessage");
 
+    //announcementsStudent
+    var asContainer = document.getElementById("asContainer");
+    var asImage  = document.getElementById("asImage");
+    var asBack  = document.getElementById("asBack");
+    var aaStudentHeading = document.getElementById("aaStudentHeading");
+    var limiter = document.getElementById("limiter");
+
     //groupChat
     var gcBack= document.getElementById("gcBack");
     var gcLogo = document.getElementById("gcLogo");
@@ -1115,6 +1122,18 @@ function themeChange() {
             llLoginMessage.style.backgroundColor = "black";
             llWelcomeU.style.color = "white";
             llLoginMessage.style.color = "white";
+        } catch (e) {}
+
+        //announcementsStudent
+        alert("here");
+        try {
+
+            aaStudentHeading.style.color = "black";
+            limiter.style.backgroundColor = "white";
+            asImage.src="images/logoBlack.png";
+            asContainer.style.backgroundColor = "white";
+            asBack.src="images/backBlack.png";
+
         } catch (e) {}
 
         //GroupChat

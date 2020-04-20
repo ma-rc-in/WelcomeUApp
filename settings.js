@@ -647,6 +647,20 @@ function languageChange() {
         } catch (e) {
         }
 
+        //userDashboardAdmin
+        try {
+            udaTextHeaderReports.innerHTML = "Zobacz zgłoszenia";
+            udaButtonTextFirstBtn.innerHTML  = "Zobacz";
+            udaTextHeaderAccessType.innerHTML = "Przydziel dostęp";
+            udaButtonTextSecondBtn.innerHTML = "Typ dostępu";
+            udaTextHeaderBan.innerHTML = "Zablokuj konto użytkownika";
+            udaButtonTextThirdBtn.innerHTML = "Zablokuj";
+            udaTextHeaderBanUserModal.innerHTML = "Przycisk 'Oddal' może być użyty do oddalenia zgłoszenia <br><br> PRzycisk 'Zawieś' może być użyty do zablokowania konto zgłoszonego użytkownika";
+            udaTextHeaderAccessTypeModal.innerHTML = "Typ dostępu";
+            udaTextHeaderBanUserModal1.innerHTML = "Wybierz ID użytkownika, którego chcesz zablokować";
+
+        }catch (e) {}
+
         //selfEnrolmentForm
         try {
             eeTitleOne.innerHTML = "Formularz rejerstracji";

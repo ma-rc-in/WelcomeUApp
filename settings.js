@@ -246,6 +246,10 @@ function languageChange() {
     var hhContact3c = document.getElementById("hhContact3c");
     var submit = document.getElementById("submit");
 
+    //announcements student
+    var aaStudentHeading = document.getElementById("aaStudentHeading");
+
+
     //English
     if (language == "English") { //each page needs a try catch so that it can load without the other pages elements
         //Main Menu
@@ -441,6 +445,10 @@ function languageChange() {
 
         }catch (e) {}
 
+        //announcement student
+        try {
+        aaStudentHeading.innerHTML = "Please select the module";
+        }catch (e) {}
     }
 
     //Polish
@@ -629,6 +637,11 @@ function languageChange() {
             mpSearch.placeholder = "Napisz Northumbria...";
         } catch (e) {
         }
+
+        //announcement student
+        try {
+            aaStudentHeading.innerHTML = "Please select the module";
+        }catch (e) {}
     }
         //Chinese
         if (language == "Chinese") {
@@ -827,6 +840,12 @@ function languageChange() {
                 submit.value = "提交";
             } catch (e) {
             }
+
+            //TODO sorry
+            //announcement student
+            try {
+                aaStudentHeading.innerHTML = "Please select the module";
+            }catch (e) {}
 
         }
 }
@@ -1309,6 +1328,10 @@ function highContrast() {
     var udaTextHeaderBanUserModal = document.getElementById("udaTextHeaderBanUserModal");
     var udaTextHeaderBanUserModal1 = document.getElementById("udaTextHeaderBanUserModal1");
 
+    //announcements student
+    var aaStudentHeading = document.getElementById("aaStudentHeading");
+    var adminButtons = document.getElementsByClassName('adminButtons');
+
     if (text == "on" && theme == "dark") {
         //mainMenu
         try {
@@ -1446,5 +1469,18 @@ function highContrast() {
         udaTextHeaderAccessTypeModal.style.color = "orange";
         udaTextHeaderBanUserModal1.style.color = "orange";
         }catch (e) {}
+
+        try {
+            aaStudentHeading.style.color = "orange";
+            adminButtons[0].style.color = "orange";
+            adminButtons[1].style.color = "orange";
+            adminButtons[2].style.color = "orange";
+            adminButtons[3].style.color = "orange";
+            adminButtons[4].style.color = "orange";
+            adminButtons[5].style.color = "orange";
+            adminButtons[6].style.color = "orange";
+            adminButtons[7].style.color = "orange";
+            ssTextModalNotifications.style.color = "orange";
+        } catch (e) {}
     }
 }

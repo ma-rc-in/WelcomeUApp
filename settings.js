@@ -957,6 +957,10 @@ function themeChange() {
     var asBack  = document.getElementById("asBack");
     var aaStudentHeading = document.getElementById("aaStudentHeading");
     var limiter = document.getElementById("limiter");
+    //announcementsLecturer
+    var anlContainer = document.getElementById("anlContainer");
+    var alImage  = document.getElementById("alImage");
+    var alBack  = document.getElementById("alBack");
 
     //groupChat
     var gcBack= document.getElementById("gcBack");
@@ -1132,6 +1136,13 @@ function themeChange() {
             asContainer.style.backgroundColor = "white";
             asBack.src="images/backBlack.png";
 
+        } catch (e) {}
+
+        //announcementsLecturer
+        try {
+            alImage.src="images/logoBlack.png";
+            anlContainer.style.backgroundColor = "white";
+            alBack.src="images/backBlack.png";
         } catch (e) {}
 
         //GroupChat

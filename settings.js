@@ -678,7 +678,6 @@ function languageChange() {
             aaStudentHeading.innerHTML = "Please select the module";
         }catch (e) {}
 
-        //TODO
         //announcement lecturer
         try {
             alTextFillForm.innerHTML = "Please fill in the form below:";
@@ -699,7 +698,6 @@ function languageChange() {
             editMessage.innerHTML = "Message";
             aaUpdate.innerHTML = "Update";
         } catch (e) {}
-    }
     }
         //Chinese
         if (language == "Chinese") {
@@ -877,8 +875,7 @@ function languageChange() {
             //map
             try {
                 mpSearch.placeholder = "输入 Northumbria...";
-            } catch (e) {
-            }
+            } catch (e) {}
 
             //help services
             try {
@@ -896,8 +893,7 @@ function languageChange() {
                 hhFAQans2.innerHTML = "您可以在设置菜单中更改网站的各个方面，例如主题和语言。";
                 hhFAQans3.innerHTML = "您可以在这里搜索找到更多的常见问题: https://libraryanswers.northumbria.ac.uk/search/";
                 submit.value = "提交";
-            } catch (e) {
-            }
+            } catch (e) {}
 
             //TODO sorry
             //announcement student
@@ -925,7 +921,6 @@ function languageChange() {
                 editMessage.innerHTML = "Message";
                 aaUpdate.innerHTML = "Update";
             } catch (e) {}
-        }
 
         }
 }

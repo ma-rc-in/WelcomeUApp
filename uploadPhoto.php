@@ -9,7 +9,7 @@
     $FileErr = '';
 
 if(isset($_POST['submit'])){
-    if($_FILES["myfile"]["size"] < 10000000000) { //checks size
+    if($_FILES["myfile"]["size"] < 1000000) { //checks size
         $filename = addslashes($_FILES["myfile"]["name"]); //get the name of the file
         $data = addslashes(file_get_contents($_FILES['myfile']['tmp_name']));
         $imgtype = addslashes($_FILES["myfile"]["type"]); //gets the type of the file
@@ -37,10 +37,11 @@ if(isset($_POST['submit'])){
             else{
                 $FileErr = "Please choose a valid photo type";
             }
+
             //uploads the data
-            $insert = "UPDATE tbl_student SET uploadedPhoto='$data',uploadedPhotoName='$filename',uploadedPhotoType='$ext' WHERE studentID='$student'";
+            $insert = "UPDATE tbl_student SET uploadedPhotoName='$filename',uploadedPhotoType='$ext', uploadedPhoto='$data' WHERE studentID='$student'";
             $studentDB = $db->query($insert);
-            header('location:selfEnrolmentCompleted.php');
+            //header('location:selfEnrolmentCompleted.php');
         }
     }
     else{
@@ -79,6 +80,7 @@ function displayImage(){
     $studentselect->execute(array(":student" => $student));
     $row = $studentselect->fetch(PDO::FETCH_ASSOC);
     $photo = $row['uploadedPhoto'];
+
     if ($photo == null)
     {
         echo' <div class="imgWrapper">
@@ -91,6 +93,8 @@ function displayImage(){
         </div>';
     }
 }
+
+
 ?>
 
     <br/>

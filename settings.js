@@ -1237,17 +1237,17 @@ function themeChange() {
         //GroupChat
         try {
             document.body.style.backgroundColor = "black";
-            gcCourseNameEcho.style.color = "black";
+            gcCourseNameEcho.style.color = "white";
             gcBack.src="images/back.png";
             gcLogo.src="images/logo_white.png";
             gcContainer.style.backgroundColor = "black";
             gcLimiter.style.backgroundColor = "black";
             gcChatContainer.style.backgroundColor = "black";
-            gcBackground.style.backgroundColor = "white";
+            gcBackground.style.backgroundColor = "grey";
             gcYourMessage.style.backgroundColor = "black";
             gcYourMessage.style.color = "white";
             gcMessageContentBox.style.backgroundColor = "white";
-            gcCourseNameTitle.style.color = "black";
+            gcCourseNameTitle.style.color = "white";
         } catch (e) {}
 
         // help services
@@ -1395,8 +1395,8 @@ function highContrast() {
 
         //groupChat
         try {
-            gcCourseNameEcho.style.color = "black";
-            courseNameTitleGroupChat.style.color = "black";
+            gcCourseNameEcho.style.color = "orange";
+            courseNameTitleGroupChat.style.color = "orange";
             yourMessageGroupChat.style.color = "orange";
             MessageContentBoxGroupChat.style.color = "black";
             reportButtonGroupChat.style.color = "orange";

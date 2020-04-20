@@ -401,6 +401,53 @@ Media Queries
         ]);
     }
 
+    if (language == "Polish") {
+        tour.addSteps([
+            {
+                element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
+                title: "Saldo SmartCard", // string - title of the popover
+                placement: "bottom",
+                backdrop: true,
+                content: "Użytkownicy mogą sprawdzić swoje saldo cardy SmartCard tutaj." // string - content of the popover
+            },
+            {
+                element: "#mmMapLogo",
+                title: "Mapa",
+                placement: "top",
+                backdrop: true,
+                content: "Użytkownicy mogą skorzystać z mapy w celu podejrzenia kampusa, a następnie znaleźć więcej informacji na temat budynków, etc."
+            },
+            {
+                element: "#mmHelpLogo",
+                title: "Wsparcie",
+                placement: "top",
+                backdrop: true,
+                content: "Użytkownicy mogą skorzystać ze wsparcia administracji, sprawdzić najczęsciej zadawane pytania oraz uzyskać więcej informacji używając czat bota."
+            },
+            {
+                element: "#mmAnnoucementsLogo",
+                title: "Ogłoszenia",
+                placement: "top",
+                backdrop: true,
+                content: "Użytkownicy mogą otrzymać ogłoszenia przesłane od wykładowców danego kierunku, np. z informacjami na temat danej pracy semestrowej."
+            },
+            {
+                element: "#mmSettingsLogo",
+                title: "Ustawienia",
+                placement: "top",
+                backdrop: true,
+                content: "Użytkownicy mogą zmienić różnorakie ustawienia aplikacji, np. wyświetlany język, motyw albo kontrast. Dodatkowo użytkownicy mogą zmienić ustawienia bezpieczeństwa, takie jak hasło, PIN oraz trwale usunąć konto."
+            },
+            {
+                element: "#mmLogoutLogo",
+                title: "Wyloguj",
+                placement: "top",
+                backdrop: true,
+                content: "Użytkownicy mogą kliknąć tutaj, aby się wylogować."
+            }
+        ]);
+    }
+
     if (language == "Chinese") {
         tour.addSteps([
             {

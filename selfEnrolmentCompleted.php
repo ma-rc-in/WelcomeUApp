@@ -9,7 +9,7 @@
     <body style="background-color:#000000;">
         <a href="mainmenu.php" >
             <center>
-                <img id="eeLogo" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
+                <img id="eeLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
             </center>
         </a>
     <br/>
@@ -19,7 +19,7 @@
         <p style="color:#FFFFFF; text-align: center" id="eeLink">Please click this <a style="color: #3498DB" href="https://www.northumbria.ac.uk/study-at-northumbria/new-students/">link</a> to view your programme induction timetable</p>
     <br/>
         <center>
-            <img src="Images/successful.png" alt="Logo"  width= "312px" height= "312px" style="margin-top: 25px; align-items: center" />
+            <img src="images/successful.png" alt="Logo"  width= "312px" height= "312px" style="margin-top: 25px; align-items: center" />
         <br/><br/><br/>
             <input type="submit" id="eeReturnBtn" onclick="window.location.href = 'mainmenu.php'" value="Return to Main Page"/>
         </center>

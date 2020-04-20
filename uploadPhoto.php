@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
 
     <a href="mainmenu.php" >
         <center>
-            <img id="eeLogo" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
+            <img id="eeLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px; align-items: center" />
         </center>
     </a>
 

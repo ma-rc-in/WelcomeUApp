@@ -267,8 +267,8 @@ if(isset($_POST['aaUpdate'])) {
       <label for="message" id="alTextMessage">Message</label>
       <textarea id="message" name="message" placeholder="Type your message.." style="height:200px"></textarea>
 
-      <input type="submit" value="Submit" name="submit">
-      <input type="submit" value="Edit Annoucements" name="aaEditAnnoucements">
+      <input type="submit" value="Submit" id="alsubmit" name="submit">
+      <input type="submit" value="Edit Announcements"  id="aleditSubmit" name="aaEditAnnoucements">
     </form>
 
     <!--List of edits-->
@@ -330,7 +330,7 @@ if(isset($_POST['aaUpdate'])) {
         </div>
 
         <div class="modal-body" style="min-height: 570px;">
-          <h4 class="formHeading" id="ssTextModalNotifications">Edit announcement.</h4>
+          <h4 class="formHeading" id="ssTextModalNotificationsEdit">Edit announcement.</h4>
           <form action="announcementsLecturer.php" method="POST">
             <div class="formPassWrapper">
               <?php
@@ -347,13 +347,13 @@ if(isset($_POST['aaUpdate'])) {
               }
               ?>
 
-              <label for="Module"> Module </label>
+              <label for="Module" id="editModule"> Module </label>
               <input type="text" id="Module" name="ModuleEdit" value="<?php echo $module; ?> " readonly>
 
-              <label for="subject"> Subject </label>
+              <label for="subject"id="editSubject"> Subject </label>
               <input type="text" id="subject" name="subjectEdit" value="<?php echo $subject; ?>" placeholder="Type a subject..">
 
-              <label for="message">Message</label>
+              <label for="message" id="editMessage">Message</label>
               <textarea id="message" name="messageEdit" placeholder="Type your message.." style="height:200px"><?php echo $message; ?></textarea>
 
 

@@ -249,6 +249,20 @@ function languageChange() {
     //announcements student
     var aaStudentHeading = document.getElementById("aaStudentHeading");
 
+    //announcements student
+    var alTextFillForm = document.getElementById("alTextFillForm");
+    var alTextModule  = document.getElementById("alTextModule");
+    var alTextSubject  = document.getElementById("alTextSubject");
+    var alTextMessage = document.getElementById("alTextMessage");
+    var alsubmit = document.getElementById("alsubmit");
+    var aleditSubmit = document.getElementById("aleditSubmit");
+    var adminButtons = document.getElementsByClassName("adminButtons");
+    var editModule = document.getElementById("editModule");
+    var editSubject = document.getElementById("editSubject");
+    var editMessage = document.getElementById("editMessage");
+    var aaUpdate = document.getElementById("aaUpdate");
+    var ssTextModalNotifications = document.getElementById("ssTextModalNotifications");
+    var ssTextModalNotificationsEdit = document.getElementById("ssTextModalNotificationsEdit");
 
     //English
     if (language == "English") { //each page needs a try catch so that it can load without the other pages elements
@@ -449,6 +463,27 @@ function languageChange() {
         try {
         aaStudentHeading.innerHTML = "Please select the module";
         }catch (e) {}
+
+        //announcement lecturer
+        try {
+            alTextFillForm.innerHTML = "Please fill in the form below:";
+            alTextModule.innerHTML = "Module Code";
+            alTextSubject.innerHTML = "Subject";
+            alTextMessage.innerHTML = "Message";
+            alsubmit.value = "Submit";
+            aleditSubmit.value = "Edit Announcements";
+            ssTextModalNotifications.innerHTML = "Select announcement to change.";
+            var x, i;
+            x = document.querySelectorAll(".adminButtons");
+            for (i = 0; i < x.length; i++) {
+                adminButtons[i].innerHTML = "Edit";
+            }
+            ssTextModalNotificationsEdit.innerHTML = "Edit announcement.";
+            editModule.innerHTML = "Module";
+            editSubject.innerHTML = "Subject";
+            editMessage.innerHTML = "Message";
+            aaUpdate.innerHTML = "Update";
+        } catch (e) {}
     }
 
     //Polish
@@ -642,6 +677,29 @@ function languageChange() {
         try {
             aaStudentHeading.innerHTML = "Please select the module";
         }catch (e) {}
+
+        //TODO
+        //announcement lecturer
+        try {
+            alTextFillForm.innerHTML = "Please fill in the form below:";
+            alTextModule.innerHTML = "Module Code";
+            alTextSubject.innerHTML = "Subject";
+            alTextMessage.innerHTML = "Message";
+            alsubmit.value = "Submit";
+            aleditSubmit.value = "Edit Announcements";
+            ssTextModalNotifications.innerHTML = "Select announcement to change.";
+            var x, i;
+            x = document.querySelectorAll(".adminButtons");
+            for (i = 0; i < x.length; i++) {
+                adminButtons[i].innerHTML = "Edit";
+            }
+            ssTextModalNotificationsEdit.innerHTML = "Edit announcement.";
+            editModule.innerHTML = "Module";
+            editSubject.innerHTML = "Subject";
+            editMessage.innerHTML = "Message";
+            aaUpdate.innerHTML = "Update";
+        } catch (e) {}
+    }
     }
         //Chinese
         if (language == "Chinese") {
@@ -846,6 +904,28 @@ function languageChange() {
             try {
                 aaStudentHeading.innerHTML = "Please select the module";
             }catch (e) {}
+
+            //announcement lecturer
+            try {
+                alTextFillForm.innerHTML = "Please fill in the form below:";
+                alTextModule.innerHTML = "Module Code";
+                alTextSubject.innerHTML = "Subject";
+                alTextMessage.innerHTML = "Message";
+                alsubmit.value = "Submit";
+                aleditSubmit.value = "Edit Announcements";
+                ssTextModalNotifications.innerHTML = "Select announcement to change.";
+                var x, i;
+                x = document.querySelectorAll(".adminButtons");
+                for (i = 0; i < x.length; i++) {
+                    adminButtons[i].innerHTML = "Edit";
+                }
+                ssTextModalNotificationsEdit.innerHTML = "Edit announcement.";
+                editModule.innerHTML = "Module";
+                editSubject.innerHTML = "Subject";
+                editMessage.innerHTML = "Message";
+                aaUpdate.innerHTML = "Update";
+            } catch (e) {}
+        }
 
         }
 }

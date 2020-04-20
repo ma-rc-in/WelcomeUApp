@@ -125,7 +125,7 @@ else
 <div class="patch-container" id="mapContainer">
     <div class="logoMain">
         <a href="mainmenu.php">
-            <img class="test" id="mapLogo" src="Images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
+            <img class="test" id="mapLogo" src="images/logo_white.png" alt="Logo" width= "350px" height= "100px" style="margin-top: 25px;" />
         </a>
     </div>
 </div>

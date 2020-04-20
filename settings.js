@@ -644,6 +644,8 @@ function languageChange() {
             udTextModalNewPinPlaceholder.placeholder = "Wprowadź nowy PIN";
             udTextModalRepeatPinPlaceholder.placeholder = "Potwierdź nowy PIN";
             udButtonTextSubmitButtonForChangePin.innerHTML = "Potwierdź";
+
+
         } catch (e) {
         }
 
@@ -1241,7 +1243,6 @@ function themeChange() {
         //login
         try {
             llLogo.src="images/logo_white.png";
-            alert("here");
             llWrapLogin.style.backgroundColor = "black";
             llContainerLogin.style.backgroundColor = "white";
             llWelcomeU.style.backgroundColor = "black";
@@ -1273,7 +1274,7 @@ function themeChange() {
             alTextSubject.style.color = "white";
             alTextMessage.style.color = "white";
             alsubmit.style.backgroundColor = "darkgrey";
-            aleditSubmit.style.backgroundColor = rgba(20, 20, 20, 0.6);
+            aleditSubmit.style.backgroundColor = "darkgrey";
         } catch (e) {}
 
         //GroupChat

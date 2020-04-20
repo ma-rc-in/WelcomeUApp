@@ -497,13 +497,13 @@ function languageChange() {
             enrolmentMenu.innerHTML = "Rejestracja";
             settingsMenu.innerHTML = "Ustawienia";
 
-            mmTextHeadermainMenuModal.innerHTML = "User Guide";
-            mmHelpMap.innerHTML = "Map - Users can search Northumbria University's Newcastle city campus for guidance and directions to their destination.";
-            mmHelpGroupChat.innerHTML = "Groupchat - Students can use the group chat service to connect with other students on their course, where they are able to message each other.";
-            mmHelpHelp.innerHTML = "Help - Users can receive help by submitting enquiries, viewing the most frequently asked questions and asking our chat bot for help.";
-            mmHelpAnnouncements.innerHTML = "Announcements - Users can receive announcements by lecturers on their course, allowing them to keep update to date with the most recent information. Lecturers can use this subsystem to keep students informed.";
-            mmHelpEnrolment.innerHTML = "Self Enrolment - Users can enrol for their course by completing a quick form on the self enrolnment system. Changes to student details can also be updated on this form.";
-            mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
+            mmTextHeadermainMenuModal.innerHTML = "Podręcznik użytkowania";
+            mmHelpMap.innerHTML = "Mapa - Użytkownicy mogą skorzystać z mapy w celu podejrzenia kampusa, a następnie znaleźć więcej informacji na temat budynków, etc.";
+            mmHelpGroupChat.innerHTML = "Czat grupowy - Studenci mogą skorzystać z czatu grupowego, aby porozumieć się z innymi studentami z tego samego kierunku.";
+            mmHelpHelp.innerHTML = "Wsparcie - Użytkownicy mogą skorzystać ze wsparcia administracji, sprawdzić najczęsciej zadawane pytania oraz uzyskać więcej informacji używając czat bota.";
+            mmHelpAnnouncements.innerHTML = "Ogłoszenia - Użytkownicy mogą otrzymać ogłoszenia przesłane od wykładowców danego kierunku, np. z informacjami na temat danej pracy semestrowej.";
+            mmHelpEnrolment.innerHTML = "Rejestracja - Użytkownicy mogą zapisać się na dany kurs wypełniając wymagane informacje i dane osobowe. Niektóry informacje są również dostępne do zmiany po dokonaniu rejerstacji.";
+            mmHelpSettings.innerHTML = "Ustawienia - Użytkownicy mogą zmienić różnorakie ustawienia aplikacji, np. wyświetlany język, motyw albo kontrast. Dodatkowo użytkownicy mogą zmienić ustawienia bezpieczeństwa, takie jak hasło, PIN oraz trwale usunąć konto.";
             try {
                 mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
             } catch (e) {}
@@ -529,32 +529,32 @@ function languageChange() {
             reportSubmitGroupChat.value = "Wyślij";
 
             //TODO
-            gcPinText.innerHTML = "Pin Verification";
-            gcTextPinCheck.innerHTML = "Please verify your PIN to continue:";
-            gcPinInput.placeholder = "Enter your PIN";
-            gcSubmitPin.value = "Submit";
+            gcPinText.innerHTML = "Weryfikacja PINu";
+            gcTextPinCheck.innerHTML = "Zweryfikuj swój PIN, aby kontynuować:";
+            gcPinInput.placeholder = "Wprowadź swój PIN";
+            gcSubmitPin.value = "Wyślij";
         } catch (e) {
         }
 
         //login
         try {
             llWelcomeU.innerHTML = "WelcomeU";
-            llLoginMessage.innerHTML = "Please login with your university login";
-            llStudentID.placeholder = "StudentID";
-            llPassword.placeholder = "Password";
-            llsubmit.value = "submit";
-            llcookieset.innerHTML = "Remember Username?";
-            capsLockInfo.innerHTML = "*Be careful with your login and password, Caps Lock is ON*";
-            cookiewarning.innerHTML = "This website is using cookies and javascript local storage to improve your experience.";
-            mmCookieMoreInfo.innerHTML = "More Information";
-            mmCookieAccept.innerHTML = "Accept";
-            mmCookieInformationHeader.innerHTML = "Cookie Information";
-            mminfo.innerHTML = "This website uses cookies and javascript local storage to enhance your experience while using this website.";
-            mminfo2.innerHTML = "We do this by using cookies to:";
-            mminfo3.innerHTML = "Store your username to make it easier for you to login.";
-            mminfo4.innerHTML = "We also use javascript local storage to:";
-            mminfo5.innerHTML = "Save various settings you may use in our website, such as the theme, language or contrast settings.";
-            mmCookieButtonClose.innerHTML = "Close";
+            llLoginMessage.innerHTML = "Zaloguj się używając swojego loginu podanego przez administrację uniwersytetu";
+            llStudentID.placeholder = "ID studenta";
+            llPassword.placeholder = "Hasło";
+            llsubmit.value = "Wyślij";
+            llcookieset.innerHTML = "Zapamiętać nazwę użytkownika?";
+            capsLockInfo.innerHTML = "*Caps Lock jest włączony*";
+            cookiewarning.innerHTML = "Ta strona używa Ciasteczek oraz Javascript local storage w celu polepszenia odbioru funkcjonalności strony.";
+            mmCookieMoreInfo.innerHTML = "Więcej informacji";
+            mmCookieAccept.innerHTML = "Zaakceptuj";
+            mmCookieInformationHeader.innerHTML = "Informacje na temat Ciasteczek";
+            mminfo.innerHTML = "Ta strona używa Ciasteczek oraz Javascript local storage w celu polepszenia odbioru funkcjonalności strony.";
+            mminfo2.innerHTML = "Używamy Ciasteczek w celu:";
+            mminfo3.innerHTML = "Przechowywania Twojej nazwy użytkownika, aby usprawnić proces logowania.";
+            mminfo4.innerHTML = "Używame również JavaScript local storage w celu:";
+            mminfo5.innerHTML = "Zapisania niektórych ustawień i personalizacji, np. motywów czy wyświetlanego języka.";
+            mmCookieButtonClose.innerHTML = "Zamknij";
 
         } catch (e) {
         }
@@ -680,23 +680,23 @@ function languageChange() {
 
         //announcement lecturer
         try {
-            alTextFillForm.innerHTML = "Please fill in the form below:";
-            alTextModule.innerHTML = "Module Code";
-            alTextSubject.innerHTML = "Subject";
-            alTextMessage.innerHTML = "Message";
-            alsubmit.value = "Submit";
-            aleditSubmit.value = "Edit Announcements";
-            ssTextModalNotifications.innerHTML = "Select announcement to change.";
+            alTextFillForm.innerHTML = "Wypełnij poniższy formularz";
+            alTextModule.innerHTML = "Kod przedmiotu";
+            alTextSubject.innerHTML = "Temat";
+            alTextMessage.innerHTML = "Wiadomość";
+            alsubmit.value = "Wyślij";
+            aleditSubmit.value = "Edytuj ogłoszenie";
+            ssTextModalNotifications.innerHTML = "Wybierz ogłoszenie do edycji.";
             var x, i;
             x = document.querySelectorAll(".adminButtons");
             for (i = 0; i < x.length; i++) {
-                adminButtons[i].innerHTML = "Edit";
+                adminButtons[i].innerHTML = "Edytuj";
             }
-            ssTextModalNotificationsEdit.innerHTML = "Edit announcement.";
-            editModule.innerHTML = "Module";
-            editSubject.innerHTML = "Subject";
-            editMessage.innerHTML = "Message";
-            aaUpdate.innerHTML = "Update";
+            ssTextModalNotificationsEdit.innerHTML = "Edytuj ogłoszenie.";
+            editModule.innerHTML = "Przedmiot";
+            editSubject.innerHTML = "Temat";
+            editMessage.innerHTML = "Wiadomość";
+            aaUpdate.innerHTML = "Zaktualizuj";
         } catch (e) {}
     }
         //Chinese

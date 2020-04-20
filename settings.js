@@ -223,7 +223,7 @@ function languageChange() {
     var mpSearch = document.getElementById("pac-input");
 
     //Help Services
-    var hhErrorTitle  = document.getElementById("hhErrorTitle");
+    var hhErrorTitle = document.getElementById("hhErrorTitle");
     var hhErrorMsg = document.getElementById("hhErrorMsg")
     var hhEmail = document.getElementById("hhEmail");
     var hhQuery = document.getElementById("hhQuery");
@@ -251,8 +251,8 @@ function languageChange() {
 
     //announcements student
     var alTextFillForm = document.getElementById("alTextFillForm");
-    var alTextModule  = document.getElementById("alTextModule");
-    var alTextSubject  = document.getElementById("alTextSubject");
+    var alTextModule = document.getElementById("alTextModule");
+    var alTextSubject = document.getElementById("alTextSubject");
     var alTextMessage = document.getElementById("alTextMessage");
     var alsubmit = document.getElementById("alsubmit");
     var aleditSubmit = document.getElementById("aleditSubmit");
@@ -448,7 +448,7 @@ function languageChange() {
         //userDashboardAdmin
         try {
             udaTextHeaderReports.innerHTML = "View reports";
-            udaButtonTextFirstBtn.innerHTML  = "View";
+            udaButtonTextFirstBtn.innerHTML = "View";
             udaTextHeaderAccessType.innerHTML = "Assign access type";
             udaButtonTextSecondBtn.innerHTML = "Assign type";
             udaTextHeaderBan.innerHTML = "Ban user accounts";
@@ -457,12 +457,14 @@ function languageChange() {
             udaTextHeaderAccessTypeModal.innerHTML = "Access Type";
             udaTextHeaderBanUserModal1.innerHTML = "Please select the users ID you wish to Ban:";
 
-        }catch (e) {}
+        } catch (e) {
+        }
 
         //announcement student
         try {
-        aaStudentHeading.innerHTML = "Please select the module";
-        }catch (e) {}
+            aaStudentHeading.innerHTML = "Please select the module";
+        } catch (e) {
+        }
 
         //announcement lecturer
         try {
@@ -483,7 +485,8 @@ function languageChange() {
             editSubject.innerHTML = "Subject";
             editMessage.innerHTML = "Message";
             aaUpdate.innerHTML = "Update";
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     //Polish
@@ -506,7 +509,8 @@ function languageChange() {
             mmHelpSettings.innerHTML = "Settings - Users can change the applications language, theme and enable high contrast settings. Additionally, students will also be able to update their password, pin and delete their related data.";
             try {
                 mmSmartCardBalance.innerHTML = "Saldo 'Smart Card'";
-            } catch (e) {}
+            } catch (e) {
+            }
         } catch (e) {
         }
 
@@ -676,7 +680,8 @@ function languageChange() {
         //announcement student
         try {
             aaStudentHeading.innerHTML = "Please select the module";
-        }catch (e) {}
+        } catch (e) {
+        }
 
         //TODO
         //announcement lecturer
@@ -698,237 +703,242 @@ function languageChange() {
             editSubject.innerHTML = "Subject";
             editMessage.innerHTML = "Message";
             aaUpdate.innerHTML = "Update";
-        } catch (e) {}
+        } catch (e) {
+        }
     }
-    }
-        //Chinese
-        if (language == "Chinese") {
-            //Main Menu
+
+    //Chinese
+    if (language == "Chinese") {
+        //Main Menu
+        try {
+
+            mapMenu.innerHTML = "地图";
+            groupChatMenu.innerHTML = "群聊";
+            helpMenu.innerHTML = "帮助";
+            annoucementsMenu.innerHTML = "通知";
+            enrolmentMenu.innerHTML = "自助注册";
+            settingsMenu.innerHTML = "设置";
+
+            mmTextHeadermainMenuModal.innerHTML = "用户导航";
+            mmHelpMap.innerHTML = "地图 - 用户可以搜索诺森比亚大学纽卡斯尔校区以获得到他们的目的地的指南和方向。";
+            mmHelpGroupChat.innerHTML = "群聊 - 学生可以使用群组聊天功能与课程上的其他学生联系，在群聊界面里学生可以互相发送信息。";
+            mmHelpHelp.innerHTML = "帮助 - 用户可以通过提交查询、查看最常见的问题和与我们的聊天机器人请求帮助来获得解决办法。";
+            mmHelpAnnouncements.innerHTML = "通知 - 学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。";
+            mmHelpEnrolment.innerHTML = "自助注册 - 学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。";
+            mmHelpSettings.innerHTML = "设置 - 用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。";
             try {
-
-                mapMenu.innerHTML = "地图";
-                groupChatMenu.innerHTML = "群聊";
-                helpMenu.innerHTML = "帮助";
-                annoucementsMenu.innerHTML = "通知";
-                enrolmentMenu.innerHTML = "自助注册";
-                settingsMenu.innerHTML = "设置";
-
-                mmTextHeadermainMenuModal.innerHTML = "用户导航";
-                mmHelpMap.innerHTML = "地图 - 用户可以搜索诺森比亚大学纽卡斯尔校区以获得到他们的目的地的指南和方向。";
-                mmHelpGroupChat.innerHTML = "群聊 - 学生可以使用群组聊天功能与课程上的其他学生联系，在群聊界面里学生可以互相发送信息。";
-                mmHelpHelp.innerHTML = "帮助 - 用户可以通过提交查询、查看最常见的问题和与我们的聊天机器人请求帮助来获得解决办法。";
-                mmHelpAnnouncements.innerHTML = "通知 - 学生可以收到讲师关于他们课程的通知，并允许他们随时更新最新的信息。讲师可以使用这个子系统来通知学生。";
-                mmHelpEnrolment.innerHTML = "自助注册 - 学生可以通过在自助注册系统中填写一个简洁的表格来完成自己的课程注册。学生资料的更新也可以在此表格中更改。";
-                mmHelpSettings.innerHTML = "设置 - 用户可以更改应用程序的语言、主题和启用高对比度设置。此外，学生还可以更新他们的密码，pin码和删除他们的相关数据。";
-                try {
                 mmSmartCardBalance.innerHTML = "学生卡余额";
-                } catch (e) {}
             } catch (e) {
             }
-            //groupchat
-            try {
-                courseNameTitleGroupChat.innerHTML = "- 群聊";
-                yourMessageGroupChat.innerHTML = "你的信息:";
-                MessageContentBoxGroupChat.placeholder = "在此输入你的信息";
-                reportButtonGroupChat.innerHTML = "举报";
-                sendButtonGroupChat.value = "发送";
-                reportUserGroupChat.innerHTML = "举报用户";
-                userIDGroupChat.innerHTML = "请选择你要举报的用户ID:";
-                reasonLabelGroupChat.innerHTML = "请选择你举报的原因:";
-                reasonGroupChat.innerHTML = "请说明举报的原因:";
-                reasonSelectGroupChat.options[0].text = "垃圾邮件";
-                reasonSelectGroupChat.options[1].text = "辱骂语言/内容";
-                reasonSelectGroupChat.options[2].text = "煽动暴力";
-                reasonSelectGroupChat.options[3].text = "其他（请在下面评论）";
-                commentGroupChat.placeholder = "请在这里评论:";
-                reportSubmitGroupChat.value = "发送";
+        } catch (e) {
+        }
+        //groupchat
+        try {
+            courseNameTitleGroupChat.innerHTML = "- 群聊";
+            yourMessageGroupChat.innerHTML = "你的信息:";
+            MessageContentBoxGroupChat.placeholder = "在此输入你的信息";
+            reportButtonGroupChat.innerHTML = "举报";
+            sendButtonGroupChat.value = "发送";
+            reportUserGroupChat.innerHTML = "举报用户";
+            userIDGroupChat.innerHTML = "请选择你要举报的用户ID:";
+            reasonLabelGroupChat.innerHTML = "请选择你举报的原因:";
+            reasonGroupChat.innerHTML = "请说明举报的原因:";
+            reasonSelectGroupChat.options[0].text = "垃圾邮件";
+            reasonSelectGroupChat.options[1].text = "辱骂语言/内容";
+            reasonSelectGroupChat.options[2].text = "煽动暴力";
+            reasonSelectGroupChat.options[3].text = "其他（请在下面评论）";
+            commentGroupChat.placeholder = "请在这里评论:";
+            reportSubmitGroupChat.value = "发送";
 
-                //TODO
-                gcPinText.innerHTML = "PIN码确认";
-                gcTextPinCheck.innerHTML = "请确认PIN码以继续:";
-                gcPinInput.placeholder = "输入你的PIN码";
-                gcSubmitPin.value = "提交";
-            } catch (e) {
-            }
-            //login
-            try {
-                llWelcomeU.innerHTML = "欢迎你";
-                llLoginMessage.innerHTML = "请登陆你的学校账号";
-                llStudentID.placeholder = "学生ID";
-                llPassword.placeholder = "密码";
-                llsubmit.value = "提交";
-                llforgotPassLabel.innerHTML = "忘记密码?";
+            //TODO
+            gcPinText.innerHTML = "PIN码确认";
+            gcTextPinCheck.innerHTML = "请确认PIN码以继续:";
+            gcPinInput.placeholder = "输入你的PIN码";
+            gcSubmitPin.value = "提交";
+        } catch (e) {
+        }
+        //login
+        try {
+            llWelcomeU.innerHTML = "欢迎你";
+            llLoginMessage.innerHTML = "请登陆你的学校账号";
+            llStudentID.placeholder = "学生ID";
+            llPassword.placeholder = "密码";
+            llsubmit.value = "提交";
+            llforgotPassLabel.innerHTML = "忘记密码?";
 
-                llcookieset.innerHTML = "是否记住用户名？";
-                capsLockInfo.innerHTML = "*注意你的登录名和密码，大写锁定开启*";
-                cookiewarning.innerHTML = "本网站使用cookie和javascript本地存储来改善你的体验。";
-                mmCookieMoreInfo.innerHTML = "更多信息";
-                mmCookieAccept.innerHTML = "接受";
-                mmCookieInformationHeader.innerHTML = "Cookie信息";
-                mminfo.innerHTML = "本网站使用cookie和javascript本地存储来提高您使用本网站的体验。";
-                mminfo2.innerHTML = "我们通过使用cookie来做到这一点:";
-                mminfo3.innerHTML = "储存你的用户名，方便用户登入。";
-                mminfo4.innerHTML = "我们也通过javascript本地存储来做到这一点:";
-                mminfo5.innerHTML = "保存你可能在我们网站上使用的各种设置，如主题、语言或对比度设置。";
-                mmCookieButtonClose.innerHTML = "关闭";
-            } catch (e) {
-            }
-            //settings
-            try {
-                ssTextSecurity.innerHTML = "安全设置";
-                ssButtonSecurity.innerHTML = "更改";
-                ssTextNotifications.innerHTML = "通知设置";
-                ssFirstBtn.innerHTML = "通知设置";
-                ssTextLanguage.innerHTML = "更改语言";
-                ssSecondBtn.innerHTML = "语言";
-                ssTextModalNotifications.innerHTML = "是否允许通知时启用铃声？";
-                ssTextTheme.innerHTML = "更换主题";
-                ssThirdBtn.innerHTML = "更换主题";
-                ssThemeDark.innerHTML = "暗夜主题";
-                ssThemeLight.innerHTML = "白日主题";
-                ssTextContrast.innerHTML = "高对比度";
-                ssTextContrastModal.innerHTML = "允许高对比度设置？";
-                ssTextContrast.innerHTML = "更改对比度";
-                ssFourthBtn.innerHTML = "更改";
-            } catch (e) {
-            }
-
-            //selfEnrolmentForm
-            try {
-                eeTitleOne.innerHTML = "自我注册表格";
-                eeStepOne.innerHTML = "步骤1 _请填写详细信息";
-                eePersonalDetails.innerHTML = "个人详细信息";
-                eeTitle.innerHTML = "标题:";
-                eeFirstName.innerHTML = "名字:";
-                eeLastName.innerHTML = "姓氏:";
-                eeGender.innerHTML = "性别:";
-                eePersonalEmail.innerHTML = "个人电子邮件地址:";
-                eeukMobile.innerHTML = "英国手机号码:";
-                eeukMobile2.innerHTML = "请在+44 XXXX XXXXXX之后继续";
-                eeEmergenceTitle.innerHTML = "紧急联系方式";
-                eeEmergencyPerson.innerHTML = "紧急联系人:";
-                eeEmergencyRelationship.innerHTML = "关系:";
-                country.options[0].text = "父母";
-                country.options[1].text = "监护人";
-                country.options[2].text = "其他";
-                eeContactNo.innerHTML = "联络号码:;";
-                eesubmit.value = "保存并继续";
-            } catch (e) {
-            }
-            //uploadPhoto
-            try {
-                eeTitleTwo.innerHTML = "自我注册表格";
-                eeStepTwo.innerHTML = "步骤2 _请上传您的照片作为您的学生证";
-                eeSmartCardCurrent.innerHTML = "目前所上传的学生证照片";
-                eeSmartCardUpload.innerHTML = "上传照片";
-                eeFilename.innerHTML = "文件名:";
-                eesubmitTwo.value = "完成";
-            } catch (e) {
-            }
-            //selfEnrolmentCompleted
-            try {
-                eeSuccess.innerHTML = "恭喜!";
-                eeComplete.innerHTML = "您已完成自我注册过程";
-                eeLink.innerHTML = "请点击这个 <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">链接</a> 查看您的新学期时间表";
-                eeReturnBtn.value = "返回首页";
-            } catch (e) {
-            }
-
-            //userDashboard
-            try {
-                udTextHeaderPass.innerHTML = "修改密码";
-                udButtonTextFirstBtn.innerHTML = "修改";
-                udTextHeaderAccount.innerHTML = "删除账户";
-                udButtonTextSecondBtn.innerHTML = "删除";
-                udTextHeaderPin.innerHTML = "设置PIN码";
-                udButtonTextThirdBtn.innerHTML = "设置";
-
-                //ERROR MESSAGE ID TRANSLATION????
-
-                udTextModalOldPassPlaceholder.placeholder = "输入你现在的密码";
-                udTextModalNewPassPlaceholder.placeholder = "输入你的新密码";
-                udTextModalRepeatNewPassPlaceholder.placeholder = "再次输入你的新密码";
-                udButtonTextSubmitButtonForPass.innerHTML = "提交";
-
-                udModalTextHeaderWarningNote.innerHTML = "警告";
-                udModalTextBodyWarningNote.innerHTML = "你正在删除你账户的所有数据, 这意味着你将无法再次使用本应用。 如果你决定继续, 请在下方输入你现在的密码并点击 '提交'.";
-                udTextModalRepeatPassDeleteAccountPlaceholder.placeholder = "输入密码以删除账户";
-                udButtonTextSubmitButtonForDeleteAccount.innerHTML = "提交";
-
-                udTextModalNewPinPlaceholder.placeholder = "输入你的新PIN码";
-                udTextModalRepeatPinPlaceholder.placeholder = "再次输入你的新PIN码";
-                udButtonTextSubmitButtonForChangePin.innerHTML = "提交";
-            } catch (e) {
-            }
-
-            //userDashboardAdmin
-            try {
-                udaTextHeaderReports.innerHTML = "查看报告";
-                udaButtonTextFirstBtn.innerHTML  = "查看";
-                udaTextHeaderAccessType.innerHTML = "分配访问类型";
-                udaButtonTextSecondBtn.innerHTML = "分配类型";
-                udaTextHeaderBan.innerHTML = "禁止用户帐户";
-                udaButtonTextThirdBtn.innerHTML = "禁止";
-                udaTextHeaderBanUserModal.innerHTML = "'Dismiss'按钮可以用来拒绝一个报告，这样它就不会显示得更久。 <br><br>'Suspend'按钮将阻止报告的ID用户，这样用户将不再能够登录。";
-                udaTextHeaderAccessTypeModal.innerHTML = "访问类型";
-                udaTextHeaderBanUserModal1.innerHTML = "请选择您希望禁止的用户ID:";
-            }catch (e) {}
-
-            //map
-            try {
-                mpSearch.placeholder = "输入 Northumbria...";
-            } catch (e) {
-            }
-
-            //help services
-            try {
-                hhErrorTitle.innerHTML = "误";
-                hhErrorMsg.innerHTML = "由于技术限制，只能由我们的管理员重置密码。 <br>请使用表格联系管理员，以重置密码。";
-                hhEmail.innerHTML = "学生电子邮件地址：";
-                hhQuery.innerHTML = "您的提问：";
-                hhQueryInput.placeholder = "在这请写下你的提问...";
-                hsButtonText.innerHTML = "查看常见问题";
-                hsModalLabelText.innerHTML = "常见问题";
-                hhFAQ1.innerHTML = "问题1：如何更改密码？";
-                hhFAQ2.innerHTML = "问题2：在哪里可以更改网站设置？";
-                hhFAQ3.innerHTML = "问题3：我还有其他问题，在哪里可以找到支持？";
-                hhFAQans1.innerHTML = "您可以通过向管理团队提交查询以请求更改密码来更改密码。";
-                hhFAQans2.innerHTML = "您可以在设置菜单中更改网站的各个方面，例如主题和语言。";
-                hhFAQans3.innerHTML = "您可以在这里搜索找到更多的常见问题: https://libraryanswers.northumbria.ac.uk/search/";
-                submit.value = "提交";
-            } catch (e) {
-            }
-
-            //TODO sorry
-            //announcement student
-            try {
-                aaStudentHeading.innerHTML = "Please select the module";
-            }catch (e) {}
-
-            //announcement lecturer
-            try {
-                alTextFillForm.innerHTML = "Please fill in the form below:";
-                alTextModule.innerHTML = "Module Code";
-                alTextSubject.innerHTML = "Subject";
-                alTextMessage.innerHTML = "Message";
-                alsubmit.value = "Submit";
-                aleditSubmit.value = "Edit Announcements";
-                ssTextModalNotifications.innerHTML = "Select announcement to change.";
-                var x, i;
-                x = document.querySelectorAll(".adminButtons");
-                for (i = 0; i < x.length; i++) {
-                    adminButtons[i].innerHTML = "Edit";
-                }
-                ssTextModalNotificationsEdit.innerHTML = "Edit announcement.";
-                editModule.innerHTML = "Module";
-                editSubject.innerHTML = "Subject";
-                editMessage.innerHTML = "Message";
-                aaUpdate.innerHTML = "Update";
-            } catch (e) {}
+            llcookieset.innerHTML = "是否记住用户名？";
+            capsLockInfo.innerHTML = "*注意你的登录名和密码，大写锁定开启*";
+            cookiewarning.innerHTML = "本网站使用cookie和javascript本地存储来改善你的体验。";
+            mmCookieMoreInfo.innerHTML = "更多信息";
+            mmCookieAccept.innerHTML = "接受";
+            mmCookieInformationHeader.innerHTML = "Cookie信息";
+            mminfo.innerHTML = "本网站使用cookie和javascript本地存储来提高您使用本网站的体验。";
+            mminfo2.innerHTML = "我们通过使用cookie来做到这一点:";
+            mminfo3.innerHTML = "储存你的用户名，方便用户登入。";
+            mminfo4.innerHTML = "我们也通过javascript本地存储来做到这一点:";
+            mminfo5.innerHTML = "保存你可能在我们网站上使用的各种设置，如主题、语言或对比度设置。";
+            mmCookieButtonClose.innerHTML = "关闭";
+        } catch (e) {
+        }
+        //settings
+        try {
+            ssTextSecurity.innerHTML = "安全设置";
+            ssButtonSecurity.innerHTML = "更改";
+            ssTextNotifications.innerHTML = "通知设置";
+            ssFirstBtn.innerHTML = "通知设置";
+            ssTextLanguage.innerHTML = "更改语言";
+            ssSecondBtn.innerHTML = "语言";
+            ssTextModalNotifications.innerHTML = "是否允许通知时启用铃声？";
+            ssTextTheme.innerHTML = "更换主题";
+            ssThirdBtn.innerHTML = "更换主题";
+            ssThemeDark.innerHTML = "暗夜主题";
+            ssThemeLight.innerHTML = "白日主题";
+            ssTextContrast.innerHTML = "高对比度";
+            ssTextContrastModal.innerHTML = "允许高对比度设置？";
+            ssTextContrast.innerHTML = "更改对比度";
+            ssFourthBtn.innerHTML = "更改";
+        } catch (e) {
         }
 
+        //selfEnrolmentForm
+        try {
+            eeTitleOne.innerHTML = "自我注册表格";
+            eeStepOne.innerHTML = "步骤1 _请填写详细信息";
+            eePersonalDetails.innerHTML = "个人详细信息";
+            eeTitle.innerHTML = "标题:";
+            eeFirstName.innerHTML = "名字:";
+            eeLastName.innerHTML = "姓氏:";
+            eeGender.innerHTML = "性别:";
+            eePersonalEmail.innerHTML = "个人电子邮件地址:";
+            eeukMobile.innerHTML = "英国手机号码:";
+            eeukMobile2.innerHTML = "请在+44 XXXX XXXXXX之后继续";
+            eeEmergenceTitle.innerHTML = "紧急联系方式";
+            eeEmergencyPerson.innerHTML = "紧急联系人:";
+            eeEmergencyRelationship.innerHTML = "关系:";
+            country.options[0].text = "父母";
+            country.options[1].text = "监护人";
+            country.options[2].text = "其他";
+            eeContactNo.innerHTML = "联络号码:;";
+            eesubmit.value = "保存并继续";
+        } catch (e) {
         }
+        //uploadPhoto
+        try {
+            eeTitleTwo.innerHTML = "自我注册表格";
+            eeStepTwo.innerHTML = "步骤2 _请上传您的照片作为您的学生证";
+            eeSmartCardCurrent.innerHTML = "目前所上传的学生证照片";
+            eeSmartCardUpload.innerHTML = "上传照片";
+            eeFilename.innerHTML = "文件名:";
+            eesubmitTwo.value = "完成";
+        } catch (e) {
+        }
+        //selfEnrolmentCompleted
+        try {
+            eeSuccess.innerHTML = "恭喜!";
+            eeComplete.innerHTML = "您已完成自我注册过程";
+            eeLink.innerHTML = "请点击这个 <a style=\"color: #3498DB\" href=\"https://www.northumbria.ac.uk/study-at-northumbria/new-students/\">链接</a> 查看您的新学期时间表";
+            eeReturnBtn.value = "返回首页";
+        } catch (e) {
+        }
+
+        //userDashboard
+        try {
+            udTextHeaderPass.innerHTML = "修改密码";
+            udButtonTextFirstBtn.innerHTML = "修改";
+            udTextHeaderAccount.innerHTML = "删除账户";
+            udButtonTextSecondBtn.innerHTML = "删除";
+            udTextHeaderPin.innerHTML = "设置PIN码";
+            udButtonTextThirdBtn.innerHTML = "设置";
+
+            //ERROR MESSAGE ID TRANSLATION????
+
+            udTextModalOldPassPlaceholder.placeholder = "输入你现在的密码";
+            udTextModalNewPassPlaceholder.placeholder = "输入你的新密码";
+            udTextModalRepeatNewPassPlaceholder.placeholder = "再次输入你的新密码";
+            udButtonTextSubmitButtonForPass.innerHTML = "提交";
+
+            udModalTextHeaderWarningNote.innerHTML = "警告";
+            udModalTextBodyWarningNote.innerHTML = "你正在删除你账户的所有数据, 这意味着你将无法再次使用本应用。 如果你决定继续, 请在下方输入你现在的密码并点击 '提交'.";
+            udTextModalRepeatPassDeleteAccountPlaceholder.placeholder = "输入密码以删除账户";
+            udButtonTextSubmitButtonForDeleteAccount.innerHTML = "提交";
+
+            udTextModalNewPinPlaceholder.placeholder = "输入你的新PIN码";
+            udTextModalRepeatPinPlaceholder.placeholder = "再次输入你的新PIN码";
+            udButtonTextSubmitButtonForChangePin.innerHTML = "提交";
+        } catch (e) {
+        }
+
+        //userDashboardAdmin
+        try {
+            udaTextHeaderReports.innerHTML = "查看报告";
+            udaButtonTextFirstBtn.innerHTML = "查看";
+            udaTextHeaderAccessType.innerHTML = "分配访问类型";
+            udaButtonTextSecondBtn.innerHTML = "分配类型";
+            udaTextHeaderBan.innerHTML = "禁止用户帐户";
+            udaButtonTextThirdBtn.innerHTML = "禁止";
+            udaTextHeaderBanUserModal.innerHTML = "'Dismiss'按钮可以用来拒绝一个报告，这样它就不会显示得更久。 <br><br>'Suspend'按钮将阻止报告的ID用户，这样用户将不再能够登录。";
+            udaTextHeaderAccessTypeModal.innerHTML = "访问类型";
+            udaTextHeaderBanUserModal1.innerHTML = "请选择您希望禁止的用户ID:";
+        } catch (e) {
+        }
+
+        //map
+        try {
+            mpSearch.placeholder = "输入 Northumbria...";
+        } catch (e) {
+        }
+
+        //help services
+        try {
+            hhErrorTitle.innerHTML = "误";
+            hhErrorMsg.innerHTML = "由于技术限制，只能由我们的管理员重置密码。 <br>请使用表格联系管理员，以重置密码。";
+            hhEmail.innerHTML = "学生电子邮件地址：";
+            hhQuery.innerHTML = "您的提问：";
+            hhQueryInput.placeholder = "在这请写下你的提问...";
+            hsButtonText.innerHTML = "查看常见问题";
+            hsModalLabelText.innerHTML = "常见问题";
+            hhFAQ1.innerHTML = "问题1：如何更改密码？";
+            hhFAQ2.innerHTML = "问题2：在哪里可以更改网站设置？";
+            hhFAQ3.innerHTML = "问题3：我还有其他问题，在哪里可以找到支持？";
+            hhFAQans1.innerHTML = "您可以通过向管理团队提交查询以请求更改密码来更改密码。";
+            hhFAQans2.innerHTML = "您可以在设置菜单中更改网站的各个方面，例如主题和语言。";
+            hhFAQans3.innerHTML = "您可以在这里搜索找到更多的常见问题: https://libraryanswers.northumbria.ac.uk/search/";
+            submit.value = "提交";
+        } catch (e) {
+        }
+
+        //TODO sorry
+        //announcement student
+        try {
+            aaStudentHeading.innerHTML = "Please select the module";
+        } catch (e) {
+        }
+
+        //announcement lecturer
+        try {
+            alTextFillForm.innerHTML = "请填写以下表格:";
+            alTextModule.innerHTML = "模块代码";
+            alTextSubject.innerHTML = "科目";
+            alTextMessage.innerHTML = "消息";
+            alsubmit.value = "提交";
+            aleditSubmit.value = "编辑通知";
+            ssTextModalNotifications.innerHTML = "选择通知以修改。";
+            var x, i;
+            x = document.querySelectorAll(".adminButtons");
+            for (i = 0; i < x.length; i++) {
+                adminButtons[i].innerHTML = "编辑";
+            }
+            ssTextModalNotificationsEdit.innerHTML = "编辑通知";
+            editModule.innerHTML = "模块";
+            editSubject.innerHTML = "科目";
+            editMessage.innerHTML = "消息";
+            aaUpdate.innerHTML = "更新";
+        } catch (e) {
+        }
+    }
 }
+
+
 
 function themeChange() {
     var theme = localStorage.getItem("theme");

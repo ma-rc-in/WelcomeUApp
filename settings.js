@@ -1066,7 +1066,6 @@ function themeChange() {
     var alsubmit = document.getElementById("alsubmit");
     var aleditSubmit = document.getElementById("aleditSubmit");
 
-
     //groupChat
     var gcBack= document.getElementById("gcBack");
     var gcLogo = document.getElementById("gcLogo");
@@ -1089,6 +1088,9 @@ function themeChange() {
     var enrolmentContainer = document.getElementById("eeContainer");
     var eeTitleOne = document.getElementById("eeTitleOne");
     var eeStepOne = document.getElementById("eeStepOne");
+    var eeSuccess = document.getElementById("eeSuccess");
+    var eeComplete = document.getElementById("eeComplete");
+    var eeLink = document.getElementById("eeLink");
 
     // help services
     var hhLogo = document.getElementById("hhLogo");
@@ -1225,6 +1227,7 @@ function themeChange() {
         //login
         try {
             llLogo.src="images/logo_white.png";
+            alert("here");
             llWrapLogin.style.backgroundColor = "black";
             llContainerLogin.style.backgroundColor = "white";
             llWelcomeU.style.backgroundColor = "black";
@@ -1288,6 +1291,19 @@ function themeChange() {
             enrolmentContainer.style.backgroundColor = "white";
             eeTitleOne.style.color = "black";
             eeStepOne.style.color = "black";
+        } catch (e) {}
+
+        try {
+            eeLogo.src="images/logoBlack.png";
+            enrolmentContainer.style.backgroundColor = "white";
+            eeTitleTwo.style.color = "black";
+            eeStepTwo.style.color = "black";
+        } catch (e) {}
+
+        try {
+            eeSuccess.style.color = "black";
+            eeComplete.style.color = "black";
+            eeLink.style.color = "black";
         } catch (e) {}
 
         // help services

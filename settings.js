@@ -865,7 +865,7 @@ function languageChange() {
                 hhErrorMsg.innerHTML = "由于技术限制，只能由我们的管理员重置密码。 <br>请使用表格联系管理员，以重置密码。";
                 hhEmail.innerHTML = "学生电子邮件地址：";
                 hhQuery.innerHTML = "您的提问：";
-                hhContactBtn.innerHTML = "Contact Us";
+                hhContactBtn.innerHTML = "联系我们";
                 hhQueryInput.placeholder = "在这请写下你的提问...";
                 hsButtonText.innerHTML = "查看常见问题";
                 hsModalLabelText.innerHTML = "常见问题";

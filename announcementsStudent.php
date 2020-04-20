@@ -6,7 +6,7 @@ $db = getConnection();//returns the connection for the database.
 session_start();
 $ID = "";
 $ModuleID="";
-echo '.<Script> localStorage.setItem("moduleCheck", "false");</Script>.';
+echo '<Script> localStorage.setItem("moduleCheck", "false");</Script>';
 
 function convertModuleID($ID)
 { //this converts the module ID into a name
@@ -24,7 +24,7 @@ if (checkAccessType() == "Lecturer") {
 
 if (isset($_POST['viewModule'])) {
   $ModuleID = $_POST['viewModule'];
-  echo '.<Script> localStorage.setItem("moduleCheck", "true"); //used to load the page</Script>.';
+  echo '<Script> localStorage.setItem("moduleCheck", "true"); //used to load the page</Script>';
 }
 
 ?>
@@ -42,10 +42,10 @@ if (isset($_POST['viewModule'])) {
   <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
   <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
   <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+  <script src="settings.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet'
   type='text/css'>
   <style>
-  @media only screen and (max-width: 600px) {
     .messageBox {
       margin: 0 auto;
       padding: 0 20px;
@@ -68,11 +68,11 @@ if (isset($_POST['viewModule'])) {
       clear: both;
       display: table;
     }
-  }
+
 
   .adminButtons {
     display: inline-block;
-    width: 400px;
+    width: 500px;
     float: left;
     left: 25%;
     min-height: 100px;
@@ -87,32 +87,55 @@ if (isset($_POST['viewModule'])) {
     margin-left: 15%;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1000px) {
 
-    .reports,  {
+    .reports, td, th, tr {
       display: block;
-      width: 100%;
+      width: 99%;
       float: left;
+      margin-left: 0%;
+    }
+
+    .adminButtons {
+      width: 95%;
     }
   }
 
+.annoucementContainer {
+  border: 1px solid #383838;
+  background-color: #4f4f4f;
+  border-radius: 5px;
+  padding: 15px 10px 10px 10px;
+  margin: 2px 0;
+  min-height: 50px;
+  overflow: auto;
+  color: white;
+}
 
+.annoucementContainerText {
+  color: white;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+  float: left;
+  width: 30%;
+  display: inline-block;
+}
 
-    </style>
+</style>
 
     </head>
     <body>
-    <div class="patch-container">
+    <div class="patch-container" id="asContainer">
     <div class="limiter" id="limiter">  <!--TODO CHANGE-->
     <div class="logoDiv">
-    <div class="goBackButton"><a href="mainmenu.php"><img src="images/back.png" class="goBackIcon"></a></div>
+    <div class="goBackButton"><a href="mainmenu.php"><img id="asBack" src="images/back.png" class="goBackIcon"></a></div>
     <div class="logoChatWrapper">
     <a href="mainmenu.php">
-    <img class="logoChat" src="images/logo_white.png" alt="Logo"/>
+    <img class="logoChat" id="asImage" src="images/logo_white.png" alt="Logo"/>
     </a>
     </div>
     </div>
-    <h1 class="formHeading">Please select the module</h1>
+    <h1 class="formHeading" id="aaStudentHeading">Please select the module</h1>
 
 
     <table class="reports">
@@ -169,6 +192,7 @@ if (isset($_POST['viewModule'])) {
     <div class="modal-content">
     <div class="modal-header">
     <span class="close firstClose" id="">&times;</span>
+    <h3>View</h3>
     </div>
 
     <div class="modal-body">
@@ -189,15 +213,17 @@ if (isset($_POST['viewModule'])) {
           $subject = $row->announcementSubject;
           $time = $row->announcementDateTime;
 
-          echo '<div id=annoucementSent>';
-          echo "Subject: ".$subject."</br>";
-          echo "Message: ".$message."</br>";
-          echo "Sent at: ".$time."</br>";
+          echo '<div class=annoucementContainer>';
+            echo "<p class=".'annoucementContainerText'.">Subject: ".$subject."</p></br>";
+            echo "<p class=".'annoucementContainerText'.">Subject: ".$message."</p></br>";
+            echo "<p class=".'annoucementContainerText'.">Subject: ".$time."</p></br>";
           echo '</div>';
         }
       } else {
         $modulename = convertModuleID($ModuleID);
+        echo '<div class=annoucementContainer>';
         echo "No announcements have been made for $ModuleID ($modulename).";
+        echo '</div>';
       }
     }
     ?>
@@ -234,3 +260,9 @@ if (isset($_POST['viewModule'])) {
     </div>
     </body>
     </html>
+
+<script>
+    languageChange();
+    themeChange();
+    highContrast();
+</script>

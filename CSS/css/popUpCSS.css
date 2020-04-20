@@ -59,7 +59,7 @@
   }
 
   .patch-container {
-    background-color: #000000;
+    /*background-color: #000000;*/
     border-radius: 5px;
     color: #000000;
     overflow: auto;

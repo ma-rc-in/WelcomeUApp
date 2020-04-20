@@ -958,10 +958,15 @@ function themeChange() {
     var aaStudentHeading = document.getElementById("aaStudentHeading");
     var limiter = document.getElementById("limiter");
 
-    //announcementsStudent
+    //announcementsLecturer
     var anlContainer = document.getElementById("anlContainer");
-    var alImage  = document.getElementById("alImage");
+    var alLogo  = document.getElementById("alLogo");
     var alBack  = document.getElementById("alBack");
+    var alContainer  = document.getElementById("alContainer");
+    var alTextFillForm = document.getElementById("alTextFillForm");
+    var alTextModule  = document.getElementById("alTextModule");
+    var alTextSubject  = document.getElementById("alTextSubject");
+    var alTextMessage  = document.getElementById("alTextMessage");
 
     //groupChat
     var gcBack= document.getElementById("gcBack");
@@ -1136,16 +1141,21 @@ function themeChange() {
             asImage.src="images/logoBlack.png";
             asContainer.style.backgroundColor = "white";
             asBack.src="images/backBlack.png";
-
         } catch (e) {}
 
         //announcementsLecturer
         try {
 
-            alImage.src="images/logoBlack.png";
+            alLogo.src="images/logoBlack.png";
             anlContainer.style.backgroundColor = "white";
             alBack.src="images/backBlack.png";
-
+            alContainer.style.borderColor = "black";
+            alContainer.style.borderRadius = "20px";
+            alContainer.style.backgroundColor = "grey";
+            alTextFillForm.style.color = "white";
+            alTextModule.style.color = "white";
+            alTextSubject.style.color = "white";
+            alTextMessage.style.color = "white";
         } catch (e) {}
 
         //GroupChat

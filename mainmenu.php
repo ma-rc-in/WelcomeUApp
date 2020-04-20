@@ -532,6 +532,67 @@ else
               ]);
           }
 
+          if (language == "Polish") {
+              tour.addSteps([
+                  {
+                      element: "#mmSmartCardBalance", // string (jQuery selector) - html element next to which the step popover should be shown
+                      title: "Saldo SmartCard", // string - title of the popover
+                      placement: "bottom",
+                      backdrop: true,
+                      content: "Użytkownicy mogą sprawdzić swoje saldo cardy SmartCard tutaj." // string - content of the popover
+                  },
+                  {
+                      element: "#mmMapLogo",
+                      title: "Mapa",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Użytkownicy mogą skorzystać z mapy w celu podejrzenia kampusa, a następnie znaleźć więcej informacji na temat budynków, etc."
+                  },
+                  {
+                      element: "#groupChat",
+                      title: "Czat grupowy",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Studenci mogą skorzystać z czatu grupowego, aby porozumieć się z innymi studentami z tego samego kierunku."
+                  },
+                  {
+                      element: "#mmHelpLogo",
+                      title: "Wsparcie",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Użytkownicy mogą skorzystać ze wsparcia administracji, sprawdzić najczęsciej zadawane pytania oraz uzyskać więcej informacji używając czat bota."
+                  },
+                  {
+                      element: "#mmAnnoucementsLogo",
+                      title: "Ogłoszenia",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Użytkownicy mogą otrzymać ogłoszenia przesłane od wykładowców danego kierunku, np. z informacjami na temat danej pracy semestrowej."
+                  },
+                  {
+                      element: "#mmEnrolmentLogo",
+                      title: "Rejestracja",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Użytkownicy mogą zapisać się na dany kurs wypełniając wymagane informacje i dane osobowe. Niektóry informacje są również dostępne do zmiany po dokonaniu rejerstacji."
+                  },
+                  {
+                      element: "#mmSettingsLogo",
+                      title: "Ustawienia",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Użytkownicy mogą zmienić różnorakie ustawienia aplikacji, np. wyświetlany język, motyw albo kontrast. Dodatkowo użytkownicy mogą zmienić ustawienia bezpieczeństwa, takie jak hasło, PIN oraz trwale usunąć konto."
+                  },
+                  {
+                      element: "#mmLogoutLogo",
+                      title: "Wyloguj",
+                      placement: "top",
+                      backdrop: true,
+                      content: "Użytkownicy mogą kliknąć tutaj, aby się wylogować."
+                  }
+              ]);
+          }
+
           $("#userGuideButton").click(function(){
           // Start the tour
           if(!tour.start()){

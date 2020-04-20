@@ -6,8 +6,8 @@ $db = getConnection();//returns the connection for the database.
 session_start();
 $view = false;
 $editID = "";
-echo '.<Script> localStorage.setItem("viewCheck", "false"); //used to load the page</Script>.';
-echo '.<Script> localStorage.setItem("viewEdit", "false"); //used to load the page</Script>.';
+echo '<Script> localStorage.setItem("viewCheck", "false"); //used to load the page</Script>';
+echo '<Script> localStorage.setItem("viewEdit", "false"); //used to load the page</Script>';
 
 function convertModuleID($ID){ //this converts the module ID into a name
   $db = getConnection();
@@ -77,6 +77,7 @@ if(isset($_POST['aaUpdate'])) {
   <link rel="stylesheet" type="text/css" href="CSS/css/util.css">
   <link rel="stylesheet" type="text/css" href="CSS/css/main.css">
   <link rel="stylesheet" type="text/css" href="CSS/css/popUpCSS.css">
+  <script src="settings.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Source+Code+Pro' rel='stylesheet'
   type='text/css'>
   <style>
@@ -207,24 +208,24 @@ if(isset($_POST['aaUpdate'])) {
 </head>
 <body>
 
-  <div class="patch-container">
+  <div class="patch-container" id="anlContainer">
     <div class="logoMain">
     <a href="mainmenu.php">
 
     <div class="logoIcon">
-      <img class="imgLogo" id="udLogo" src="images/logo_white.png" alt="Logo" />
+      <img class="imgLogo" id="alLogo" src="images/logo_white.png" alt="Logo" />
     </div>
     </a>
     </div>
-    <div class="goBackButton"><a href="mainmenu.php"><img src="images/back.png" id="gcBack" class="goBackIcon"></a></div>
+    <div class="goBackButton"><a href="mainmenu.php"><img id="alBack" src="images/back.png" id="gcBack" class="goBackIcon"></a></div>
 
   </div>
 
-  <div class="container">
-    <h4 style="color: black;" align="center">Please fill in the form below:</h4>
+  <div class="container" id="alContainer">
+    <h4 style="color: black;" align="center" id="alTextFillForm">Please fill in the form below:</h4>
     <form action="announcementsLecturer.php" method="POST">
 
-      <label for="fname">Module Code</label>
+      <label for="fname" id="alTextModule">Module Code</label>
 
       <select id="selectModule" name="selectModule">
         <?php
@@ -260,10 +261,10 @@ if(isset($_POST['aaUpdate'])) {
         }
         ?>
       </select>
-      <label for="subject"> Subject </label>
+      <label for="subject" id="alTextSubject"> Subject </label>
       <input type="text" id="subject" name="subject" placeholder="Type a subject..">
 
-      <label for="message">Message</label>
+      <label for="message" id="alTextMessage">Message</label>
       <textarea id="message" name="message" placeholder="Type your message.." style="height:200px"></textarea>
 
       <input type="submit" value="Submit" name="submit">
@@ -411,3 +412,9 @@ if(checkEdit == "true"){
 
 </body>
 </html>
+
+<script>
+    languageChange(); //changes the lanugage (default is english)
+    themeChange();
+    highContrast();
+</script>

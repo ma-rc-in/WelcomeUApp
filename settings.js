@@ -1271,6 +1271,17 @@ function themeChange() {
             hsButtonText.style.borderColor = "white";
             hhContactBtn.style.borderColor = "white";
         } catch (e) {}
+
+        //annoucementLecturer
+        try {
+            alContainer.style.borderColor = "black";
+            alContainer.style.borderRadius = "20px";
+            alContainer.style.backgroundColor = "grey";
+            alTextFillForm.style.color = "white";
+            alTextModule.style.color = "white";
+            alTextSubject.style.color = "white";
+            alTextMessage.style.color = "white";
+        } catch (e) {}
     }
 }
 

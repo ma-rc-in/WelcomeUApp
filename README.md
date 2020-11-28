@@ -1,6 +1,6 @@
 # About the project
 
-This project provides an app for new students at Northumbria University. Completed as a team work project.
+This project provides an app for new students at Northumbria University. Completed as a major team project in the final year of a bachelor's degree. 
 
 # Authors
 
